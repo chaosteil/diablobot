@@ -95,8 +95,7 @@ class DiabloBasic(callbacks.Plugin):
 					irc.sendMsg(ircmsgs.privmsg(msg.args[0], out))
 
 	def tz(self, irc, msg, args, arg1, arg2, arg3):
-		"""!tz [<source timezone>] <your timezone> <time to convert>
-		!tz <your timezone> now
+		"""!tz [<source timezone>] <your timezone> <time to convert>  |  <your timezone> now
 
 		Converts the given time from source timezone to your timezone. If no source timezone is specified, Pacific US (Blizzard) time is used. If 'now' is used as the time to covert, the source timezone is assumed to be US/Pacific (Blizzard).
 		"""
@@ -110,9 +109,12 @@ class DiabloBasic(callbacks.Plugin):
 					tz_from = pytz.timezone("US/Pacific")
 					tm = parse(arg2).replace(tzinfo=tz_from)
 			else:
-				tz_from = pytz.timezone(arg1)
-				tz_to = pytz.timezone(arg2)
-				tm = parse(arg3).replace(tzinfo=tz_from)
+				try:
+					tz_from = pytz.timezone(arg1)
+					tz_to = pytz.timezone(arg2)
+					tm = parse(arg3).replace(tzinfo=tz_from)
+				except ValueError:
+					return
 		except pytz.UnknownTimeZoneError as e:
 			if str(e) == "'Blizzard'":
 				irc.reply("Blizzard time: Soon")

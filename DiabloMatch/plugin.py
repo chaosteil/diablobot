@@ -108,7 +108,7 @@ class DiabloMatch(callbacks.Plugin):
 		This should describe *how* to use this plugin."""
 		if arg1 == "register":
 			if arg2 == None:
-				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Please specify the battletag you wish to register: !bt register <tag>"))
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Please specify the battletag you wish to register: !bt register BattleTag#1234"))
 			else:
 				if not self._verify_bt(arg2):
 					irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a proper battletag. Use 'BattleTag#1234' format."))
