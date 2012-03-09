@@ -157,13 +157,13 @@ class DiabloMatch(callbacks.Plugin):
 				else:
 					irc.sendMsg(ircmsgs.privmsg(msg.nick, "I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
 			else:
-				irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+arg1+""))
 				users = session.query(User).filter(or_(
 						User.bt.like(arg1.replace("*", "%")),
 						User.reddit_name.like(arg1.replace("*", "%")),
 						User.email.like(arg1.replace("*", "%")),
 						User.irc_name.like(arg1.replace("*", "%")),
 						User.steam_name.like(arg1.replace("*", "%"))))
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " results."))
 			for user in users:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, user.pretty_print()))
 	bt = wrap(bt, [optional('lowered'), optional('lowered')])

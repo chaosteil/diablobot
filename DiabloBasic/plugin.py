@@ -44,7 +44,8 @@ class DiabloBasic(callbacks.Plugin):
 		return out[:-2]
 
 	def quote(self, irc, msg, args, charname):
-		"""Returns a random quote from the character specified, or from anyone if no character specified.
+		"""
+		Returns a random quote from the character specified, or from anyone if no character specified.
 		"""
 		if not charname:
 			q = self.quotes[random.choice(self.quotes.keys())]
