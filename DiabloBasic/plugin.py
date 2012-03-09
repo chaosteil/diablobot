@@ -15,7 +15,7 @@ import supybot.callbacks as callbacks
 import re
 import json
 import random
-import time, pytz
+import pytz
 from datetime import datetime
 from dateutil.parser import parse
 
@@ -118,54 +118,33 @@ class DiabloBasic(callbacks.Plugin):
 
 	def tz(self, irc, msg, args, arg1, arg2, arg3):
 		"""!tz [<source timezone>] <your timezone> <time to convert>
+		!tz <your timezone> now
 
-		Converts the given time from source timezone to your timezone. You may specify 'now' as the time to convert. If no source timezone is specified, Pacific US (Blizzard) time is used.
+		Converts the given time from source timezone to your timezone. If no source timezone is specified, Pacific US (Blizzard) time is used. If 'now' is used as the time to covert, the source timezone is assumed to be US/Pacific (Blizzard).
 		"""
 		try:
 			if not arg3:
-				tz_from = pytz.timezone("US/Pacific")
 				tz_to = pytz.timezone(arg1)
-				tm = arg2
+				if arg2 == "now":
+					tz_from = pytz.timezone("US/Eastern")
+					tm = datetime.now().replace(tzinfo=tz_from)
+				else:
+					tz_from = pytz.timezone("US/Pacific")
+					tm = parse(arg2).replace(tzinfo=tz_from)
 			else:
 				tz_from = pytz.timezone(arg1)
 				tz_to = pytz.timezone(arg2)
-				tm = arg3
+				tm = parse(arg3).replace(tzinfo=tz_from)
 		except pytz.UnknownTimeZoneError as e:
-			irc.reply("Unknown time zone " + str(e))
+			if str(e) == "'Blizzard'":
+				irc.reply("Blizzard time: Soon")
+			else:
+				irc.reply("Unknown time zone " + str(e))
 			return
-		if tm == "now":
-			tm = time.time()
-		else:
-			tm = parse(tm)
-		"""
-		print tz_from.__dict__
-		{'_dst': datetime.timedelta(0),
-		'_utcoffset': datetime.timedelta(-1, 57600),
-		'_tzinfos': {
-			(datetime.timedelta(-1, 57600), datetime.timedelta(0), 'PST'): <DstTzInfo 'US/Pacific' PST-1 day, 16:00:00 STD>,
-			(datetime.timedelta(-1, 61200), datetime.timedelta(0, 3600), 'PPT'): <DstTzInfo 'US/Pacific' PPT-1 day, 17:00:00 DST>,
-			(datetime.timedelta(-1, 61200), datetime.timedelta(0, 3600), 'PWT'): <DstTzInfo 'US/Pacific' PWT-1 day, 17:00:00 DST>,
-			(datetime.timedelta(-1, 61200), datetime.timedelta(0, 3600), 'PDT'): <DstTzInfo 'US/Pacific' PDT-1 day, 17:00:00 DST>},
-			'_tzname': 'PST'
-		}
-		"""
-		print tm
-		print tm.timetuple()
-		print time.mktime(tm.timetuple())
-		print "\n"
-		print tm.timetuple()
-		print str(int(tz_from["utcoffset"]))
-		return
-		tm_from = tz_from.localize(datetime.fromtimestamp(tm))
-		irc.reply(str(tm_from) + " tm_from")
-		tm_to = tz_to.localize(tz_from)
-		irc.reply(str(tm_to) + " tm_to")
-		#utc_dt = pytz.utc.localize(datetime.utcfromtimestamp(tm))
-		#irc.reply(str(utc_dt) + " utc")
-		#tm_to = tz_to.normalize(utc_dt.astimezone(tz_to))
-		#irc.reply(str(tm_to) + " tm_to")
-		#utc_dt2 = utc.normalize(tm_to.astimezone(pytz.utc))
-		#irc.reply(utc_dt2)
+
+		tm_to = tm.astimezone(tz_to)
+		print tm_to
+
 		irc.reply(str(tz_to) + ": " + str(tm_to))
 	tz = wrap(tz, ['anything', 'anything', optional('anything')])
 
