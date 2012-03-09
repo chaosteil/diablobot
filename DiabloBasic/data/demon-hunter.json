@@ -1,0 +1,1205 @@
+{
+  "traits" : [ {
+    "description" : "<p>Whenever you use Vault, Smoke Screen or backflip with Evasive Fire you gain <span class=\"d3-color-green\">60%</span> movement speed for <span class=\"d3-color-green\">2</span> seconds.</p>",
+    "name" : "Tactical Advantage",
+    "icon" : "demonhunter_passive_tacticaladvantage",
+    "slug" : "tactical-advantage",
+    "requiredLevel" : 10,
+    "tooltipParams" : "skill/demon-hunter/tactical-advantage",
+    "simpleDescription" : "<p>Never start a fair fight.</p>"
+  }, {
+    "description" : "<p>Every <span class=\"d3-color-green\">10</span> seconds, your next bow attack will immobilize your target for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "name" : "Thrill of the Hunt",
+    "icon" : "demonhunter_passive_thrillofthehunt",
+    "slug" : "thrill-of-the-hunt",
+    "requiredLevel" : 10,
+    "tooltipParams" : "skill/demon-hunter/thrill-of-the-hunt",
+    "simpleDescription" : "<p>&quot;The first three were dead before they hit the ground. The others weren&#39;t so lucky.&quot; —Captain Rumford</p>"
+  }, {
+    "description" : "<p>Your maximum Hatred is increased by <span class=\"d3-color-green\">25</span>. In addition, gain <span class=\"d3-color-green\">20</span> Hatred and <span class=\"d3-color-green\">2</span> Discipline whenever you are healed by a health globe.</p>",
+    "name" : "Vengeance",
+    "icon" : "demonhunter_passive_vengeance",
+    "slug" : "vengeance",
+    "requiredLevel" : 12,
+    "tooltipParams" : "skill/demon-hunter/vengeance",
+    "simpleDescription" : "<p>&quot;If it bleeds you can kill it. Kill this one slowly.&quot; —Greyscarr, Veteran Demon Hunter</p>"
+  }, {
+    "description" : "<p>As long as there are no enemies within <span class=\"d3-color-green\">10</span> yards, all damage is increased by <span class=\"d3-color-green\">20%</span>.</p>",
+    "name" : "Steady Aim",
+    "icon" : "demonhunter_passive_steadyaim",
+    "slug" : "steady-aim",
+    "requiredLevel" : 13,
+    "tooltipParams" : "skill/demon-hunter/steady-aim",
+    "simpleDescription" : "<p>&quot;Flee if you can, demon. I have a quiver full of friends who fly faster than you.&quot; —Tyla Shrikewing</p>"
+  }, {
+    "description" : "<p>Damage against slowed enemies increased by <span class=\"d3-color-green\">15%</span>.</p>",
+    "name" : "Cull the Weak",
+    "icon" : "demonhunter_passive_culltheweak",
+    "slug" : "cull-the-weak",
+    "requiredLevel" : 15,
+    "tooltipParams" : "skill/demon-hunter/cull-the-weak",
+    "simpleDescription" : "<p>&quot;I&#39;ll show you the same mercy you showed my helpless family.&quot; —Tyla Shrikewing</p>"
+  }, {
+    "description" : "<p>Critical hits have a chance to restore <span class=\"d3-color-green\">2</span> Discipline.</p><p>Discipline is used to fuel many of your tactical and defensive skills.</p>",
+    "name" : "Night Stalker",
+    "icon" : "demonhunter_passive_nightstalker",
+    "slug" : "night-stalker",
+    "requiredLevel" : 17,
+    "tooltipParams" : "skill/demon-hunter/night-stalker",
+    "simpleDescription" : "<p>&quot;How did I learn to hate, to kill, to flay the flesh from the bones of my prey without pity? You taught me.&quot; —Tyla Shrikewing&#39;s final words to Naragh the Sin Eater</p>"
+  }, {
+    "description" : "<p>As long as you have not taken damage in the last <span class=\"d3-color-green\">5</span> seconds you gain <span class=\"d3-color-green\">2%</span> of your maximum Life per second.</p>",
+    "name" : "Brooding",
+    "icon" : "demonhunter_passive_brooding",
+    "slug" : "brooding",
+    "requiredLevel" : 19,
+    "tooltipParams" : "skill/demon-hunter/brooding",
+    "simpleDescription" : "<p>Never forget where you came from.</p>"
+  }, {
+    "description" : "<p>Whenever you are at full Hatred, movement speed is increased by <span class=\"d3-color-green\">15%</span>.</p>",
+    "name" : "Hot Pursuit",
+    "icon" : "demonhunter_passive_hotpursuit",
+    "slug" : "hot-pursuit",
+    "requiredLevel" : 20,
+    "tooltipParams" : "skill/demon-hunter/hot-pursuit",
+    "simpleDescription" : "<p>&quot;Don&#39;t make me chase you back to Hell, vermin. I know a quicker way to send you there.&quot; —Tyla Shrikewing</p>"
+  }, {
+    "description" : "<p>Gain a bonus based on the weapon type of your main hand weapon:<br/>Bow: <span class=\"d3-color-green\">15%</span> increased damage<br/>Crossbows: <span class=\"d3-color-green\">50%</span> critical hit damage<br/>Hand Crossbows: <span class=\"d3-color-green\">10%</span> chance to critical hit</p>",
+    "name" : "Archery",
+    "icon" : "demonhunter_passive_archery",
+    "slug" : "archery",
+    "requiredLevel" : 22,
+    "tooltipParams" : "skill/demon-hunter/archery",
+    "simpleDescription" : "<p>&quot;Feel the weight of the crossbow in your hand. Now... the wind, the distance, the target&#39;s speed. Good. Now try it with blood in your eyes and a demon at your throat.&quot; —Greyscarr, Veteran Demon Hunter</p>"
+  }, {
+    "description" : "<p>Enemies hit by Fan of Knives, Spike Trap and Caltrops have their damage reduced by <span class=\"d3-color-green\">25%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "name" : "Numbing Traps",
+    "icon" : "demonhunter_passive_numbingtraps",
+    "slug" : "numbing-traps",
+    "requiredLevel" : 23,
+    "tooltipParams" : "skill/demon-hunter/numbing-traps",
+    "simpleDescription" : "<p>&quot;Demonic anatomy is strange and diverse. At times they defy sanity, but in other ways they are just as vulnerable as we are.&quot; —Meditations on the Enemy</p>"
+  }, {
+    "description" : "<p>Reduces the Discipline cost of all skills by <span class=\"d3-color-green\">20%</span>.</p><p>Discipline is used to fuel many of your tactical and defensive skills.</p>",
+    "name" : "Perfectionist",
+    "icon" : "demonhunter_passive_perfectionist",
+    "slug" : "perfectionist",
+    "requiredLevel" : 24,
+    "tooltipParams" : "skill/demon-hunter/perfectionist",
+    "simpleDescription" : "<p>Once the trap is sprung you must not relent until every last enemy has fallen. To hesitate is to invite disaster.</p>"
+  }, {
+    "description" : "<p>The duration of your Caltrops, Marked for Death, Spike Trap and Sentry is increased by <span class=\"d3-color-green\">100%</span>.</p>",
+    "name" : "Custom Engineering",
+    "icon" : "demonhunter_passive_customengineering",
+    "slug" : "custom-engineering",
+    "requiredLevel" : 25,
+    "tooltipParams" : "skill/demon-hunter/custom-engineering",
+    "simpleDescription" : "<p>The self-loading mechanisms built into most hand crossbows and traps are delicate and difficult to maintain. Extensive practice is required to use them properly.</p>"
+  }, {
+    "description" : "<p>Increases Hatred generated from Grenades by <span class=\"d3-color-green\">2</span> and reduces the Hatred cost of Cluster Arrow by <span class=\"d3-color-green\">10</span>. Upon death, you drop a giant grenade that explodes for <span class=\"d3-color-green\">450%</span> weapon damage as Fire.</p>",
+    "name" : "Grenadier",
+    "icon" : "demonhunter_passive_grenadier",
+    "slug" : "grenadier",
+    "requiredLevel" : 28,
+    "tooltipParams" : "skill/demon-hunter/grenadier",
+    "simpleDescription" : "<p>&quot;Do not construct these devices by candlelight, nor by firelight. Once armed, be no closer than ten paces upon the count of three.&quot; —Explicit instructions from Quang the Chemist</p>"
+  }, {
+    "description" : "<p>Gain a <span class=\"d3-color-green\">3%</span> chance to critical hit every second. This bonus is reset <span class=\"d3-color-green\">1</span> second after you successfully critical hit.</p>",
+    "name" : "Sharpshooter",
+    "icon" : "demonhunter_passive_sharpshooter",
+    "slug" : "sharpshooter",
+    "requiredLevel" : 29,
+    "tooltipParams" : "skill/demon-hunter/sharpshooter",
+    "simpleDescription" : "<p>&quot;Every creature has a vulnerability. Find it, and put an arrow in it.&quot; —Greyscarr, Veteran Demon Hunter</p>"
+  }, {
+    "description" : "<p>Damage from rockets increased by <span class=\"d3-color-green\">100%</span>. </p><p>Rockets are fired from certain socketed skill effects.</p>",
+    "name" : "Ballistics",
+    "icon" : "demonhunter_passive_ballistics",
+    "slug" : "ballistics",
+    "requiredLevel" : 30,
+    "tooltipParams" : "skill/demon-hunter/ballistics",
+    "simpleDescription" : "<p>&quot;How should I know who first invented these devices? Just make sure the correct end is pointed at the enemy and they&#39;ll do the rest.&quot; —Greyscarr, Veteran Demon Hunter</p>"
+  } ],
+  "skills" : [ {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Piercing Arrow",
+      "type" : "d",
+      "requiredLevel" : 6,
+      "tooltipParams" : "rune/hungering-arrow/d",
+      "description" : "<p>Increase the chance for the arrow to pierce to <span class=\"d3-color-green\">55%</span>.</p>",
+      "simpleDescription" : "<p>Increase the piercing chance of the arrow.</p>"
+    }, {
+      "name" : "Cinder Arrow",
+      "type" : "a",
+      "requiredLevel" : 13,
+      "tooltipParams" : "rune/hungering-arrow/a",
+      "description" : "<p>Light the arrow on fire, dealing <span class=\"d3-color-green\">35%</span> additional weapon damage as Fire over <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Light the arrow on fire and burn the target.</p>"
+    }, {
+      "name" : "Shatter Shot",
+      "type" : "b",
+      "requiredLevel" : 20,
+      "tooltipParams" : "rune/hungering-arrow/b",
+      "description" : "<p>If the arrow successfully pierces the first target, the arrow splits into <span class=\"d3-color-green\">3</span> arrows.</p>",
+      "simpleDescription" : "<p>Arrow has a chance to split into multiple arrows.</p>"
+    }, {
+      "name" : "Devouring Arrow",
+      "type" : "c",
+      "requiredLevel" : 26,
+      "tooltipParams" : "rune/hungering-arrow/c",
+      "description" : "<p>Each consecutive pierce increases the damage of the arrow by <span class=\"d3-color-green\">70%</span>.</p>",
+      "simpleDescription" : "<p>Increase the damage of the arrow with each target pierced.</p>"
+    }, {
+      "name" : "Spray of Teeth",
+      "type" : "e",
+      "requiredLevel" : 35,
+      "tooltipParams" : "rune/hungering-arrow/e",
+      "description" : "<p>Successful critical hits cause a burst of bone to explode from the target, dealing <span class=\"d3-color-green\">50%</span> weapon damage to enemies in that area.</p>",
+      "simpleDescription" : "<p>Critical Hits cause the target&#39;s bones to explode.</p>"
+    } ],
+    "categoryName" : "Primary",
+    "categorySlug" : "primary",
+    "name" : "Hungering Arrow",
+    "icon" : "demonhunter_hungeringarrow",
+    "slug" : "hungering-arrow",
+    "requiredLevel" : 1,
+    "tooltipParams" : "skill/demon-hunter/hungering-arrow",
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">3</span> Hatred</p><p>Fire a magically imbued arrow that seeks out targets for <span class=\"d3-color-green\">115%</span> weapon damage and has a <span class=\"d3-color-green\">35%</span> chance to pierce through targets.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">3</span> Hatred</p><p>Fire a piercing arrow that seeks additional targets.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Impact",
+      "type" : "b",
+      "requiredLevel" : 7,
+      "tooltipParams" : "rune/impale/b",
+      "description" : "<p>Impale will knock the target back and stun them for <span class=\"d3-color-green\">1.5</span> seconds.</p>",
+      "simpleDescription" : "<p>Knockback and Stun the target.</p>"
+    }, {
+      "name" : "Chemical Burn",
+      "type" : "c",
+      "requiredLevel" : 15,
+      "tooltipParams" : "rune/impale/c",
+      "description" : "<p>Your target will also Bleed for <span class=\"d3-color-green\">100%</span> weapon damage as Physical over <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Impale causes the target to Bleed after each strike.</p>"
+    }, {
+      "name" : "Grievous Wounds",
+      "type" : "e",
+      "requiredLevel" : 21,
+      "tooltipParams" : "rune/impale/e",
+      "description" : "<p>Gain <span class=\"d3-color-green\">100%</span> additional damage to critical hits.</p>",
+      "simpleDescription" : "<p>Critical Hits cause additional damage.</p>"
+    }, {
+      "name" : "Overpenetration",
+      "type" : "a",
+      "requiredLevel" : 27,
+      "tooltipParams" : "rune/impale/a",
+      "description" : "<p>The knife will pierce through all enemies in a straight line.</p>",
+      "simpleDescription" : "<p>The knife will pierce through all enemies in a straight line.</p>"
+    }, {
+      "name" : "Awareness",
+      "type" : "d",
+      "requiredLevel" : 35,
+      "tooltipParams" : "rune/impale/d",
+      "description" : "<p>After the intial throw, release multiple blades centered on you, dealing <span class=\"d3-color-green\">75%</span> weapon damage to all enemies within <span class=\"d3-color-green\">10</span> yards.</p>",
+      "simpleDescription" : "<p>After the initial throw, release multiple blades that strike all enemies near you.</p>"
+    } ],
+    "categoryName" : "Secondary",
+    "categorySlug" : "secondary",
+    "name" : "Impale",
+    "icon" : "demonhunter_impale",
+    "slug" : "impale",
+    "requiredLevel" : 2,
+    "tooltipParams" : "skill/demon-hunter/impale",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Hatred</p><p>Impale a target for <span class=\"d3-color-green\">250%</span> weapon damage.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Hatred</p><p>Throw a knife that can impale enemies.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Volatile Explosives",
+      "type" : "a",
+      "requiredLevel" : 8,
+      "tooltipParams" : "rune/bola-shot/a",
+      "description" : "<p>Increase the explosion radius to <span class=\"d3-color-green\">14</span> yards.</p>",
+      "simpleDescription" : "<p>Increase the explosive radius of Bola Shot.</p>"
+    }, {
+      "name" : "Thunder Ball",
+      "type" : "c",
+      "requiredLevel" : 17,
+      "tooltipParams" : "rune/bola-shot/c",
+      "description" : "<p>When the bola explodes, it deals <span class=\"d3-color-green\">130%</span> weapon damage as Lightning and has a <span class=\"d3-color-green\">35%</span> chance to stun the primary target for <span class=\"d3-color-green\">1.5</span> seconds.</p>",
+      "simpleDescription" : "<p>Electrify the bola and add a chance to Stun targets.</p>"
+    }, {
+      "name" : "Acid Strike",
+      "type" : "b",
+      "requiredLevel" : 25,
+      "tooltipParams" : "rune/bola-shot/b",
+      "description" : "<p>Shoot <span class=\"d3-color-green\">3</span> bolas that deal <span class=\"d3-color-green\">130%</span> weapon damage as Poison each. The bolas no longer explode for area damage to nearby targets.</p>",
+      "simpleDescription" : "<p>Fire multiple shots that Poison instead of explode.</p>"
+    }, {
+      "name" : "Bitter Pill",
+      "type" : "d",
+      "requiredLevel" : 34,
+      "tooltipParams" : "rune/bola-shot/d",
+      "description" : "<p>After the bola explodes, you have a <span class=\"d3-color-green\">35%</span> chance to gain <span class=\"d3-color-green\">3</span> Discipline.</p>",
+      "simpleDescription" : "<p>When the bola explodes you have a chance to regain Discipline.</p>"
+    }, {
+      "name" : "Imminent Doom",
+      "type" : "e",
+      "requiredLevel" : 44,
+      "tooltipParams" : "rune/bola-shot/e",
+      "description" : "<p>Augments the bola to deal <span class=\"d3-color-green\">182%</span> weapon damage as Arcane to the target and <span class=\"d3-color-green\">154%</span> weapon damage as Arcane to all other targets within <span class=\"d3-color-green\">7</span> yards, but increases the explosion delay to <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Fire an Arcane bola that deals increased damage, but takes longer to explode.</p>"
+    } ],
+    "categoryName" : "Primary",
+    "categorySlug" : "primary",
+    "name" : "Bola Shot",
+    "icon" : "demonhunter_bolashot",
+    "slug" : "bola-shot",
+    "requiredLevel" : 3,
+    "tooltipParams" : "skill/demon-hunter/bola-shot",
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">3</span> Hatred</p><p>Shoot out an explosive bola that wraps itself around its target.  After <span class=\"d3-color-green\">1</span> second, the bola explodes dealing <span class=\"d3-color-green\">130%</span> weapon damage as Fire to the target and an additional <span class=\"d3-color-green\">110%</span> weapon damage as Fire to all other targets within <span class=\"d3-color-green\">7</span> yards.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">3</span> Hatred</p><p>Fire a bola that wraps around a target and explodes.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Hooked Spines",
+      "type" : "b",
+      "requiredLevel" : 11,
+      "tooltipParams" : "rune/caltrops/b",
+      "description" : "<p>Increase the slow amount to <span class=\"d3-color-green\">80%</span>.</p>",
+      "simpleDescription" : "<p>Increase the effectiveness of slowing enemies down.</p>"
+    }, {
+      "name" : "Torturous Ground",
+      "type" : "c",
+      "requiredLevel" : 21,
+      "tooltipParams" : "rune/caltrops/c",
+      "description" : "<p>When the trap is sprung, all enemies in the area are immobilized for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Immobilize enemies caught in the trap.</p>"
+    }, {
+      "name" : "Jagged Spikes",
+      "type" : "a",
+      "requiredLevel" : 29,
+      "tooltipParams" : "rune/caltrops/a",
+      "description" : "<p>Enemies in the area also take <span class=\"d3-color-green\">45%</span> weapon damage.</p>",
+      "simpleDescription" : "<p>Caltrops can damage enemies.</p>"
+    }, {
+      "name" : "Carved Stakes",
+      "type" : "d",
+      "requiredLevel" : 34,
+      "tooltipParams" : "rune/caltrops/d",
+      "description" : "<p>Reduce the cost to <span class=\"d3-color-green\">6</span> Discipline.</p>",
+      "simpleDescription" : "<p>Reduce the Discipline cost of Caltrops.</p>"
+    }, {
+      "name" : "Bait the Trap",
+      "type" : "e",
+      "requiredLevel" : 42,
+      "tooltipParams" : "rune/caltrops/e",
+      "description" : "<p>Become empowered while standing in the area of effect, gaining an additional <span class=\"d3-color-green\">10%</span> chance to critical hit with all attacks.</p>",
+      "simpleDescription" : "<p>Increase your Critical Hit chance while standing in the trap.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Caltrops",
+    "icon" : "demonhunter_caltrops",
+    "slug" : "caltrops",
+    "requiredLevel" : 4,
+    "tooltipParams" : "skill/demon-hunter/caltrops",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">8</span> Discipline</p><p>Lay a trap of caltrops on the ground that activates when an enemy approaches. Once sprung, the caltrops slow the movement of enemies within <span class=\"d3-color-green\">12</span> yards by <span class=\"d3-color-green\">60%</span>. This trap lasts <span class=\"d3-color-green\">6</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">8</span> Discipline</p><p>Place a trap that slows enemies.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Withering Fire",
+      "type" : "d",
+      "requiredLevel" : 14,
+      "tooltipParams" : "rune/rapid-fire/d",
+      "description" : "<p>Reduces the initial Hatred cost to <span class=\"d3-color-green\">5</span>, and ignites your arrows, causing them to deal Fire damage.</p>",
+      "simpleDescription" : "<p>Shoot Fire arrows and reduce the Hatred cost of Rapid Fire.</p>"
+    }, {
+      "name" : "Web Shot",
+      "type" : "e",
+      "requiredLevel" : 24,
+      "tooltipParams" : "rune/rapid-fire/e",
+      "description" : "<p>Slows the movement of affected targets by <span class=\"d3-color-green\">80%</span> for <span class=\"d3-color-green\">1</span> seconds.</p>",
+      "simpleDescription" : "<p>Slow enemies hit by Rapid Fire.</p>"
+    }, {
+      "name" : "Fire Support",
+      "type" : "c",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/rapid-fire/c",
+      "description" : "<p>While channeling Rapid Fire, launch <span class=\"d3-color-green\">3</span> homing rockets every second. Each rocket deals <span class=\"d3-color-green\">35%</span> weapon damage as Physical to nearby targets.</p>",
+      "simpleDescription" : "<p>Launch homing rockets while using Rapid Fire.</p>"
+    }, {
+      "name" : "High Velocity",
+      "type" : "b",
+      "requiredLevel" : 42,
+      "tooltipParams" : "rune/rapid-fire/b",
+      "description" : "<p>Fire Poison arrows that have a <span class=\"d3-color-green\">40%</span> chance to pierce through enemies.</p>",
+      "simpleDescription" : "<p>Fire Poison arrows that have a chance to pierce through targets.</p>"
+    }, {
+      "name" : "Bombardment",
+      "type" : "a",
+      "requiredLevel" : 51,
+      "tooltipParams" : "rune/rapid-fire/a",
+      "description" : "<p>Rapidly fire grenades instead of arrows for <span class=\"d3-color-green\">276%</span> weapon damage as Fire to all enemies within a <span class=\"d3-color-green\">4</span> yard radius.</p>",
+      "simpleDescription" : "<p>Throw grenades instead of shooting arrows.</p>"
+    } ],
+    "categoryName" : "Secondary",
+    "categorySlug" : "secondary",
+    "name" : "Rapid Fire",
+    "icon" : "demonhunter_rapidfire",
+    "slug" : "rapid-fire",
+    "requiredLevel" : 5,
+    "tooltipParams" : "skill/demon-hunter/rapid-fire",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Hatred initially, and an additional <span class=\"d3-color-green\">10</span> Hatred while channeling</p><p>Rapidly fire for <span class=\"d3-color-green\">228%</span> weapon damage as Physical.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Hatred</p><p>Continually fire a stream of arrows. Movement breaks concentration and decreases Hatred.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Shrapnel",
+      "type" : "a",
+      "requiredLevel" : 16,
+      "tooltipParams" : "rune/evasive-fire/a",
+      "description" : "<p>Shoot exploding bolts that also deal <span class=\"d3-color-green\">30%</span> weapon damage as Fire to all enemies within <span class=\"d3-color-green\">6</span> yards of the primary target.</p>",
+      "simpleDescription" : "<p>Shoot explosive bolts.</p>"
+    }, {
+      "name" : "Parting Gift",
+      "type" : "c",
+      "requiredLevel" : 25,
+      "tooltipParams" : "rune/evasive-fire/c",
+      "description" : "<p>Whenever a backflip is triggered, leave a poison bomb behind that explodes for <span class=\"d3-color-green\">45%</span> weapon damage as Poison in a <span class=\"d3-color-green\">12</span> yard radius after <span class=\"d3-color-green\">1.2</span> seconds. Turns Evasive Fire into Poison damage.</p>",
+      "simpleDescription" : "<p>Poison the target and drop a bomb when you backflip.</p>"
+    }, {
+      "name" : "Covering Fire",
+      "type" : "b",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/evasive-fire/b",
+      "description" : "<p>Shoot a spread of bolts that hit up to <span class=\"d3-color-green\">3</span> targets for <span class=\"d3-color-green\">125%</span> weapon damage each.</p>",
+      "simpleDescription" : "<p>Fire multiple bolts that spread.</p>"
+    }, {
+      "name" : "Displace",
+      "type" : "e",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/evasive-fire/e",
+      "description" : "<p>Increase the distance of the backflip to <span class=\"d3-color-green\">30</span> yards.</p>",
+      "simpleDescription" : "<p>Increase the distance of your backflip.</p>"
+    }, {
+      "name" : "Surge",
+      "type" : "d",
+      "requiredLevel" : 47,
+      "tooltipParams" : "rune/evasive-fire/d",
+      "description" : "<p>Reduces the cost of the backflip to <span class=\"d3-color-green\">2</span> Discipline. Turns Evasive Fire into Lightning damage.</p>",
+      "simpleDescription" : "<p>Electrify the bolt and reduce the cost of your backflip.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Evasive Fire",
+    "icon" : "demonhunter_evasivefire",
+    "slug" : "evasive-fire",
+    "requiredLevel" : 8,
+    "tooltipParams" : "skill/demon-hunter/evasive-fire",
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">4</span> Hatred<br/><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">4</span> Discipline if you backflip</p><p>Shoot for <span class=\"d3-color-green\">125%</span> weapon damage. If an enemy is in front of you at close range, you will also backflip away <span class=\"d3-color-green\">15</span> yards.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">4</span> Hatred<br/><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">4</span> Discipline if you backflip</p><p>Fire at an enemy and perform an evasive backflip if the target is close.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Equilibrium",
+      "type" : "b",
+      "requiredLevel" : 18,
+      "tooltipParams" : "rune/strafe/b",
+      "description" : "<p>Increased rate of fire while using Strafe by <span class=\"d3-color-green\">30%</span>.</p>",
+      "simpleDescription" : "<p>Increase your attack speed when using Strafe.</p>"
+    }, {
+      "name" : "Drifting Shadow",
+      "type" : "d",
+      "requiredLevel" : 27,
+      "tooltipParams" : "rune/strafe/d",
+      "description" : "<p>Movement speed increased to <span class=\"d3-color-green\">100%</span> of normal running speed while strafing.</p>",
+      "simpleDescription" : "<p>Movement speed is increased while strafing.</p>"
+    }, {
+      "name" : "Stinging Steel",
+      "type" : "e",
+      "requiredLevel" : 37,
+      "tooltipParams" : "rune/strafe/e",
+      "description" : "<p>Throw out knives rather than arrows that do an extra <span class=\"d3-color-green\">100%</span> damage on successful critical hits.</p>",
+      "simpleDescription" : "<p>Throw out knives that deal additional damage on Critical Hits.</p>"
+    }, {
+      "name" : "Rocket Storm",
+      "type" : "c",
+      "requiredLevel" : 43,
+      "tooltipParams" : "rune/strafe/c",
+      "description" : "<p>In addition to regular firing, fire off homing rockets for <span class=\"d3-color-green\">60%</span> weapon damage as Fire.</p>",
+      "simpleDescription" : "<p>Fire homing rockets while moving.</p>"
+    }, {
+      "name" : "Demolition",
+      "type" : "a",
+      "requiredLevel" : 51,
+      "tooltipParams" : "rune/strafe/a",
+      "description" : "<p>Throw out bouncy grenades that explode for <span class=\"d3-color-green\">144%</span> weapon damage to targets within <span class=\"d3-color-green\">9</span> yards.</p>",
+      "simpleDescription" : "<p>Throw grenades that randomly target enemies.</p>"
+    } ],
+    "categoryName" : "Archery",
+    "categorySlug" : "archery",
+    "name" : "Strafe",
+    "icon" : "demonhunter_strafe",
+    "slug" : "strafe",
+    "requiredLevel" : 9,
+    "tooltipParams" : "skill/demon-hunter/strafe",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Hatred</p><p>Shoot at random nearby enemies for <span class=\"d3-color-green\">120%</span> weapon damage while moving at <span class=\"d3-color-green\">65%</span> of normal movement speed.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Hatred</p><p>Shoot at nearby enemies while moving.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Chain Gang",
+      "type" : "b",
+      "requiredLevel" : 18,
+      "tooltipParams" : "rune/entangling-shot/b",
+      "description" : "<p>Hit up to <span class=\"d3-color-green\">4</span> targets.</p>",
+      "simpleDescription" : "<p>Hit up to <span class=\"d3-color-green\">4</span> targets.</p>"
+    }, {
+      "name" : "Chain Lightning",
+      "type" : "c",
+      "requiredLevel" : 26,
+      "tooltipParams" : "rune/entangling-shot/c",
+      "description" : "<p>Strike targets with electrified chains that do an additional <span class=\"d3-color-green\">18%</span> weapon damage per second as Lightning for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Strike targets with electrified chains.</p>"
+    }, {
+      "name" : "Heavy Burden",
+      "type" : "a",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/entangling-shot/a",
+      "description" : "<p>Increase the movement slow duration to <span class=\"d3-color-green\">4</span> seconds.</p>",
+      "simpleDescription" : "<p>Increase the time enemies are Slowed.</p>"
+    }, {
+      "name" : "Justice is Served",
+      "type" : "d",
+      "requiredLevel" : 41,
+      "tooltipParams" : "rune/entangling-shot/d",
+      "description" : "<p>Increase the Hatred generated to <span class=\"d3-color-green\">6</span> per shot.</p>",
+      "simpleDescription" : "<p>Increase the Hatred generated by Entangling Shot.</p>"
+    }, {
+      "name" : "Bounty Hunter",
+      "type" : "e",
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/entangling-shot/e",
+      "description" : "<p>Gain <span class=\"d3-color-green\">6%</span> of the damage dealt as Life.</p>",
+      "simpleDescription" : "<p>Convert damage dealt by Entangling Shot to Life.</p>"
+    } ],
+    "categoryName" : "Primary",
+    "categorySlug" : "primary",
+    "name" : "Entangling Shot",
+    "icon" : "demonhunter_entanglingshot",
+    "slug" : "entangling-shot",
+    "requiredLevel" : 11,
+    "tooltipParams" : "skill/demon-hunter/entangling-shot",
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">3</span> Hatred</p><p>Imbue an arrow with shadow energy that deals <span class=\"d3-color-green\">75%</span> weapon damage and entangles up to <span class=\"d3-color-green\">2</span> enemies, slowing their movement by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">3</span> Hatred</p><p>Imbue an arrow with shadow energy, slowing up to <span class=\"d3-color-green\">2</span> enemies.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Twin Chakrams",
+      "type" : "a",
+      "requiredLevel" : 19,
+      "tooltipParams" : "rune/chakram/a",
+      "description" : "<p>A second Chakram mirrors the first.  Each Chakram deals <span class=\"d3-color-green\">101%</span> weapon damage as Physical.</p>",
+      "simpleDescription" : "<p>Throw two Chakrams instead of one.</p>"
+    }, {
+      "name" : "Serpentine",
+      "type" : "c",
+      "requiredLevel" : 29,
+      "tooltipParams" : "rune/chakram/c",
+      "description" : "<p>The Chakram follows a slow curve, dealing <span class=\"d3-color-green\">203%</span> weapon damage as Poison to enemies along the path.</p>",
+      "simpleDescription" : "<p>The Chakram follows a slow curve, hitting enemies in its path.</p>"
+    }, {
+      "name" : "Razor Disk",
+      "type" : "d",
+      "requiredLevel" : 37,
+      "tooltipParams" : "rune/chakram/d",
+      "description" : "<p>The Chakram spirals out from the targeted location dealing <span class=\"d3-color-green\">165%</span> weapon damage as Arcane to enemies along the path.</p>",
+      "simpleDescription" : "<p>The Chakram spirals out from the targeted location.</p>"
+    }, {
+      "name" : "Boomerang",
+      "type" : "b",
+      "requiredLevel" : 44,
+      "tooltipParams" : "rune/chakram/b",
+      "description" : "<p>The Chakram path turns into a loop, dealing <span class=\"d3-color-green\">188%</span> weapon damage as Lightning to enemies along the path.</p>",
+      "simpleDescription" : "<p>Throw an electrified Chakram that returns to you.</p>"
+    }, {
+      "name" : "Shuriken Cloud",
+      "type" : "e",
+      "requiredLevel" : 53,
+      "tooltipParams" : "rune/chakram/e",
+      "description" : "<p>Surround yourself with spinning Chakrams for <span class=\"d3-color-green\">120</span> seconds, dealing <span class=\"d3-color-green\">30%</span> weapon damage per second as Physical to nearby enemies.</p>",
+      "simpleDescription" : "<p>Surround yourself with spinning Chakrams.</p>"
+    } ],
+    "categoryName" : "Secondary",
+    "categorySlug" : "secondary",
+    "name" : "Chakram",
+    "icon" : "demonhunter_chakram",
+    "slug" : "chakram",
+    "requiredLevel" : 12,
+    "tooltipParams" : "skill/demon-hunter/chakram",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Hatred</p><p>Fire a swirling Chakram that does <span class=\"d3-color-green\">150%</span> weapon damage as Physical to enemies along its path.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Hatred</p><p>Release a spinning blade of death that slices through enemies.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Acrobatics",
+      "type" : "b",
+      "requiredLevel" : 23,
+      "tooltipParams" : "rune/vault/b",
+      "description" : "<p>Removes the Discipline cost but adds a <span class=\"d3-color-green\">15</span> cooldown.</p>",
+      "simpleDescription" : "<p>Removes the Discipline cost but adds a cooldown.</p>"
+    }, {
+      "name" : "Rattling Roll",
+      "type" : "e",
+      "requiredLevel" : 31,
+      "tooltipParams" : "rune/vault/e",
+      "description" : "<p>All enemies within <span class=\"d3-color-green\">8</span> yards of your destination are knocked back and stunned for <span class=\"d3-color-green\">1.5</span> seconds.</p>",
+      "simpleDescription" : "<p>Knockback and Stun enemies when you land.</p>"
+    }, {
+      "name" : "Action Shot",
+      "type" : "c",
+      "requiredLevel" : 40,
+      "tooltipParams" : "rune/vault/c",
+      "description" : "<p>As you travel, shoot arrows for <span class=\"d3-color-green\">75%</span> weapon damage at nearby targets.</p>",
+      "simpleDescription" : "<p>Fire at nearby targets while Vaulting.</p>"
+    }, {
+      "name" : "Tumble",
+      "type" : "d",
+      "requiredLevel" : 48,
+      "tooltipParams" : "rune/vault/d",
+      "description" : "<p>After using Vault, your next Vault within <span class=\"d3-color-green\">6</span> seconds has its Discipline cost reduced by <span class=\"d3-color-green\">50%</span>.</p>",
+      "simpleDescription" : "<p>Reduce the Discipline cost if you Vault immediately after landing.</p>"
+    }, {
+      "name" : "Trail of Cinders",
+      "type" : "a",
+      "requiredLevel" : 53,
+      "tooltipParams" : "rune/vault/a",
+      "description" : "<p>Ignite with fire dealing <span class=\"d3-color-green\">100%</span> weapon damage as Fire to everything along your path.</p>",
+      "simpleDescription" : "<p>Leave a trail of fire in your wake.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Vault",
+    "icon" : "demonhunter_vault",
+    "slug" : "vault",
+    "requiredLevel" : 13,
+    "tooltipParams" : "skill/demon-hunter/vault",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Discipline</p><p>Tumble acrobatically <span class=\"d3-color-green\">35</span> yards.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Discipline</p><p>Tumble acrobatically to avoid attacks.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Tinkerer",
+      "type" : "d",
+      "requiredLevel" : 23,
+      "tooltipParams" : "rune/grenades/d",
+      "description" : "<p>Increases Hatred generation to <span class=\"d3-color-green\">6</span> Hatred.</p>",
+      "simpleDescription" : "<p>Increases Hatred generation to <span class=\"d3-color-green\">6</span> Hatred.</p>"
+    }, {
+      "name" : "Cluster Grenades",
+      "type" : "b",
+      "requiredLevel" : 31,
+      "tooltipParams" : "rune/grenades/b",
+      "description" : "<p>Throw Cluster Grenades that deal <span class=\"d3-color-green\">112%</span> weapon damage as Fire over an <span class=\"d3-color-green\">8</span> yard radius.</p>",
+      "simpleDescription" : "<p>Throw cluster grenades.</p>"
+    }, {
+      "name" : "Fire Bomb",
+      "type" : "c",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/grenades/c",
+      "description" : "<p>Throw a single grenade that deals <span class=\"d3-color-green\">123%</span> weapon damage as Fire.</p>",
+      "simpleDescription" : "<p>Throw a single grenade that deals heavy damage.</p>"
+    }, {
+      "name" : "Stun Grenades",
+      "type" : "e",
+      "requiredLevel" : 45,
+      "tooltipParams" : "rune/grenades/e",
+      "description" : "<p>Hurl grenades that have a <span class=\"d3-color-green\">15%</span> chance to Stun enemies for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Grenades have a chance to Stun enemies.</p>"
+    }, {
+      "name" : "Gas Grenades",
+      "type" : "a",
+      "requiredLevel" : 53,
+      "tooltipParams" : "rune/grenades/a",
+      "description" : "<p>Throw gas grenades that explode for <span class=\"d3-color-green\">95%</span> weapon damage as Poison and leaves a cloud that deals an additional <span class=\"d3-color-green\">25%</span> weapon damage per second as Poison for <span class=\"d3-color-green\">3</span> seconds to enemies who stand in the area.</p>",
+      "simpleDescription" : "<p>Throw gas grenades that explode and leave a cloud of Poison gas.</p>"
+    } ],
+    "categoryName" : "Devices",
+    "categorySlug" : "devices",
+    "name" : "Grenades",
+    "icon" : "demonhunter_grenades",
+    "slug" : "grenades",
+    "requiredLevel" : 14,
+    "tooltipParams" : "skill/demon-hunter/grenades",
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">3</span> Hatred</p><p>Throw out three grenades that explode for <span class=\"d3-color-green\">95%</span> weapon damage as Fire each.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">3</span> Hatred</p><p>Throw three grenades that bounce and explode.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Contagion",
+      "type" : "b",
+      "requiredLevel" : 23,
+      "tooltipParams" : "rune/marked-for-death/b",
+      "description" : "<p>When the target is killed, the ability spreads to <span class=\"d3-color-green\">2</span> other nearby targets. This effect can chain repeatedly.</p>",
+      "simpleDescription" : "<p>When the target is killed, additional enemies are Marked for Death.</p>"
+    }, {
+      "name" : "Valley of Death",
+      "type" : "c",
+      "requiredLevel" : 32,
+      "tooltipParams" : "rune/marked-for-death/c",
+      "description" : "<p>Mark an area on the ground <span class=\"d3-color-green\">12</span> yards wide for <span class=\"d3-color-green\">15</span> seconds.  Enemies in the area take <span class=\"d3-color-green\">15%</span> additional damage.</p>",
+      "simpleDescription" : "<p>All enemies in the targeted area become Marked for Death.</p>"
+    }, {
+      "name" : "Grim Reaper",
+      "type" : "a",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/marked-for-death/a",
+      "description" : "<p>An additional <span class=\"d3-color-green\">15%</span> of damage done to the target is also divided among all enemies within <span class=\"d3-color-green\">20</span> yards.</p>",
+      "simpleDescription" : "<p>A portion of damage done against the target is also applied to nearby enemies.</p>"
+    }, {
+      "name" : "Mortal Enemy",
+      "type" : "d",
+      "requiredLevel" : 46,
+      "tooltipParams" : "rune/marked-for-death/d",
+      "description" : "<p>Attacks you make against the marked target generate <span class=\"d3-color-green\">3</span> Hatred.</p>",
+      "simpleDescription" : "<p>Attacks against the marked target generate Hatred.</p>"
+    }, {
+      "name" : "Death Toll",
+      "type" : "e",
+      "requiredLevel" : 55,
+      "tooltipParams" : "rune/marked-for-death/e",
+      "description" : "<p><span class=\"d3-color-green\">1%</span> of damage done to the marked target heals the attacker.</p>",
+      "simpleDescription" : "<p>Damage against the marked target heals the attacker.</p>"
+    } ],
+    "categoryName" : "Archery",
+    "categorySlug" : "archery",
+    "name" : "Marked for Death",
+    "icon" : "demonhunter_markedfordeath",
+    "slug" : "marked-for-death",
+    "requiredLevel" : 15,
+    "tooltipParams" : "skill/demon-hunter/marked-for-death",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">6</span> Discipline</p><p>Marks an enemy. The marked enemy will take <span class=\"d3-color-green\">15%</span> additional damage for the next <span class=\"d3-color-green\">30</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">6</span> Discipline</p><p>Marks an enemy to take additional damage from attacks.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Crippling Razors",
+      "type" : "d",
+      "requiredLevel" : 24,
+      "tooltipParams" : "rune/fan-of-knives/d",
+      "description" : "<p>Increase the slow amount to <span class=\"d3-color-green\">80%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Increase the duration enemies are slowed.</p>"
+    }, {
+      "name" : "Retaliate",
+      "type" : "e",
+      "requiredLevel" : 32,
+      "tooltipParams" : "rune/fan-of-knives/e",
+      "description" : "<p>Surround yourself with whirling blades that deal <span class=\"d3-color-green\">464%</span> weapon damage to all enemies if you are struck in the next <span class=\"d3-color-green\">10</span> seconds.</p>",
+      "simpleDescription" : "<p>Surround yourself with whirling blades that strike any enemies that attack you.</p>"
+    }, {
+      "name" : "Hail of Knives",
+      "type" : "a",
+      "requiredLevel" : 41,
+      "tooltipParams" : "rune/fan-of-knives/a",
+      "description" : "<p>Increase the radius to damage all enemies within <span class=\"d3-color-green\">20</span> yards.</p>",
+      "simpleDescription" : "<p>Increase the radius and damage of Fan of Knives.</p>"
+    }, {
+      "name" : "Fan of Daggers",
+      "type" : "c",
+      "requiredLevel" : 50,
+      "tooltipParams" : "rune/fan-of-knives/c",
+      "description" : "<p>Imbue your knives with a <span class=\"d3-color-green\">80%</span> chance to stun enemies for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Imbue your knives with a chance to Stun enemies.</p>"
+    }, {
+      "name" : "Assassin's Knives",
+      "type" : "b",
+      "requiredLevel" : 56,
+      "tooltipParams" : "rune/fan-of-knives/b",
+      "description" : "<p>Throw long-range knives that deal <span class=\"d3-color-green\">70%</span> weapon damage to <span class=\"d3-color-green\">5</span> additional targets.</p>",
+      "simpleDescription" : "<p>Throw long-range knives that randomly target enemies.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Fan of Knives",
+    "icon" : "demonhunter_fanofknives",
+    "slug" : "fan-of-knives",
+    "requiredLevel" : 16,
+    "tooltipParams" : "skill/demon-hunter/fan-of-knives",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Hatred<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">10</span> seconds</p><p>Throw knives out in a spiral around you, doing <span class=\"d3-color-green\">320%</span> weapon damage to all enemies within <span class=\"d3-color-green\">10</span> yards of you. Your knives will also slow the movement of enemies by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Hatred</p><p>Unleash a flurry of knives that strike and Slow all nearby enemies.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Bandolier",
+      "type" : "b",
+      "requiredLevel" : 26,
+      "tooltipParams" : "rune/spike-trap/b",
+      "description" : "<p>Increase the maximum number of traps that can be out simultaneously to <span class=\"d3-color-green\">6</span>.</p>",
+      "simpleDescription" : "<p>Increase the maximum number of traps you can place.</p>"
+    }, {
+      "name" : "Sticky Trap",
+      "type" : "c",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/spike-trap/c",
+      "description" : "<p>Plant a bomb on an enemy rather than on the ground. If the target dies within <span class=\"d3-color-green\">30</span> seconds, the trap explodes dealing <span class=\"d3-color-green\">196%</span> weapon damage to all enemies within <span class=\"d3-color-green\">8</span> yards.</p>",
+      "simpleDescription" : "<p>Plant a bomb on an enemy that explodes when the target dies.</p>"
+    }, {
+      "name" : "Long Fuse",
+      "type" : "a",
+      "requiredLevel" : 39,
+      "tooltipParams" : "rune/spike-trap/a",
+      "description" : "<p>Increases the arming time to <span class=\"d3-color-green\">2.0</span> seconds but increases damage to <span class=\"d3-color-green\">182%</span> weapon damage.</p>",
+      "simpleDescription" : "<p>A more powerful trap with a longer fuse.</p>"
+    }, {
+      "name" : "Lightning Rod",
+      "type" : "e",
+      "requiredLevel" : 46,
+      "tooltipParams" : "rune/spike-trap/e",
+      "description" : "<p>When the trap is triggered it releases a pulse of lightning that will bounce to up to <span class=\"d3-color-green\">3</span> enemies for <span class=\"d3-color-green\">135%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Place electrified traps that have a chance to electrocute multiple enemies.</p>"
+    }, {
+      "name" : "Scatter",
+      "type" : "d",
+      "requiredLevel" : 55,
+      "tooltipParams" : "rune/spike-trap/d",
+      "description" : "<p>Simultaneously place all <span class=\"d3-color-green\">3</span> traps at once.</p>",
+      "simpleDescription" : "<p>Simultaneously place multiple traps and increase their damage.</p>"
+    } ],
+    "categoryName" : "Devices",
+    "categorySlug" : "devices",
+    "name" : "Spike Trap",
+    "icon" : "demonhunter_spiketrap",
+    "slug" : "spike-trap",
+    "requiredLevel" : 17,
+    "tooltipParams" : "skill/demon-hunter/spike-trap",
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">4</span> Hatred</p><p>Lay a trap that arms after <span class=\"d3-color-green\">1.2</span> seconds and triggers when an enemy approaches. The trap does <span class=\"d3-color-green\">135%</span> weapon damage to all enemies within <span class=\"d3-color-green\">8</span> yards.</p><p>You can have a maximum of <span class=\"d3-color-green\">3</span> Spike Traps active at one time.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">4</span> Hatred</p><p>A deadly trap that explodes on contact once armed.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Invigoration",
+      "type" : "b",
+      "requiredLevel" : 28,
+      "tooltipParams" : "rune/preparation/b",
+      "description" : "<p>When activated, increases your maximum Discipline by <span class=\"d3-color-green\">10</span> for <span class=\"d3-color-green\">5</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases your maximum Discipline after using Prepartion.</p>"
+    }, {
+      "name" : "Punishment",
+      "type" : "a",
+      "requiredLevel" : 35,
+      "tooltipParams" : "rune/preparation/a",
+      "description" : "<p>Removes cooldown. Skill now costs <span class=\"d3-color-green\">20</span> Discipline to cast and restores all Hatred.</p>",
+      "simpleDescription" : "<p>Preparation now costs Discipline to cast but restores all Hatred instead of Discipline and removes the cooldown.</p>"
+    }, {
+      "name" : "Battle Scars",
+      "type" : "d",
+      "requiredLevel" : 45,
+      "tooltipParams" : "rune/preparation/d",
+      "description" : "<p>Regain <span class=\"d3-color-green\">60%</span> Life when using Preparation.</p>",
+      "simpleDescription" : "<p>Regain Life when using Preparation.</p>"
+    }, {
+      "name" : "Focused Mind",
+      "type" : "c",
+      "requiredLevel" : 51,
+      "tooltipParams" : "rune/preparation/c",
+      "description" : "<p>Gain <span class=\"d3-color-green\">45</span> Discipline over <span class=\"d3-color-green\">15</span> seconds instead of replenishing Discipline immediately.</p>",
+      "simpleDescription" : "<p>Continually gain Discipline over time instead of replenishing Discipline immediately.</p>"
+    }, {
+      "name" : "Backup Plan",
+      "type" : "e",
+      "requiredLevel" : 58,
+      "tooltipParams" : "rune/preparation/e",
+      "description" : "<p>Grants a <span class=\"d3-color-green\">30%</span> chance that the cooldown will not be triggered when used.</p>",
+      "simpleDescription" : "<p>Grants a chance that the cooldown will not be triggered when using Preparation.</p>"
+    } ],
+    "categoryName" : "Shadow",
+    "categorySlug" : "shadow",
+    "name" : "Preparation",
+    "icon" : "demonhunter_preparation",
+    "slug" : "preparation",
+    "requiredLevel" : 19,
+    "tooltipParams" : "skill/demon-hunter/preparation",
+    "description" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">45</span> seconds</p><p>Instantly restore all Discipline.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">45</span> seconds</p><p>Focus and instantly restore all Discipline.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Ball Lightning",
+      "type" : "b",
+      "requiredLevel" : 30,
+      "tooltipParams" : "rune/elemental-arrow/b",
+      "description" : "<p>Fire a slow moving arrow that electrocutes enemies along its path for <span class=\"d3-color-green\">155%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Fire a slow moving arrow that electrocutes enemies along its path.</p>"
+    }, {
+      "name" : "Frost Arrow",
+      "type" : "a",
+      "requiredLevel" : 39,
+      "tooltipParams" : "rune/elemental-arrow/a",
+      "description" : "<p>Fire a Frost arrow that splits into multiple arrows after hitting its target, dealing <span class=\"d3-color-green\">170%</span> weapon damage as Cold. Affected enemies have their movement speed slowed by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">1</span> second.</p>",
+      "simpleDescription" : "<p>Fire a Frost arrow that splits into multiple arrows after hitting its target.</p>"
+    }, {
+      "name" : "Screaming Skul",
+      "type" : "c",
+      "requiredLevel" : 43,
+      "tooltipParams" : "rune/elemental-arrow/c",
+      "description" : "<p>Grants a <span class=\"d3-color-green\">40%</span> chance to shoot a skull that will fear affected enemies for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Grant a chance to shoot a skull that causes Fear.</p>"
+    }, {
+      "name" : "Lightning Bolts",
+      "type" : "e",
+      "requiredLevel" : 49,
+      "tooltipParams" : "rune/elemental-arrow/e",
+      "description" : "<p>Fire electrified bolts that stun enemies for <span class=\"d3-color-green\">2</span> seconds when they critically hit.</p>",
+      "simpleDescription" : "<p>Fire electrified bolts that Stun enemies.</p>"
+    }, {
+      "name" : "Nether Tentacles",
+      "type" : "d",
+      "requiredLevel" : 57,
+      "tooltipParams" : "rune/elemental-arrow/d",
+      "description" : "<p>Unleash shadow tentacles that deal <span class=\"d3-color-green\">155%</span> weapon damage and return <span class=\"d3-color-green\">3%</span> of damage dealt as Life for you.</p>",
+      "simpleDescription" : "<p>Unleash shadow tentacles that convert damage dealt to Life.</p>"
+    } ],
+    "categoryName" : "Secondary",
+    "categorySlug" : "secondary",
+    "name" : "Elemental Arrow",
+    "icon" : "demonhunter_elementalarrow",
+    "slug" : "elemental-arrow",
+    "requiredLevel" : 20,
+    "tooltipParams" : "skill/demon-hunter/elemental-arrow",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Hatred</p><p>Shoot an elemental charged arrow that deals <span class=\"d3-color-green\">155%</span> weapon damage as Fire to all targets it passes through.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Hatred</p><p>Unleash a fiery arrow that pierces through enemies.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Spitfire Turret",
+      "type" : "c",
+      "requiredLevel" : 30,
+      "tooltipParams" : "rune/sentry/c",
+      "description" : "<p>The turret will also fire homing rockets every <span class=\"d3-color-green\">1.5</span> seconds aimed at random nearby targets for <span class=\"d3-color-green\">40%</span> weapon damage as Fire.</p>",
+      "simpleDescription" : "<p>Sentry turret can fire homing rockets at random targets.</p>"
+    }, {
+      "name" : "Vigilant Watcher",
+      "type" : "b",
+      "requiredLevel" : 36,
+      "tooltipParams" : "rune/sentry/b",
+      "description" : "<p>Increases duration of the turret to <span class=\"d3-color-green\">30</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases the duration of Sentry.</p>"
+    }, {
+      "name" : "Chain of Torment",
+      "type" : "a",
+      "requiredLevel" : 44,
+      "tooltipParams" : "rune/sentry/a",
+      "description" : "<p>Create a tether between you and the Sentry that does <span class=\"d3-color-green\">40%</span> weapon damage every second to every enemy it touches.</p>",
+      "simpleDescription" : "<p>Create a tether between you and the Sentry that damages enemies that touch it.</p>"
+    }, {
+      "name" : "Aid Station",
+      "type" : "d",
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/sentry/d",
+      "description" : "<p>Heals nearby allies for <span class=\"d3-color-green\">1.0%</span> of their maximum Life per second.</p>",
+      "simpleDescription" : "<p>Sentry turret heals nearby allies.</p>"
+    }, {
+      "name" : "Guardian Turret",
+      "type" : "e",
+      "requiredLevel" : 57,
+      "tooltipParams" : "rune/sentry/e",
+      "description" : "<p>The turret also creates a shield that reduces damage taken by allies by <span class=\"d3-color-green\">20%</span>.</p>",
+      "simpleDescription" : "<p>The Sentry turret creates a shield that reduces damage taken by allies.</p>"
+    } ],
+    "categoryName" : "Archery",
+    "categorySlug" : "archery",
+    "name" : "Sentry",
+    "icon" : "demonhunter_sentry",
+    "slug" : "sentry",
+    "requiredLevel" : 21,
+    "tooltipParams" : "skill/demon-hunter/sentry",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Discipline</p><p>Drop a turret on the ground. The turret begins firing at nearby enemies for <span class=\"d3-color-green\">20% </span> weapon damage. Lasts <span class=\"d3-color-green\">20</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Discipline</p><p>Summon a turret that automatically attacks nearby enemies.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Fire at Will",
+      "type" : "d",
+      "requiredLevel" : 32,
+      "tooltipParams" : "rune/multishot/d",
+      "description" : "<p>Cost reduced to <span class=\"d3-color-green\">10</span> Hatred. Deals <span class=\"d3-color-green\">115%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Reduce the Hatred cost and convert damage to Lightning.</p>"
+    }, {
+      "name" : "Burst Fire",
+      "type" : "b",
+      "requiredLevel" : 40,
+      "tooltipParams" : "rune/multishot/b",
+      "description" : "<p>Every time you fire, generate a shock pulse that damages nearby enemies for <span class=\"d3-color-green\">45%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Every time you fire, generate an Arcane shock pulse that damages nearby enemies.</p>"
+    }, {
+      "name" : "Supression Fire",
+      "type" : "e",
+      "requiredLevel" : 47,
+      "tooltipParams" : "rune/multishot/e",
+      "description" : "<p>Every enemy hit grants <span class=\"d3-color-green\">1</span> Discipline.</p>",
+      "simpleDescription" : "<p>Gain Discipline for each enemy hit.</p>"
+    }, {
+      "name" : "Full Broadside",
+      "type" : "a",
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/multishot/a",
+      "description" : "<p>Increase the damage of Multishot to <span class=\"d3-color-green\">150%</span> weapon damage.</p>",
+      "simpleDescription" : "<p>Increase the damage of Multishot.</p>"
+    }, {
+      "name" : "Arsenal",
+      "type" : "c",
+      "requiredLevel" : 58,
+      "tooltipParams" : "rune/multishot/c",
+      "description" : "<p>Every use also fires <span class=\"d3-color-green\">3</span> rockets at nearby enemies that deal <span class=\"d3-color-green\">40%</span> weapon damage as Fire each.</p>",
+      "simpleDescription" : "<p>Fire multiple homing rockets.</p>"
+    } ],
+    "categoryName" : "Devices",
+    "categorySlug" : "devices",
+    "name" : "Multishot",
+    "icon" : "demonhunter_multishot",
+    "slug" : "multishot",
+    "requiredLevel" : 22,
+    "tooltipParams" : "skill/demon-hunter/multishot",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Hatred</p><p>Fire a massive volley of arrows dealing <span class=\"d3-color-green\">115%</span> weapon damage to all enemies in the area.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Hatred</p><p>Fire a massive volley of arrows in an arc.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Displacement",
+      "type" : "e",
+      "requiredLevel" : 30,
+      "tooltipParams" : "rune/smoke-screen/e",
+      "description" : "<p>Gain <span class=\"d3-color-green\">35%</span> movement speed when activated.</p>",
+      "simpleDescription" : "<p>Gain a movement speed bonus when using Smoke Screen.</p>"
+    }, {
+      "name" : "Lingering Fog",
+      "type" : "b",
+      "requiredLevel" : 39,
+      "tooltipParams" : "rune/smoke-screen/b",
+      "description" : "<p>Increase the duration of the effect to <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Increase the duration of Smoke Screen.</p>"
+    }, {
+      "name" : "Breathe Deep",
+      "type" : "c",
+      "requiredLevel" : 45,
+      "tooltipParams" : "rune/smoke-screen/c",
+      "description" : "<p>While invisible you gain <span class=\"d3-color-green\">20</span> Hatred per second.</p>",
+      "simpleDescription" : "<p>While invisible, you gain additional Hatred.</p>"
+    }, {
+      "name" : "Special Recipe",
+      "type" : "d",
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/smoke-screen/d",
+      "description" : "<p>Reduce the cost to <span class=\"d3-color-green\">12</span> Discipline.</p>",
+      "simpleDescription" : "<p>Reduce the Discipline cost of Smoke Screen.</p>"
+    }, {
+      "name" : "Choking Gas",
+      "type" : "a",
+      "requiredLevel" : 59,
+      "tooltipParams" : "rune/smoke-screen/a",
+      "description" : "<p>Leave behind a cloud of gas that deals <span class=\"d3-color-green\">70%</span> weapon damage per second as Physical to enemies in the area for <span class=\"d3-color-green\">5</span> seconds.</p>",
+      "simpleDescription" : "<p>Leave behind a cloud of deadly gas.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Smoke Screen",
+    "icon" : "demonhunter_smokescreen",
+    "slug" : "smoke-screen",
+    "requiredLevel" : 22,
+    "tooltipParams" : "skill/demon-hunter/smoke-screen",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Discipline</p><p>Vanish behind a wall of smoke, becoming momentarily invisible for <span class=\"d3-color-green\">2</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Discipline</p><p>Vanish from sight for a limited time.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Spider Companion",
+      "type" : "a",
+      "requiredLevel" : 31,
+      "tooltipParams" : "rune/companion/a",
+      "description" : "<p>Summons a spider instead of a raven. The spider&#39;s attacks also slow the movement of targets by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">2 - 2</span> seconds.</p>",
+      "simpleDescription" : "<p>Summon a spider that attacks and Slows enemies.</p>"
+    }, {
+      "name" : "Bat Companion",
+      "type" : "d",
+      "requiredLevel" : 37,
+      "tooltipParams" : "rune/companion/d",
+      "description" : "<p>Summons a bat instead of a raven.  The bat grants you <span class=\"d3-color-green\">3</span> Hatred per second.</p>",
+      "simpleDescription" : "<p>Summon a bat that increases your Hatred regeneration.</p>"
+    }, {
+      "name" : "Boar Companion",
+      "type" : "b",
+      "requiredLevel" : 43,
+      "tooltipParams" : "rune/companion/b",
+      "description" : "<p>Summon a boar instead of a raven. The boar&#39;s attacks hit all enemies in an area with every swing.</p>",
+      "simpleDescription" : "<p>Summon a boar that can strike multiple enemies.</p>"
+    }, {
+      "name" : "Ferret Companion",
+      "type" : "e",
+      "requiredLevel" : 49,
+      "tooltipParams" : "rune/companion/e",
+      "description" : "<p>Summons ferrets instead of a raven.  The ferrets collect gold for you and increase gold found on monsters by <span class=\"d3-color-green\">10%</span>.</p>",
+      "simpleDescription" : "<p>Summon a pair of ferrets that increase the gold each monster drops.</p>"
+    }, {
+      "name" : "Wolf Companion",
+      "type" : "c",
+      "requiredLevel" : 56,
+      "tooltipParams" : "rune/companion/c",
+      "description" : "<p>Summon a powerful but temporary wolf ally rather than a long-term raven companion. The wolf will fight with you for <span class=\"d3-color-green\">25</span> seconds and attacks enemies for <span class=\"d3-color-green\">60%</span> of your weapon damage as Physical.</p>",
+      "simpleDescription" : "<p>Summon a wolf ally that fights along side you for a limited time.</p>"
+    } ],
+    "categoryName" : "Shadow",
+    "categorySlug" : "shadow",
+    "name" : "Companion",
+    "icon" : "demonhunter_companion",
+    "slug" : "companion",
+    "requiredLevel" : 25,
+    "tooltipParams" : "skill/demon-hunter/companion",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Discipline</p><p>Summon a raven companion. Your raven companion will periodically peck at enemies for <span class=\"d3-color-green\">30%</span> of your weapon damage as Physical.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Discipline</p><p>Summon a raven companion from the shadows.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Dark Cloud",
+      "type" : "b",
+      "requiredLevel" : 34,
+      "tooltipParams" : "rune/rain-of-vengeance/b",
+      "description" : "<p>Launch a massive volley of guided arrows that rain down on enemies for <span class=\"d3-color-green\">42%</span> weapon damage for the <span class=\"d3-color-green\">12</span> seconds</p>",
+      "simpleDescription" : "<p>Launch a massive volley of guided arrows that rain down on enemies.</p>"
+    }, {
+      "name" : "Beastly Bombs",
+      "type" : "a",
+      "requiredLevel" : 42,
+      "tooltipParams" : "rune/rain-of-vengeance/a",
+      "description" : "<p>Summon <span class=\"d3-color-green\">20</span> Shadow Beasts to drop bombs on enemies, dealing <span class=\"d3-color-green\">150%</span> weapon damage each.</p>",
+      "simpleDescription" : "<p>Summon Shadow Beasts that fly overhead and drop bombs on enemies.</p>"
+    }, {
+      "name" : "Stampede",
+      "type" : "e",
+      "requiredLevel" : 47,
+      "tooltipParams" : "rune/rain-of-vengeance/e",
+      "description" : "<p>Summon a wave of <span class=\"d3-color-green\">10</span> Shadow Beasts to tear across the ground, knocking back enemies and dealing <span class=\"d3-color-green\">100%</span> weapon damage each.</p>",
+      "simpleDescription" : "<p>Summon Shadow Beasts that swoop along the ground and damage enemies they hit.</p>"
+    }, {
+      "name" : "Anathema",
+      "type" : "c",
+      "requiredLevel" : 54,
+      "tooltipParams" : "rune/rain-of-vengeance/c",
+      "description" : "<p>Summon a Shadow Beast that drops grenades from the sky for <span class=\"d3-color-green\">10</span> seconds dealing <span class=\"d3-color-green\">140%</span> weapon damage.</p>",
+      "simpleDescription" : "<p>Summon a single Shadow Beast that hovers overhead and drops grenades.</p>"
+    }, {
+      "name" : "Flying Strike",
+      "type" : "d",
+      "requiredLevel" : 59,
+      "tooltipParams" : "rune/rain-of-vengeance/d",
+      "description" : "<p>A group of <span class=\"d3-color-green\">8</span> Shadow Beasts plummet from the sky at a targeted location dealing <span class=\"d3-color-green\">75%</span> weapon damage each and stunning enemies for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Call Shadow Beasts to plummet from the sky and bomb the target, stunning enemies in the area.</p>"
+    } ],
+    "categoryName" : "Archery",
+    "categorySlug" : "archery",
+    "name" : "Rain of Vengeance",
+    "icon" : "demonhunter_rainofvengeance",
+    "slug" : "rain-of-vengeance",
+    "requiredLevel" : 26,
+    "tooltipParams" : "skill/demon-hunter/rain-of-vengeance",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">40</span> Hatred<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">30</span> seconds</p><p>Fire a massive volley of arrows around you. Arrows fall from the sky dealing <span class=\"d3-color-green\">91%</span> weapon damage for <span class=\"d3-color-green\">5</span> seconds to all enemies in the area.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">40</span> Hatred<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">30</span> seconds</p><p>Unleash a torrent of arrows from the sky.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Dazzling Arrow",
+      "type" : "e",
+      "requiredLevel" : 34,
+      "tooltipParams" : "rune/cluster-arrow/e",
+      "description" : "<p>Enemies hit by grenades have a <span class=\"d3-color-green\">65%</span> chance to be stunned for <span class=\"d3-color-green\">2.0</span> seconds.</p>",
+      "simpleDescription" : "<p>The grenades have a chance to Stun enemies.</p>"
+    }, {
+      "name" : "Shooting Stars",
+      "type" : "b",
+      "requiredLevel" : 41,
+      "tooltipParams" : "rune/cluster-arrow/b",
+      "description" : "<p>Instead of releasing grenades, shoots up to <span class=\"d3-color-green\">3</span> rockets at nearby enemies dealing <span class=\"d3-color-green\">175%</span> weapon damage as Physical each.</p>",
+      "simpleDescription" : "<p>Release homing rockets instead of cluster grenades.</p>"
+    }, {
+      "name" : "Maelstrom",
+      "type" : "d",
+      "requiredLevel" : 48,
+      "tooltipParams" : "rune/cluster-arrow/d",
+      "description" : "<p>Instead of releasing grenades, the cluster releases shadow energy that deals <span class=\"d3-color-green\">145%</span> weapon damage as Physical to nearby enemies. You will gain <span class=\"d3-color-green\">4%</span> of the damage done as Life.</p>",
+      "simpleDescription" : "<p>Release tendrils of shadow energy on impact that replenish your Life.</p>"
+    }, {
+      "name" : "Cluster Bombs",
+      "type" : "c",
+      "requiredLevel" : 54,
+      "tooltipParams" : "rune/cluster-arrow/c",
+      "description" : "<p>Launch the cluster through the air, dropping a series of bombs in a straight line that explode for <span class=\"d3-color-green\">230%</span> weapon damage as Fire each.</p>",
+      "simpleDescription" : "<p>Arc the arrow and drop multiple bombs along its path.</p>"
+    }, {
+      "name" : "Loaded for Bear",
+      "type" : "a",
+      "requiredLevel" : 60,
+      "tooltipParams" : "rune/cluster-arrow/a",
+      "description" : "<p>Increases the damage of the explosion at the impact location to <span class=\"d3-color-green\">290%</span> weapon damage as Fire.</p>",
+      "simpleDescription" : "<p>Increases the damage at the impact point.</p>"
+    } ],
+    "categoryName" : "Devices",
+    "categorySlug" : "devices",
+    "name" : "Cluster Arrow",
+    "icon" : "demonhunter_clusterarrow",
+    "slug" : "cluster-arrow",
+    "requiredLevel" : 28,
+    "tooltipParams" : "skill/demon-hunter/cluster-arrow",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Hatred</p><p>Fire a cluster arrow that explodes for <span class=\"d3-color-green\">200%</span> weapon damage as Fire into a series of additional miniature bombs that explode for <span class=\"d3-color-green\">100%</span> weapon damage as Fire each.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Hatred</p><p>Fire a cluster arrow that fragments into multiple explosions on impact.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Night Bane",
+      "type" : "a",
+      "requiredLevel" : 36,
+      "tooltipParams" : "rune/shadow-power/a",
+      "description" : "<p>Gain an additional <span class=\"d3-color-green\">15</span> Hatred per second while Shadow Power is active.</p>",
+      "simpleDescription" : "<p>Gain additional Hatred while Shadow Power is active.</p>"
+    }, {
+      "name" : "Blood Moon",
+      "type" : "e",
+      "requiredLevel" : 41,
+      "tooltipParams" : "rune/shadow-power/e",
+      "description" : "<p>Increases the amount of Life gained to <span class=\"d3-color-green\">30%</span> of all damage dealt.</p>",
+      "simpleDescription" : "<p>Increases the amount of Life gained.</p>"
+    }, {
+      "name" : "Well of Darkness",
+      "type" : "d",
+      "requiredLevel" : 45,
+      "tooltipParams" : "rune/shadow-power/d",
+      "description" : "<p>Reduces Discipline cost to <span class=\"d3-color-green\">16</span>.</p>",
+      "simpleDescription" : "<p>Reduces the Discipline cost of Shadow Power.</p>"
+    }, {
+      "name" : "Gloom",
+      "type" : "c",
+      "requiredLevel" : 50,
+      "tooltipParams" : "rune/shadow-power/c",
+      "description" : "<p>While active, all incoming damage is reduced by <span class=\"d3-color-green\">65%</span>.</p>",
+      "simpleDescription" : "<p>Shadow Power reduces incoming damage.</p>"
+    }, {
+      "name" : "Shadow Glide",
+      "type" : "b",
+      "requiredLevel" : 60,
+      "tooltipParams" : "rune/shadow-power/b",
+      "description" : "<p>While active, gain <span class=\"d3-color-green\">40%</span> movement speed.</p>",
+      "simpleDescription" : "<p>Shadow Power grants a movement bonus.</p>"
+    } ],
+    "categoryName" : "Shadow",
+    "categorySlug" : "shadow",
+    "name" : "Shadow Power",
+    "icon" : "demonhunter_shadowpower",
+    "slug" : "shadow-power",
+    "requiredLevel" : 30,
+    "tooltipParams" : "skill/demon-hunter/shadow-power",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Discipline</p><p>Draw in the power of the shadows, gaining <span class=\"d3-color-green\">20%</span> of all damage done as Life for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Discipline</p><p>Gain Life for dealing damage for <span class=\"d3-color-green\">3</span> seconds.</p>"
+  } ]
+}

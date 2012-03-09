@@ -1,0 +1,1299 @@
+{
+  "traits" : [ {
+    "description" : "<p>Gain <span class=\"d3-color-green\">30</span> Arcane Power whenever you are healed by a health globe.</p>",
+    "name" : "Power Hungry",
+    "icon" : "wizard_passive_powerhungry",
+    "slug" : "power-hungry",
+    "requiredLevel" : 10,
+    "tooltipParams" : "skill/wizard/power-hungry",
+    "simpleDescription" : "<p>&quot;It just doesn&#39;t sit right with me. Some of the things these so-called wizards do... They border on necromancy. Or worse! It&#39;s just not proper magic.&quot; —Venerable Sorcerer Fob Dunar</p>"
+  }, {
+    "description" : "<p>Whenever you deal Arcane damage, enemies are slowed by <span class=\"d3-color-green\">30%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
+    "name" : "Temporal Flux",
+    "icon" : "wizard_passive_temporalflux",
+    "slug" : "temporal-flux",
+    "requiredLevel" : 10,
+    "tooltipParams" : "skill/wizard/temporal-flux",
+    "simpleDescription" : "<p>&quot;The energies of time and arcane power are jealous consorts. If you caress the one, you neglect the other at great risk.&quot; —Ennead Sage Resko</p>"
+  }, {
+    "description" : "<p>Your critical hits have a chance to reduce the cooldown of your spells by <span class=\"d3-color-green\">1</span> second.</p>",
+    "name" : "Critical Mass",
+    "icon" : "wizard_passive_criticalmass",
+    "slug" : "critical-mass",
+    "requiredLevel" : 12,
+    "tooltipParams" : "skill/wizard/critical-mass",
+    "simpleDescription" : "<p>&quot;As the blast obliterated the walls, she spun the energy of the shockwave into a new spell and hurled it at her stupefied foes.&quot; —The Harrowing of Korlean&#39;s Stronghold</p>"
+  }, {
+    "description" : "<p>Increases all damage done by <span class=\"d3-color-green\">15%</span> but decreases armor and resistances by <span class=\"d3-color-green\">10%</span>.</p>",
+    "name" : "Glass Cannon",
+    "icon" : "wizard_passive_glasscannon",
+    "slug" : "glass-cannon",
+    "requiredLevel" : 13,
+    "tooltipParams" : "skill/wizard/glass-cannon",
+    "simpleDescription" : "<p>&quot;How will I survive? I don&#39;t intend to get hit in the first place. If you even touch me, it&#39;s because I allowed it.&quot; —Maloth, renegade wizard</p>"
+  }, {
+    "description" : "<p>When you deal damage with a Signature spell, you gain <span class=\"d3-color-green\">4</span> Arcane Power.</p><p>The following skills are Signature spells:<br/><span class=\"tooltip-icon-bullet\"></span> Magic Missile<br/><span class=\"tooltip-icon-bullet\"></span> Shock Pulse<br/><span class=\"tooltip-icon-bullet\"></span> Spectral Blade<br/><span class=\"tooltip-icon-bullet\"></span> Electrocute</p>",
+    "name" : "Prodigy",
+    "icon" : "wizard_passive_prodigy",
+    "slug" : "prodigy",
+    "requiredLevel" : 15,
+    "tooltipParams" : "skill/wizard/prodigy",
+    "simpleDescription" : "<p>&quot;Heavy steel armor may turn aside a blade, but let&#39;s see how well it works against lightning!&quot; —Larra Stormlash&#39;s infamous faux pas at the Royal Westmarch Joust</p>"
+  }, {
+    "description" : "<p>Increases your maximum Arcane Power by <span class=\"d3-color-green\">20</span> and Arcane Power regeneration by <span class=\"d3-color-green\">2</span> per second.</p>",
+    "name" : "Astral Presence",
+    "icon" : "wizard_passive_astralpresence",
+    "slug" : "astral-presence",
+    "requiredLevel" : 18,
+    "tooltipParams" : "skill/wizard/astral-presence",
+    "simpleDescription" : "<p>&quot;Feel the power in the veil that surrounds us—a thunder cloud ready to burst... a volcano about to erupt. Harness it, and you will be invincible.&quot; —Adria</p>"
+  }, {
+    "description" : "<p>Whenever you suffer more than <span class=\"d3-color-green\">15%</span> of your Life in a single hit, the cooldowns on Mirror Image and Teleport are automatically reset.</p>",
+    "name" : "Illusionist",
+    "icon" : "wizard_passive_illusionist",
+    "slug" : "illusionist",
+    "requiredLevel" : 19,
+    "tooltipParams" : "skill/wizard/illusionist",
+    "simpleDescription" : "<p>&quot;To be where you are not is the wisest of strategies.&quot; —Grand Archmage Ralhys</p>"
+  }, {
+    "description" : "<p>Cold damage dealt to chilled and frozen targets is increased by <span class=\"d3-color-green\">20%</span>.</p>",
+    "name" : "Black Ice",
+    "icon" : "wizard_passive_blackice",
+    "slug" : "black-ice",
+    "requiredLevel" : 20,
+    "tooltipParams" : "skill/wizard/black-ice",
+    "simpleDescription" : "<p>TEMP SIMPLE TOOLTIP TEXT</p>"
+  }, {
+    "description" : "<p>Dealing fire damage to enemies applies a burning effect, increasing all damage done to them by <span class=\"d3-color-green\">15%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "name" : "Conflagration",
+    "icon" : "wizard_passive_conflagration",
+    "slug" : "conflagration",
+    "requiredLevel" : 22,
+    "tooltipParams" : "skill/wizard/conflagration",
+    "simpleDescription" : "<p>&quot;The red hot armor seared their flesh and boiled their blood as they tried desperately to pry it from smoldering bodies. We finished the defenseless creatures as an act of mercy.&quot; —Tales of Caldeum, Volume XII</p>"
+  }, {
+    "description" : "<p>Lightning damage dealt to enemies has up to a <span class=\"d3-color-green\">5%</span> chance to stun the target for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "name" : "Paralysis",
+    "icon" : "wizard_passive_paralysis",
+    "slug" : "paralysis",
+    "requiredLevel" : 23,
+    "tooltipParams" : "skill/wizard/paralysis",
+    "simpleDescription" : "<p>&quot;Some people are shocked by my mastery of magic.&quot; —Larra Stormlash</p>"
+  }, {
+    "description" : "<p>Increases the duration of your Armor spells by <span class=\"d3-color-green\">120</span> seconds. As long as an Armor spell is active, you gain <span class=\"d3-color-green\">890</span> Life per second.</p><p>The following skills are improved:<br/><span class=\"tooltip-icon-bullet\"></span> Energy Armor<br/><span class=\"tooltip-icon-bullet\"></span> Ice Armor<br/><span class=\"tooltip-icon-bullet\"></span> Storm Armor</p>",
+    "name" : "Galvanizing Ward",
+    "icon" : "wizard_passive_galvanizingward",
+    "slug" : "galvanizing-ward",
+    "requiredLevel" : 24,
+    "tooltipParams" : "skill/wizard/galvanizing-ward",
+    "simpleDescription" : "<p>&quot;Power begets power. The excess energy from one spell is absorbed by the other, and so the effect is sustained.&quot; —Excerpt from Grand Master Clavaught&#39;s Lecture on Synergistic Effects in Esoteric Arcane Spheres</p>"
+  }, {
+    "description" : "<p>Decreases melee damage taken by <span class=\"d3-color-green\">20%</span>.</p>",
+    "name" : "Blur",
+    "icon" : "wizard_passive_blur",
+    "slug" : "blur",
+    "requiredLevel" : 25,
+    "tooltipParams" : "skill/wizard/blur",
+    "simpleDescription" : "<p>Truly powerful Wizards have been known to turn their magic inward, transmuting the very composition of their own bodies for boundless energy and catlike reflexes.</p>"
+  }, {
+    "description" : "<p>Reduces all cooldowns by <span class=\"d3-color-green\">15%</span>.</p>",
+    "name" : "Evocation",
+    "icon" : "wizard_passive_evocation",
+    "slug" : "evocation",
+    "requiredLevel" : 28,
+    "tooltipParams" : "skill/wizard/evocation",
+    "simpleDescription" : "<p>So long have you focused on twisting reality to your will that time itself seeks to appease you.</p>"
+  }, {
+    "description" : "<p>When you deal damage with a Signature spell you may gain a Flash of Insight. After <span class=\"d3-color-green\">5</span> Flashes of Insight, your next non-Signature spell deals <span class=\"d3-color-green\">75%</span> additional damage. </p><p>The following skills are Signature spells:<br/><span class=\"tooltip-icon-bullet\"></span> Magic Missile<br/><span class=\"tooltip-icon-bullet\"></span> Shock Pulse<br/><span class=\"tooltip-icon-bullet\"></span> Spectral Blade<br/><span class=\"tooltip-icon-bullet\"></span> Electrocute</p>",
+    "name" : "Arcane Dynamo",
+    "icon" : "wizard_passive_arcanedynamo",
+    "slug" : "arcane-dynamo",
+    "requiredLevel" : 29,
+    "tooltipParams" : "skill/wizard/arcane-dynamo",
+    "simpleDescription" : "<p>Dare not to invoke the wrath of a Wizard. You are nothing more than a loose coalescence of dust before their ire, easily scattered at a whim.</p>"
+  }, {
+    "description" : "<p>When reduced below <span class=\"d3-color-green\">20%</span> Life, release a shockwave that knocks all enemies back. This effect cannot occur more than once every <span class=\"d3-color-green\">60</span> seconds.</p>",
+    "name" : "Unstable Anomaly",
+    "icon" : "wizard_passive_unstableanomaly",
+    "slug" : "unstable-anomaly",
+    "requiredLevel" : 30,
+    "tooltipParams" : "skill/wizard/unstable-anomaly",
+    "simpleDescription" : "<p>&quot;It takes perfect concentration for a Wizard to dance on the edge of infinity. Never be the one to break that concentration.&quot; —One-Eye Whipple</p>"
+  } ],
+  "skills" : [ {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Charged Blast",
+      "type" : "a",
+      "requiredLevel" : 6,
+      "tooltipParams" : "rune/magic-missile/a",
+      "description" : "<p>Increases the damage of Magic Missile to <span class=\"d3-color-green\">143%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Increases the damage of Magic Missile.</p>"
+    }, {
+      "name" : "Split",
+      "type" : "b",
+      "requiredLevel" : 13,
+      "tooltipParams" : "rune/magic-missile/b",
+      "description" : "<p>Fire <span class=\"d3-color-green\">3</span> missiles that each deal <span class=\"d3-color-green\">50%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Fire multiple missiles with each attack.</p>"
+    }, {
+      "name" : "Penetrating Blast",
+      "type" : "c",
+      "requiredLevel" : 21,
+      "tooltipParams" : "rune/magic-missile/c",
+      "description" : "<p>Missiles have a <span class=\"d3-color-green\">70%</span> chance to pierce through their target and hit additional enemies.</p>",
+      "simpleDescription" : "<p>Missiles have a chance to pierce through targets and hit multiple enemies.</p>"
+    }, {
+      "name" : "Attunement",
+      "type" : "d",
+      "requiredLevel" : 27,
+      "tooltipParams" : "rune/magic-missile/d",
+      "description" : "<p>Whenever Magic Missile hits a target you gain <span class=\"d3-color-green\">4</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Whenever Magic Missile hits a target you gain Arcane Power.</p>"
+    }, {
+      "name" : "Seeker",
+      "type" : "e",
+      "requiredLevel" : 35,
+      "tooltipParams" : "rune/magic-missile/e",
+      "description" : "<p>Missiles track the nearest enemy and their damage is increased to <span class=\"d3-color-green\">121%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Missiles track the nearest enemy and hit for additional damage.</p>"
+    } ],
+    "categoryName" : "Primary",
+    "categorySlug" : "primary",
+    "name" : "Magic Missile",
+    "icon" : "wizard_magicmissile",
+    "slug" : "magic-missile",
+    "requiredLevel" : 1,
+    "tooltipParams" : "skill/wizard/magic-missile",
+    "description" : "<p><span class=\"d3-color-gold\">This is a Signature spell. Signature spells are free to cast.</span></p><p>Launch a missile of magic energy, causing <span class=\"d3-color-green\">110%</span> weapon damage as Arcane.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Signature Spell</span></p><p>Cast a bolt of arcane energy towards a target.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Arcane Nova",
+      "type" : "b",
+      "requiredLevel" : 7,
+      "tooltipParams" : "rune/arcane-orb/b",
+      "description" : "<p>Modify the orb to deal <span class=\"d3-color-green\">250%</span> weapon damage as Arcane to all enemies within <span class=\"d3-color-green\">20</span> yards.</p>",
+      "simpleDescription" : "<p>Increase the size and damage of Arcane Orb.</p>"
+    }, {
+      "name" : "Tap the Source",
+      "type" : "d",
+      "requiredLevel" : 15,
+      "tooltipParams" : "rune/arcane-orb/d",
+      "description" : "<p>Reduce casting cost to <span class=\"d3-color-green\">23</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Reduce the casting cost of Arcane Orb.</p>"
+    }, {
+      "name" : "Obliteration",
+      "type" : "a",
+      "requiredLevel" : 21,
+      "tooltipParams" : "rune/arcane-orb/a",
+      "description" : "<p>Increase the damage of the explosion to deal <span class=\"d3-color-green\">325%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Increase the damage of Arcane Orb.</p>"
+    }, {
+      "name" : "Arcane Orbit",
+      "type" : "c",
+      "requiredLevel" : 27,
+      "tooltipParams" : "rune/arcane-orb/c",
+      "description" : "<p>Create <span class=\"d3-color-green\">4</span> Arcane Orbs that orbit you, exploding for <span class=\"d3-color-green\">100%</span> weapon damage as Arcane when enemies get close.</p>",
+      "simpleDescription" : "<p>Create Arcane Orbs that orbit around you, exploding when enemies get close.</p>"
+    }, {
+      "name" : "Celestial Orb",
+      "type" : "e",
+      "requiredLevel" : 36,
+      "tooltipParams" : "rune/arcane-orb/e",
+      "description" : "<p>The orb will pierce through targets, damaging any enemy it passes through.</p>",
+      "simpleDescription" : "<p>The Orb passes through enemies, damaging all of them.</p>"
+    } ],
+    "categoryName" : "Secondary",
+    "categorySlug" : "secondary",
+    "name" : "Arcane Orb",
+    "icon" : "wizard_arcaneorb",
+    "slug" : "arcane-orb",
+    "requiredLevel" : 2,
+    "tooltipParams" : "skill/wizard/arcane-orb",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">35</span> Arcane Power</p><p>Hurl an orb of pure energy that explodes when it hits, dealing <span class=\"d3-color-green\">250%</span> weapon damage as Arcane to all enemies within <span class=\"d3-color-green\">10</span> yards.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">35</span> Arcane Power</p><p>Cast an orb of pure arcane energy that explodes on contact.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Explosive Bolts",
+      "type" : "e",
+      "requiredLevel" : 8,
+      "tooltipParams" : "rune/shock-pulse/e",
+      "description" : "<p>Slain enemies explode, dealing <span class=\"d3-color-green\">70%</span> weapon damage as Lightning to every enemy within <span class=\"d3-color-green\">10</span> yards.</p>",
+      "simpleDescription" : "<p>Slain enemies explode and electrocute nearby enemies.</p>"
+    }, {
+      "name" : "Fire Bolts",
+      "type" : "a",
+      "requiredLevel" : 17,
+      "tooltipParams" : "rune/shock-pulse/a",
+      "description" : "<p>Cast bolts of fire that each deal <span class=\"d3-color-green\">137%</span> weapon damage as Fire.</p>",
+      "simpleDescription" : "<p>Cast bolts of fire that burn enemies.</p>"
+    }, {
+      "name" : "Piercing Orb",
+      "type" : "c",
+      "requiredLevel" : 29,
+      "tooltipParams" : "rune/shock-pulse/c",
+      "description" : "<p>Merge the bolts in a a single giant orb that oscillates forward dealing <span class=\"d3-color-green\">105%</span> weapon damage as Lightning to everything it hits.</p>",
+      "simpleDescription" : "<p>Electrocute multiple enemies with a single orb of electricity.</p>"
+    }, {
+      "name" : "Lightning Affinity",
+      "type" : "d",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/shock-pulse/d",
+      "description" : "<p>Every target hit by a pulse restores <span class=\"d3-color-green\">2</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Every target hit by a pulse restores Arcane Power.</p>"
+    }, {
+      "name" : "Living Lightning",
+      "type" : "b",
+      "requiredLevel" : 48,
+      "tooltipParams" : "rune/shock-pulse/b",
+      "description" : "<p>Conjure a being of lightning that drifts forward, electrocuting nearby enemies for <span class=\"d3-color-green\">37%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Conjure a being of lightning that drifts forward, electrocuting nearby enemies.</p>"
+    } ],
+    "categoryName" : "Primary",
+    "categorySlug" : "primary",
+    "name" : "Shock Pulse",
+    "icon" : "wizard_shockpulse",
+    "slug" : "shock-pulse",
+    "requiredLevel" : 3,
+    "tooltipParams" : "skill/wizard/shock-pulse",
+    "description" : "<p><span class=\"d3-color-gold\">This is a Signature spell. Signature spells are free to cast.</span></p><p>Release a medium range pulse of <span class=\"d3-color-green\">3</span> unpredictable charges of electricity that deal <span class=\"d3-color-green\">105%</span> weapon damage as Lightning.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Signature Spell</span></p><p>Release bursts of uncontrollable electricity across the ground.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Shatter",
+      "type" : "b",
+      "requiredLevel" : 11,
+      "tooltipParams" : "rune/frost-nova/b",
+      "description" : "<p>A frozen enemy that is killed has a <span class=\"d3-color-green\">50%</span> chance of releasing another Frost Nova.</p>",
+      "simpleDescription" : "<p>A frozen enemy has a chance of releasing an additional Frost Nova when killed.</p>"
+    }, {
+      "name" : "Cold Snap",
+      "type" : "d",
+      "requiredLevel" : 21,
+      "tooltipParams" : "rune/frost-nova/d",
+      "description" : "<p>Reduce cooldown to <span class=\"d3-color-green\">9</span> seconds.</p>",
+      "simpleDescription" : "<p>Reduce the cooldown duration of Frost Nova.</p>"
+    }, {
+      "name" : "Frozen Mist",
+      "type" : "c",
+      "requiredLevel" : 29,
+      "tooltipParams" : "rune/frost-nova/c",
+      "description" : "<p>The Frost Nova no longer freezes enemies, but instead leaves behind a mist of frost dealing that deals <span class=\"d3-color-green\">160%</span> weapon damage as Cold over <span class=\"d3-color-green\">8</span> seconds.</p>",
+      "simpleDescription" : "<p>The Frost Nova no longer freezes enemies, but leaves behind a mist that damages enemies.</p>"
+    }, {
+      "name" : "Deep Freeze",
+      "type" : "e",
+      "requiredLevel" : 34,
+      "tooltipParams" : "rune/frost-nova/e",
+      "description" : "<p>If Frost Nova hits at least <span class=\"d3-color-green\">5</span> targets, you gain <span class=\"d3-color-green\">15%</span> chance to critically hit for <span class=\"d3-color-green\">12</span> seconds.</p>",
+      "simpleDescription" : "<p>If Frost Nova hits at least <span class=\"d3-color-green\">5</span> targets, you gain a chance to cause Critical Hits.</p>"
+    }, {
+      "name" : "Bone Chill",
+      "type" : "a",
+      "requiredLevel" : 42,
+      "tooltipParams" : "rune/frost-nova/a",
+      "description" : "<p>Enemies take <span class=\"d3-color-green\">15%</span> more damage while frozen or chilled by Frost Nova.</p>",
+      "simpleDescription" : "<p>Enemies take more damage while frozen or chilled by Frost Nova.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Frost Nova",
+    "icon" : "wizard_frostnova",
+    "slug" : "frost-nova",
+    "requiredLevel" : 4,
+    "tooltipParams" : "skill/wizard/frost-nova",
+    "description" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">12</span> seconds</p><p>An explosion of ice freezes nearby enemies for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">12</span> seconds</p><p>Blast nearby enemies and freeze them in place.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Snow Blast",
+      "type" : "a",
+      "requiredLevel" : 14,
+      "tooltipParams" : "rune/ray-of-frost/a",
+      "description" : "<p>Damage increases slowly over <span class=\"d3-color-green\">1.5</span> seconds to inflict a maximum of <span class=\"d3-color-green\">260%</span> weapon damage as Cold.</p>",
+      "simpleDescription" : "<p>Damage increases the longer Ray of Frost is used.</p>"
+    }, {
+      "name" : "Numb",
+      "type" : "c",
+      "requiredLevel" : 23,
+      "tooltipParams" : "rune/ray-of-frost/c",
+      "description" : "<p>Increase enemy slow amount to <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Increase the potency of the movement slow.</p>"
+    }, {
+      "name" : "Sleet Storm",
+      "type" : "b",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/ray-of-frost/b",
+      "description" : "<p>Create a swirling storm around you, dealing <span class=\"d3-color-green\">200%</span> weapon damage as Cold to all enemies caught within it.</p>",
+      "simpleDescription" : "<p>Create a swirling storm around you that damages enemies caught in it.</p>"
+    }, {
+      "name" : "Cold Blood",
+      "type" : "d",
+      "requiredLevel" : 42,
+      "tooltipParams" : "rune/ray-of-frost/d",
+      "description" : "<p>Reduce casting cost to <span class=\"d3-color-green\">0</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Reduce the casting cost Ray of Frost.</p>"
+    }, {
+      "name" : "Black Ice",
+      "type" : "e",
+      "requiredLevel" : 51,
+      "tooltipParams" : "rune/ray-of-frost/e",
+      "description" : "<p>Enemies who die leave a patch of ice on the ground that causes <span class=\"d3-color-green\">180%</span> weapon damage as Cold to enemies moving through it over <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Enemies who die leave a patch of ice on the ground that damages enemies that move through it.</p>"
+    } ],
+    "categoryName" : "Secondary",
+    "categorySlug" : "secondary",
+    "name" : "Ray of Frost",
+    "icon" : "wizard_rayoffrost",
+    "slug" : "ray-of-frost",
+    "requiredLevel" : 5,
+    "tooltipParams" : "skill/wizard/ray-of-frost",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Arcane Power</p><p>Project a beam of frozen ice that blasts <span class=\"d3-color-green\">200%</span> weapon damage as Cold to the first enemy it hits, slowing the target&#39;s movement by <span class=\"d3-color-green\">30%</span> and attack speed by <span class=\"d3-color-green\">20%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Arcane Power</p><p>Channel a beam of pure cold and freeze your enemies.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Crystal Shell",
+      "type" : "c",
+      "requiredLevel" : 16,
+      "tooltipParams" : "rune/diamond-skin/c",
+      "description" : "<p>Increase the maximum absorption amount to <span class=\"d3-color-green\">17794</span> damage.</p>",
+      "simpleDescription" : "<p>Increase the maximum amount of damage absorbed.</p>"
+    }, {
+      "name" : "Prism",
+      "type" : "d",
+      "requiredLevel" : 25,
+      "tooltipParams" : "rune/diamond-skin/d",
+      "description" : "<p>Reduce Arcane Power cost of all spells by <span class=\"d3-color-green\">15</span> while Diamond Skin is active.</p>",
+      "simpleDescription" : "<p>Reduce the Arcane Power cost of all spells while Diamond Skin is active.</p>"
+    }, {
+      "name" : "Mirror Skin",
+      "type" : "a",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/diamond-skin/a",
+      "description" : "<p>Reflects <span class=\"d3-color-green\">50%</span> of damage absorbed back at the attacker.</p>",
+      "simpleDescription" : "<p>Reflects a percentage of damage absorbed back at the attacker.</p>"
+    }, {
+      "name" : "Enduring Skin",
+      "type" : "b",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/diamond-skin/b",
+      "description" : "<p>Increase duration to <span class=\"d3-color-green\">5</span> seconds.</p>",
+      "simpleDescription" : "<p>Increase the duration of Diamond Skin.</p>"
+    }, {
+      "name" : "Diamond Shards",
+      "type" : "e",
+      "requiredLevel" : 47,
+      "tooltipParams" : "rune/diamond-skin/e",
+      "description" : "<p>When Diamond Skin wears off, diamond shards will explode in all directions dealing <span class=\"d3-color-green\">155%</span> weapon damage as Physical to enemies nearby.</p>",
+      "simpleDescription" : "<p>When Diamond Skin wears off, diamond shards explode in all directions.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Diamond Skin",
+    "icon" : "wizard_diamondskin",
+    "slug" : "diamond-skin",
+    "requiredLevel" : 8,
+    "tooltipParams" : "skill/wizard/diamond-skin",
+    "description" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Transform your skin to diamond for <span class=\"d3-color-green\">3</span> seconds, absorbing up to <span class=\"d3-color-green\">8897</span> damage from incoming attacks.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Transform your skin to diamond, temporarily absorbing all damage.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Deep Cuts",
+      "type" : "a",
+      "requiredLevel" : 16,
+      "tooltipParams" : "rune/spectral-blade/a",
+      "description" : "<p>Enemies hit by the blade will Bleed for an additional <span class=\"d3-color-green\">35%</span> weapon damage done over <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Enemies hit by the blade will Bleed for additional damage.</p>"
+    }, {
+      "name" : "Impactful Blades",
+      "type" : "c",
+      "requiredLevel" : 24,
+      "tooltipParams" : "rune/spectral-blade/c",
+      "description" : "<p>Hits have a <span class=\"d3-color-green\">15%</span> chance to cause Knockback and slow the movement of enemies by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">1</span> seconds.</p>",
+      "simpleDescription" : "<p>Hits have a chance to cause Knockback and slow enemies.</p>"
+    }, {
+      "name" : "Siphoning Blade",
+      "type" : "d",
+      "requiredLevel" : 34,
+      "tooltipParams" : "rune/spectral-blade/d",
+      "description" : "<p>Every enemy hit grants <span class=\"d3-color-green\">1</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Every enemy hit grants additional Arcane Power.</p>"
+    }, {
+      "name" : "Healing Blades",
+      "type" : "e",
+      "requiredLevel" : 44,
+      "tooltipParams" : "rune/spectral-blade/e",
+      "description" : "<p>Whenever the blades do critical damage, you are healed <span class=\"d3-color-green\">8%</span> of the damage done.</p>",
+      "simpleDescription" : "<p>Whenever the blades do critical damage, you gain Life.</p>"
+    }, {
+      "name" : "Thrown Blade",
+      "type" : "b",
+      "requiredLevel" : 54,
+      "tooltipParams" : "rune/spectral-blade/b",
+      "description" : "<p>Extends the reach of Spectral Blade to <span class=\"d3-color-green\">20</span> yards.</p>",
+      "simpleDescription" : "<p>Extends the reach of Spectral Blade.</p>"
+    } ],
+    "categoryName" : "Primary",
+    "categorySlug" : "primary",
+    "name" : "Spectral Blade",
+    "icon" : "wizard_spectralblade",
+    "slug" : "spectral-blade",
+    "requiredLevel" : 9,
+    "tooltipParams" : "skill/wizard/spectral-blade",
+    "description" : "<p><span class=\"d3-color-gold\">This is a Signature spell. Signature spells are free to cast.</span></p><p>Summon a spectral blade that strikes all enemies in your path for <span class=\"d3-color-green\">105%</span> weapon damage.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Signature Spell</span></p><p>Summon mystic blades that slice through enemies.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Impactful Wave",
+      "type" : "e",
+      "requiredLevel" : 18,
+      "tooltipParams" : "rune/wave-of-force/e",
+      "description" : "<p>Increases the distance enemies are knocked back and stuns all affected enemies for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases the distance enemies are knocked back and Stuns all affected enemies.</p>"
+    }, {
+      "name" : "Force Affinity",
+      "type" : "d",
+      "requiredLevel" : 26,
+      "tooltipParams" : "rune/wave-of-force/d",
+      "description" : "<p>Reduce casting cost to <span class=\"d3-color-green\">15</span> Arcane Power and cooldown is reduced to <span class=\"d3-color-green\">12</span> seconds.</p>",
+      "simpleDescription" : "<p>Reduce the casting cost and cooldown duration of Wave of Force.</p>"
+    }, {
+      "name" : "Forceful Wave",
+      "type" : "a",
+      "requiredLevel" : 37,
+      "tooltipParams" : "rune/wave-of-force/a",
+      "description" : "<p>Increases damage to <span class=\"d3-color-green\">286%</span> weapon damage as Physical, but reduces knockback.</p>",
+      "simpleDescription" : "<p>Increase the damage but no longer knocks enemies back.</p>"
+    }, {
+      "name" : "Teleporting Wave",
+      "type" : "c",
+      "requiredLevel" : 43,
+      "tooltipParams" : "rune/wave-of-force/c",
+      "description" : "<p>Enemies caught in the wave have a <span class=\"d3-color-green\">100%</span> chance to be randomly teleported.</p>",
+      "simpleDescription" : "<p>Enemies caught in the wave have a chance to be randomly teleported.</p>"
+    }, {
+      "name" : "Exploding Wave",
+      "type" : "b",
+      "requiredLevel" : 51,
+      "tooltipParams" : "rune/wave-of-force/b",
+      "description" : "<p>Enemies hit have a <span class=\"d3-color-green\">40%</span> chance to cause a smaller Wave of Force that deals <span class=\"d3-color-green\">110%</span> weapon damage as Physical and knocks back enemies caught in its wake.</p>",
+      "simpleDescription" : "<p>Enemies hit have a chance to release secondary waves.</p>"
+    } ],
+    "categoryName" : "Arcane",
+    "categorySlug" : "arcane",
+    "name" : "Wave of Force",
+    "icon" : "wizard_waveofforce",
+    "slug" : "wave-of-force",
+    "requiredLevel" : 9,
+    "tooltipParams" : "skill/wizard/wave-of-force",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Discharge a wave of pure energy that repels projectiles and knocks back nearby enemies. This also slows the movement of enemies by <span class=\"d3-color-green\">60%</span> and deals <span class=\"d3-color-green\">220%</span> weapon damage as Physical.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Command the elements to push back enemies and projectiles.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Chain Lightning",
+      "type" : "b",
+      "requiredLevel" : 18,
+      "tooltipParams" : "rune/electrocute/b",
+      "description" : "<p>Increases the maximum number of enemies that can be electrocuted to <span class=\"d3-color-green\">6</span>.</p>",
+      "simpleDescription" : "<p>Increases the maximum number of enemies electrocuted.</p>"
+    }, {
+      "name" : "Forked Lightning",
+      "type" : "e",
+      "requiredLevel" : 26,
+      "tooltipParams" : "rune/electrocute/e",
+      "description" : "<p>Critical Hits release <span class=\"d3-color-green\">4</span> charged bolts in random directions, dealing <span class=\"d3-color-green\">46%</span> weapon damage as Lightning to any targets hit.</p>",
+      "simpleDescription" : "<p>Critical Hits release charged bolts that travel in random directions.</p>"
+    }, {
+      "name" : "Lightning Blast",
+      "type" : "a",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/electrocute/a",
+      "description" : "<p>Create streaks of lightning that pierce through targets, hitting all enemies for <span class=\"d3-color-green\">80%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Create streaks of lightning that pierce all targets hit.</p>"
+    }, {
+      "name" : "Surge of Power",
+      "type" : "d",
+      "requiredLevel" : 41,
+      "tooltipParams" : "rune/electrocute/d",
+      "description" : "<p>Gain <span class=\"d3-color-green\">1</span> Arcane Power for every enemy hit by Electrocute.</p>",
+      "simpleDescription" : "<p>Gain Arcane Power for every enemy hit by Electrocute.</p>"
+    }, {
+      "name" : "Arc Lightning",
+      "type" : "c",
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/electrocute/c",
+      "description" : "<p>Blast a cone of lightning that causes <span class=\"d3-color-green\">80%</span> weapon damage as Lightning to all affected targets.</p>",
+      "simpleDescription" : "<p>Blast a cone of lightning.</p>"
+    } ],
+    "categoryName" : "Primary",
+    "categorySlug" : "primary",
+    "name" : "Electrocute",
+    "icon" : "wizard_electrocute",
+    "slug" : "electrocute",
+    "requiredLevel" : 11,
+    "tooltipParams" : "skill/wizard/electrocute",
+    "description" : "<p><span class=\"d3-color-gold\">This is a Signature spell. Signature spells are free to cast.</span></p><p>Lightning arcs from your fingertips, dealing <span class=\"d3-color-green\">80%</span> weapon damage as Lightning. The lightning can jump, hitting up to <span class=\"d3-color-green\">2</span> additional enemies.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Signature Spell</span></p><p>Cast chain lightning that electrocutes up to <span class=\"d3-color-green\">3</span> enemies.</p><p><span class=\"d3-color-yellow\">Hold SHIFT to attack without moving.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Disruption",
+      "type" : "a",
+      "requiredLevel" : 19,
+      "tooltipParams" : "rune/arcane-torrent/a",
+      "description" : "<p>Targets hit by Arcane Torrent become Disrupted for <span class=\"d3-color-green\">6</span> seconds, causing them to take <span class=\"d3-color-green\">15%</span> additional damage from any attacks that deal Arcane damage.</p>",
+      "simpleDescription" : "<p>Targets hit by Arcane Torrent are susceptible to Arcane damage attacks for a limited time.</p>"
+    }, {
+      "name" : "Death Blossom",
+      "type" : "e",
+      "requiredLevel" : 29,
+      "tooltipParams" : "rune/arcane-torrent/e",
+      "description" : "<p>Unleash a torrent of power beyond your control. You no longer direct where the projectiles go, but their damage is increased to <span class=\"d3-color-green\">365%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Unleash a torrent of power beyond your control. You no longer direct where the projectiles go, but their damage is increased.</p>"
+    }, {
+      "name" : "Arcane Mines",
+      "type" : "c",
+      "requiredLevel" : 37,
+      "tooltipParams" : "rune/arcane-torrent/c",
+      "description" : "<p>Instead of firing projectiles, lay Arcane mines that arm after <span class=\"d3-color-green\">1</span> second. These mines explode when an enemy approaches, dealing <span class=\"d3-color-green\">210%</span> weapon damage as Arcane. Enemies caught in the explosion have their movement and attack speeds reduced by <span class=\"d3-color-green\">30%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Instead of firing projectiles, place Arcane mines. Mines explode when enemies approach, dealing damage and reducing the movement and attack speeds of enemies caught in the blast.</p>"
+    }, {
+      "name" : "Power Stone",
+      "type" : "d",
+      "requiredLevel" : 44,
+      "tooltipParams" : "rune/arcane-torrent/d",
+      "description" : "<p>Every missile hit has a <span class=\"d3-color-green\">2%</span> chance to leave behind a Power Stone that grants Arcane Power when picked up.</p>",
+      "simpleDescription" : "<p>Every missile hit has a chance to leave behind a Power Stone that grants Arcane Power when picked up.</p>"
+    }, {
+      "name" : "Cascade",
+      "type" : "b",
+      "requiredLevel" : 53,
+      "tooltipParams" : "rune/arcane-torrent/b",
+      "description" : "<p>Enemies killed by Arcane Torrent have a <span class=\"d3-color-green\">100%</span> chance to fire a new missile at a nearby enemy dealing <span class=\"d3-color-green\">200%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Enemies killed by Arcane Torrent have a chance to fire a new missile at a nearby enemies.</p>"
+    } ],
+    "categoryName" : "Secondary",
+    "categorySlug" : "secondary",
+    "name" : "Arcane Torrent",
+    "icon" : "wizard_arcanetorrent",
+    "slug" : "arcane-torrent",
+    "requiredLevel" : 12,
+    "tooltipParams" : "skill/wizard/arcane-torrent",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Arcane Power</p><p>Hurl a barrage of arcane projectiles that deal <span class=\"d3-color-green\">190%</span> weapon damage as Arcane to all enemies near the impact location.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Arcane Power</p><p>Unleash a barrage of Arcane projectiles.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Chilling Aura",
+      "type" : "b",
+      "requiredLevel" : 23,
+      "tooltipParams" : "rune/ice-armor/b",
+      "description" : "<p>Lower the temperature of the air around you. Nearby enemies are chilled, slowing their movement speed by <span class=\"d3-color-green\">30%</span>.</p>",
+      "simpleDescription" : "<p>Lower the temperature of the air around you. Nearby enemies are chilled, slowing their movement and attack speeds.</p>"
+    }, {
+      "name" : "Crystallize",
+      "type" : "d",
+      "requiredLevel" : 31,
+      "tooltipParams" : "rune/ice-armor/d",
+      "description" : "<p>Whenever you are struck by a melee attack your Armor is increased by <span class=\"d3-color-green\">25%</span> for <span class=\"d3-color-green\">10</span> seconds. This effect can stack up to <span class=\"d3-color-green\">3</span> times.</p>",
+      "simpleDescription" : "<p>Whenever you are struck by a melee attack, your Armor is increased.</p>"
+    }, {
+      "name" : "Jagged Ice",
+      "type" : "a",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/ice-armor/a",
+      "description" : "<p>Melee attackers take <span class=\"d3-color-green\">96%</span> weapon damage as Cold and are chilled for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Melee attackers take weapon damage and are Frozen.</p>"
+    }, {
+      "name" : "Ice Reflect",
+      "type" : "e",
+      "requiredLevel" : 45,
+      "tooltipParams" : "rune/ice-armor/e",
+      "description" : "<p>Melee attacks have up to a <span class=\"d3-color-green\">35%</span> chance to create a Frost Nova on the attacker dealing <span class=\"d3-color-green\">75%</span> weapon damage as Cold.</p>",
+      "simpleDescription" : "<p>Melee attacks against you have a chance to create a Frost Nova centered on the attacker.</p>"
+    }, {
+      "name" : "Frozen Storm",
+      "type" : "c",
+      "requiredLevel" : 53,
+      "tooltipParams" : "rune/ice-armor/c",
+      "description" : "<p>A whirling storm of ice builds around you that deals <span class=\"d3-color-green\">30%</span> weapon damage as Cold over <span class=\"d3-color-green\">3</span> seconds after casting Ice Armor.</p>",
+      "simpleDescription" : "<p>A whirling storm of ice builds around you and damages enemies.</p>"
+    } ],
+    "categoryName" : "Conjuration",
+    "categorySlug" : "conjuration",
+    "name" : "Ice Armor",
+    "icon" : "wizard_icearmor",
+    "slug" : "ice-armor",
+    "requiredLevel" : 14,
+    "tooltipParams" : "skill/wizard/ice-armor",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power</p><p>Surround yourself in a barrier of ice causing <span class=\"d3-color-green\">80%</span> weapon damage as Cold to melee attackers, chilling them for <span class=\"d3-color-green\">2</span> seconds. Lasts <span class=\"d3-color-green\">120</span> seconds.</p><p><span class=\"d3-color-yellow\">This is an Armor spell. Only one Armor spell can be active at a time.</span></p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power</p><p>Protect yourself with a barrier of ice that freezes attackers. </p><p><span class=\"d3-color-yellow\">Only one Armor spell can be active at a time.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Mistral Breeze",
+      "type" : "d",
+      "requiredLevel" : 22,
+      "tooltipParams" : "rune/energy-twister/d",
+      "description" : "<p>Reduce casting cost to <span class=\"d3-color-green\">23</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Reduce casting cost of Energy Twister.</p>"
+    }, {
+      "name" : "Gale Force",
+      "type" : "a",
+      "requiredLevel" : 32,
+      "tooltipParams" : "rune/energy-twister/a",
+      "description" : "<p>Increase damage to <span class=\"d3-color-green\">565%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Increase the damage of Energy Twister.</p>"
+    }, {
+      "name" : "Raging Storm",
+      "type" : "b",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/energy-twister/b",
+      "description" : "<p>When two twisters collide they merge into a tornado with increased area of effect that causes <span class=\"d3-color-green\">435%</span> weapon damage as Arcane over <span class=\"d3-color-green\">6</span> seconds.</p>",
+      "simpleDescription" : "<p>When two twisters collide they merge into a tornado with increased area of effect and damage.</p>"
+    }, {
+      "name" : "Wicked Wind",
+      "type" : "e",
+      "requiredLevel" : 46,
+      "tooltipParams" : "rune/energy-twister/e",
+      "description" : "<p>Twister no longer travels but spins in place dealing <span class=\"d3-color-green\">304%</span> weapon damage as Arcane over <span class=\"d3-color-green\">6</span> seconds.</p>",
+      "simpleDescription" : "<p>Twister no longer travels but spins in place dealing damage to everything caught in it.</p>"
+    }, {
+      "name" : "Storm Chaser",
+      "type" : "c",
+      "requiredLevel" : 55,
+      "tooltipParams" : "rune/energy-twister/c",
+      "description" : "<p>Signature spells are: Magic Missile, Shock Pulse, Spectral Blade, Electrocute</p>",
+      "simpleDescription" : "<p>Signature spells are: Magic Missile, Shock Pulse, Spectral Blade, Electrocute</p>"
+    } ],
+    "categoryName" : "Arcane",
+    "categorySlug" : "arcane",
+    "name" : "Energy Twister",
+    "icon" : "wizard_energytwister",
+    "slug" : "energy-twister",
+    "requiredLevel" : 15,
+    "tooltipParams" : "skill/wizard/energy-twister",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">35</span> Arcane Power</p><p>Unleash a twister of pure energy that deals <span class=\"d3-color-green\">435%</span> weapon damage as Arcane over <span class=\"d3-color-green\">6</span> seconds to everything in its path.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">35</span> Arcane Power</p><p>Release a raging tornado that wreaks havoc across the battlefield.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Miasma",
+      "type" : "b",
+      "requiredLevel" : 24,
+      "tooltipParams" : "rune/slow-time/b",
+      "description" : "<p>Slow Time effects cling to enemies for <span class=\"d3-color-green\">3</span> seconds after they have left the bubble.</p>",
+      "simpleDescription" : "<p>Slow Time effects cling to enemies after they leave the area.</p>"
+    }, {
+      "name" : "Time Warp",
+      "type" : "a",
+      "requiredLevel" : 32,
+      "tooltipParams" : "rune/slow-time/a",
+      "description" : "<p>Enemies caught in the bubble of warped time take <span class=\"d3-color-green\">20%</span> more damage.</p>",
+      "simpleDescription" : "<p>Enemies caught by Slow Time take more damage.</p>"
+    }, {
+      "name" : "Time Shell",
+      "type" : "c",
+      "requiredLevel" : 40,
+      "tooltipParams" : "rune/slow-time/c",
+      "description" : "<p>Reduce the area Slow Time affects to <span class=\"d3-color-green\">10</span> yards, but increases the potency of the movement speed reduction to <span class=\"d3-color-green\">80%</span>.</p>",
+      "simpleDescription" : "<p>Reduce the area Slow Time affects, but increase its effect of slowing enemy movement and attack speed.</p>"
+    }, {
+      "name" : "Perpetuity",
+      "type" : "d",
+      "requiredLevel" : 50,
+      "tooltipParams" : "rune/slow-time/d",
+      "description" : "<p>Reduce cooldown to <span class=\"d3-color-green\">16</span> seconds.</p>",
+      "simpleDescription" : "<p>Reduce the cooldown duration of Slow Time.</p>"
+    }, {
+      "name" : "Stretch Time",
+      "type" : "e",
+      "requiredLevel" : 56,
+      "tooltipParams" : "rune/slow-time/e",
+      "description" : "<p>Time is sped up for any allies standing in the area, increasing their attack speed by <span class=\"d3-color-green\">15%</span>.</p>",
+      "simpleDescription" : "<p>Time is sped up for any allies standing the area, increasing their attack speed.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Slow Time",
+    "icon" : "wizard_slowtime",
+    "slug" : "slow-time",
+    "requiredLevel" : 16,
+    "tooltipParams" : "skill/wizard/slow-time",
+    "description" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">20</span> seconds</p><p>Invoke a bubble of warped time and space for <span class=\"d3-color-green\">8</span> seconds, reducing enemy attack speed by <span class=\"d3-color-green\">20%</span> and movement speed by <span class=\"d3-color-green\">30%</span>. This bubble also slows the movement of enemy projectiles by <span class=\"d3-color-green\">90%</span>.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">20</span> seconds</p><p>Fracture time and space, slowing enemies around you while you move unhindered.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Reactive Armor",
+      "type" : "c",
+      "requiredLevel" : 26,
+      "tooltipParams" : "rune/storm-armor/c",
+      "description" : "<p>Whenever you are hit, you have a chance to be enveloped with a lightning shield for <span class=\"d3-color-green\">6</span> seconds that shocks nearby enemies for <span class=\"d3-color-green\">50%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Whenever you are hit, you have a chance to be enveloped with a lightning shield that electrocutes nearby enemies.</p>"
+    }, {
+      "name" : "Power of the Storm",
+      "type" : "d",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/storm-armor/d",
+      "description" : "<p>Reduce the Arcane Power cost of all Skills by <span class=\"d3-color-green\">3</span> while Storm Armor is active.</p>",
+      "simpleDescription" : "<p>Reduce the Arcane Power cost of all Skills while Storm Armor is active.</p>"
+    }, {
+      "name" : "Strike Back",
+      "type" : "a",
+      "requiredLevel" : 39,
+      "tooltipParams" : "rune/storm-armor/a",
+      "description" : "<p>Increase the damage of the shock to <span class=\"d3-color-green\">91%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Increase the damage of dealt by Storm Armor.</p>"
+    }, {
+      "name" : "Scramble",
+      "type" : "b",
+      "requiredLevel" : 46,
+      "tooltipParams" : "rune/storm-armor/b",
+      "description" : "<p>Increase your movement speed by <span class=\"d3-color-green\">25%</span> for <span class=\"d3-color-green\">3</span> seconds whenever you are hit by melee or ranged attacks.</p>",
+      "simpleDescription" : "<p>Increase your movement speed whenever you are hit by melee or ranged attacks.</p>"
+    }, {
+      "name" : "Shocking Aspect",
+      "type" : "e",
+      "requiredLevel" : 55,
+      "tooltipParams" : "rune/storm-armor/e",
+      "description" : "<p>Whenever you cause a Critical Hit, you have a chance to electrocute a nearby enemy for <span class=\"d3-color-green\">35%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Whenever you cause a Critical Hit, you have a chance to further electrocute a nearby enemy.</p>"
+    } ],
+    "categoryName" : "Conjuration",
+    "categorySlug" : "conjuration",
+    "name" : "Storm Armor",
+    "icon" : "wizard_stormarmor",
+    "slug" : "storm-armor",
+    "requiredLevel" : 17,
+    "tooltipParams" : "skill/wizard/storm-armor",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power</p><p>Bathe yourself in electrical energy, shocking ranged and melee attackers for <span class=\"d3-color-green\">70%</span> weapon damage as Lightning. Lasts <span class=\"d3-color-green\">120</span> seconds.</p><p><span class=\"d3-color-yellow\">This is an Armor spell. Only one Armor spell can be active at a time.</span></p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power</p><p>Surround yourself with a magical storm that electrocutes attackers with lightning. </p><p><span class=\"d3-color-yellow\">Only one Armor spell can be active at a time.</span></p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Unleashed",
+      "type" : "d",
+      "requiredLevel" : 28,
+      "tooltipParams" : "rune/explosive-blast/d",
+      "description" : "<p>Reduces the casting cost to <span class=\"d3-color-green\">35</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Reduce the casting cost of Explosive Blast.</p>"
+    }, {
+      "name" : "Time Bomb",
+      "type" : "c",
+      "requiredLevel" : 36,
+      "tooltipParams" : "rune/explosive-blast/c",
+      "description" : "<p>The blast detonates from the point it was originally cast after <span class=\"d3-color-green\">2.5</span> seconds for <span class=\"d3-color-green\">228%</span> weapon damage as Physical.</p>",
+      "simpleDescription" : "<p>The blast detonates from the point it was riginally cast after a short time delay.</p>"
+    }, {
+      "name" : "Short Fuse",
+      "type" : "a",
+      "requiredLevel" : 45,
+      "tooltipParams" : "rune/explosive-blast/a",
+      "description" : "<p>Release the energy immediately for <span class=\"d3-color-green\">175%</span> weapon damage as Physical.</p>",
+      "simpleDescription" : "<p>Immediately release the energy of Explosive Blast.</p>"
+    }, {
+      "name" : "Obliterate",
+      "type" : "b",
+      "requiredLevel" : 50,
+      "tooltipParams" : "rune/explosive-blast/b",
+      "description" : "<p>Increase the explosion radius to <span class=\"d3-color-green\">18</span> yards for <span class=\"d3-color-green\">175%</span> weapon damage as Physical.</p>",
+      "simpleDescription" : "<p>Increase the explosion radius of Explosive Blast.</p>"
+    }, {
+      "name" : "Chain Reaction",
+      "type" : "e",
+      "requiredLevel" : 59,
+      "tooltipParams" : "rune/explosive-blast/e",
+      "description" : "<p><span class=\"d3-color-green\">3</span> consecutive explosions cascade off you that each cause <span class=\"d3-color-green\">61%</span> weapon damage as Physical.</p>",
+      "simpleDescription" : "<p>Multiple explosions follow the initial blast and damage enemies caught in the area.</p>"
+    } ],
+    "categoryName" : "Mastery",
+    "categorySlug" : "mastery",
+    "name" : "Explosive Blast",
+    "icon" : "wizard_explosiveblast",
+    "slug" : "explosive-blast",
+    "requiredLevel" : 19,
+    "tooltipParams" : "skill/wizard/explosive-blast",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">45</span> Arcane Power<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">1</span> second</p><p>Gather an infusion of energy around you that explodes after <span class=\"d3-color-green\">1.5</span> seconds, causing <span class=\"d3-color-green\">175%</span> weapon damage as Physical to any enemies within <span class=\"d3-color-green\">12</span> yards.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">45</span> Arcane Power<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">1</span> second</p><p>Absorb energy and release it as a devastating blast.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Convergence",
+      "type" : "b",
+      "requiredLevel" : 30,
+      "tooltipParams" : "rune/disintegrate/b",
+      "description" : "<p>Increase the width of the beam allowing it to hit more enemies.</p>",
+      "simpleDescription" : "<p>Increase the width of the beam.</p>"
+    }, {
+      "name" : "Chaos Nexus",
+      "type" : "d",
+      "requiredLevel" : 39,
+      "tooltipParams" : "rune/disintegrate/d",
+      "description" : "<p>When casting the beam you become charged with energy that spits out at nearby enemies doing <span class=\"d3-color-green\">40%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Additional beams discharge out to damage nearby enemies.</p>"
+    }, {
+      "name" : "Volatility",
+      "type" : "e",
+      "requiredLevel" : 43,
+      "tooltipParams" : "rune/disintegrate/e",
+      "description" : "<p>Enemies killed by the beam have a <span class=\"d3-color-green\">35%</span> chance to explode causing <span class=\"d3-color-green\">425%</span> weapon damage as Arcane to all enemies within <span class=\"d3-color-green\">8</span> yards.</p>",
+      "simpleDescription" : "<p>Enemies killed by the beam have a chance to explode.</p>"
+    }, {
+      "name" : "Entropy",
+      "type" : "c",
+      "requiredLevel" : 49,
+      "tooltipParams" : "rune/disintegrate/c",
+      "description" : "<p>The beam fractures into a short ranged cone causing <span class=\"d3-color-green\">195%</span> weapon damage per second as Arcane.</p>",
+      "simpleDescription" : "<p>The beam fractures into a short ranged cone instead.</p>"
+    }, {
+      "name" : "Intensify",
+      "type" : "a",
+      "requiredLevel" : 57,
+      "tooltipParams" : "rune/disintegrate/a",
+      "description" : "<p>Damage increases slowly over time to inflict a maximum of <span class=\"d3-color-green\">221%</span> weapon damage as Arcane.</p>",
+      "simpleDescription" : "<p>Damage increases the longer Disintegrate is used.</p>"
+    } ],
+    "categoryName" : "Secondary",
+    "categorySlug" : "secondary",
+    "name" : "Disintegrate",
+    "icon" : "wizard_disintegrate",
+    "slug" : "disintegrate",
+    "requiredLevel" : 20,
+    "tooltipParams" : "skill/wizard/disintegrate",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Arcane Power</p><p>Thrust a beam of pure energy forward, dealing <span class=\"d3-color-green\">170%</span> weapon damage as Arcane and disintegrating enemies it kills.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Arcane Power</p><p>Channel a beam of pure energy that pierces through all enemies.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Arcane Hydra",
+      "type" : "e",
+      "requiredLevel" : 28,
+      "tooltipParams" : "rune/hydra/e",
+      "description" : "<p>Summon an Arcane Hydra that spits Arcane Orbs which explode on impact causing <span class=\"d3-color-green\">25%</span> weapon damage as Arcane to enemies near the explosion.</p>",
+      "simpleDescription" : "<p>Summon an Arcane Hydra that spits Arcane Orbs.</p>"
+    }, {
+      "name" : "Lightning Hydra",
+      "type" : "b",
+      "requiredLevel" : 36,
+      "tooltipParams" : "rune/hydra/b",
+      "description" : "<p>Summon a Lightning Hydra that electrocutes enemies for <span class=\"d3-color-green\">30%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Summon a Lightning Hydra that electrocutes enemies.</p>"
+    }, {
+      "name" : "Venom Hydra",
+      "type" : "c",
+      "requiredLevel" : 49,
+      "tooltipParams" : "rune/hydra/c",
+      "description" : "<p>Summon a Poison Breathing Hydra that leaves a pool of acid causing <span class=\"d3-color-green\">14%</span> weapon damage per second as Poison to enemies who remain in the pool.</p>",
+      "simpleDescription" : "<p>Summon a Poison Breathing Hydra that leaves a pool of acid that damages enemies.</p>"
+    }, {
+      "name" : "Frost Hydra",
+      "type" : "a",
+      "requiredLevel" : 56,
+      "tooltipParams" : "rune/hydra/a",
+      "description" : "<p>Summon a Frost Hydra that breathes a short range cone of frost causing <span class=\"d3-color-green\">28%</span> weapon damage as Cold to all enemies in the cone.</p>",
+      "simpleDescription" : "<p>Summon a Frost Hydra that breathes frost, freezing enemies it hits.</p>"
+    }, {
+      "name" : "Mammoth Hydra",
+      "type" : "d",
+      "requiredLevel" : 58,
+      "tooltipParams" : "rune/hydra/d",
+      "description" : "<p>Summon a Mammoth Hydra that breathes a river of flame at nearby enemies dealing <span class=\"d3-color-green\">20%</span> weapon damage per second as Fire to enemies caught in the burning ground.</p>",
+      "simpleDescription" : "<p>Summon a Mammoth Hydra that breathes a river of flame, burning enemies caught in its flames.</p>"
+    } ],
+    "categoryName" : "Arcane",
+    "categorySlug" : "arcane",
+    "name" : "Hydra",
+    "icon" : "wizard_hydra",
+    "slug" : "hydra",
+    "requiredLevel" : 20,
+    "tooltipParams" : "skill/wizard/hydra",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">40</span> Arcane Power</p><p>Summon a multi-headed Hydra for <span class=\"d3-color-green\">15</span> seconds that attacks enemies with bolts of fire dealing <span class=\"d3-color-green\">25%</span> weapon damage as Fire. You may only have one Hydra active at a time.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">40</span> Arcane Power</p><p>Summon a magical Hydra to attack enemies with bursts of fire.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Electrify",
+      "type" : "b",
+      "requiredLevel" : 32,
+      "tooltipParams" : "rune/magic-weapon/b",
+      "description" : "<p>Attacks have a chance to cause lightning to arc to <span class=\"d3-color-green\">3</span> nearby enemies dealing <span class=\"d3-color-green\">10%</span> of weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Attacks have a chance to cause lightning to arc towards nearby enemies.</p>"
+    }, {
+      "name" : "Force Weapon",
+      "type" : "c",
+      "requiredLevel" : 40,
+      "tooltipParams" : "rune/magic-weapon/c",
+      "description" : "<p>Increases damage bonus to <span class=\"d3-color-green\">20%</span> damage, and gives up to a <span class=\"d3-color-green\">2%</span> chance to Knockback any enemies hit.</p>",
+      "simpleDescription" : "<p>Increases the damage bonus of Magic Weapon and has a chance to Knockback enemies.</p>"
+    }, {
+      "name" : "Conduit",
+      "type" : "d",
+      "requiredLevel" : 47,
+      "tooltipParams" : "rune/magic-weapon/d",
+      "description" : "<p>Attacks have a chance to restore <span class=\"d3-color-green\">1</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Attacks have a chance to restore Arcane Power.</p>"
+    }, {
+      "name" : "Venom",
+      "type" : "a",
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/magic-weapon/a",
+      "description" : "<p>Attacks poison enemies, dealing <span class=\"d3-color-green\">15%</span> of weapon damage as Poison over <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Attacks poison enemies.</p>"
+    }, {
+      "name" : "Blood Magic",
+      "type" : "e",
+      "requiredLevel" : 58,
+      "tooltipParams" : "rune/magic-weapon/e",
+      "description" : "<p>Attacks recover <span class=\"d3-color-green\">1.5%</span> of damage caused as Life.</p>",
+      "simpleDescription" : "<p>Gain Life when damaging an enemy.</p>"
+    } ],
+    "categoryName" : "Conjuration",
+    "categorySlug" : "conjuration",
+    "name" : "Magic Weapon",
+    "icon" : "wizard_magicweapon",
+    "slug" : "magic-weapon",
+    "requiredLevel" : 22,
+    "tooltipParams" : "skill/wizard/magic-weapon",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power</p><p>Imbue your weapon with magical energy, granting it <span class=\"d3-color-green\">10%</span> increased Physical damage. Lasts <span class=\"d3-color-green\">120</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power</p><p>Imbue your weapon with magical energy, increasing your weapon&#39;s effectiveness.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Safe Passage",
+      "type" : "c",
+      "requiredLevel" : 31,
+      "tooltipParams" : "rune/teleport/c",
+      "description" : "<p>For <span class=\"d3-color-green\">4</span> seconds after you Teleport, you will take <span class=\"d3-color-green\">30%</span> less damage.</p>",
+      "simpleDescription" : "<p>Take less damage after you Teleport.</p>"
+    }, {
+      "name" : "Wormhole",
+      "type" : "e",
+      "requiredLevel" : 39,
+      "tooltipParams" : "rune/teleport/e",
+      "description" : "<p>After casting Teleport, there is a <span class=\"d3-color-green\">1</span> second delay before the cooldown begins.</p>",
+      "simpleDescription" : "<p>After casting Teleport there is a small delay before the cooldown begins, allowing you to Teleport again.</p>"
+    }, {
+      "name" : "Reversal",
+      "type" : "d",
+      "requiredLevel" : 45,
+      "tooltipParams" : "rune/teleport/d",
+      "description" : "<p>Casting Teleport again within <span class=\"d3-color-green\">8</span> seconds will instantly bring you back to your original location.</p>",
+      "simpleDescription" : "<p>Casting Teleport again within <span class=\"d3-color-green\">8</span> seconds will instantly return you to your original location.</p>"
+    }, {
+      "name" : "Fracture",
+      "type" : "b",
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/teleport/b",
+      "description" : "<p>Summon <span class=\"d3-color-green\">2</span> decoys for <span class=\"d3-color-green\">8</span> seconds after Teleporting.</p>",
+      "simpleDescription" : "<p>Summon decoys of yourself after Teleporting.</p>"
+    }, {
+      "name" : "Calamity",
+      "type" : "a",
+      "requiredLevel" : 59,
+      "tooltipParams" : "rune/teleport/a",
+      "description" : "<p>Casts a low power Wave of Force upon arriving, dealing <span class=\"d3-color-green\">80%</span> weapon damage as Physical to all enemies nearby.</p>",
+      "simpleDescription" : "<p>Cast a low power Wave of Force after Teleporting.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Teleport",
+    "icon" : "wizard_teleport",
+    "slug" : "teleport",
+    "requiredLevel" : 22,
+    "tooltipParams" : "skill/wizard/teleport",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Arcane Power<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">16</span> seconds</p><p>Teleport through the ether to the selected location up to <span class=\"d3-color-green\">35</span> yards away.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Arcane Power<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">16</span> seconds</p><p>Teleport instantly to another location.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Molten Impact",
+      "type" : "a",
+      "requiredLevel" : 31,
+      "tooltipParams" : "rune/meteor/a",
+      "description" : "<p>Increase the damage of the meteor impact to <span class=\"d3-color-green\">325%</span> weapon damage as Fire and the molten fire to <span class=\"d3-color-green\">130%</span> weapon damage as Fire over <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Increase the damage of the Meteor impact.</p>"
+    }, {
+      "name" : "Star Pact",
+      "type" : "d",
+      "requiredLevel" : 37,
+      "tooltipParams" : "rune/meteor/d",
+      "description" : "<p>Reduce casting cost to <span class=\"d3-color-green\">42</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Reduce the casting cost of Meteor.</p>"
+    }, {
+      "name" : "Meteor Shower",
+      "type" : "b",
+      "requiredLevel" : 44,
+      "tooltipParams" : "rune/meteor/b",
+      "description" : "<p>Unleash a volley of <span class=\"d3-color-green\">7</span> smaller meteors that each strike for <span class=\"d3-color-green\">100%</span> weapon damage as Fire.</p>",
+      "simpleDescription" : "<p>Unleash a volley of smaller Meteors.</p>"
+    }, {
+      "name" : "Comet",
+      "type" : "c",
+      "requiredLevel" : 50,
+      "tooltipParams" : "rune/meteor/c",
+      "description" : "<p>Transforms the meteor to ice that deals <span class=\"d3-color-green\">300%</span> weapon damage as Cold. The impact site is covered in a freezing mist that deals <span class=\"d3-color-green\">120%</span> weapon damage as Cold and slows the movement of enemies by <span class=\"d3-color-green\">60%</span> over <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Transforms the Meteor to ice. The impact site is covered in a freezing mist that damages enemies and slows their movement.</p>"
+    }, {
+      "name" : "Liquify",
+      "type" : "e",
+      "requiredLevel" : 57,
+      "tooltipParams" : "rune/meteor/e",
+      "description" : "<p>If the initial impact causes Critical Hits, the molten fire duration is increased to <span class=\"d3-color-green\">8</span> seconds.</p>",
+      "simpleDescription" : "<p>If the initial blast causes Critical Hits, the duration of the impact is increased.</p>"
+    } ],
+    "categoryName" : "Arcane",
+    "categorySlug" : "arcane",
+    "name" : "Meteor",
+    "icon" : "wizard_meteor",
+    "slug" : "meteor",
+    "requiredLevel" : 23,
+    "tooltipParams" : "skill/wizard/meteor",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">60</span> Arcane Power</p><p>Summon an immense meteor that plummets from the sky causing <span class=\"d3-color-green\">250%</span> weapon damage as Fire to all enemies it crashes into. The ground it hits is scorched with molten fire that deals <span class=\"d3-color-green\">100%</span> weapon damage as Fire over <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">60</span> Arcane Power</p><p>Unleash a massive meteor that scorches enemies caught in its blast.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Simulacrum",
+      "type" : "c",
+      "requiredLevel" : 31,
+      "tooltipParams" : "rune/mirror-image/c",
+      "description" : "<p>Increases the Life of your images to <span class=\"d3-color-green\">100%</span> of your Life.</p>",
+      "simpleDescription" : "<p>Increase the Life of your Mirror Images.</p>"
+    }, {
+      "name" : "Duplicates",
+      "type" : "b",
+      "requiredLevel" : 37,
+      "tooltipParams" : "rune/mirror-image/b",
+      "description" : "<p>Summon <span class=\"d3-color-green\">5</span> Mirror Images that have <span class=\"d3-color-green\">25%</span> of your Life each.</p>",
+      "simpleDescription" : "<p>Summon <span class=\"d3-color-green\">5</span> Mirror Images that have a percentage of your Life.</p>"
+    }, {
+      "name" : "Mocking Demise",
+      "type" : "e",
+      "requiredLevel" : 43,
+      "tooltipParams" : "rune/mirror-image/e",
+      "description" : "<p>When an image is destroyed it explodes, doing <span class=\"d3-color-green\">45%</span> weapon damage as Physical and has <span class=\"d3-color-green\">50%</span> chance to stun enemies it hits for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>When an Mirror Image is destroyed it explodes, possible Stunning enemies.</p>"
+    }, {
+      "name" : "Extension of Will",
+      "type" : "d",
+      "requiredLevel" : 49,
+      "tooltipParams" : "rune/mirror-image/d",
+      "description" : "<p>The duration of the images is increased to <span class=\"d3-color-green\">10</span> seconds and increases the Life of your images to <span class=\"d3-color-green\">25%</span> of your Life.</p>",
+      "simpleDescription" : "<p>The duration of Mirror Image is increased and each double is given extra Life.</p>"
+    }, {
+      "name" : "Mirror Mimics",
+      "type" : "a",
+      "requiredLevel" : 56,
+      "tooltipParams" : "rune/mirror-image/a",
+      "description" : "<p>Spells the images cast will do <span class=\"d3-color-green\">10%</span> of the damage as your own.</p>",
+      "simpleDescription" : "<p>Spells cast by the Mirror Images deal limited damage to enemies.</p>"
+    } ],
+    "categoryName" : "Mastery",
+    "categorySlug" : "mastery",
+    "name" : "Mirror Image",
+    "icon" : "wizard_mirrorimage",
+    "slug" : "mirror-image",
+    "requiredLevel" : 25,
+    "tooltipParams" : "skill/wizard/mirror-image",
+    "description" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Summon <span class=\"d3-color-green\">2</span> illusionary duplicates of yourself that last for <span class=\"d3-color-green\">7</span> seconds and have <span class=\"d3-color-green\">25%</span> of your Life. The images may cast some of the same spells as you, but those spells deal no damage.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Summon <span class=\"d3-color-green\">2</span> illusions of yourself to distract enemies.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Grasping Chill",
+      "type" : "c",
+      "requiredLevel" : 35,
+      "tooltipParams" : "rune/blizzard/c",
+      "description" : "<p>After the Blizzard ends, cover the ground in a low lying mist for <span class=\"d3-color-green\">3</span> seconds that slows any enemies who enters it.</p>",
+      "simpleDescription" : "<p>After the Blizzard ends, cover the ground in a low lying mist that slows enemies that enter it.</p>"
+    }, {
+      "name" : "Frozen Solid",
+      "type" : "e",
+      "requiredLevel" : 42,
+      "tooltipParams" : "rune/blizzard/e",
+      "description" : "<p>Enemies caught in the storm have a <span class=\"d3-color-green\">20%</span> chance to be frozen for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Enemies caught in the storm have a chance to be frozen.</p>"
+    }, {
+      "name" : "Snowbound",
+      "type" : "d",
+      "requiredLevel" : 47,
+      "tooltipParams" : "rune/blizzard/d",
+      "description" : "<p>Reduce the casting cost to <span class=\"d3-color-green\">30</span> Arcane Power.</p>",
+      "simpleDescription" : "<p>Reduce the casting cost of Blizzard.</p>"
+    }, {
+      "name" : "Stark Winter",
+      "type" : "b",
+      "requiredLevel" : 54,
+      "tooltipParams" : "rune/blizzard/b",
+      "description" : "<p>Increase the size of the Blizzard to cover <span class=\"d3-color-green\">22</span> yards, dealing <span class=\"d3-color-green\">175%</span> weapon damage over <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Increase the area Blizzard affects.</p>"
+    }, {
+      "name" : "Unrelenting Storm",
+      "type" : "a",
+      "requiredLevel" : 60,
+      "tooltipParams" : "rune/blizzard/a",
+      "description" : "<p>Increase the duration of the Blizzard to deal <span class=\"d3-color-green\">233%</span> weapon damage over <span class=\"d3-color-green\">4</span> seconds.</p>",
+      "simpleDescription" : "<p>Increase the duration of the Blizzard.</p>"
+    } ],
+    "categoryName" : "Arcane",
+    "categorySlug" : "arcane",
+    "name" : "Blizzard",
+    "icon" : "wizard_blizzard",
+    "slug" : "blizzard",
+    "requiredLevel" : 27,
+    "tooltipParams" : "skill/wizard/blizzard",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">45</span> Arcane Power</p><p>Call down shards of ice to pelt an area dealing <span class=\"d3-color-green\">175%</span> weapon damage as Cold to all enemies in the area over <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">45</span> Arcane Power</p><p>Unleash a blizzard that damages and slows enemies caught in its grasp.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Sparkflint",
+      "type" : "a",
+      "requiredLevel" : 35,
+      "tooltipParams" : "rune/familiar/a",
+      "description" : "<p>Summons a fiery Familiar that increases damage of all attacks by <span class=\"d3-color-green\">15%</span> while Familiar is active.</p>",
+      "simpleDescription" : "<p>Summons a fiery Familiar that increases damage of all your attacks.</p>"
+    }, {
+      "name" : "Dartling",
+      "type" : "c",
+      "requiredLevel" : 42,
+      "tooltipParams" : "rune/familiar/c",
+      "description" : "<p>Summons a lightning Familiar whose projectiles have a <span class=\"d3-color-green\">100%</span> chance to pierce through enemies.</p>",
+      "simpleDescription" : "<p>Summons a lightning Familiar whose projectiles have a chance to pierce enemies.</p>"
+    }, {
+      "name" : "Ancient Guardian",
+      "type" : "e",
+      "requiredLevel" : 46,
+      "tooltipParams" : "rune/familiar/e",
+      "description" : "<p>Summons a protective Familiar. When you are below <span class=\"d3-color-green\">35%</span> Life the Familiar will fully absorb damage from <span class=\"d3-color-green\">1</span> attack every <span class=\"d3-color-green\">6</span> seconds.</p>",
+      "simpleDescription" : "<p>Summons a protective Familiar. When you are below <span class=\"d3-color-green\">35%</span> Life the Familiar will fully absorb damage you receive.</p>"
+    }, {
+      "name" : "Arcanot",
+      "type" : "d",
+      "requiredLevel" : 51,
+      "tooltipParams" : "rune/familiar/d",
+      "description" : "<p>While the Familiar is active you, regenerate <span class=\"d3-color-green\">2</span> Arcane Power per second.</p>",
+      "simpleDescription" : "<p>While the Familiar is active, you regenerate Arcane Power.</p>"
+    }, {
+      "name" : "Cannoneer",
+      "type" : "b",
+      "requiredLevel" : 57,
+      "tooltipParams" : "rune/familiar/b",
+      "description" : "<p>The Familiar&#39;s projectiles explode on impact dealing <span class=\"d3-color-green\">20%</span> weapon damage as Arcane to all enemies within <span class=\"d3-color-green\">6</span> yards.</p>",
+      "simpleDescription" : "<p>The Familiar&#39;s projectile attacks explode on impact.</p>"
+    } ],
+    "categoryName" : "Conjuration",
+    "categorySlug" : "conjuration",
+    "name" : "Familiar",
+    "icon" : "wizard_familiar",
+    "slug" : "familiar",
+    "requiredLevel" : 27,
+    "tooltipParams" : "skill/wizard/familiar",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Arcane Power</p><p>Summon a companion that will attack your targets for <span class=\"d3-color-green\">20%</span> weapon damage as Arcane. This companion cannot be targeted or damaged by enemies. Pet lasts <span class=\"d3-color-green\">120</span> seconds.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">20</span> Arcane Power</p><p>Summon a mystical companion. Your Familiar is immune to damage and will assist you in combat.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Absorption",
+      "type" : "d",
+      "requiredLevel" : 34,
+      "tooltipParams" : "rune/energy-armor/d",
+      "description" : "<p>You have a chance to gain <span class=\"d3-color-green\">4</span> Arcane Power whenever you are hit by a ranged or melee attack.</p>",
+      "simpleDescription" : "<p>You have a chance to gain Arcane Power whenever you are hit by a ranged or melee attack.</p>"
+    }, {
+      "name" : "Pinpoint Barrier",
+      "type" : "e",
+      "requiredLevel" : 41,
+      "tooltipParams" : "rune/energy-armor/e",
+      "description" : "<p>Also increases your chance to critical hit by <span class=\"d3-color-green\">5%</span> while Energy Armor is active.</p>",
+      "simpleDescription" : "<p>Increase your chance to cause Critical Hits.</p>"
+    }, {
+      "name" : "Energy Tap",
+      "type" : "b",
+      "requiredLevel" : 48,
+      "tooltipParams" : "rune/energy-armor/b",
+      "description" : "<p>Rather than reducing your maximum Arcane Power, it is increased by <span class=\"d3-color-green\">20</span> while Energy Armor is active.</p>",
+      "simpleDescription" : "<p>Energy Armor generates Arcane Power instead of costing it when used.</p>"
+    }, {
+      "name" : "Force Armor",
+      "type" : "c",
+      "requiredLevel" : 54,
+      "tooltipParams" : "rune/energy-armor/c",
+      "description" : "<p>While Energy Armor is active, incoming attacks that would deal more than <span class=\"d3-color-green\">35%</span> of your maximum Life are reduced to deal <span class=\"d3-color-green\">35%</span> of your maximum Life instead.</p>",
+      "simpleDescription" : "<p>While Energy Armor is active, incoming attacks that would deal more than <span class=\"d3-color-green\">35%</span> of your maximum Life are reduced to deal <span class=\"d3-color-green\">35%</span> of your maximum Life instead.</p>"
+    }, {
+      "name" : "Prismatic Armor",
+      "type" : "a",
+      "requiredLevel" : 60,
+      "tooltipParams" : "rune/energy-armor/a",
+      "description" : "<p>Increases all of your resistances by <span class=\"d3-color-green\">40%</span> while Energy Armor is active.</p>",
+      "simpleDescription" : "<p>Increases your ability to Resistance all damage types.</p>"
+    } ],
+    "categoryName" : "Conjuration",
+    "categorySlug" : "conjuration",
+    "name" : "Energy Armor",
+    "icon" : "wizard_energyarmor",
+    "slug" : "energy-armor",
+    "requiredLevel" : 28,
+    "tooltipParams" : "skill/wizard/energy-armor",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power</p><p>Focus your energies, increasing your Armor by <span class=\"d3-color-green\">65%</span> but lowers your maximum Arcane Power by <span class=\"d3-color-green\">20</span>. Lasts <span class=\"d3-color-green\">120</span> seconds.</p><p><span class=\"d3-color-yellow\">This is an Armor spell. Only one Armor spell can be active at a time.</span></p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power</p><p>Increase your Armor at the cost of lowering maximum Arcane Power.</p><p><span class=\"d3-color-yellow\">Only one Armor spell can be active at a time.</span></p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Arcane Destruction",
+      "type" : "e",
+      "requiredLevel" : 36,
+      "tooltipParams" : "rune/archon/e",
+      "description" : "<p>An explosion erupts around you when you transform causing <span class=\"d3-color-green\">450%</span> weapon damage as Arcane to all enemies within <span class=\"d3-color-green\">15</span> yards.</p>",
+      "simpleDescription" : "<p>An explosion erupts around you when you transform.</p>"
+    }, {
+      "name" : "Teleport",
+      "type" : "c",
+      "requiredLevel" : 41,
+      "tooltipParams" : "rune/archon/c",
+      "description" : "<p>Archon form can now cast <span class=\"d3-color-green\">Teleport</span> with a cooldown of <span class=\"d3-color-green\">10</span> seconds.</p>",
+      "simpleDescription" : "<p>Archon form can now cast <span class=\"d3-color-green\">Teleport</span>.</p>"
+    }, {
+      "name" : "Pure Power",
+      "type" : "d",
+      "requiredLevel" : 45,
+      "tooltipParams" : "rune/archon/d",
+      "description" : "<p>Decrease the cooldown of Archon to <span class=\"d3-color-green\">100</span> seconds.</p>",
+      "simpleDescription" : "<p>Decrease the cooldown duration of Archon.</p>"
+    }, {
+      "name" : "Slow Time",
+      "type" : "b",
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/archon/b",
+      "description" : "<p>Archon form can now cast <span class=\"d3-color-green\">Slow Time</span> that lasts for <span class=\"d3-color-green\">8</span> seconds.</p>",
+      "simpleDescription" : "<p>Archon form can now cast <span class=\"d3-color-green\">Slow Time</span>.</p>"
+    }, {
+      "name" : "Improved Archon",
+      "type" : "a",
+      "requiredLevel" : 60,
+      "tooltipParams" : "rune/archon/a",
+      "description" : "<p>Increase damage of all Archon abilities by <span class=\"d3-color-green\">25%</span>.</p>",
+      "simpleDescription" : "<p>Increase damage of all Archon abilities.</p>"
+    } ],
+    "categoryName" : "Mastery",
+    "categorySlug" : "mastery",
+    "name" : "Archon",
+    "icon" : "wizard_archon",
+    "slug" : "archon",
+    "requiredLevel" : 30,
+    "tooltipParams" : "skill/wizard/archon",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">120</span> seconds</p><p>Transform into a being of pure arcane energy for <span class=\"d3-color-green\">15</span> seconds. While in Archon form your normal abilities are replaced by powerful Archon abilities, and your armor and resistances are increased by <span class=\"d3-color-green\">40%</span>. Every enemy killed while in Archon form adds <span class=\"d3-color-green\">1</span> second to the duration of Archon.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Arcane Power<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">120</span> seconds</p><p>Become a being of pure unstoppable energy and gain potent new abilities for <span class=\"d3-color-green\">15</span> seconds.</p>"
+  } ]
+}
