@@ -144,16 +144,20 @@ class DiabloMatch(callbacks.Plugin):
 				c = arg1[0:n]
 				name = arg1[n+1:]
 				if c == "bt":
-					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (battletag)"))
+					users = session.query(User).filter(User.bt.like(name.replace("*", "%")))
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (battletag). " + str(users.count()) + " results."))
 				elif c == "reddit":
-					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (Reddit username)"))
+					users = session.query(User).filter(User.reddit_name.like(name.replace("*", "%")))
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Reddit username). " + str(users.count()) + " results."))
 				elif c == "email":
-					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (email address)"))
+					users = session.query(User).filter(User.email.like(name.replace("*", "%")))
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (email address). " + str(users.count()) + " results."))
 				elif c == "irc":
-					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (IRC services username)"))
 					users = session.query(User).filter(User.irc_name.like(name.replace("*", "%")))
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (IRC services username). " + str(users.count()) + " results."))
 				elif c == "steam":
-					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (Steam username)"))
+					users = session.query(User).filter(User.steam_name.like(name.replace("*", "%")))
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Steam username). " + str(users.count()) + " results."))
 				else:
 					irc.sendMsg(ircmsgs.privmsg(msg.nick, "I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
 			else:
