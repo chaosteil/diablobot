@@ -121,7 +121,6 @@ class DiabloBasic(callbacks.Plugin):
 			return
 
 		tm_to = tm.astimezone(tz_to)
-		print tm_to
 
 		irc.reply(str(tz_to) + ": " + str(tm_to))
 	tz = wrap(tz, ['anything', 'anything', optional('anything')])
