@@ -12,15 +12,11 @@ import supybot.ircutils as ircutils
 import supybot.ircmsgs as ircmsgs
 import supybot.callbacks as callbacks
 
-#from sqlalchemy.orm import mapper, class_mapper
-#from sqlalchemy.orm.exc import UnmappedClassError
-#from sqlalchemy import func
-from sqlalchemy import create_engine, Table, MetaData, func
+from sqlalchemy import create_engine, Table, MetaData, func, or_
 from sqlalchemy.orm import sessionmaker, mapper
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 import time
-#import sqlite3
 import re
 
 class User(object):
@@ -53,7 +49,6 @@ class DiabloMatch(callbacks.Plugin):
 
 	def __init__(self, irc):
 		super(DiabloMatch, self).__init__(irc)
-		#self.conn = sqlite3.connect('plugins/DiabloMatch/db.sqlite3')
 
 	def _get_services_account(self, irc, nick):
 		if nick not in self._whois.keys():
@@ -77,24 +72,23 @@ class DiabloMatch(callbacks.Plugin):
 	def _check_auth(self, irc, msg):
 		a = self._get_services_account(irc, ircutils.toLower(msg.nick))
 		if a[0] == 1:
-			irc.reply("Sorry, my cache was not initialized. Please repeat your previous command.")
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Sorry, my cache was not initialized. Please repeat your previous command."))
 		elif a[0] == 2:
-			irc.reply("Still checking. Try again in a few seconds.")
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Still checking. Try again in a few seconds."))
 		elif a[0] == 3:
-			irc.reply("You're not logged in. Please authenticate with NickServ to use this bot.")
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "You're not logged in. Please authenticate with NickServ to use this bot."))
 		elif a[0] == 4:
-			irc.reply("You were logged in to NickServ as '" + a[1] + "', but your session expired. I've refreshed it; please repeat your previous command.")
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "You were logged in to NickServ as '" + a[1] + "', but your session expired. I've refreshed it; please repeat your previous command."))
 		elif a[0] == 5:
-			irc.reply("You're logged in to NickServ as '" + a[1] + "'.")
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "You're logged in to NickServ as '" + a[1] + "'."))
 			return a[1]
 		else:
-			irc.reply("This can't ever happen. Someone must have divided by zero.")
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "This can't ever happen. Someone must have divided by zero."))
 		return False
 
 	def do330(self, irc, msg): #"logged in as" whois response
 		nick = ircutils.toLower(msg.args[1])
 		account = ircutils.toLower(msg.args[2])
-		print nick + " is logged in as " + account
 		self._whois[nick] = (account, time.time())
 		return
 		nick = ircutils.toLower(msg.args[1])
@@ -114,50 +108,64 @@ class DiabloMatch(callbacks.Plugin):
 		This should describe *how* to use this plugin."""
 		if arg1 == "register":
 			if arg2 == None:
-				irc.reply("Please specify the battletag you wish to register: !bt register <tag>")
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Please specify the battletag you wish to register: !bt register <tag>"))
 			else:
 				if not self._verify_bt(arg2):
-					irc.reply("That's not a proper battletag. Use 'BattleTag#1234' format.")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a proper battletag. Use 'BattleTag#1234' format."))
 					return
 				s = self._check_auth(irc, msg)
 				if s:
-					#TODO update instead of insert, if exists
 					session = Session()
-					user = User()
+					try:
+						user = session.query(User).filter(User.irc_name == s).one()
+					except NoResultFound:	#we want irc_name to be unique, even though it's not a primary key
+						user = User()
 					user.bt = arg2
 					user.irc_name = s
 					session.add(user)
 					session.commit()
 
-					irc.reply("Registered your battletag as " + arg2 + "")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
 				else:
-					irc.reply("Didn't register anything.")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Didn't register anything."))
+		elif arg1 == None:
+			s = self._check_auth(irc, msg)
+			if s:
+				session = Session()
+				user = session.query(User).filter(User.irc_name == s).one()	#only one because irc_name is unique
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Your battletag is " + user.pretty_print()))
 		else:
 			try:
 				n = arg1.index(":")
 			except ValueError:
 				n = 0
+			session = Session()
 			if n != 0:
 				c = arg1[0:n]
 				name = arg1[n+1:]
-				session = Session()
 				if c == "bt":
-					irc.reply("looking up user "+name+" (battletag)")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (battletag)"))
 				elif c == "reddit":
-					irc.reply("looking up user "+name+" (Reddit username)")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (Reddit username)"))
 				elif c == "email":
-					irc.reply("looking up user "+name+" (email address)")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (email address)"))
 				elif c == "irc":
-					irc.reply("looking up user "+name+" (IRC services username)")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (IRC services username)"))
 					users = session.query(User).filter(User.irc_name.like(name.replace("*", "%")))
 				elif c == "steam":
-					irc.reply("looking up user "+name+" (Steam username)")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+name+" (Steam username)"))
 				else:
-					irc.reply("I don't recognize that field. Known fields: bt, reddit, email, irc, steam")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
 			else:
-				irc.reply("looking up user "+arg1+"")
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "looking up user "+arg1+""))
+				users = session.query(User).filter(or_(
+						User.bt.like(arg1.replace("*", "%")),
+						User.reddit_name.like(arg1.replace("*", "%")),
+						User.email.like(arg1.replace("*", "%")),
+						User.irc_name.like(arg1.replace("*", "%")),
+						User.steam_name.like(arg1.replace("*", "%"))))
 			for user in users:
-				irc.reply(user.pretty_print())
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, user.pretty_print()))
 	bt = wrap(bt, [optional('lowered'), optional('lowered')])
 
 	"""
