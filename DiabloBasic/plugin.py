@@ -58,28 +58,6 @@ class DiabloBasic(callbacks.Plugin):
 				irc.reply("I don't have any quotes from " + charname + ". " + self._quotehelp())
 	quote = wrap(quote, [optional('lowered')])
 
-	def skill(self, irc, msg, args, charname):
-		"""takes zero or one arguments
-
-		Returns a random quote from the character specified, or from anyone if no character specified.
-		"""
-		if not charname:
-			irc.reply("here's a quote from a random character")
-		else:
-			irc.reply("here's a quote from "+charname)
-	skill = wrap(skill, [optional('lowered')])
-
-	def item(self, irc, msg, args, charname):
-		"""takes zero or one arguments
-
-		Returns a random quote from the character specified, or from anyone if no character specified.
-		"""
-		if not charname:
-			irc.reply("here's a quote from a random character")
-		else:
-			irc.reply("here's a quote from "+charname)
-	item = wrap(item, [optional('lowered')])
-
 	def _hash_decode(self, h):
 		a = []
 		for f in h:
