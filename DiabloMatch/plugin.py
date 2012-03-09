@@ -168,38 +168,11 @@ class DiabloMatch(callbacks.Plugin):
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, user.pretty_print()))
 	bt = wrap(bt, [optional('lowered'), optional('lowered')])
 
-	"""
-	TODO on any !command, cache the user's whois info
+	#on any channel activity, cache the user's whois info
 	def doPrivmsg(self, irc, msg):
 		if ircmsgs.isCtcp(msg) and not ircmsgs.isAction(msg):
 			return
-		channel = msg.args[0]
-		if irc.isChannel(channel):
-			if ircmsgs.isAction(msg):
-				text = ircmsgs.unAction(msg)
-			else:
-				text = msg.args[1]
-			for url in utils.web.urlRe.findall(text):
-				#http://us.battle.net/d3/en/calculator/monk#WVYjRk!YUa!cZZaYb
-				m = re.search("battle.net/d3/en/calculator/([\\w-]+)#([\\w\\.]+)!([\\w\\.]+)!([\\w\\.]+)", url)
-				if m:
-					sk = []
-					for f in self._hash_decode(m.group(2)):	#skills
-						sk.append(self.skilldata[m.group(1)]["skills"][f])
-					out = self.classes_pretty[m.group(1)] + ": "
-					for (n, f) in enumerate(self._hash_decode(m.group(4))):	#runes
-						if f < 0:
-							out += sk[n]["name"] + " (none)"
-						else:
-							out += sk[n]["name"] + " (" + sk[n]["runes"][f]["name"] + ")"
-						out += ", "
-					out = out[:-2]
-					out += " / "
-					for f in self._hash_decode(m.group(3)):	#traits
-						out += self.skilldata[m.group(1)]["traits"][f]["name"] + ", "
-					out = out[:-2]
-					irc.sendMsg(ircmsgs.privmsg(msg.args[0], out))
-	"""
-
+		if irc.isChannel(msg.args[0]):
+			self._get_services_account(irc, ircutils.toLower(msg.nick))
 
 Class = DiabloMatch
