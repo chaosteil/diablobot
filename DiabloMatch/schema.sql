@@ -8,5 +8,6 @@ CREATE TABLE users (
 	pass TEXT default '',
 	cmt TEXT default '',
 	tz INTEGER default 0,
+	realm TEXT default '',
 	url TEXT default ''
 );
