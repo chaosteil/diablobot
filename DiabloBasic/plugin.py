@@ -48,6 +48,9 @@ class DiabloBasic(callbacks.Plugin):
 		Returns a random quote from the character specified, or from anyone if no character specified.
 		"""
 		if not charname:
+			if random.randrange(0, 999) == 0:	#this won't show up in the list of quote sources. it's a secret!
+				irc.sendMsg(ircmsgs.privmsg(msg.args[0], "Cow: Mooooooo!"))
+				return
 			q = self.quotes[random.choice(self.quotes.keys())]
 			irc.sendMsg(ircmsgs.privmsg(msg.args[0], q["name"] + ": " + random.choice(q["quotes"])))
 		elif charname == "list":
