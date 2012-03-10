@@ -70,13 +70,13 @@ class DiabloMatch(callbacks.Plugin):
 		return re.match(r"\w{1,32}#\d{4,8}$", tag) != None
 
 	def _check_auth(self, irc, msg):
-		a = self._get_services_account(irc, ircutils.toLower(msg.nick))
+		a = self._get_services_account(irc, msg.nick)
 		if a[0] == 1:
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Sorry, my cache was not initialized. Please repeat your previous command."))
 		elif a[0] == 2:
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Still checking. Try again in a few seconds."))
 		elif a[0] == 3:
-			irc.sendMsg(ircmsgs.privmsg(msg.nick, "You're not logged in. Please authenticate with NickServ to use this bot."))
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "You're not logged in. Please authenticate with NickServ so I know who you are."))
 		elif a[0] == 4:
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "You were logged in to NickServ as '" + a[1] + "', but your session expired. I've refreshed it; please repeat your previous command."))
 		elif a[0] == 5:
@@ -87,19 +87,13 @@ class DiabloMatch(callbacks.Plugin):
 		return False
 
 	def do330(self, irc, msg): #"logged in as" whois response
-		nick = ircutils.toLower(msg.args[1])
-		account = ircutils.toLower(msg.args[2])
+		nick = msg.args[1]
+		account = msg.args[2]
 		self._whois[nick] = (account, time.time())
-		return
-		nick = ircutils.toLower(msg.args[1])
-		if (irc, nick) not in self._whois:
-			return
-		else:
-			self._whois[(irc, nick)][-1][msg.command] = msg
 
 	def do318(self, irc, msg):	#end of whois responses
 		#if we get this and didn't get a 330, then the user is not logged in
-		nick = ircutils.toLower(msg.args[1])
+		nick = msg.args[1]
 		if self._whois[nick] == None:
 			self._whois[nick] = -1		#-1 means whois complete and not logged in
 
@@ -117,7 +111,7 @@ class DiabloMatch(callbacks.Plugin):
 				if s:
 					session = Session()
 					try:
-						user = session.query(User).filter(User.irc_name == s).one()
+						user = session.query(User).filter(func.lower(User.irc_name) == func.lower(s)).one()
 					except NoResultFound:	#we want irc_name to be unique, even though it's not a primary key
 						user = User()
 					user.bt = arg2
@@ -132,7 +126,7 @@ class DiabloMatch(callbacks.Plugin):
 			s = self._check_auth(irc, msg)
 			if s:
 				session = Session()
-				user = session.query(User).filter(User.irc_name == s).one()	#only one because irc_name is unique
+				user = session.query(User).filter(func.lower(User.irc_name) == func.lower(s)).one()	#only one because irc_name is unique
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Your battletag is " + user.pretty_print()))
 		else:
 			try:
@@ -144,39 +138,39 @@ class DiabloMatch(callbacks.Plugin):
 				c = arg1[0:n]
 				name = arg1[n+1:]
 				if c == "bt":
-					users = session.query(User).filter(User.bt.like(name.replace("*", "%")))
+					users = session.query(User).filter(func.lower(User.bt).like(func.lower(name.replace("*", "%"))))
 					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (battletag). " + str(users.count()) + " results."))
 				elif c == "reddit":
-					users = session.query(User).filter(User.reddit_name.like(name.replace("*", "%")))
+					users = session.query(User).filter(func.lower(User.reddit_name).like(func.lower(name.replace("*", "%"))))
 					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Reddit username). " + str(users.count()) + " results."))
 				elif c == "email":
-					users = session.query(User).filter(User.email.like(name.replace("*", "%")))
+					users = session.query(User).filter(func.lower(User.email).like(func.lower(name.replace("*", "%"))))
 					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (email address). " + str(users.count()) + " results."))
 				elif c == "irc":
-					users = session.query(User).filter(User.irc_name.like(name.replace("*", "%")))
+					users = session.query(User).filter(func.lower(User.irc_name).like(func.lower(name.replace("*", "%"))))
 					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (IRC services username). " + str(users.count()) + " results."))
 				elif c == "steam":
-					users = session.query(User).filter(User.steam_name.like(name.replace("*", "%")))
+					users = session.query(User).filter(func.lower(User.steam_name).like(func.lower(name.replace("*", "%"))))
 					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Steam username). " + str(users.count()) + " results."))
 				else:
 					irc.sendMsg(ircmsgs.privmsg(msg.nick, "I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
 			else:
 				users = session.query(User).filter(or_(
-						User.bt.like(arg1.replace("*", "%")),
-						User.reddit_name.like(arg1.replace("*", "%")),
-						User.email.like(arg1.replace("*", "%")),
-						User.irc_name.like(arg1.replace("*", "%")),
-						User.steam_name.like(arg1.replace("*", "%"))))
+						func.lower(User.bt).like(func.lower(arg1.replace("*", "%"))),
+						func.lower(User.reddit_name).like(func.lower(arg1.replace("*", "%"))),
+						func.lower(User.email).like(func.lower(arg1.replace("*", "%"))),
+						func.lower(User.irc_name).like(func.lower(arg1.replace("*", "%"))),
+						func.lower(User.steam_name).like(func.lower(arg1.replace("*", "%")))))
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " results."))
 			for user in users:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, user.pretty_print()))
-	bt = wrap(bt, [optional('lowered'), optional('lowered')])
+	bt = wrap(bt, [optional('anything'), optional('anything')])
 
 	#on any channel activity, cache the user's whois info
 	def doPrivmsg(self, irc, msg):
 		if ircmsgs.isCtcp(msg) and not ircmsgs.isAction(msg):
 			return
 		if irc.isChannel(msg.args[0]):
-			self._get_services_account(irc, ircutils.toLower(msg.nick))
+			self._get_services_account(irc, msg.nick)
 
 Class = DiabloMatch
