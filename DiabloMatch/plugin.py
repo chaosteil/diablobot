@@ -18,10 +18,11 @@ from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 import time
 import re
+import pytz
+from datetime import datetime
 
 class User(object):
 	quickfields = [("bt", "Battletag"), ("reddit_name", "Reddit"), ("irc_name", "IRC"), ("steam_name", "Steam")]
-	#bt reddit_name email irc_name steam_name cmt tz realm url
 
 	def __init__(self):
 		pass
@@ -29,15 +30,32 @@ class User(object):
 	def __repr__(self):
 		return "<User('%s')>" % (self.irc_name)
 
-	def pretty_print(self):
+	def pretty_print(self, r=True):
 		out = ""
 		for f in User.quickfields:
 			v = getattr(self, f[0])
 			if v != None and v != 0:
 				out += "" + f[1] + ": " + v + ", "
 		out = out[:-2]
-		if self.realm != None:
+		if r and self.realm != None:
 			out += ", Realm: " + self.realm
+		return out
+
+	def full_print(self):
+		out = []
+		out.append(self.pretty_print(r=False))
+		if self.realm != None:
+			out.append("Realm: " + self.realm)
+		if self.cmt != None:
+			out.append("Comment: " + self.cmt)
+		if self.tz != None:
+			tz_to = pytz.timezone(self.tz)
+			tz_from = pytz.timezone("America/New_York")
+			tm = datetime.now().replace(tzinfo=tz_from)
+			tm_to = tm.astimezone(tz_to)
+			out.append("Local time: " + str(tm_to) + " (" + self.tz + ")")
+		if self.url != None:
+			out.append("URL: " + self.url)
 		return out
 
 #engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3', echo=True)
@@ -172,6 +190,49 @@ class DiabloMatch(callbacks.Plugin):
 			for user in users:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, user.pretty_print()))
 	bt = wrap(bt, [optional('anything'), optional('anything')])
+
+	def btinfo(self, irc, msg, args, arg1):
+		"""Add the help for "@plugin help DiabloMatch" here
+		This should describe *how* to use this plugin."""
+		if arg1 == None:
+			arg1 = "irc:" + self._check_auth(irc, msg)
+		try:
+			n = arg1.index(":")
+		except ValueError:
+			n = 0
+		session = Session()
+		if n != 0:
+			c = arg1[0:n]
+			name = arg1[n+1:]
+			if c == "bt":
+				users = session.query(User).filter(func.lower(User.bt).like(func.lower(name.replace("*", "%"))))
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (battletag). " + str(users.count()) + " results."))
+			elif c == "reddit":
+				users = session.query(User).filter(func.lower(User.reddit_name).like(func.lower(name.replace("*", "%"))))
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Reddit username). " + str(users.count()) + " results."))
+			elif c == "email":
+				users = session.query(User).filter(func.lower(User.email).like(func.lower(name.replace("*", "%"))))
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (email address). " + str(users.count()) + " results."))
+			elif c == "irc":
+				users = session.query(User).filter(func.lower(User.irc_name).like(func.lower(name.replace("*", "%"))))
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (IRC services username). " + str(users.count()) + " results."))
+			elif c == "steam":
+				users = session.query(User).filter(func.lower(User.steam_name).like(func.lower(name.replace("*", "%"))))
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Steam username). " + str(users.count()) + " results."))
+			else:
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
+		else:
+			users = session.query(User).filter(or_(
+					func.lower(User.bt).like(func.lower(arg1.replace("*", "%"))),
+					func.lower(User.reddit_name).like(func.lower(arg1.replace("*", "%"))),
+					func.lower(User.email).like(func.lower(arg1.replace("*", "%"))),
+					func.lower(User.irc_name).like(func.lower(arg1.replace("*", "%"))),
+					func.lower(User.steam_name).like(func.lower(arg1.replace("*", "%")))))
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " results."))
+		for user in users:
+			for line in user.full_print():
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, line))
+	btinfo = wrap(btinfo, [optional('anything')])
 
 	#on any channel activity, cache the user's whois info
 	def doPrivmsg(self, irc, msg):
