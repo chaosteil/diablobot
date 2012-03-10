@@ -71,6 +71,7 @@ class DiabloMatch(callbacks.Plugin):
 	"""Add the help for "@plugin help DiabloMatch" here
 	This should describe *how* to use this plugin."""
 	_whois = {}
+	bt_regexp = re.compile(r"\w{1,32}#\d{4,8}$")
 
 	def __init__(self, irc):
 		super(DiabloMatch, self).__init__(irc)
@@ -90,9 +91,6 @@ class DiabloMatch(callbacks.Plugin):
 				return (4, self._whois[nick][0])
 			else:
 				return (5, self._whois[nick][0])
-
-	def _verify_bt(self, tag):
-		return re.match(r"\w{1,32}#\d{4,8}$", tag) != None
 
 	def _check_auth(self, irc, msg):
 		a = self._get_services_account(irc, msg.nick)
@@ -136,8 +134,11 @@ class DiabloMatch(callbacks.Plugin):
 			s = self._check_auth(irc, msg)
 			if s:
 				session = Session()
-				user = session.query(User).filter(func.lower(User.irc_name) == func.lower(s)).one()	#only one because irc_name is unique
-				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Your battletag is " + user.pretty_print()))
+				try:
+					user = session.query(User).filter(func.lower(User.irc_name) == func.lower(s)).one()	#only one because irc_name is unique
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Your battletag is " + user.pretty_print()))
+				except NoResultFound:
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, "No battletag found"))
 		else:
 			try:
 				n = arg1.index(":")
@@ -235,7 +236,7 @@ class DiabloMatch(callbacks.Plugin):
 		if not ircname:
 			return
 		if arg1 == "bt":
-			if not self._verify_bt(arg2):
+			if DiabloMatch.bt_regexp.match(arg2) == None:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a proper battletag. Use 'BattleTag#1234' format."))
 				return
 			session = Session()
