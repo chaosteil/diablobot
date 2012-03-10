@@ -7,7 +7,7 @@ CREATE TABLE users (
 	steam_name TEXT default NULL,
 	pass TEXT default NULL,
 	cmt TEXT default NULL,
-	tz INTEGER default 0,
+	tz TEXT default NULL,
 	realm TEXT default NULL,
 	url TEXT default NULL
 );
