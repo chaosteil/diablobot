@@ -128,7 +128,8 @@ class DiabloBasic(callbacks.Plugin):
 
 		tm_to = tm.astimezone(tz_to)
 
-		irc.reply(str(tz_to) + ": " + str(tm_to))
+		irc.reply(tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
+
 	tz = wrap(tz, ['anything', 'anything', optional('anything')])
 
 Class = DiabloBasic

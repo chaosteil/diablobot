@@ -22,7 +22,7 @@ import pytz
 from datetime import datetime
 
 class User(object):
-	quickfields = [("bt", "Battletag"), ("reddit_name", "Reddit"), ("irc_name", "IRC"), ("steam_name", "Steam")]
+	quickfields = [("irc_name", "IRC"), ("reddit_name", "Reddit"), ("steam_name", "Steam"), ("bt", "Battletag")]
 
 	def __init__(self):
 		pass
@@ -53,7 +53,7 @@ class User(object):
 			tz_from = pytz.timezone("America/New_York")
 			tm = datetime.now().replace(tzinfo=tz_from)
 			tm_to = tm.astimezone(tz_to)
-			out.append("Local time: " + str(tm_to) + " (" + self.tz + ")")
+			out.append("Local time: " + tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
 		if self.url != None:
 			out.append("URL: " + self.url)
 		return out
