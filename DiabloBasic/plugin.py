@@ -36,12 +36,17 @@ class DiabloBasic(callbacks.Plugin):
 		f = open("plugins/DiabloBasic/data/quotes.json", "r")
 		self.quotes = json.load(f)
 		f.close()
+		DiabloBasic._qcount = 0
+		for c in self.quotes.values():
+			DiabloBasic._qcount += len(c["quotes"])
 
 	def _quotehelp(self):
 		out = "Available quote sources: "
-		for f in self.quotes.keys():
+		for f in sorted(self.quotes.keys()):
 			out += f + ", "
-		return out[:-2]
+		out = out[:-2]
+		out += " (" + str(DiabloBasic._qcount) + " quotes)"
+		return out
 
 	def quote(self, irc, msg, args, charname):
 		"""[\37character]
