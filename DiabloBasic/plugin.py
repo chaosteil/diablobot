@@ -107,10 +107,10 @@ class DiabloBasic(callbacks.Plugin):
 			if not arg3:
 				tz_to = pytz.timezone(arg1)
 				if arg2 == "now":
-					tz_from = pytz.timezone("US/Eastern")
+					tz_from = pytz.timezone("America/New_York")
 					tm = datetime.now().replace(tzinfo=tz_from)
 				else:
-					tz_from = pytz.timezone("US/Pacific")
+					tz_from = pytz.timezone("America/Los_Angeles")
 					tm = parse(arg2).replace(tzinfo=tz_from)
 			else:
 				try:
