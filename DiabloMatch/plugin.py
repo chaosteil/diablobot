@@ -131,24 +131,7 @@ class DiabloMatch(callbacks.Plugin):
 			if arg2 == None:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Please specify the battletag you wish to register: !bt register BattleTag#1234"))
 			else:
-				if not self._verify_bt(arg2):
-					irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a proper battletag. Use 'BattleTag#1234' format."))
-					return
-				s = self._check_auth(irc, msg)
-				if s:
-					session = Session()
-					try:
-						user = session.query(User).filter(func.lower(User.irc_name) == func.lower(s)).one()
-					except NoResultFound:	#we want irc_name to be unique, even though it's not a primary key
-						user = User()
-					user.bt = arg2
-					user.irc_name = s
-					session.add(user)
-					session.commit()
-
-					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
-				else:
-					irc.sendMsg(ircmsgs.privmsg(msg.nick, "Didn't register anything."))
+				self.btset(irc, msg, ["bt", arg2])
 		elif arg1 == None:
 			s = self._check_auth(irc, msg)
 			if s:
@@ -237,6 +220,34 @@ class DiabloMatch(callbacks.Plugin):
 			for line in user.full_print():
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, line))
 	btinfo = wrap(btinfo, [optional('anything')])
+
+	def btset(self, irc, msg, args, arg1, arg2):
+		"""\37field \37value
+		Modifies your user info.
+		"""
+		if arg2 == None:	#not in []
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Here's a list of available fields: (not yet implemented)."))
+			return
+		if arg1 == "bt":
+			if not self._verify_bt(arg2):
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a proper battletag. Use 'BattleTag#1234' format."))
+				return
+			s = self._check_auth(irc, msg)
+			if s:
+				session = Session()
+				try:
+					user = session.query(User).filter(func.lower(User.irc_name) == func.lower(s)).one()
+				except NoResultFound:	#we want irc_name to be unique, even though it's not a primary key
+					user = User()
+				user.bt = arg2
+				user.irc_name = s
+				session.add(user)
+				session.commit()
+
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
+			else:
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Didn't register anything."))
+	btset = wrap(btset, ['anything', optional('text')])
 
 	#on any channel activity, cache the user's whois info
 	def doPrivmsg(self, irc, msg):
