@@ -1,13 +1,13 @@
 CREATE TABLE users (
 	id INTEGER PRIMARY KEY,
-	bt TEXT default '',
-	reddit_name TEXT default '' UNIQUE,
-	email TEXT default '',
-	irc_name TEXT default '' UNIQUE,
-	steam_name TEXT default '',
-	pass TEXT default '',
-	cmt TEXT default '',
+	bt TEXT default NULL,
+	reddit_name TEXT default NULL UNIQUE,
+	email TEXT default NULL,
+	irc_name TEXT default NULL UNIQUE,
+	steam_name TEXT default NULL,
+	pass TEXT default NULL,
+	cmt TEXT default NULL,
 	tz INTEGER default 0,
-	realm TEXT default '',
-	url TEXT default ''
+	realm TEXT default NULL,
+	url TEXT default NULL
 );
