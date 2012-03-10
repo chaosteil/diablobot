@@ -20,6 +20,9 @@ import time
 import re
 
 class User(object):
+	quickfields = [("bt", "Battletag"), ("reddit_name", "Reddit"), ("irc_name", "IRC"), ("steam_name", "Steam")]
+	#bt reddit_name email irc_name steam_name cmt tz realm url
+
 	def __init__(self):
 		pass
 
@@ -28,10 +31,14 @@ class User(object):
 
 	def pretty_print(self):
 		out = ""
-		for k, v in self.__dict__.iteritems():
-			if k not in ["id", "_sa_instance_state"] and v != u"" and v != 0:
-				out += str(k) + ": " + str(v) + ", "
-		return out[:-2]
+		for f in User.quickfields:
+			v = getattr(self, f[0])
+			if v != None and v != 0:
+				out += "" + f[1] + ": " + v + ", "
+		out = out[:-2]
+		if self.realm != None:
+			out += ", Realm: " + self.realm
+		return out
 
 #engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3', echo=True)
 engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3')
