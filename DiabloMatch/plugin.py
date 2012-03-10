@@ -223,30 +223,47 @@ class DiabloMatch(callbacks.Plugin):
 
 	def btset(self, irc, msg, args, arg1, arg2):
 		"""\37field \37value
-		Modifies your user info.
+		Modifies your user info. Invoke btset list to see a list of available fields
 		"""
-		if arg2 == None:	#not in []
+		if arg1.lower() == "list":	#or arg1.lower() not in []:
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Here's a list of available fields: (not yet implemented)."))
+			return
+		if arg2 == None:
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Here's the current value of " + arg1 + ": (not yet implemented)."))
+			return
+		ircname = self._check_auth(irc, msg)
+		if not ircname:
 			return
 		if arg1 == "bt":
 			if not self._verify_bt(arg2):
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a proper battletag. Use 'BattleTag#1234' format."))
 				return
-			s = self._check_auth(irc, msg)
-			if s:
-				session = Session()
-				try:
-					user = session.query(User).filter(func.lower(User.irc_name) == func.lower(s)).one()
-				except NoResultFound:	#we want irc_name to be unique, even though it's not a primary key
-					user = User()
-				user.bt = arg2
-				user.irc_name = s
-				session.add(user)
-				session.commit()
+			session = Session()
+			try:
+				user = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
+			except NoResultFound:	#we want irc_name to be unique, even though it's not a primary key
+				user = User()
+				user.irc_name = ircname
+			user.bt = arg2
+			session.add(user)
+			session.commit()
 
-				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
-			else:
-				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Didn't register anything."))
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
+		elif arg1 == "tz":
+			try:
+				pytz.timezone(arg2)
+			except pytz.UnknownTimeZoneError as e:
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Unknown time zone " + str(e)))
+				return
+			session = Session()
+			try:
+				user = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
+			except NoResultFound:
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Register first."))
+				return
+			user.tz = arg2
+			session.add(user)
+			session.commit()
 	btset = wrap(btset, ['anything', optional('text')])
 
 	#on any channel activity, cache the user's whois info
