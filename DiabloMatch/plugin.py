@@ -123,8 +123,10 @@ class DiabloMatch(callbacks.Plugin):
 			self._whois[nick] = -1		#-1 means whois complete and not logged in
 
 	def bt(self, irc, msg, args, arg1, arg2):
-		"""Add the help for "@plugin help DiabloMatch" here
-		This should describe *how* to use this plugin."""
+		"""[\37user]  |  register \37Battletag#1234
+		Shows user information. \37user may be prefixed with irc:, steam:, reddit:, email:, or bt:, and may contain the wildcard *. If \37user is not supplied, your own information will be displayed.
+		If the first argument is register, the given \37battletag will be registered as yours.
+		"""
 		if arg1 == "register":
 			if arg2 == None:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Please specify the battletag you wish to register: !bt register BattleTag#1234"))
@@ -192,8 +194,9 @@ class DiabloMatch(callbacks.Plugin):
 	bt = wrap(bt, [optional('anything'), optional('anything')])
 
 	def btinfo(self, irc, msg, args, arg1):
-		"""Add the help for "@plugin help DiabloMatch" here
-		This should describe *how* to use this plugin."""
+		"""[\37user]
+		Shows detailed user information. \37user may be prefixed with irc:, steam:, reddit:, email:, or bt:, and may contain the wildcard *. If \37user is not supplied, your own information will be displayed.
+		"""
 		if arg1 == None:
 			arg1 = "irc:" + self._check_auth(irc, msg)
 		try:
@@ -230,6 +233,7 @@ class DiabloMatch(callbacks.Plugin):
 					func.lower(User.steam_name).like(func.lower(arg1.replace("*", "%")))))
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " results."))
 		for user in users:
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "User details. Fields marked with a * are unvalidated."))
 			for line in user.full_print():
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, line))
 	btinfo = wrap(btinfo, [optional('anything')])

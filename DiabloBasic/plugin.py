@@ -44,8 +44,8 @@ class DiabloBasic(callbacks.Plugin):
 		return out[:-2]
 
 	def quote(self, irc, msg, args, charname):
-		"""
-		Returns a random quote from the character specified, or from anyone if no character specified.
+		"""[\37character]
+		Returns a random quote from \37character, or from a random character if none is specified.
 		"""
 		if not charname:
 			if random.randrange(0, 999) == 0:	#this won't show up in the list of quote sources. it's a secret!
@@ -99,9 +99,9 @@ class DiabloBasic(callbacks.Plugin):
 					irc.sendMsg(ircmsgs.privmsg(msg.args[0], out))
 
 	def tz(self, irc, msg, args, arg1, arg2, arg3):
-		"""!tz [<source timezone>] <your timezone> <time to convert>  |  <your timezone> now
+		"""[\37source_timezone] \37your_timezone \37time_to_convert  |  \37your_timezone now
 
-		Converts the given time from source timezone to your timezone. If no source timezone is specified, Pacific US (Blizzard) time is used. If 'now' is used as the time to covert, the source timezone is assumed to be US/Pacific (Blizzard).
+		Converts the given time from \37source_timezone to \37your_timezone. If no source timezone is specified, Pacific US (Blizzard) time is used. If 'now' is used as the time to covert, the source timezone is assumed to be US/Pacific (Blizzard).
 		"""
 		try:
 			if not arg3:
