@@ -15,7 +15,7 @@ import supybot.callbacks as callbacks
 import re
 import json
 import random
-import pytz
+import pytz, time
 from datetime import datetime
 from dateutil.parser import parse
 import urllib2
@@ -44,6 +44,7 @@ class DiabloBasic(callbacks.Plugin):
 		DiabloBasic._qcount = 0
 		for c in self.quotes.values():
 			DiabloBasic._qcount += len(c["quotes"])
+		DiabloBasic._dstream_time = 0
 
 	def _quotehelp(self):
 		out = "Available quote sources: "
@@ -164,12 +165,14 @@ class DiabloBasic(callbacks.Plugin):
 
 		Displays whether \37stream is currently live. If no stream is specified, it lists the status of all the regular streams.
 		"""
-		data = urllib2.urlopen("http://api.justin.tv/api/stream/list.json")
-		j = json.load(data)
+		if time.time() - DiabloBasic._dstream_time > 600:	#ten minutes
+			j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json")
+			DiabloBasic._dstream_json = json.load(j)
+			DiabloBasic._dstream_time = time.time()
 
 		irc.reply("Active Diablo streams on twitch.tv or justin.tv:")
 		i = 0
-		for c in j:
+		for c in DiabloBasic._dstream_json:
 			if i >= 6:
 				irc.reply("And more!")
 				return
