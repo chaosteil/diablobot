@@ -54,6 +54,16 @@ class DiabloBasic(callbacks.Plugin):
 		out += " (" + str(DiabloBasic._qcount) + " quotes)"
 		return out
 
+
+	def _quote_print(self, irc, msg, string):
+		l = len(string)
+		if l > 433:
+			string = [string[i:i+432] for i in range(0, l, 432)] #432 is the max line length on espernet
+			for p in out:
+				irc.sendMsg(ircmsgs.privmsg(msg.args[0], p))
+		else:
+			irc.sendMsg(ircmsgs.privmsg(msg.args[0], string))
+
 	def quote(self, irc, msg, args, charname):
 		"""[\37character]
 		Returns a random quote from \37character, or from a random character if none is specified.
@@ -63,19 +73,12 @@ class DiabloBasic(callbacks.Plugin):
 				irc.sendMsg(ircmsgs.privmsg(msg.args[0], "Cow: Mooooooo!"))
 				return
 			q = self.quotes[random.choice(self.quotes.keys())]
-			irc.sendMsg(ircmsgs.privmsg(msg.args[0], q["name"] + ": " + random.choice(q["quotes"])))
+			self._quote_print(irc, msg, q["name"] + ": " + random.choice(q["quotes"]))
 		elif charname == "list":
 			irc.reply(self._quotehelp())
 		else:
 			try:
-				out = self.quotes[charname]["name"] + ": " + random.choice(self.quotes[charname]["quotes"])
-				l = len(out)
-				if l > 433:
-					out = [out[i:i+432] for i in range(0, l, 432)] #432 is the max line length on espernet
-					for p in out:
-						irc.sendMsg(ircmsgs.privmsg(msg.args[0], p))
-				else:
-						irc.sendMsg(ircmsgs.privmsg(msg.args[0], out))
+				self._quote_print(irc, msg, self.quotes[charname]["name"] + ": " + random.choice(self.quotes[charname]["quotes"]))
 			except KeyError:
 				irc.reply("I don't have any quotes from " + charname + ". " + self._quotehelp())
 	quote = wrap(quote, [optional('lowered')])
