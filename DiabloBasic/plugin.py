@@ -128,8 +128,11 @@ class DiabloBasic(callbacks.Plugin):
 					tz_from = pytz.timezone("America/New_York")
 					tm = datetime.now().replace(tzinfo=tz_from)
 				else:
-					tz_from = pytz.timezone("America/Los_Angeles")
-					tm = parse(arg2).replace(tzinfo=tz_from)
+					try:
+						tz_from = pytz.timezone("America/Los_Angeles")
+						tm = parse(arg2).replace(tzinfo=tz_from)
+					except ValueError:
+						return
 			else:
 				try:
 					tz_from = pytz.timezone(arg1)
@@ -138,7 +141,7 @@ class DiabloBasic(callbacks.Plugin):
 				except ValueError:
 					return
 		except pytz.UnknownTimeZoneError as e:
-			if str(e) == "'Blizzard'":
+			if str(e).lower() == "'blizzard'":
 				irc.reply("Blizzard time: Soon")
 			else:
 				irc.reply("Unknown time zone " + str(e))
