@@ -180,18 +180,18 @@ class DiabloBasic(callbacks.Plugin):
 				j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?channel="+f)
 				DiabloBasic._dstream_regulars_json[f] = json.load(j)
 
-		irc.reply("Active Diablo streams on twitch.tv or justin.tv:")
+		irc.sendMsg(ircmsgs.privmsg(msg.nick, "Active Diablo streams on twitch.tv or justin.tv:"))
 		for f in DiabloBasic._dstream_regulars_json.values():
 			if f != [] and DiabloBasic._dstream_re.match(f[0]["meta_game"]):
-				irc.reply(f[0]["channel"]["channel_url"] + " (" + f[0]["meta_game"] + ")")
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, f[0]["channel"]["channel_url"] + " (" + f[0]["meta_game"] + ")"))
 		i = 0
 		for c in DiabloBasic._dstream_json:
 			if i >= 8:
-				irc.reply("And more!")
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "And more!"))
 				return
 			try:
 				if DiabloBasic._dstream_re.match(c["meta_game"]):
-					irc.reply(c["channel"]["channel_url"] + " (" + c["meta_game"] + ")")
+					irc.sendMsg(ircmsgs.privmsg(msg.nick, c["channel"]["channel_url"] + " (" + c["meta_game"] + ")"))
 					i += 1
 			except:
 				pass
