@@ -261,7 +261,7 @@ class DiabloMatch(callbacks.Plugin):
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
 		elif arg1 in ["tz", "timezone"]:
 			session = Session()
-			user = self._check_registered(irc, msg, session, ircname):
+			user = self._check_registered(irc, msg, session, ircname)
 			if user == None:
 				return
 			try:
@@ -278,7 +278,7 @@ class DiabloMatch(callbacks.Plugin):
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a valid realm. Valid realms: " + ", ".join(DiabloMatch._realms) + "."))
 				return
 			session = Session()
-			user = self._check_registered(irc, msg, session, ircname):
+			user = self._check_registered(irc, msg, session, ircname)
 			if user == None:
 				return
 			user.realm = arg2
