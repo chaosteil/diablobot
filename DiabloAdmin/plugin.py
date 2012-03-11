@@ -26,8 +26,9 @@ class DiabloAdmin(callbacks.Plugin):
 		if not ircdb.checkCapability(msg.prefix, "owner"):
 			irc.reply("Insufficient permissions.")
 			return
-		os.system("cd /home/diablobot/dbot; git pull")
-		irc.reply("Done.")
+		os.chdir("/home/diablobot/dbot/plugins")
+		ret = os.system("git pull")
+		irc.reply("Done. git exit status = " + str(ret))
 	gitpull = wrap(gitpull, [optional('lowered')])
 
 
