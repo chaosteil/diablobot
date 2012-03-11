@@ -157,7 +157,7 @@ class DiabloBasic(callbacks.Plugin):
             return
         tm_to = tm.astimezone(tz_to)
         irc.reply(tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
-    tz = wrap(tz, ['anything', 'anything', optional('anything')])
+    tz = wrap(tz, ['anything', 'anything', optional('text')])
 
     def rules(self, irc, msg, args):
         """
