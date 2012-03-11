@@ -56,7 +56,7 @@ class DiabloBasic(callbacks.Plugin):
 
     def _quotehelp(self):
         return 'Available quote sources: %s (%d quotes)' % \
-                (', '.join(sorted(self.quotes.keys()), DiabloBasic._qcount))
+                (', '.join(sorted(self.quotes.keys())), DiabloBasic._qcount)
 
     def _quote_print(self, irc, msg, string):
         l = len(string)
