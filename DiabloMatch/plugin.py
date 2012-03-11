@@ -228,8 +228,8 @@ class DiabloMatch(callbacks.Plugin):
 			user = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
 		except NoResultFound:
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Register a battletag first."))
-			return False
-		return True
+			return None
+		return user
 
 	def btset(self, irc, msg, args, arg1, arg2):
 		"""\37field \37value
@@ -259,9 +259,10 @@ class DiabloMatch(callbacks.Plugin):
 			session.commit()
 
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
-		elif arg1 == "tz":
+		elif arg1 in ["tz", "timezone"]:
 			session = Session()
-			if not self._check_registered(irc, msg, session, ircname):
+			user = self._check_registered(irc, msg, session, ircname):
+			if user == None:
 				return
 			try:
 				pytz.timezone(arg2)
@@ -273,11 +274,12 @@ class DiabloMatch(callbacks.Plugin):
 			session.add(user)
 			session.commit()
 		elif arg1 == "realm":
-			if arg2 not in DiabloMatch._realms: #TODO when the actual list is made available
+			if arg2 not in DiabloMatch._realms:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a valid realm. Valid realms: " + ", ".join(DiabloMatch._realms) + "."))
 				return
 			session = Session()
-			if not self._check_registered(irc, msg, session, ircname):
+			user = self._check_registered(irc, msg, session, ircname):
+			if user == None:
 				return
 			user.realm = arg2
 			session.add(user)
