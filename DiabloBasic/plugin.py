@@ -42,7 +42,7 @@ class DiabloBasic(callbacks.Plugin):
         # Load class data
         for c in self.classes:
             with open("plugins/DiabloBasic/data/"+c+".json", "r") as f:
-            self.skilldata[c] = json.load(f)
+                self.skilldata[c] = json.load(f)
 
         # Load quotes
         with open("plugins/DiabloBasic/data/quotes.json", "r") as f:
