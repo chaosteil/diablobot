@@ -130,11 +130,28 @@ class DiabloBasic(callbacks.Plugin):
 			else:
 				irc.reply("Unknown time zone " + str(e))
 			return
-
 		tm_to = tm.astimezone(tz_to)
-
 		irc.reply(tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
-
 	tz = wrap(tz, ['anything', 'anything', optional('anything')])
+
+	def rules(self, irc, msg, args):
+		"""
+		Shows the rules for #diablo and #bazaar.
+		"""
+		rs = [
+			"All topics are allowed, but Diablo should always take precedence.",
+			"Be polite and respectful of others.",
+			"Do not disrupt conversation with spam or bot activities.",
+			"Use #bazaar for item trading discussion.",
+			"Do not sell, offer to sell, or seek sale of beta keys.",
+			"Follow instructions given by the channel operators.",
+			"Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
+			"See http://bit.ly/wEkLDN for more details."
+		]
+		irc.sendMsg(ircmsgs.privmsg(msg.nick, "Channel rules for #diablo and #bazaar"))
+		for n, v in enumerate(rs):
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, str(n+1) + ". " + v))
+		irc.sendMsg(ircmsgs.privmsg(msg.nick, "End of rules"))
+	#rules = wrap(rules)
 
 Class = DiabloBasic
