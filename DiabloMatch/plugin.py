@@ -255,6 +255,7 @@ class DiabloMatch(callbacks.Plugin):
 				pytz.timezone(arg2)
 			except pytz.UnknownTimeZoneError as e:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Unknown time zone " + str(e)))
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Find a list of valid time zones at http://en.wikipedia.org/wiki/List_of_tz_database_time_zones"))
 				return
 			session = Session()
 			try:
