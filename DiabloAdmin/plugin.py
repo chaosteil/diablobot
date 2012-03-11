@@ -29,6 +29,7 @@ class DiabloAdmin(callbacks.Plugin):
         os.chdir("/home/diablobot/dbot/plugins")
         ret = os.system("git pull")
         irc.reply("Done. git exit status = " + str(ret))
+        os.chdir("/home/diablobot/dbot/")
     gitpull = wrap(gitpull, [optional('lowered')])
 
 
