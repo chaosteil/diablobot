@@ -29,8 +29,7 @@ class DiabloBasic(callbacks.Plugin):
 	classes_pretty = {"barbarian":"Barbarian", "demon-hunter":"Demon Hunter", "monk":"Monk", "witch-doctor":"Witch Doctor", "wizard":"Wizard", "follower":"Follower"}
 	skilldata = {}
 	#_regular_streams = ["rdiablo", "DrZealotTV"]
-	#_dstream_re = re.compile("diablo", re.IGNORECASE)
-	_dstream_re = re.compile("starcraft", re.IGNORECASE)
+	_dstream_re = re.compile("diablo", re.IGNORECASE)
 
 	def __init__(self, irc):
 		super(DiabloBasic, self).__init__(irc)
@@ -68,7 +67,14 @@ class DiabloBasic(callbacks.Plugin):
 			irc.reply(self._quotehelp())
 		else:
 			try:
-				irc.sendMsg(ircmsgs.privmsg(msg.args[0], self.quotes[charname]["name"] + ": " + random.choice(self.quotes[charname]["quotes"])))
+				out = self.quotes[charname]["name"] + ": " + random.choice(self.quotes[charname]["quotes"])
+				l = len(out)
+				if l > 433:
+					out = [out[i:i+432] for i in range(0, l, 432)] #432 is the max line length on espernet
+					for p in out:
+						irc.sendMsg(ircmsgs.privmsg(msg.args[0], p))
+				else:
+						irc.sendMsg(ircmsgs.privmsg(msg.args[0], out))
 			except KeyError:
 				irc.reply("I don't have any quotes from " + charname + ". " + self._quotehelp())
 	quote = wrap(quote, [optional('lowered')])
