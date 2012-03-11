@@ -275,4 +275,9 @@ class DiabloMatch(callbacks.Plugin):
 		if irc.isChannel(msg.args[0]):
 			self._get_services_account(irc, msg.nick)
 
+	#on any channel join, cache the user's whois info
+	def doJoin(self, irc, msg):
+		if irc.isChannel(msg.args[0]):
+			self._get_services_account(irc, msg.nick)
+
 Class = DiabloMatch
