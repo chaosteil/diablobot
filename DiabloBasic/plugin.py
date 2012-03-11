@@ -59,13 +59,13 @@ class DiabloBasic(callbacks.Plugin):
                 (', '.join(sorted(self.quotes.keys()), DiabloBasic._qcount))
 
     def _quote_print(self, irc, msg, string):
-    l = len(string)
-    if l > 433:
-        string = [string[i:i+432] for i in range(0, l, 432)] #432 is the max line length on espernet
-        for p in out:
-            irc.sendMsg(ircmsgs.privmsg(msg.args[0], p))
-    else:
-        irc.sendMsg(ircmsgs.privmsg(msg.args[0], string))
+        l = len(string)
+        if l > 433:
+            string = [string[i:i+432] for i in range(0, l, 432)] #432 is the max line length on espernet
+            for p in out:
+                irc.sendMsg(ircmsgs.privmsg(msg.args[0], p))
+        else:
+            irc.sendMsg(ircmsgs.privmsg(msg.args[0], string))
 
     def quote(self, irc, msg, args, charname):
         """[\37character]
