@@ -95,9 +95,9 @@ class DiabloMatch(callbacks.Plugin):
 	def _check_auth(self, irc, msg):
 		a = self._get_services_account(irc, msg.nick)
 		if a[0] == 1:
-			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Sorry, my cache was not initialized. Please repeat your previous command."))
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Sorry, I needed to verify your identity. Please repeat your previous command."))
 		elif a[0] == 2:
-			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Still checking. Try again in a few seconds."))
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Still verifying your identity. Try again in a few seconds."))
 		elif a[0] == 3:
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "You're not logged in. Please authenticate with NickServ so I know who you are."))
 		elif a[0] == 4:
