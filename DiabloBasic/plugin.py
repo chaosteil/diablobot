@@ -195,7 +195,7 @@ class DiabloBasic(callbacks.Plugin):
         irc.sendMsg(ircmsgs.privmsg(msg.nick, "Active Diablo streams on twitch.tv or justin.tv:"))
         for f in DiabloBasic._dstream_regulars_json.values():
             if f != [] and DiabloBasic._dstream_re.match(f[0]["meta_game"]):
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, f[0]["channel"]["channel_url"] + " (" + f[0]["meta_game"] + ")"))
+                irc.sendMsg(ircmsgs.privmsg(msg.nick, f[0]["channel"]["channel_url"] + " - " + f[0]["title"] + " (" + f[0]["meta_game"] + ")"))
         i = 0
         for c in DiabloBasic._dstream_json:
             if i >= 8:
@@ -203,7 +203,7 @@ class DiabloBasic(callbacks.Plugin):
                 return
             try:
                 if DiabloBasic._dstream_re.match(c["meta_game"]):
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, c["channel"]["channel_url"] + " (" + c["meta_game"] + ")"))
+                    irc.sendMsg(ircmsgs.privmsg(msg.nick, c["channel"]["channel_url"] + " - " + c["title"] + " (" + c["meta_game"] + ")"))
                     i += 1
             except:
                 pass
