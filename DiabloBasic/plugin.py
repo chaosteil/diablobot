@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ###
 # Copyright (c) 2012, listen2, Chaosteil
 # All rights reserved.
@@ -150,7 +151,7 @@ class DiabloBasic(callbacks.Plugin):
                     return
         except pytz.UnknownTimeZoneError as e:
             if str(e).lower() == "'blizzard'":
-                irc.reply("Blizzard time: Soon (tm)")
+                irc.reply("Blizzard time: Soon™")
             else:
                 irc.reply("Unknown time zone " + str(e))
             return
