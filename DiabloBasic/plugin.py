@@ -18,14 +18,19 @@ import random
 import pytz
 from datetime import datetime
 from dateutil.parser import parse
+import urllib2
 
 class DiabloBasic(callbacks.Plugin):
 	"""Add the help for "@plugin help DiabloBasic" here
 	This should describe *how* to use this plugin."""
+	#threaded = True
 	hash_base = "aZbYcXdWeVfUgThSiRjQkPlOmNnMoLpKqJrIsHtGuFvEwDxCyBzA0123456789+/"
 	classes = ["barbarian", "demon-hunter", "monk", "witch-doctor", "wizard", "follower"]
 	classes_pretty = {"barbarian":"Barbarian", "demon-hunter":"Demon Hunter", "monk":"Monk", "witch-doctor":"Witch Doctor", "wizard":"Wizard", "follower":"Follower"}
 	skilldata = {}
+	#_regular_streams = ["rdiablo", "DrZealotTV"]
+	#_dstream_re = re.compile("diablo", re.IGNORECASE)
+	_dstream_re = re.compile("starcraft", re.IGNORECASE)
 
 	def __init__(self, irc):
 		super(DiabloBasic, self).__init__(irc)
@@ -153,5 +158,28 @@ class DiabloBasic(callbacks.Plugin):
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, str(n+1) + ". " + v))
 		irc.sendMsg(ircmsgs.privmsg(msg.nick, "End of rules"))
 	#rules = wrap(rules)
+
+	def streams(self, irc, msg, args, sname):
+		"""[<\37stream> ...]
+
+		Displays whether \37stream is currently live. If no stream is specified, it lists the status of all the regular streams.
+		"""
+		data = urllib2.urlopen("http://api.justin.tv/api/stream/list.json")
+		j = json.load(data)
+
+		irc.reply("Active Diablo streams on twitch.tv or justin.tv:")
+		i = 0
+		for c in j:
+			if i >= 6:
+				irc.reply("And more!")
+				return
+			try:
+				if DiabloBasic._dstream_re.match(c["meta_game"]):
+					irc.reply(c["channel"]["channel_url"] + " (" + c["meta_game"] + ")")
+					i += 1
+			except:
+				pass
+
+	streams = wrap(streams, [optional('anything')])
 
 Class = DiabloBasic
