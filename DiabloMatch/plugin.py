@@ -273,6 +273,7 @@ class DiabloMatch(callbacks.Plugin):
 			user.tz = arg2
 			session.add(user)
 			session.commit()
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set timezone to " + arg2 + "."))
 		elif arg1 == "realm":
 			if arg2 not in DiabloMatch._realms:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a valid realm. Valid realms: " + ", ".join(DiabloMatch._realms) + "."))
@@ -284,6 +285,7 @@ class DiabloMatch(callbacks.Plugin):
 			user.realm = arg2
 			session.add(user)
 			session.commit()
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set realm to " + arg2 + "."))
 			
 	btset = wrap(btset, ['anything', optional('text')])
 
