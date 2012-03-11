@@ -28,7 +28,8 @@ class DiabloBasic(callbacks.Plugin):
 	classes = ["barbarian", "demon-hunter", "monk", "witch-doctor", "wizard", "follower"]
 	classes_pretty = {"barbarian":"Barbarian", "demon-hunter":"Demon Hunter", "monk":"Monk", "witch-doctor":"Witch Doctor", "wizard":"Wizard", "follower":"Follower"}
 	skilldata = {}
-	#_regular_streams = ["rdiablo", "DrZealotTV"]
+	_dstream_regulars = ["rdiablo", "DrZealotTV"]
+	_dstream_regulars_json = {}
 	_dstream_re = re.compile("diablo", re.IGNORECASE)
 
 	def __init__(self, irc):
@@ -172,14 +173,20 @@ class DiabloBasic(callbacks.Plugin):
 		Displays whether \37stream is currently live. If no stream is specified, it lists the status of all the regular streams.
 		"""
 		if time.time() - DiabloBasic._dstream_time > 600:	#ten minutes
-			j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json")
-			DiabloBasic._dstream_json = json.load(j)
 			DiabloBasic._dstream_time = time.time()
+			j = urllib2.urlopen("http://api.justin.tv/api/stream/search/diablo.json?limit=8")
+			DiabloBasic._dstream_json = json.load(j)
+			for f in DiabloBasic._dstream_regulars:
+				j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?channel="+f)
+				DiabloBasic._dstream_regulars_json[f] = json.load(j)
 
 		irc.reply("Active Diablo streams on twitch.tv or justin.tv:")
+		for f in DiabloBasic._dstream_regulars_json.values():
+			if f != [] and DiabloBasic._dstream_re.match(f[0]["meta_game"]):
+				irc.reply(f[0]["channel"]["channel_url"] + " (" + f[0]["meta_game"] + ")")
 		i = 0
 		for c in DiabloBasic._dstream_json:
-			if i >= 6:
+			if i >= 8:
 				irc.reply("And more!")
 				return
 			try:
