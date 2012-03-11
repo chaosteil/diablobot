@@ -286,6 +286,15 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set realm to " + arg2 + "."))
+        elif arg1 in ["steam", "steam_name"]:
+            session = Session()
+            user = self._check_registered(irc, msg, session, ircname)
+            if user == None:
+                return
+            user.steam_name = arg2
+            session.add(user)
+            session.commit()
+            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set steam_name to " + arg2 + "."))
             
     btset = wrap(btset, ['anything', optional('text')])
 
