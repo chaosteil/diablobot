@@ -72,6 +72,7 @@ class DiabloMatch(callbacks.Plugin):
 	This should describe *how* to use this plugin."""
 	_whois = {}
 	bt_regexp = re.compile(r"\w{1,32}#\d{4,8}$")
+	_realms = ["useast", "uswest", "europe", "asia"] #TODO when the actual list is made available
 
 	def __init__(self, irc):
 		super(DiabloMatch, self).__init__(irc)
@@ -222,6 +223,14 @@ class DiabloMatch(callbacks.Plugin):
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, line))
 	btinfo = wrap(btinfo, [optional('anything')])
 
+	def _check_registered(self, irc, msg, session, ircname):
+		try:
+			user = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
+		except NoResultFound:
+			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Register a battletag first."))
+			return False
+		return True
+
 	def btset(self, irc, msg, args, arg1, arg2):
 		"""\37field \37value
 		Modifies your user info. Invoke btset list to see a list of available fields
@@ -251,21 +260,29 @@ class DiabloMatch(callbacks.Plugin):
 
 			irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
 		elif arg1 == "tz":
+			session = Session()
+			if not self._check_registered(irc, msg, session, ircname):
+				return
 			try:
 				pytz.timezone(arg2)
 			except pytz.UnknownTimeZoneError as e:
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Unknown time zone " + str(e)))
 				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Find a list of valid time zones at http://en.wikipedia.org/wiki/List_of_tz_database_time_zones"))
 				return
-			session = Session()
-			try:
-				user = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
-			except NoResultFound:
-				irc.sendMsg(ircmsgs.privmsg(msg.nick, "Register first."))
-				return
 			user.tz = arg2
 			session.add(user)
 			session.commit()
+		elif arg1 == "realm":
+			if arg2 not in DiabloMatch._realms: #TODO when the actual list is made available
+				irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a valid realm. Valid realms: " + ", ".join(DiabloMatch._realms) + "."))
+				return
+			session = Session()
+			if not self._check_registered(irc, msg, session, ircname):
+				return
+			user.realm = arg2
+			session.add(user)
+			session.commit()
+			
 	btset = wrap(btset, ['anything', optional('text')])
 
 	#on any channel activity, cache the user's whois info
