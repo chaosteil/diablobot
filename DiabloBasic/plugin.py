@@ -73,7 +73,7 @@ class DiabloBasic(callbacks.Plugin):
         DiabloBasic._dstream_time = 0
 
     def _quotehelp(self):
-        return 'Available quote sources: %s (%d quotes)' %
+        return 'Available quote sources: %s (%d quotes)' % \
                 (', '.join(sorted(self.quotes.keys())), self.quote_count)
 
     def printQuote(self, irc, name, message):
