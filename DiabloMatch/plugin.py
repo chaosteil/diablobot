@@ -151,19 +151,19 @@ class DiabloMatch(callbacks.Plugin):
                 name = arg1[n+1:]
                 if c == "bt":
                     users = session.query(User).filter(func.lower(User.bt).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (battletag). " + str(users.count()) + " results."))
+                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (battletag). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
                 elif c == "reddit":
                     users = session.query(User).filter(func.lower(User.reddit_name).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Reddit username). " + str(users.count()) + " results."))
+                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Reddit username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
                 elif c == "email":
                     users = session.query(User).filter(func.lower(User.email).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (email address). " + str(users.count()) + " results."))
+                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (email address). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") +  ". Use !btinfo <user> for details."))
                 elif c == "irc":
                     users = session.query(User).filter(func.lower(User.irc_name).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (IRC services username). " + str(users.count()) + " results."))
+                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (IRC services username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
                 elif c == "steam":
                     users = session.query(User).filter(func.lower(User.steam_name).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Steam username). " + str(users.count()) + " results."))
+                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Steam username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
                 else:
                     irc.sendMsg(ircmsgs.privmsg(msg.nick, "I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
             else:
@@ -173,7 +173,7 @@ class DiabloMatch(callbacks.Plugin):
                         func.lower(User.email).like(func.lower(arg1.replace("*", "%"))),
                         func.lower(User.irc_name).like(func.lower(arg1.replace("*", "%"))),
                         func.lower(User.steam_name).like(func.lower(arg1.replace("*", "%")))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " results."))
+                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
             for user in users:
                 irc.sendMsg(ircmsgs.privmsg(msg.nick, user.pretty_print()))
     bt = wrap(bt, [optional('anything'), optional('anything')])
@@ -194,19 +194,19 @@ class DiabloMatch(callbacks.Plugin):
             name = arg1[n+1:]
             if c == "bt":
                 users = session.query(User).filter(func.lower(User.bt).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (battletag). " + str(users.count()) + " results."))
+                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (battletag). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
             elif c == "reddit":
                 users = session.query(User).filter(func.lower(User.reddit_name).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Reddit username). " + str(users.count()) + " results."))
+                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Reddit username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
             elif c == "email":
                 users = session.query(User).filter(func.lower(User.email).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (email address). " + str(users.count()) + " results."))
+                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (email address). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
             elif c == "irc":
                 users = session.query(User).filter(func.lower(User.irc_name).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (IRC services username). " + str(users.count()) + " results."))
+                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (IRC services username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
             elif c == "steam":
                 users = session.query(User).filter(func.lower(User.steam_name).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Steam username). " + str(users.count()) + " results."))
+                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Steam username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
             else:
                 irc.sendMsg(ircmsgs.privmsg(msg.nick, "I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
         else:
@@ -216,7 +216,7 @@ class DiabloMatch(callbacks.Plugin):
                     func.lower(User.email).like(func.lower(arg1.replace("*", "%"))),
                     func.lower(User.irc_name).like(func.lower(arg1.replace("*", "%"))),
                     func.lower(User.steam_name).like(func.lower(arg1.replace("*", "%")))))
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " results."))
+            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
         for user in users:
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "User details. Fields marked with a * are unvalidated."))
             for line in user.full_print():
