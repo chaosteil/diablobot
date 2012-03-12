@@ -98,18 +98,18 @@ class DiabloMatch(callbacks.Plugin):
     def _check_auth(self, irc, msg):
         a = self._get_services_account(irc, msg.nick)
         if a[0] == 1:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Sorry, I needed to verify your identity. Please repeat your previous command."))
+            irc.reply("Sorry, I needed to verify your identity. Please repeat your previous command.", private=True)
         elif a[0] == 2:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Still verifying your identity. Try again in a few seconds."))
+            irc.reply("Still verifying your identity. Try again in a few seconds.", private=True)
         elif a[0] == 3:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "You're not logged in. Please authenticate with NickServ so I know who you are."))
+            irc.reply("You're not logged in. Please authenticate with NickServ so I know who you are.", private=True)
         elif a[0] == 4:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "You were logged in to NickServ as '" + a[1] + "', but your session expired. I've refreshed it; please repeat your previous command."))
+            irc.reply("You were logged in to NickServ as '" + a[1] + "', but your session expired. I've refreshed it; please repeat your previous command.", private=True)
         elif a[0] == 5:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "You're logged in to NickServ as '" + a[1] + "'."))
+            irc.reply("You're logged in to NickServ as '" + a[1] + "'.", private=True)
             return a[1]
         else:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "This can't ever happen. Someone must have divided by zero."))
+            irc.reply("This can't ever happen. Someone must have divided by zero.", private=True)
         return False
 
     def do330(self, irc, msg): #"logged in as" whois response
@@ -130,7 +130,7 @@ class DiabloMatch(callbacks.Plugin):
         """
         if arg1 == "register":
             if arg2 == None:
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Please specify the battletag you wish to register: !bt register BattleTag#1234"))
+                irc.reply("Please specify the battletag you wish to register: !bt register BattleTag#1234", private=True)
             else:
                 self.btset(irc, msg, ["bt", arg2])
         elif arg1 == None:
@@ -139,9 +139,9 @@ class DiabloMatch(callbacks.Plugin):
                 session = Session()
                 try:
                     user = session.query(User).filter(func.lower(User.irc_name) == func.lower(s)).one()    #only one because irc_name is unique
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Your battletag is " + user.pretty_print()))
+                    irc.reply("Your battletag is " + user.pretty_print(), private=True)
                 except NoResultFound:
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "No battletag found"))
+                    irc.reply("No battletag found", private=True)
         else:
             try:
                 n = arg1.index(":")
@@ -153,21 +153,21 @@ class DiabloMatch(callbacks.Plugin):
                 name = arg1[n+1:]
                 if c == "bt":
                     users = session.query(User).filter(func.lower(User.bt).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (battletag). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
+                    irc.reply("Looking up user "+name+" (battletag). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
                 elif c == "reddit":
                     users = session.query(User).filter(func.lower(User.reddit_name).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Reddit username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
+                    irc.reply("Looking up user "+name+" (Reddit username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
                 elif c == "email":
                     users = session.query(User).filter(func.lower(User.email).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (email address). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") +  ". Use !btinfo <user> for details."))
+                    irc.reply("Looking up user "+name+" (email address). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") +  ". Use !btinfo <user> for details.", private=True)
                 elif c == "irc":
                     users = session.query(User).filter(func.lower(User.irc_name).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (IRC services username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
+                    irc.reply("Looking up user "+name+" (IRC services username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
                 elif c == "steam":
                     users = session.query(User).filter(func.lower(User.steam_name).like(func.lower(name.replace("*", "%"))))
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Steam username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
+                    irc.reply("Looking up user "+name+" (Steam username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
                 else:
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, "I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
+                    irc.reply("I don't recognize that field. Known fields: bt, reddit, email, irc, steam", private=True)
             else:
                 users = session.query(User).filter(or_(
                         func.lower(User.bt).like(func.lower(arg1.replace("*", "%"))),
@@ -175,9 +175,9 @@ class DiabloMatch(callbacks.Plugin):
                         func.lower(User.email).like(func.lower(arg1.replace("*", "%"))),
                         func.lower(User.irc_name).like(func.lower(arg1.replace("*", "%"))),
                         func.lower(User.steam_name).like(func.lower(arg1.replace("*", "%")))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details."))
+                irc.reply("Looking up user "+arg1+". " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
             for user in users:
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, user.pretty_print()))
+                irc.reply(user.pretty_print(), private=True)
     bt = wrap(bt, [optional('anything'), optional('anything')])
 
     def btinfo(self, irc, msg, args, arg1):
@@ -196,21 +196,21 @@ class DiabloMatch(callbacks.Plugin):
             name = arg1[n+1:]
             if c == "bt":
                 users = session.query(User).filter(func.lower(User.bt).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (battletag). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
+                irc.reply("Looking up user "+name+" (battletag). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
             elif c == "reddit":
                 users = session.query(User).filter(func.lower(User.reddit_name).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Reddit username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
+                irc.reply("Looking up user "+name+" (Reddit username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
             elif c == "email":
                 users = session.query(User).filter(func.lower(User.email).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (email address). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
+                irc.reply("Looking up user "+name+" (email address). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
             elif c == "irc":
                 users = session.query(User).filter(func.lower(User.irc_name).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (IRC services username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
+                irc.reply("Looking up user "+name+" (IRC services username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
             elif c == "steam":
                 users = session.query(User).filter(func.lower(User.steam_name).like(func.lower(name.replace("*", "%"))))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+name+" (Steam username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
+                irc.reply("Looking up user "+name+" (Steam username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
             else:
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
+                irc.reply("I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
         else:
             users = session.query(User).filter(or_(
                     func.lower(User.bt).like(func.lower(arg1.replace("*", "%"))),
@@ -218,18 +218,18 @@ class DiabloMatch(callbacks.Plugin):
                     func.lower(User.email).like(func.lower(arg1.replace("*", "%"))),
                     func.lower(User.irc_name).like(func.lower(arg1.replace("*", "%"))),
                     func.lower(User.steam_name).like(func.lower(arg1.replace("*", "%")))))
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Looking up user "+arg1+". " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + "."))
+            irc.reply("Looking up user "+arg1+". " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
         for user in users:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "User details. Fields marked with a * are unvalidated."))
+            irc.reply("User details. Fields marked with a * are unvalidated.", private=True)
             for line in user.full_print():
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, line))
+                irc.reply(line, private=True)
     btinfo = wrap(btinfo, [optional('anything')])
 
     def _check_registered(self, irc, msg, session, ircname):
         try:
             user = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
         except NoResultFound:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Register a battletag first."))
+            irc.reply("Register a battletag first.", private=True)
             return None
         return user
 
@@ -243,17 +243,17 @@ class DiabloMatch(callbacks.Plugin):
         except:
             pass
         if arg1.lower() == "list":    #or arg1.lower() not in []:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Available fields: bt/battletag, reddit_name, email, irc_name, steam_name, password, comment, tz/timezone, realm, url"))
+            irc.reply("Available fields: bt/battletag, reddit_name, email, irc_name, steam_name, password, comment, tz/timezone, realm, url", private=True)
             return
         if arg2 == None:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Here's the current value of " + arg1 + ": (not yet implemented)."))
+            irc.reply("Here's the current value of " + arg1 + ": (not yet implemented).", private=True)
             return
         ircname = self._check_auth(irc, msg)
         if not ircname:
             return
         if arg1.lower() in ["bt", "battletag"]:
             if DiabloMatch.bt_regexp.match(arg2) == None:
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a proper battletag. Use 'BattleTag#1234' format."))
+                irc.reply("That's not a proper battletag. Use 'BattleTag#1234' format.", private=True)
                 return
             session = Session()
             try:
@@ -265,7 +265,7 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
 
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
+            irc.reply("Registered your battletag as " + arg2 + "", private=True)
         elif arg1.lower() in ["tz", "timezone"]:
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
@@ -274,16 +274,16 @@ class DiabloMatch(callbacks.Plugin):
             try:
                 pytz.timezone(arg2)
             except pytz.UnknownTimeZoneError as e:
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Unknown time zone " + str(e)))
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "Find a list of valid time zones at http://en.wikipedia.org/wiki/List_of_tz_database_time_zones"))
+                irc.reply("Unknown time zone " + str(e), private=True)
+                irc.reply("Find a list of valid time zones at http://en.wikipedia.org/wiki/List_of_tz_database_time_zones", private=True)
                 return
             user.tz = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set timezone to " + arg2 + "."))
+            irc.reply("Set timezone to " + arg2 + ".", private=True)
         elif arg1.lower() == "realm":
             if arg2 not in DiabloMatch._realms:
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a valid realm. Valid realms: " + ", ".join(DiabloMatch._realms) + "."))
+                irc.reply("That's not a valid realm. Valid realms: " + ", ".join(DiabloMatch._realms) + ".", private=True)
                 return
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
@@ -292,7 +292,7 @@ class DiabloMatch(callbacks.Plugin):
             user.realm = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set realm to " + arg2 + "."))
+            irc.reply("Set realm to " + arg2 + ".", private=True)
         elif arg1.lower() in ["steam", "steam_name"]:
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
@@ -301,7 +301,7 @@ class DiabloMatch(callbacks.Plugin):
             user.steam_name = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set steam_name to " + arg2 + "."))
+            irc.reply("Set steam_name to " + arg2 + ".", private=True)
         elif arg1.lower() == "password":
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
@@ -312,7 +312,7 @@ class DiabloMatch(callbacks.Plugin):
             user.password = expression.null() if arg2 == "" else hasher.hexdigest()
             session.add(user)
             session.commit()
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set password."))
+            irc.reply("Set password.", private=True)
         elif arg1.lower() == "email":
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
@@ -321,7 +321,7 @@ class DiabloMatch(callbacks.Plugin):
             user.email = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set email address to " + arg2 + "."))
+            irc.reply("Set email address to " + arg2 + ".", private=True)
         elif arg1.lower() == "comment":
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
@@ -330,7 +330,7 @@ class DiabloMatch(callbacks.Plugin):
             user.cmt = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set comment to " + arg2 + "."))
+            irc.reply("Set comment to " + arg2 + ".", private=True)
         elif arg1.lower() == "url":
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
@@ -339,7 +339,7 @@ class DiabloMatch(callbacks.Plugin):
             user.url = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set URL to " + arg2 + "."))
+            irc.reply("Set URL to " + arg2 + ".", private=True)
     btset = wrap(btset, ['anything', optional('text')])
 
     #on any channel activity, cache the user's whois info

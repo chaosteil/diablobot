@@ -59,14 +59,14 @@ class DiabloBasic(callbacks.Plugin):
         return 'Available quote sources: %s (%d quotes)' % \
                 (', '.join(sorted(self.quotes.keys())), DiabloBasic._qcount)
 
-    def _quote_print(self, irc, msg, string):
+    def _quote_print(self, irc, string):
         l = len(string)
         if l > 433:
             string = [string[i:i+432] for i in range(0, l, 432)] #432 is the max line length on espernet
             for p in out:
-                irc.sendMsg(ircmsgs.privmsg(msg.args[0], p))
+                irc.reply(p, prefixNick=False)
         else:
-            irc.sendMsg(ircmsgs.privmsg(msg.args[0], string))
+            irc.reply(string, prefixNick=False)
 
     def quote(self, irc, msg, args, charname):
         """[\37character]
@@ -74,16 +74,15 @@ class DiabloBasic(callbacks.Plugin):
         """
         if not charname:
             if random.randrange(0, 999) == 0:    #this won't show up in the list of quote sources. it's a secret!
-                irc.sendMsg(ircmsgs.privmsg(msg.args[0], "Cow: Mooooooo!"))
+                irc.reply("Cow: Mooooooo!", prefixNick=False)
                 return
             q = self.quotes[random.choice(self.quotes.keys())]
-            self._quote_print(irc, msg, q["name"] + ": " + random.choice(q["quotes"]))
-            irc.sendMsg(ircmsgs.privmsg(msg.args[0], q["name"] + ": " + random.choice(q["quotes"])))
+            self._quote_print(irc, q["name"] + ": " + random.choice(q["quotes"]))
         elif charname == "list":
             irc.reply(self._quotehelp())
         else:
             try:
-                self._quote_print(irc, msg, self.quotes[charname]["name"] + ": " + random.choice(self.quotes[charname]["quotes"]))
+                self._quote_print(irc, self.quotes[charname]["name"] + ": " + random.choice(self.quotes[charname]["quotes"]))
             except KeyError:
                 irc.reply("I don't have any quotes from %s. To get a full list"
                           "of the quotes, enter !quote list" % charname)
@@ -123,7 +122,7 @@ class DiabloBasic(callbacks.Plugin):
                     for f in self._hash_decode(m.group(3)):    #traits
                         out += self.skilldata[m.group(1)]["traits"][f]["name"] + ", "
                     out = out[:-2]
-                    irc.sendMsg(ircmsgs.privmsg(msg.args[0], out))
+                    irc.reply(out, prefixNick=False)
 
     def tz(self, irc, msg, args, arg1, arg2, arg3):
         """[\37source_timezone] \37your_timezone \37time_to_convert  |  \37your_timezone now
@@ -173,10 +172,10 @@ class DiabloBasic(callbacks.Plugin):
             "Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
             "See http://bit.ly/wEkLDN for more details."
         ]
-        irc.sendMsg(ircmsgs.privmsg(msg.nick, "Channel rules for #diablo and #bazaar"))
+        irc.reply("Channel rules for #diablo and #bazaar", private=True)
         for n, v in enumerate(rs):
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "%d. %s" % (n+1, v)))
-        irc.sendMsg(ircmsgs.privmsg(msg.nick, "End of rules"))
+            irc.reply("%d. %s" % (n+1, v), private=True)
+        irc.reply("End of rules", private=True)
     #rules = wrap(rules)
 
     def streams(self, irc, msg, args, sname):
@@ -192,18 +191,18 @@ class DiabloBasic(callbacks.Plugin):
                 j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?channel="+f)
                 DiabloBasic._dstream_regulars_json[f] = json.load(j)
 
-        irc.sendMsg(ircmsgs.privmsg(msg.nick, "Active Diablo streams on twitch.tv or justin.tv:"))
+        irc.reply("Active Diablo streams on twitch.tv or justin.tv:", private=True)
         for f in DiabloBasic._dstream_regulars_json.values():
             if f != [] and DiabloBasic._dstream_re.match(f[0]["meta_game"]):
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, f[0]["channel"]["channel_url"] + " - " + f[0]["title"] + " (" + f[0]["meta_game"] + ")"))
+                irc.reply(f[0]["channel"]["channel_url"] + " - " + f[0]["title"] + " (" + f[0]["meta_game"] + ")", private=True)
         i = 0
         for c in DiabloBasic._dstream_json:
             if i >= 8:
-                irc.sendMsg(ircmsgs.privmsg(msg.nick, "And more!"))
+                irc.reply("And more!", private=True)
                 return
             try:
                 if DiabloBasic._dstream_re.match(c["meta_game"]):
-                    irc.sendMsg(ircmsgs.privmsg(msg.nick, c["channel"]["channel_url"] + " - " + c["title"] + " (" + c["meta_game"] + ")"))
+                    irc.reply(c["channel"]["channel_url"] + " - " + c["title"] + " (" + c["meta_game"] + ")", private=True)
                     i += 1
             except:
                 pass
