@@ -73,6 +73,7 @@ class DiabloMatch(callbacks.Plugin):
     _whois = {}
     bt_regexp = re.compile(r"\w{1,32}#\d{4,8}$")
     _realms = ["useast", "uswest", "europe", "asia"] #TODO when the actual list is made available
+    _color_regexp = re.compile("(?:(?:\d{1,2}(?:,\d{1,2})?)?|||)")
 
     def __init__(self, irc):
         super(DiabloMatch, self).__init__(irc)
@@ -235,6 +236,11 @@ class DiabloMatch(callbacks.Plugin):
         """\37field \37value
         Modifies your user info. Invoke btset list to see a list of available fields
         """
+        try:
+            arg1 = DiabloMatch._color_regexp.sub("", arg1)
+            arg2 = DiabloMatch._color_regexp.sub("", arg2)
+        except:
+            pass
         if arg1.lower() == "list":    #or arg1.lower() not in []:
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Available fields: bt/battletag, reddit_name, email, irc_name, steam_name, password, comment, tz/timezone, realm, url"))
             return
