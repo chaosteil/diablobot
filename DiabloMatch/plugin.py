@@ -23,7 +23,12 @@ from datetime import datetime
 import hashlib
 
 class User(object):
-    quickfields = [("irc_name", "IRC"), ("reddit_name", "Reddit"), ("steam_name", "Steam*"), ("bt", "Battletag*")]
+    quickfields = [
+        ("irc_name", "IRC"),
+        ("reddit_name", "Reddit"),
+        ("steam_name", "Steam*"),
+        ("bt", "Battletag*")
+    ]
 
     def __init__(self):
         pass
@@ -67,167 +72,201 @@ meta.bind = engine
 user_table = Table('users', meta, autoload=True)
 mapper(User, user_table)
 
-
 class DiabloMatch(callbacks.Plugin):
     """Add the help for "@plugin help DiabloMatch" here
     This should describe *how* to use this plugin."""
-    _whois = {}
-    bt_regexp = re.compile(r"\w{1,32}#\d{4,8}$")
-    _realms = ["useast", "uswest", "europe", "asia"] #TODO when the actual list is made available
+
+    # TODO fix when the actual list is made available
+    _realms = [
+        "useast",
+        "uswest",
+        "europe",
+        "asia"
+    ]
+
+    _bt_regexp    = re.compile(r"\w{1,32}#\d{4,8}$")
     _color_regexp = re.compile("(?:(?:\d{1,2}(?:,\d{1,2})?)?|||)")
 
     def __init__(self, irc):
         super(DiabloMatch, self).__init__(irc)
 
+        self.whois = {}
+
     def _get_services_account(self, irc, nick):
-        if nick not in self._whois.keys():
+        # Is nick in Whois?
+        if nick not in self.whois.keys():
             irc.queueMsg(ircmsgs.whois(nick, nick))
-            self._whois[nick] = None    #None means whois in process
+            self.whois[nick] = None    #None means whois in process
             return (1, )
-        elif self._whois[nick] == None:
+        
+        # Whois in progress
+        elif self.whois[nick] == None:
             return (2, )
-        elif self._whois[nick] == -1:
+
+        # User not authenticated with NickServ
+        elif self.whois[nick] == -1:
             return (3, )
-        else:    #user was authed in the past
-            if time.time() - self._whois[nick][1] > 36000:    #ten hours
+
+        # User authenticated some time ago
+        else:    
+            # Ten hours since auth, we refresh the auth
+            if time.time() - self.whois[nick][1] > 36000:
                 irc.queueMsg(ircmsgs.whois(nick, nick))
-                return (4, self._whois[nick][0])
+                return (4, self.whois[nick][0])
+
+            # User logged in
             else:
-                return (5, self._whois[nick][0])
+                return (5, self.whois[nick][0])
 
     def _check_auth(self, irc, msg):
         a = self._get_services_account(irc, msg.nick)
         if a[0] == 1:
-            irc.reply("Sorry, I needed to verify your identity. Please repeat your previous command.", private=True)
+            irc.reply("Sorry, I needed to verify your identity. "
+                      "Please repeat your previous command.", private=True)
         elif a[0] == 2:
-            irc.reply("Still verifying your identity. Try again in a few seconds.", private=True)
+            irc.reply("Still verifying your identity. "
+                      "Try again in a few seconds.", private=True)
         elif a[0] == 3:
-            irc.reply("You're not logged in. Please authenticate with NickServ so I know who you are.", private=True)
+            irc.reply("You're not logged in. Please authenticate with "
+                      "NickServ so I know who you are.", private=True)
         elif a[0] == 4:
-            irc.reply("You were logged in to NickServ as '" + a[1] + "', but your session expired. I've refreshed it; please repeat your previous command.", private=True)
+            irc.reply("You were logged in to NickServ as '%s', but your "
+                      "last session expired. Please repeat your previous "
+                      "command." % a[1], private=True)
         elif a[0] == 5:
-            irc.reply("You're logged in to NickServ as '" + a[1] + "'.", private=True)
+            irc.reply("You're logged in to NickServ as '%s'." % a[1],
+                      private=True)
             return a[1]
         else:
-            irc.reply("This can't ever happen. Someone must have divided by zero.", private=True)
+            irc.reply("This can't ever happen. "
+                      "Someone must have divided by zero.", private=True)
         return False
 
-    def do330(self, irc, msg): #"logged in as" whois response
+    # "Logged in as" WHOIS response
+    def do330(self, irc, msg):
         nick = msg.args[1]
         account = msg.args[2]
-        self._whois[nick] = (account, time.time())
+        self.whois[nick] = (account, time.time())
 
-    def do318(self, irc, msg):    #end of whois responses
-        #if we get this and didn't get a 330, then the user is not logged in
+    # End of WHOIS responses
+    def do318(self, irc, msg):
+        # If we get this and didn't get a 330, then the user is not logged in
         nick = msg.args[1]
-        if self._whois[nick] == None:
-            self._whois[nick] = -1        #-1 means whois complete and not logged in
+        if self.whois[nick] == None:
+            self.whois[nick] = -1 #-1 means whois complete and not logged in
+
+    def _btRegister(self, irc, msg, battletag):
+        if battletag:
+            self.btset(irc, msg, ["bt", battletag])
+        else:
+            irc.reply("Please specify the battletag you wish to register: "
+                      "!bt register BattleTag#1234", private=True)
+
+    def _findBtUsers(self, irc, name, typename):
+        session = Session()
+
+        datatypes_pretty = {
+            "bt":      (User.bt, "BattleTag"),
+            "reddit":  (User.reddit_name, "Reddit Username"),
+            "email":   (User.email, "Email Address"),
+            "irc":     (User.irc_name, "IRC Services Username"),
+            "steam":   (User.steam_name, "Steam Username")
+        }
+
+        # A small helper closure
+        def show_result(datatype, count):
+            irc.reply("Looking up user %s (%s). %d result%s. "
+                      "Use !btinfo <user> for details." %
+                      (name, datatype , count,
+                       "s" if not users.count() == 1 else ""),
+                     private=True)
+
+        if typename in datatypes_pretty.keys():
+            users = session.query(User).filter(
+                func.lower(datatypes_pretty[typename][0]).like(
+                    func.lower(name.replace("*", "%"))))
+            show_result(name, datatypes_pretty[typename][1], users.count())
+
+        elif typename == None:
+            users = session.query(User).filter(or_(
+                    func.lower(User.bt).like(
+                        func.lower(arg1.replace("*", "%"))),
+                    func.lower(User.reddit_name).like(
+                        func.lower(arg1.replace("*", "%"))),
+                    func.lower(User.email).like(
+                        func.lower(arg1.replace("*", "%"))),
+                    func.lower(User.irc_name).like(
+                        func.lower(arg1.replace("*", "%"))),
+                    func.lower(User.steam_name).like(
+                        func.lower(arg1.replace("*", "%")))))
+            show_result(name, "All fields", users.count())
+
+        else:
+            irc.reply("I don't recognize that field. Known fields: "
+                      "bt, reddit, email, irc, steam",
+                      private=True)
+            users = []
+
+        return users
 
     def bt(self, irc, msg, args, arg1, arg2):
         """[\37user]  |  register \37Battletag#1234
         Shows user information. \37user may be prefixed with irc:, steam:, reddit:, email:, or bt:, and may contain the wildcard *. If \37user is not supplied, your own information will be displayed.
         If the first argument is register, the given \37battletag will be registered as yours.
         """
+
         if arg1 == "register":
-            if arg2 == None:
-                irc.reply("Please specify the battletag you wish to register: !bt register BattleTag#1234", private=True)
-            else:
-                self.btset(irc, msg, ["bt", arg2])
+            self._btRegister(irc, msg, arg2)
         elif arg1 == None:
             s = self._check_auth(irc, msg)
             if s:
                 session = Session()
                 try:
-                    user = session.query(User).filter(func.lower(User.irc_name) == func.lower(s)).one()    #only one because irc_name is unique
-                    irc.reply("Your battletag is " + user.pretty_print(), private=True)
+                    # We pick one user. irc_name is unique, so no worries
+                    user = session.query(User).filter(
+                        func.lower(User.irc_name) == func.lower(s)).one()
+                    irc.reply("Your battletag is %s" % user.pretty_print(),
+                              private=True)
+
                 except NoResultFound:
-                    irc.reply("No battletag found", private=True)
+                    irc.reply("No battletag found for you. Register one with "
+                              "!bt register BattleTag#1234", private=True)
         else:
-            try:
-                n = arg1.index(":")
-            except ValueError:
-                n = 0
-            session = Session()
-            if n != 0:
-                c = arg1[0:n]
-                name = arg1[n+1:]
-                if c == "bt":
-                    users = session.query(User).filter(func.lower(User.bt).like(func.lower(name.replace("*", "%"))))
-                    irc.reply("Looking up user "+name+" (battletag). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
-                elif c == "reddit":
-                    users = session.query(User).filter(func.lower(User.reddit_name).like(func.lower(name.replace("*", "%"))))
-                    irc.reply("Looking up user "+name+" (Reddit username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
-                elif c == "email":
-                    users = session.query(User).filter(func.lower(User.email).like(func.lower(name.replace("*", "%"))))
-                    irc.reply("Looking up user "+name+" (email address). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") +  ". Use !btinfo <user> for details.", private=True)
-                elif c == "irc":
-                    users = session.query(User).filter(func.lower(User.irc_name).like(func.lower(name.replace("*", "%"))))
-                    irc.reply("Looking up user "+name+" (IRC services username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
-                elif c == "steam":
-                    users = session.query(User).filter(func.lower(User.steam_name).like(func.lower(name.replace("*", "%"))))
-                    irc.reply("Looking up user "+name+" (Steam username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
-                else:
-                    irc.reply("I don't recognize that field. Known fields: bt, reddit, email, irc, steam", private=True)
+            data = arg1.split(":")
+
+            if len(data) == 1:
+                users = self._findBtUsers(irc, data[0], None)
             else:
-                users = session.query(User).filter(or_(
-                        func.lower(User.bt).like(func.lower(arg1.replace("*", "%"))),
-                        func.lower(User.reddit_name).like(func.lower(arg1.replace("*", "%"))),
-                        func.lower(User.email).like(func.lower(arg1.replace("*", "%"))),
-                        func.lower(User.irc_name).like(func.lower(arg1.replace("*", "%"))),
-                        func.lower(User.steam_name).like(func.lower(arg1.replace("*", "%")))))
-                irc.reply("Looking up user "+arg1+". " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ". Use !btinfo <user> for details.", private=True)
+                users = self._findBtUsers(irc, data[0], data[1])
+
             for user in users:
                 irc.reply(user.pretty_print(), private=True)
+
     bt = wrap(bt, [optional('anything'), optional('anything')])
 
     def btinfo(self, irc, msg, args, arg1):
         """[\37user]
         Shows detailed user information. \37user may be prefixed with irc:, steam:, reddit:, email:, or bt:, and may contain the wildcard *. If \37user is not supplied, your own information will be displayed.
         """
-        if arg1 == None:
-            arg1 = "irc:" + self._check_auth(irc, msg)
-        try:
-            n = arg1.index(":")
-        except ValueError:
-            n = 0
-        session = Session()
-        if n != 0:
-            c = arg1[0:n]
-            name = arg1[n+1:]
-            if c == "bt":
-                users = session.query(User).filter(func.lower(User.bt).like(func.lower(name.replace("*", "%"))))
-                irc.reply("Looking up user "+name+" (battletag). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
-            elif c == "reddit":
-                users = session.query(User).filter(func.lower(User.reddit_name).like(func.lower(name.replace("*", "%"))))
-                irc.reply("Looking up user "+name+" (Reddit username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
-            elif c == "email":
-                users = session.query(User).filter(func.lower(User.email).like(func.lower(name.replace("*", "%"))))
-                irc.reply("Looking up user "+name+" (email address). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
-            elif c == "irc":
-                users = session.query(User).filter(func.lower(User.irc_name).like(func.lower(name.replace("*", "%"))))
-                irc.reply("Looking up user "+name+" (IRC services username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
-            elif c == "steam":
-                users = session.query(User).filter(func.lower(User.steam_name).like(func.lower(name.replace("*", "%"))))
-                irc.reply("Looking up user "+name+" (Steam username). " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
-            else:
-                irc.reply("I don't recognize that field. Known fields: bt, reddit, email, irc, steam"))
+        data = arg1.split(":")
+
+        if len(data) == 1:
+            users = self._findBtUsers(irc, data[0], "irc")
         else:
-            users = session.query(User).filter(or_(
-                    func.lower(User.bt).like(func.lower(arg1.replace("*", "%"))),
-                    func.lower(User.reddit_name).like(func.lower(arg1.replace("*", "%"))),
-                    func.lower(User.email).like(func.lower(arg1.replace("*", "%"))),
-                    func.lower(User.irc_name).like(func.lower(arg1.replace("*", "%"))),
-                    func.lower(User.steam_name).like(func.lower(arg1.replace("*", "%")))))
-            irc.reply("Looking up user "+arg1+". " + str(users.count()) + " result" + ("s" if not users.count() == 1 else "") + ".", private=True)
+            users = self._findBtUsers(irc, data[0], data[1])
+
         for user in users:
-            irc.reply("User details. Fields marked with a * are unvalidated.", private=True)
+            irc.reply("User details. Fields marked with a * are not "
+                      "officially validated.", private=True)
             for line in user.full_print():
                 irc.reply(line, private=True)
+
     btinfo = wrap(btinfo, [optional('anything')])
 
     def _check_registered(self, irc, msg, session, ircname):
         try:
-            user = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
+            user = session.query(User).filter(
+                func.lower(User.irc_name) == func.lower(ircname)).one()
         except NoResultFound:
             irc.reply("Register a battletag first.", private=True)
             return None
@@ -252,7 +291,7 @@ class DiabloMatch(callbacks.Plugin):
         if not ircname:
             return
         if arg1.lower() in ["bt", "battletag"]:
-            if DiabloMatch.bt_regexp.match(arg2) == None:
+            if DiabloMatch._bt_regexp.match(arg2) == None:
                 irc.reply("That's not a proper battletag. Use 'BattleTag#1234' format.", private=True)
                 return
             session = Session()
@@ -265,7 +304,8 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
 
-            irc.reply("Registered your battletag as " + arg2 + "", private=True)
+            irc.reply("Registered your battletag as %s" % arg2,
+                      private=True)
         elif arg1.lower() in ["tz", "timezone"]:
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
@@ -274,8 +314,10 @@ class DiabloMatch(callbacks.Plugin):
             try:
                 pytz.timezone(arg2)
             except pytz.UnknownTimeZoneError as e:
-                irc.reply("Unknown time zone " + str(e), private=True)
-                irc.reply("Find a list of valid time zones at http://en.wikipedia.org/wiki/List_of_tz_database_time_zones", private=True)
+                irc.reply("Unknown time zone %s" % str(e), private=True)
+                irc.reply("You can find a list of valid time zones at "
+                          "http://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
+                          private=True)
                 return
             user.tz = expression.null() if arg2 == "" else arg2
             session.add(user)
