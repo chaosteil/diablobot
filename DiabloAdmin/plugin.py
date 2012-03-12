@@ -19,25 +19,22 @@ class DiabloAdmin(callbacks.Plugin):
     """Add the help for "@plugin help DiabloAdmin" here
     This should describe *how* to use this plugin."""
 
-    def gitpull(self, irc, msg, args, charname):
-        """[\37character]
-        Returns a random quote from \37character, or from a random character if none is specified.
+    def gitpull(self, irc, msg, args):
+        """[\37gitpull]
+        Pulls the latest revision of the git repository from the servers
         """
-        if not ircdb.checkCapability(msg.prefix, "owner"):
-            irc.reply("Insufficient permissions.")
-            return
         os.chdir("/home/diablobot/dbot/plugins")
         ret = os.system("git pull")
         irc.reply("Done. git exit status = " + str(ret))
         os.chdir("/home/diablobot/dbot/")
-    gitpull = wrap(gitpull, [optional('lowered')])
+    gitpull = wrap(gitpull, [('checkCapability', 'owner')])
 
-    def diablo_source(self, irc, msg, args):
+    def diablosource(self, irc, msg, args):
         """[\37source]
         Gives you the current location of the diablobot model source code.
         """
         irc.reply("http://www.github.com/Chaosteil/diablobot")
 
-    diablo_source = wrap(diablo_source)
+    diablosource = wrap(diablosource)
 
 Class = DiabloAdmin
