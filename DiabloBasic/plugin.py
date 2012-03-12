@@ -28,12 +28,29 @@ class DiabloBasic(callbacks.Plugin):
 
     # Skill Info
     hash_base = "aZbYcXdWeVfUgThSiRjQkPlOmNnMoLpKqJrIsHtGuFvEwDxCyBzA0123456789+/"
-    classes = ["barbarian", "demon-hunter", "monk", "witch-doctor", "wizard", "follower"]
-    classes_pretty = {"barbarian":"Barbarian", "demon-hunter":"Demon Hunter", "monk":"Monk", "witch-doctor":"Witch Doctor", "wizard":"Wizard", "follower":"Follower"}
+    classes = [
+        "barbarian",
+        "demon-hunter",
+        "monk",
+        "witch-doctor",
+        "wizard",
+        "follower"
+    ]
+    classes_pretty = {
+        "barbarian": "Barbarian",
+        "demon-hunter": "Demon Hunter",
+        "monk": "Monk",
+        "witch-doctor": "Witch Doctor",
+        "wizard": "Wizard",
+        "follower": "Follower"
+    }
     skilldata = {}
 
     # Stream Info
-    _dstream_regulars = ["rdiablo", "DrZealotTV"]
+    _dstream_regulars = [
+        "rdiablo",
+        "DrZealotTV"
+    ]
     _dstream_regulars_json = {}
     _dstream_re = re.compile("diablo", re.IGNORECASE)
 
@@ -48,44 +65,47 @@ class DiabloBasic(callbacks.Plugin):
         # Load quotes
         with open("plugins/DiabloBasic/data/quotes.json", "r") as f:
             self.quotes = json.load(f)
-        DiabloBasic._qcount = 0
+        self.quote_count = 0
         for c in self.quotes.values():
-            DiabloBasic._qcount += len(c["quotes"])
+            self.quote_count += len(c["quotes"])
         
         # Init stream checking
         DiabloBasic._dstream_time = 0
 
     def _quotehelp(self):
-        return 'Available quote sources: %s (%d quotes)' % \
-                (', '.join(sorted(self.quotes.keys())), DiabloBasic._qcount)
+        return 'Available quote sources: %s (%d quotes)' %
+                (', '.join(sorted(self.quotes.keys())), self.quote_count)
 
-    def _quote_print(self, irc, string):
-        l = len(string)
-        if l > 433:
-            string = [string[i:i+432] for i in range(0, l, 432)] #432 is the max line length on espernet
-            for p in out:
-                irc.reply(p, prefixNick=False)
-        else:
-            irc.reply(string, prefixNick=False)
+    def printQuote(self, irc, name, message):
+        irc.reply("%s: %s" % (name, message), prefixNick=False)
 
     def quote(self, irc, msg, args, charname):
         """[\37character]
         Returns a random quote from \37character, or from a random character if none is specified.
         """
-        if not charname:
-            if random.randrange(0, 999) == 0:    #this won't show up in the list of quote sources. it's a secret!
-                irc.reply("Cow: Mooooooo!", prefixNick=False)
-                return
-            q = self.quotes[random.choice(self.quotes.keys())]
-            self._quote_print(irc, q["name"] + ": " + random.choice(q["quotes"]))
-        elif charname == "list":
+        # Lists all available quotes
+        if charname == "list":
             irc.reply(self._quotehelp())
+
+        # Picks a random quote
+        elif not charname:
+            # this won't show up in the list of quote sources. it's a secret!
+            if random.randrange(0, 999) == 0:
+                self.printQuote(irc, "Cow", "Mooooooo! Moo moo moo moo moo!")
+            else:
+                q = self.quotes[random.choice(self.quotes.keys())]
+                self.printQuote(irc, q["name"], random.choice(q["quotes"]))
+
+        # Help text
+        elif charname not in self.quotes:
+            irc.reply("I don't have any quotes from %s. To get a full list"
+                      "of the quotes, enter !quote list" % charname)
+
+        # Prints a quote of the character
         else:
-            try:
-                self._quote_print(irc, self.quotes[charname]["name"] + ": " + random.choice(self.quotes[charname]["quotes"]))
-            except KeyError:
-                irc.reply("I don't have any quotes from %s. To get a full list"
-                          "of the quotes, enter !quote list" % charname)
+            q = self.quotes[charname]
+            self.printQuote(irc, q["name"], random.choice(q["quotes"]))
+
     quote = wrap(quote, [optional('lowered')])
 
     def _hash_decode(self, h):
