@@ -236,7 +236,7 @@ class DiabloMatch(callbacks.Plugin):
         Modifies your user info. Invoke btset list to see a list of available fields
         """
         if arg1.lower() == "list":    #or arg1.lower() not in []:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Available fields: bt/battletag, reddit_name, email, irc_name, steam_name, pass, comment, tz/timezone, realm, url"))
+            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Available fields: bt/battletag, reddit_name, email, irc_name, steam_name, password, comment, tz/timezone, realm, url"))
             return
         if arg2 == None:
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Here's the current value of " + arg1 + ": (not yet implemented)."))
@@ -295,14 +295,14 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set steam_name to " + arg2 + "."))
-        elif arg1 in ["pass", "password"]:
+        elif arg1 == "password":
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
                 return
             hasher = hashlib.sha256()
             hasher.update(arg2)
-            user.steam_name = hasher.hexdigest()
+            user.password = hasher.hexdigest()
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set password."))

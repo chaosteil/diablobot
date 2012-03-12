@@ -5,7 +5,7 @@ CREATE TABLE users (
     email TEXT default NULL,
     irc_name TEXT default NULL UNIQUE,
     steam_name TEXT default NULL,
-    pass TEXT default NULL,
+    password TEXT default NULL,
     cmt TEXT default NULL,
     tz TEXT default NULL,
     realm TEXT default NULL,
