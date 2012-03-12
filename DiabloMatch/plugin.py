@@ -244,7 +244,7 @@ class DiabloMatch(callbacks.Plugin):
         ircname = self._check_auth(irc, msg)
         if not ircname:
             return
-        if arg1 in ["bt", "battletag"]:
+        if arg1.lower() in ["bt", "battletag"]:
             if DiabloMatch.bt_regexp.match(arg2) == None:
                 irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a proper battletag. Use 'BattleTag#1234' format."))
                 return
@@ -259,7 +259,7 @@ class DiabloMatch(callbacks.Plugin):
             session.commit()
 
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Registered your battletag as " + arg2 + ""))
-        elif arg1 in ["tz", "timezone"]:
+        elif arg1.lower() in ["tz", "timezone"]:
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
@@ -274,7 +274,7 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set timezone to " + arg2 + "."))
-        elif arg1 == "realm":
+        elif arg1.lower() == "realm":
             if arg2 not in DiabloMatch._realms:
                 irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a valid realm. Valid realms: " + ", ".join(DiabloMatch._realms) + "."))
                 return
@@ -286,7 +286,7 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set realm to " + arg2 + "."))
-        elif arg1 in ["steam", "steam_name"]:
+        elif arg1.lower() in ["steam", "steam_name"]:
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
@@ -295,7 +295,7 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set steam_name to " + arg2 + "."))
-        elif arg1 == "password":
+        elif arg1.lower() == "password":
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
@@ -306,7 +306,7 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set password."))
-        elif arg1 == "email":
+        elif arg1.lower() == "email":
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
@@ -315,7 +315,7 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set email address to " + arg2 + "."))
-        elif arg1 == "comment":
+        elif arg1.lower() == "comment":
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
@@ -324,7 +324,7 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set comment to " + arg2 + "."))
-        elif arg1 == "url":
+        elif arg1.lower() == "url":
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
