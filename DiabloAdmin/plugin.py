@@ -31,9 +31,9 @@ class DiabloAdmin(callbacks.Plugin):
 
     def diablosource(self, irc, msg, args):
         """[\37source]
-        Gives you the current location of the diablobot model source code.
+        Gives you the current location of the diablobot plugin source code.
         """
-        irc.reply("http://www.github.com/Chaosteil/diablobot")
+        irc.reply("Current location of the supybot plugins for diablobot: http://www.github.com/Chaosteil/diablobot")
 
     diablosource = wrap(diablosource)
 
