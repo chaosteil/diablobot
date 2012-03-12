@@ -16,13 +16,13 @@ from sqlalchemy import create_engine, Table, MetaData, func, or_
 from sqlalchemy.orm import sessionmaker, mapper
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
-import time
+import time, pytz
 import re
-import pytz
 from datetime import datetime
+import hashlib
 
 class User(object):
-    quickfields = [("irc_name", "IRC"), ("reddit_name", "Reddit"), ("steam_name", "Steam"), ("bt", "Battletag")]
+    quickfields = [("irc_name", "IRC"), ("reddit_name", "Reddit"), ("steam_name", "Steam*"), ("bt", "Battletag*")]
 
     def __init__(self):
         pass
@@ -46,14 +46,14 @@ class User(object):
         out.append(self.pretty_print(r=False))
         if self.realm != None:
             out.append("Realm: " + self.realm)
-        if self.cmt != None:
-            out.append("Comment: " + self.cmt)
         if self.tz != None:
             tz_to = pytz.timezone(self.tz)
             tz_from = pytz.timezone("America/New_York")
             tm = datetime.now().replace(tzinfo=tz_from)
             tm_to = tm.astimezone(tz_to)
             out.append("Local time: " + tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
+        if self.cmt != None:
+            out.append("Comment: " + self.cmt)
         if self.url != None:
             out.append("URL: " + self.url)
         return out
@@ -236,7 +236,7 @@ class DiabloMatch(callbacks.Plugin):
         Modifies your user info. Invoke btset list to see a list of available fields
         """
         if arg1.lower() == "list":    #or arg1.lower() not in []:
-            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Here's a list of available fields: (not yet implemented)."))
+            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Available fields: bt/battletag, reddit_name, email, irc_name, steam_name, pass, comment, tz/timezone, realm, url"))
             return
         if arg2 == None:
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Here's the current value of " + arg1 + ": (not yet implemented)."))
@@ -244,7 +244,7 @@ class DiabloMatch(callbacks.Plugin):
         ircname = self._check_auth(irc, msg)
         if not ircname:
             return
-        if arg1 == "bt":
+        if arg1 in ["bt", "battletag"]:
             if DiabloMatch.bt_regexp.match(arg2) == None:
                 irc.sendMsg(ircmsgs.privmsg(msg.nick, "That's not a proper battletag. Use 'BattleTag#1234' format."))
                 return
@@ -295,7 +295,44 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set steam_name to " + arg2 + "."))
-            
+        elif arg1 in ["pass", "password"]:
+            session = Session()
+            user = self._check_registered(irc, msg, session, ircname)
+            if user == None:
+                return
+            hasher = hashlib.sha256()
+            hasher.update(arg2)
+            user.steam_name = hasher.hexdigest()
+            session.add(user)
+            session.commit()
+            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set password."))
+        elif arg1 == "email":
+            session = Session()
+            user = self._check_registered(irc, msg, session, ircname)
+            if user == None:
+                return
+            user.email = arg2
+            session.add(user)
+            session.commit()
+            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set email address to " + arg2 + "."))
+        elif arg1 == "comment":
+            session = Session()
+            user = self._check_registered(irc, msg, session, ircname)
+            if user == None:
+                return
+            user.cmt = arg2
+            session.add(user)
+            session.commit()
+            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set comment to " + arg2 + "."))
+        elif arg1 == "url":
+            session = Session()
+            user = self._check_registered(irc, msg, session, ircname)
+            if user == None:
+                return
+            user.url = arg2
+            session.add(user)
+            session.commit()
+            irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set URL to " + arg2 + "."))
     btset = wrap(btset, ['anything', optional('text')])
 
     #on any channel activity, cache the user's whois info
