@@ -32,12 +32,12 @@ class DiabloAdmin(callbacks.Plugin):
         os.chdir("/home/diablobot/dbot/")
     gitpull = wrap(gitpull, [optional('lowered')])
 
-    def source(self, irc, msg, args):
+    def diablo_source(self, irc, msg, args):
         """[\37source]
         Gives you the current location of the diablobot model source code.
         """
         irc.reply("http://www.github.com/Chaosteil/diablobot")
 
-    source = wrap(source)
+    diablo_source = wrap(diablo_source)
 
 Class = DiabloAdmin
