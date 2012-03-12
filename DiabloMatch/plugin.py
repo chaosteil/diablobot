@@ -15,6 +15,7 @@ import supybot.callbacks as callbacks
 from sqlalchemy import create_engine, Table, MetaData, func, or_
 from sqlalchemy.orm import sessionmaker, mapper
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+from sqlalchemy.sql import expression
 
 import time, pytz
 import re
@@ -276,7 +277,7 @@ class DiabloMatch(callbacks.Plugin):
                 irc.sendMsg(ircmsgs.privmsg(msg.nick, "Unknown time zone " + str(e)))
                 irc.sendMsg(ircmsgs.privmsg(msg.nick, "Find a list of valid time zones at http://en.wikipedia.org/wiki/List_of_tz_database_time_zones"))
                 return
-            user.tz = arg2
+            user.tz = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set timezone to " + arg2 + "."))
@@ -288,7 +289,7 @@ class DiabloMatch(callbacks.Plugin):
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
                 return
-            user.realm = arg2
+            user.realm = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set realm to " + arg2 + "."))
@@ -297,7 +298,7 @@ class DiabloMatch(callbacks.Plugin):
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
                 return
-            user.steam_name = arg2
+            user.steam_name = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set steam_name to " + arg2 + "."))
@@ -308,7 +309,7 @@ class DiabloMatch(callbacks.Plugin):
                 return
             hasher = hashlib.sha256()
             hasher.update(arg2)
-            user.password = hasher.hexdigest()
+            user.password = expression.null() if arg2 == "" else hasher.hexdigest()
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set password."))
@@ -317,7 +318,7 @@ class DiabloMatch(callbacks.Plugin):
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
                 return
-            user.email = arg2
+            user.email = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set email address to " + arg2 + "."))
@@ -326,7 +327,7 @@ class DiabloMatch(callbacks.Plugin):
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
                 return
-            user.cmt = arg2
+            user.cmt = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set comment to " + arg2 + "."))
@@ -335,7 +336,7 @@ class DiabloMatch(callbacks.Plugin):
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
                 return
-            user.url = arg2
+            user.url = expression.null() if arg2 == "" else arg2
             session.add(user)
             session.commit()
             irc.sendMsg(ircmsgs.privmsg(msg.nick, "Set URL to " + arg2 + "."))
