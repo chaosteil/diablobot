@@ -187,7 +187,7 @@ class DiabloMatch(callbacks.Plugin):
             users = session.query(User).filter(
                 func.lower(datatypes_pretty[typename][0]).like(
                     func.lower(name.replace("*", "%"))))
-            show_result(name, datatypes_pretty[typename][1], users.count())
+            show_result(datatypes_pretty[typename][1], users.count())
 
         elif typename == None:
             users = session.query(User).filter(or_(
@@ -201,7 +201,7 @@ class DiabloMatch(callbacks.Plugin):
                         func.lower(arg1.replace("*", "%"))),
                     func.lower(User.steam_name).like(
                         func.lower(arg1.replace("*", "%")))))
-            show_result(name, "All fields", users.count())
+            show_result("All fields", users.count())
 
         else:
             irc.reply("I don't recognize that field. Known fields: "
