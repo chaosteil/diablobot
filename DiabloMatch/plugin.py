@@ -105,6 +105,8 @@ class DiabloMatch(callbacks.Plugin):
 
         # User not authenticated with NickServ
         elif self.whois[nick] == -1:
+            # We try to refresh the auth , maybe the user is registered now
+            irc.queueMsg(ircmsgs.whois(nick, nick))
             return (3, )
 
         # User authenticated some time ago
