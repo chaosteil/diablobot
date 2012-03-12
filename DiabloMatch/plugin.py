@@ -192,15 +192,15 @@ class DiabloMatch(callbacks.Plugin):
         elif typename == None:
             users = session.query(User).filter(or_(
                     func.lower(User.bt).like(
-                        func.lower(arg1.replace("*", "%"))),
+                        func.lower(name.replace("*", "%"))),
                     func.lower(User.reddit_name).like(
-                        func.lower(arg1.replace("*", "%"))),
+                        func.lower(name.replace("*", "%"))),
                     func.lower(User.email).like(
-                        func.lower(arg1.replace("*", "%"))),
+                        func.lower(name.replace("*", "%"))),
                     func.lower(User.irc_name).like(
-                        func.lower(arg1.replace("*", "%"))),
+                        func.lower(name.replace("*", "%"))),
                     func.lower(User.steam_name).like(
-                        func.lower(arg1.replace("*", "%")))))
+                        func.lower(name.replace("*", "%")))))
             show_result("All fields", users.count())
 
         else:
@@ -239,7 +239,7 @@ class DiabloMatch(callbacks.Plugin):
             if len(data) == 1:
                 users = self._findBtUsers(irc, data[0], None)
             else:
-                users = self._findBtUsers(irc, data[0], data[1])
+                users = self._findBtUsers(irc, data[1], data[0])
 
             for user in users:
                 irc.reply(user.pretty_print(), private=True)
@@ -255,7 +255,7 @@ class DiabloMatch(callbacks.Plugin):
         if len(data) == 1:
             users = self._findBtUsers(irc, data[0], "irc")
         else:
-            users = self._findBtUsers(irc, data[0], data[1])
+            users = self._findBtUsers(irc, data[1], data[0])
 
         for user in users:
             irc.reply("User details. Fields marked with a * are not "
