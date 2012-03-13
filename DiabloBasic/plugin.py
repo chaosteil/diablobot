@@ -178,11 +178,9 @@ class DiabloBasic(callbacks.Plugin):
         """
         Shows the rules for #diablo and #bazaar.
         """
-        irc.reply("Channel rules for #diablo and #bazaar", private=True)
-        for n, v in enumerate(DiabloCommon.channel_rules):
-            irc.reply("%d. %s" % (n+1, v), private=True)
-        irc.reply("End of rules", private=True)
-    #rules = wrap(rules)
+        for v in DiabloCommon.channel_rules:
+            irc.reply(v, private=True)
+    rules = wrap(rules)
 
     def streams(self, irc, msg, args):
         """
@@ -220,10 +218,8 @@ class DiabloBasic(callbacks.Plugin):
         if ircname.lower() not in DiabloCommon.op_ids:
             irc.reply("You're not allowed to use tellrules.")
             return
-        irc.reply("Channel rules for #diablo and #bazaar", private=True, to=victim)
-        for n, v in enumerate(DiabloCommon.channel_rules):
-            irc.reply("%d. %s" % (n+1, v), private=True, to=victim)
-        irc.reply("End of rules", private=True, to=victim)
+        for v in DiabloCommon.channel_rules:
+            irc.reply(v, private=True, to=victim)
     tellrules = wrap(tellrules, ['nick'])
 
 Class = DiabloBasic

@@ -17,14 +17,16 @@ op_ids = [  #note lowercase
     ]
 
 channel_rules = [
-    "All topics are allowed, but Diablo should always take precedence.",
-    "Be polite and respectful of others.",
-    "Do not disrupt conversation with spam or bot activities.",
-    "Use #bazaar for item trading discussion.",
-    "Do not sell, offer to sell, or seek sale of beta keys.",
-    "Follow instructions given by the channel operators.",
-    "Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
-    "See http://bit.ly/wEkLDN for more details."
+    "Channel rules for #diablo and #bazaar",
+    "1. All topics are allowed, but Diablo should always take precedence.",
+    "2. Be polite and respectful of others.",
+    "3. Do not disrupt conversation with spam or bot activities.",
+    "4. Use #bazaar for item trading discussion.",
+    "5. Do not sell, offer to sell, or seek sale of beta keys.",
+    "6. Follow instructions given by the channel operators.",
+    "7. Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
+    "8. See http://bit.ly/wEkLDN for more details.",
+    "End of rules"
     ]
 
 
