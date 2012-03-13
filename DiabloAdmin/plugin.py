@@ -59,7 +59,8 @@ class DiabloAdmin(callbacks.Plugin):
         Shows the last 5 lines in the error log.
         """
         ret = subprocess.Popen(["tail", "logs/messages.log"], stdout=subprocess.PIPE).communicate()[0]
-        irc.reply(ret, private=True)
+        for f in ret.split("\n"):
+            irc.reply(f, private=True)
     showlog = wrap(showlog, [('checkCapability', 'owner')])
 
     def diablosource(self, irc, msg, args):
