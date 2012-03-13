@@ -24,8 +24,14 @@ class DiabloAdmin(callbacks.Plugin):
         Pulls the latest revision of the git repository from the servers
         """
         os.chdir("/home/diablobot/dbot/plugins")
+        oldhead = subprocess.Popen(["git", "log -1 --format='%H'"], stdout=subprocess.PIPE).communicate()[0]
         ret = subprocess.Popen(["git", "pull"], stdout=subprocess.PIPE).communicate()[0]
         for f in ret.split("\n"):
+            if f == "":
+                return
+            irc.reply(f, prefixNick=False)
+        log = subprocess.Popen(["git", "log --oneline " + oldhead + "..HEAD"], stdout=subprocess.PIPE).communicate()[0]
+        for f in log.split("\n"):
             if f == "":
                 return
             irc.reply(f, prefixNick=False)
