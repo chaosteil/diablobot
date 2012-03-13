@@ -204,7 +204,7 @@ class DiabloBasic(callbacks.Plugin):
     #rules = wrap(rules)
 
     def streams(self, irc, msg, args, sname):
-        """[<\37stream> ...]
+        """[\37stream ...]
 
         Displays whether \37stream is currently live. If no stream is specified, it lists the status of all the regular streams.
         """
@@ -233,10 +233,16 @@ class DiabloBasic(callbacks.Plugin):
                 pass
     streams = wrap(streams, [optional('anything')])
 
-    def tellrules(self, irc, msg, args):
+    def tellrules(self, irc, msg, args, victim):
+        """\37user
+        Tell the rules for #diablo and #bazaar to \37user.
         """
-        Shows the rules for #diablo and #bazaar.
-        """
+        ircname = DiabloCommon.check_auth(irc, msg.nick)
+        if not ircname:
+            return
+        if ircname.lower() not in DiabloCommon.op_ids:
+            irc.reply("You're not allowed to use tellrules.")
+            return
         rs = [
             "All topics are allowed, but Diablo should always take precedence.",
             "Be polite and respectful of others.",
@@ -247,10 +253,10 @@ class DiabloBasic(callbacks.Plugin):
             "Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
             "See http://bit.ly/wEkLDN for more details."
         ]
-        irc.reply("Channel rules for #diablo and #bazaar", private=True)
+        irc.reply("Channel rules for #diablo and #bazaar", private=True, to=victim)
         for n, v in enumerate(rs):
-            irc.reply("%d. %s" % (n+1, v), private=True)
-        irc.reply("End of rules", private=True)
+            irc.reply("%d. %s" % (n+1, v), private=True, to=victim)
+        irc.reply("End of rules", private=True, to=victim)
     tellrules = wrap(tellrules, ['anything'])
 
 Class = DiabloBasic

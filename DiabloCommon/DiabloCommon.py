@@ -3,6 +3,18 @@ import time
 
 whois = {}
 
+op_ids = [  #note lowercase
+    "maxlemon", "lemonegro",
+    "chaosteil",
+    "listen2",
+    "nitesmoke",
+    "onebit",
+    "xiphirx_", "xiphirx",
+    "thunderclaww",
+    "anime",
+    "taffing", "taffer"
+    ]
+
 def get_services_account(irc, nick):
     # Is nick in Whois?
     if nick not in whois.keys():
@@ -47,10 +59,9 @@ def check_auth(irc, nick):
                   "last session expired. Please repeat your previous "
                   "command." % a[1], private=True)
     elif a[0] == 5:
-        irc.reply("You're logged in to NickServ as '%s'." % a[1],
-                  private=True)
+        #irc.reply("You're logged in to NickServ as '%s'." % a[1], private=True)
         return a[1]
     else:
         irc.reply("This can't ever happen. "
                   "Someone must have divided by zero.", private=True)
-    return False			
+    return False
