@@ -50,7 +50,7 @@ class DiabloAdmin(callbacks.Plugin):
         """
         os.chdir("/home/diablobot/dbot/plugins")
         ret = subprocess.Popen(["git", "pull"], stdout=subprocess.PIPE).communicate()[0]
-        irc.reply("Done. git exit status = " + str(ret))
+        irc.reply("Done. git exit status = %s" % ret)
         os.chdir("/home/diablobot/dbot/")
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
 
