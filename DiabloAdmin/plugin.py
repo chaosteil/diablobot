@@ -50,7 +50,8 @@ class DiabloAdmin(callbacks.Plugin):
         """
         os.chdir("/home/diablobot/dbot/plugins")
         ret = subprocess.Popen(["git", "pull"], stdout=subprocess.PIPE).communicate()[0]
-        irc.reply("Done. git exit status = %s" % ret)
+        for f in ret.split("\n"):
+            irc.reply(f, prefixNick=False)
         os.chdir("/home/diablobot/dbot/")
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
 
@@ -59,8 +60,7 @@ class DiabloAdmin(callbacks.Plugin):
         Shows the last 5 lines in the error log.
         """
         ret = subprocess.Popen(["tail", "logs/messages.log"], stdout=subprocess.PIPE).communicate()[0]
-        for f in ret.split("\n"):
-            irc.reply(f, private=True)
+        irc.reply(ret, private=True)
     showlog = wrap(showlog, [('checkCapability', 'owner')])
 
     def diablosource(self, irc, msg, args):
