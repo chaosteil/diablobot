@@ -103,10 +103,7 @@ class DiabloBasic(callbacks.Plugin):
     quote = wrap(quote, [optional('lowered')])
 
     def _hash_decode(self, h):
-        a = []
-        for f in h:
-            a.append(self.hash_base.find(f));
-        return a
+        return [self.hash_base.find(f) for f in h]
 
     def doPrivmsg(self, irc, msg):
         if ircmsgs.isCtcp(msg) and not ircmsgs.isAction(msg):
