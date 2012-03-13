@@ -92,9 +92,6 @@ class DiabloMatch(callbacks.Plugin):
     _bt_regexp    = re.compile(r"\w{1,32}#\d{4,8}$")
     _color_regexp = re.compile("(?:(?:\d{1,2}(?:,\d{1,2})?)?|||)")
 
-    def __init__(self, irc):
-        super(DiabloMatch, self).__init__(irc)
-
     def _get_services_account(self, irc, nick):
         # Is nick in Whois?
         if nick not in DiabloCommon.whois.keys():
