@@ -13,7 +13,11 @@ import supybot.ircmsgs as ircmsgs
 import supybot.ircdb as ircdb
 import supybot.callbacks as callbacks
 
-import os, subprocess
+import os, subprocess, sys
+
+if "/home/diablobot/dbot/plugins/DiabloCommon" not in sys.path:
+     sys.path.append("/home/diablobot/dbot/plugins/DiabloCommon")
+import DiabloCommon
 
 class DiabloAdmin(callbacks.Plugin):
     """Add the help for "@plugin help DiabloAdmin" here

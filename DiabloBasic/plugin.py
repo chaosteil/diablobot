@@ -21,6 +21,11 @@ from datetime import datetime
 from dateutil.parser import parse
 import urllib2
 
+import sys
+if "/home/diablobot/dbot/plugins/DiabloCommon" not in sys.path:
+     sys.path.append("/home/diablobot/dbot/plugins/DiabloCommon")
+import DiabloCommon
+
 class DiabloBasic(callbacks.Plugin):
     """Add the help for "@plugin help DiabloBasic" here
     This should describe *how* to use this plugin."""

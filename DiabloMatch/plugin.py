@@ -22,6 +22,11 @@ import re
 from datetime import datetime
 import hashlib
 
+import sys
+if "/home/diablobot/dbot/plugins/DiabloCommon" not in sys.path:
+     sys.path.append("/home/diablobot/dbot/plugins/DiabloCommon")
+import DiabloCommon
+
 class User(object):
     quickfields = [
         ("irc_name", "IRC"),
@@ -90,21 +95,19 @@ class DiabloMatch(callbacks.Plugin):
     def __init__(self, irc):
         super(DiabloMatch, self).__init__(irc)
 
-        self.whois = {}
-
     def _get_services_account(self, irc, nick):
         # Is nick in Whois?
-        if nick not in self.whois.keys():
+        if nick not in DiabloCommon.whois.keys():
             irc.queueMsg(ircmsgs.whois(nick, nick))
-            self.whois[nick] = None    #None means whois in process
+            DiabloCommon.whois[nick] = None    #None means whois in process
             return (1, )
         
         # Whois in progress
-        elif self.whois[nick] == None:
+        elif DiabloCommon.whois[nick] == None:
             return (2, )
 
         # User not authenticated with NickServ
-        elif self.whois[nick] == -1:
+        elif DiabloCommon.whois[nick] == -1:
             # We try to refresh the auth , maybe the user is registered now
             irc.queueMsg(ircmsgs.whois(nick, nick))
             return (3, )
@@ -112,13 +115,13 @@ class DiabloMatch(callbacks.Plugin):
         # User authenticated some time ago
         else:    
             # Ten hours since auth, we refresh the auth
-            if time.time() - self.whois[nick][1] > 36000:
+            if time.time() - DiabloCommon.whois[nick][1] > 36000:
                 irc.queueMsg(ircmsgs.whois(nick, nick))
-                return (4, self.whois[nick][0])
+                return (4, DiabloCommon.whois[nick][0])
 
             # User logged in
             else:
-                return (5, self.whois[nick][0])
+                return (5, DiabloCommon.whois[nick][0])
 
     def _check_auth(self, irc, msg):
         a = self._get_services_account(irc, msg.nick)
@@ -148,14 +151,14 @@ class DiabloMatch(callbacks.Plugin):
     def do330(self, irc, msg):
         nick = msg.args[1]
         account = msg.args[2]
-        self.whois[nick] = (account, time.time())
+        DiabloCommon.whois[nick] = (account, time.time())
 
     # End of WHOIS responses
     def do318(self, irc, msg):
         # If we get this and didn't get a 330, then the user is not logged in
         nick = msg.args[1]
-        if self.whois[nick] == None:
-            self.whois[nick] = -1 #-1 means whois complete and not logged in
+        if DiabloCommon.whois[nick] == None:
+            DiabloCommon.whois[nick] = -1 #-1 means whois complete and not logged in
 
     def _btRegister(self, irc, msg, battletag):
         if battletag:
