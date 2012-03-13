@@ -33,15 +33,7 @@ class DiabloBasic(callbacks.Plugin):
 
     # Skill Info
     hash_base = "aZbYcXdWeVfUgThSiRjQkPlOmNnMoLpKqJrIsHtGuFvEwDxCyBzA0123456789+/"
-    classes = [
-        "barbarian",
-        "demon-hunter",
-        "monk",
-        "witch-doctor",
-        "wizard",
-        "follower"
-    ]
-    classes_pretty = {
+    classes = {
         "barbarian": "Barbarian",
         "demon-hunter": "Demon Hunter",
         "monk": "Monk",
@@ -63,7 +55,7 @@ class DiabloBasic(callbacks.Plugin):
         super(DiabloBasic, self).__init__(irc)
 
         # Load class data
-        for c in self.classes:
+        for c in self.classes.keys():
             with open("plugins/DiabloBasic/data/"+c+".json", "r") as f:
                 self.skilldata[c] = json.load(f)
 
@@ -132,8 +124,8 @@ class DiabloBasic(callbacks.Plugin):
                     sk = []
                     for f in self._hash_decode(m.group(2)):    #skills
                         sk.append(self.skilldata[m.group(1)]["skills"][f])
-                    out = self.classes_pretty[m.group(1)] + ": "
-                    for (n, f) in enumerate(self.hash_decode(m.group(4))):    #runes
+                    out = self.classes[m.group(1)] + ": "
+                    for (n, f) in enumerate(self._hash_decode(m.group(4))):    #runes
                         if f < 0:
                             out += sk[n]["name"] + " (none)"
                         else:
