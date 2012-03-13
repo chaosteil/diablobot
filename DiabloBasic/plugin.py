@@ -165,7 +165,7 @@ class DiabloBasic(callbacks.Plugin):
             return
         tm_to = tm.astimezone(tz_to)
         irc.reply(tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
-    tz = wrap(tz, ['anything', 'anything', optional('text')])
+    tz = wrap(tz, ['something', 'something', optional('text')])
 
     def rules(self, irc, msg, args):
         """
@@ -205,7 +205,7 @@ class DiabloBasic(callbacks.Plugin):
                     i += 1
             except:
                 pass
-    streams = wrap(streams, [optional('anything')])
+    streams = wrap(streams, [optional('something')])
 
     def tellrules(self, irc, msg, args, victim):
         """\37user
