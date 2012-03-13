@@ -25,7 +25,7 @@ class DiabloAdmin(callbacks.Plugin):
     public = False
 
     def gitpull(self, irc, msg, args):
-        """[\37gitpull]
+        """
         Pulls the latest revision of the git repository from the servers
         """
         os.chdir("/home/diablobot/dbot/plugins")
@@ -44,7 +44,7 @@ class DiabloAdmin(callbacks.Plugin):
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
 
     def showlog(self, irc, msg, args):
-        """[\37showlog]
+        """
         Shows the last 5 lines in the error log.
         """
         ret = subprocess.Popen(["tail", "logs/messages.log"], stdout=subprocess.PIPE).communicate()[0]
