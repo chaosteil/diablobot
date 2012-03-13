@@ -52,7 +52,7 @@ class DiabloAdmin(callbacks.Plugin):
     showlog = wrap(showlog, [('checkCapability', 'owner')])
 
     def diablosource(self, irc, msg, args):
-        """[\37source]
+        """[\37diablosource]
         Gives you the current location of the diablobot plugin source code.
         """
         irc.reply("Current location of the supybot plugins for diablobot: "

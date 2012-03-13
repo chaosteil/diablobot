@@ -191,20 +191,32 @@ class DiabloBasic(callbacks.Plugin):
                 DiabloBasic._dstream_regulars_json[f] = json.load(j)
 
         irc.reply("Active Diablo streams on twitch.tv or justin.tv:", private=True)
+        current_streams = []
+
+        # Get streams of regulars
         for f in DiabloBasic._dstream_regulars_json.values():
             if f != [] and DiabloBasic._dstream_re.match(f[0]["meta_game"]):
-                irc.reply(f[0]["channel"]["channel_url"] + " - " + f[0]["title"] + " (" + f[0]["meta_game"] + ")", private=True)
-        i = 0
+                current_streams.append(f[0])
+
+        # Get streams of other people
         for c in DiabloBasic._dstream_json:
-            if i >= 8:
-                irc.reply("And more!", private=True)
-                return
             try:
                 if DiabloBasic._dstream_re.match(c["meta_game"]):
-                    irc.reply(c["channel"]["channel_url"] + " - " + c["title"] + " (" + c["meta_game"] + ")", private=True)
-                    i += 1
+                    current_streams.append(c)
             except:
                 pass
+        
+        # Print out all gathered streams
+        for i in current_streams[:8]:
+            irc.reply("%s - %s (%s)" % \
+                      (i["channel"]["channel_url"], i["title"],
+                       i["meta_game"]), private=True)
+
+        if len(current_stream) > 8:
+            irc.reply("And more!", private=True)
+
+
+
     streams = wrap(streams, [optional('something')])
 
     def tellrules(self, irc, msg, args, victim):
