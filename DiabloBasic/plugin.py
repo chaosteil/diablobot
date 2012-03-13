@@ -212,11 +212,7 @@ class DiabloBasic(callbacks.Plugin):
         """\37user
         Tell the rules for #diablo and #bazaar to \37user.
         """
-        ircname = DiabloCommon.check_auth(irc, msg.nick)
-        if not ircname:
-            return
-        if ircname.lower() not in DiabloCommon.op_ids:
-            irc.reply("You're not allowed to use tellrules.")
+        if not DiabloCommon.check_op(irc, msg.nick):
             return
         for v in DiabloCommon.channel_rules:
             irc.reply(v, private=True, to=victim)

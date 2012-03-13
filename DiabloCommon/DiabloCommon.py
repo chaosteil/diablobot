@@ -91,3 +91,15 @@ def check_auth(irc, nick):
         irc.reply("This can't ever happen. "
                   "Someone must have divided by zero.", private=True)
     return False
+
+def check_op(irc, nick):
+    """irc obj, nick str
+    Finds the NickServ name of nick and returns whether it is in op_ids[]
+    """
+    ns_name = check_auth(irc, nick)
+    if not ns_name:
+        return False
+    if ns_name.lower() not in op_ids:
+        irc.reply("You're not allowed to use %s." % inspect.stack()[1][3])
+        return False
+    return True
