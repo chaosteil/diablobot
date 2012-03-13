@@ -13,7 +13,7 @@ import supybot.ircmsgs as ircmsgs
 import supybot.ircdb as ircdb
 import supybot.callbacks as callbacks
 
-import os
+import os, subprocess
 
 class DiabloAdmin(callbacks.Plugin):
     """Add the help for "@plugin help DiabloAdmin" here
@@ -24,7 +24,7 @@ class DiabloAdmin(callbacks.Plugin):
         Pulls the latest revision of the git repository from the servers
         """
         os.chdir("/home/diablobot/dbot/plugins")
-        ret = os.system("git pull")
+        ret = subprocess.Popen(["git", "pull"], stdout=subprocess.PIPE).communicate()[0]
         irc.reply("Done. git exit status = " + str(ret))
         os.chdir("/home/diablobot/dbot/")
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
