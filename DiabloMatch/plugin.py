@@ -168,7 +168,7 @@ class DiabloMatch(callbacks.Plugin):
         if arg1 == "register":
             self._btRegister(irc, msg, arg2)
         elif arg1 == None:
-            s = DiabloCommon.check_auth(irc, msg)
+            s = DiabloCommon.check_auth(irc, msg.nick)
             if s:
                 session = Session()
                 try:
@@ -237,7 +237,7 @@ class DiabloMatch(callbacks.Plugin):
         if arg2 == None:
             irc.reply("Here's the current value of " + arg1 + ": (not yet implemented).", private=True)
             return
-        ircname = DiabloCommon.check_auth(irc, msg)
+        ircname = DiabloCommon.check_auth(irc, msg.nick)
         if not ircname:
             return
         if arg1.lower() in ["bt", "battletag"]:

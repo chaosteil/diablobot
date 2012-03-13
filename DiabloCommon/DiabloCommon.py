@@ -31,8 +31,8 @@ def get_services_account(irc, nick):
         else:
             return (5, whois[nick][0])
 
-def check_auth(irc, msg):
-    a = get_services_account(irc, msg.nick)
+def check_auth(irc, nick):
+    a = get_services_account(irc, nick)
     if a[0] == 1:
         irc.reply("Sorry, I needed to verify your identity. "
                   "Please repeat your previous command.", private=True)
