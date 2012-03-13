@@ -212,7 +212,7 @@ class DiabloBasic(callbacks.Plugin):
                       (i["channel"]["channel_url"], i["title"],
                        i["meta_game"]), private=True)
 
-        if len(current_stream) > 8:
+        if len(current_streams) > 8:
             irc.reply("And more!", private=True)
 
 
