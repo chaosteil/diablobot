@@ -132,6 +132,13 @@ class DiabloBasic(callbacks.Plugin):
                         out += self.skilldata[m.group(1)]["traits"][f]["name"] + ", "
                     out = out[:-2]
                     irc.reply(out, prefixNick=False)
+                #https://twitter.com/#!/Nyzaris/status/179599382814011392
+                m = re.search("twitter.com/#!/.+/status/(\d+)", url)
+                if m:
+                    j = urllib2.urlopen("http://api.twitter.com/1/statuses/show/%s.json" % m.group(1))
+                    tjson = json.load(j)
+
+                    irc.reply("%s (%s): %s" % (tjson["user"]["screen_name"], tjson["user"]["name"], tjson["text"]), prefixNick=False)
 
     def tz(self, irc, msg, args, arg1, arg2, arg3):
         """[\37source_timezone] \37your_timezone \37time_to_convert  |  \37your_timezone now
@@ -179,7 +186,7 @@ class DiabloBasic(callbacks.Plugin):
 
     def streams(self, irc, msg, args):
         """
-		  Displays active Diablo streams on twitch.tv.
+        Displays active Diablo streams on twitch.tv.
         """
         if time.time() - DiabloBasic._dstream_time > 600:    #ten minutes
             DiabloBasic._dstream_time = time.time()
