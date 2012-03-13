@@ -76,7 +76,7 @@ class DiabloBasic(callbacks.Plugin):
         """[\37character]
         Returns a random quote from \37character, or from a random character if none is specified.
         """
-        # Lists all available quotes
+        # Lists all available quote sources
         if charname == "list":
             irc.reply('Available quote sources: %s (%d quotes)' % \
                 (', '.join(sorted(self.quotes.keys())), self.quote_count))
@@ -92,7 +92,7 @@ class DiabloBasic(callbacks.Plugin):
 
         # Help text
         elif charname not in self.quotes:
-            irc.reply("I don't have any quotes from %s. To get a full list"
+            irc.reply("I don't have any quotes from %s. To see a full list"
                       "of the quotes, enter !quote list" % charname)
 
         # Prints a quote of the character
@@ -199,28 +199,13 @@ class DiabloBasic(callbacks.Plugin):
             DiabloBasic._dstream_json = sorted(DiabloBasic._dstream_json, key=lambda x: 0 if x["channel"]["title"] in DiabloBasic._dstream_regulars else 1)
 
         irc.reply("Active Diablo streams on twitch.tv or justin.tv:", private=True)
-        current_streams = []
-
-        # Get streams of regulars
-        for f in DiabloBasic._dstream_regulars_json.values():
-            if f != [] and DiabloBasic._dstream_re.match(f[0]["meta_game"]):
-                current_streams.append(f[0])
-
-        # Get streams of other people
-        for c in DiabloBasic._dstream_json:
-            try:
-                if DiabloBasic._dstream_re.match(c["meta_game"]):
-                    current_streams.append(c)
-            except:
-                pass
         
-        # Print out all gathered streams
-        for i in current_streams[:8]:
+        for i in DiabloBasic._dstream_json[:8]:
             irc.reply("%s - %s (%s)" % \
                       (i["channel"]["channel_url"].encode("utf-8"), i["title"].encode("utf-8"),
                        i["meta_game"].encode("utf-8")), private=True)
 
-        if len(current_streams) > 8:
+        if len(DiabloBasic._dstream_json) > 8:
             irc.reply("And more!", private=True)
 
     streams = wrap(streams)
