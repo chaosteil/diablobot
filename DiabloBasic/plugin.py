@@ -221,6 +221,6 @@ class DiabloBasic(callbacks.Plugin):
         for n, v in enumerate(DiabloCommon.channel_rules):
             irc.reply("%d. %s" % (n+1, v), private=True, to=victim)
         irc.reply("End of rules", private=True, to=victim)
-    tellrules = wrap(tellrules, ['anything'])
+    tellrules = wrap(tellrules, ['nick'])
 
 Class = DiabloBasic
