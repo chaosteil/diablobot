@@ -15,6 +15,31 @@ import supybot.callbacks as callbacks
 
 import os
 
+# Pulled from http://stackoverflow.com/a/136368
+def tail(f, window=20):
+    BUFSIZ = 1024
+    f.seek(0, 2)
+    bytes = f.tell()
+    size = window
+    block = -1
+    data = []
+    while size > 0 and bytes > 0:
+        if (bytes - BUFSIZ > 0):
+            # Seek back one whole BUFSIZ
+            f.seek(block*BUFSIZ, 2)
+            # read BUFFER
+            data.append(f.read(BUFSIZ))
+        else:
+            # file too small, start from begining
+            f.seek(0,0)
+            # only read what was not read
+            data.append(f.read(bytes))
+        linesFound = data[-1].count('\n')
+        size -= linesFound
+        bytes -= BUFSIZ
+        block -= 1
+    return '\n'.join(''.join(data).splitlines()[-window:])
+
 class DiabloAdmin(callbacks.Plugin):
     """Add the help for "@plugin help DiabloAdmin" here
     This should describe *how* to use this plugin."""
@@ -29,12 +54,21 @@ class DiabloAdmin(callbacks.Plugin):
         os.chdir("/home/diablobot/dbot/")
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
 
+    def showlog(self, irc, msg, args):
+        """[\37showlog]
+        Shows the last 5 lines in the error log.
+        """
+        with open('logs/messages.log') as f:
+            for line in tail(f, 5):
+                irc.reply(line, private=True)
+    showlog = wrap(showlog, [('checkCapability', 'owner')])
+
     def diablosource(self, irc, msg, args):
         """[\37source]
         Gives you the current location of the diablobot plugin source code.
         """
-        irc.reply("Current location of the supybot plugins for diablobot: http://www.github.com/Chaosteil/diablobot")
-
+        irc.reply("Current location of the supybot plugins for diablobot: "
+                  "http://www.github.com/Chaosteil/diablobot")
     diablosource = wrap(diablosource)
 
 Class = DiabloAdmin
