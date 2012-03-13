@@ -177,18 +177,19 @@ class DiabloBasic(callbacks.Plugin):
         irc.reply("End of rules", private=True)
     #rules = wrap(rules)
 
-    def streams(self, irc, msg, args, sname):
-        """[\37stream ...]
-
-        Displays whether \37stream is currently live. If no stream is specified, it lists the status of all the regular streams.
+    def streams(self, irc, msg, args):
+        """
+		  Displays active Diablo streams on twitch.tv.
         """
         if time.time() - DiabloBasic._dstream_time > 600:    #ten minutes
             DiabloBasic._dstream_time = time.time()
-            j = urllib2.urlopen("http://api.justin.tv/api/stream/search/diablo.json?limit=8")
+            j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20III")
             DiabloBasic._dstream_json = json.load(j)
-            for f in DiabloBasic._dstream_regulars:
-                j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?channel="+f)
-                DiabloBasic._dstream_regulars_json[f] = json.load(j)
+            j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20II")
+            DiabloBasic._dstream_json.extend(json.load(j))
+            j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?meta_game=Diablo")
+            DiabloBasic._dstream_json.extend(json.load(j))
+            DiabloBasic._dstream_json = sorted(DiabloBasic._dstream_json, key=lambda x: 0 if x["channel"]["title"] in DiabloBasic._dstream_regulars else 1)
 
         irc.reply("Active Diablo streams on twitch.tv or justin.tv:", private=True)
         current_streams = []
@@ -209,15 +210,13 @@ class DiabloBasic(callbacks.Plugin):
         # Print out all gathered streams
         for i in current_streams[:8]:
             irc.reply("%s - %s (%s)" % \
-                      (i["channel"]["channel_url"], i["title"],
-                       i["meta_game"]), private=True)
+                      (i["channel"]["channel_url"].encode("utf-8"), i["title"].encode("utf-8"),
+                       i["meta_game"].encode("utf-8")), private=True)
 
         if len(current_streams) > 8:
             irc.reply("And more!", private=True)
 
-
-
-    streams = wrap(streams, [optional('something')])
+    streams = wrap(streams)
 
     def tellrules(self, irc, msg, args, victim):
         """\37user
