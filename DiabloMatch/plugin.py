@@ -42,12 +42,7 @@ class User(object):
         return "<User('%s')>" % (self.irc_name)
 
     def pretty_print(self, r=True):
-        out = ""
-        for f in User.quickfields:
-            v = getattr(self, f[0])
-            if v != None and v != 0:
-                out += "" + f[1] + ": " + v + ", "
-        out = out[:-2]
+        out = ", ".join(["" + f[1] + ": " + getattr(self, f[0]) for f in User.quickfields if getattr(self, f[0]) not in [None, 0]])
         if r and self.realm != None:
             out += ", Realm: " + self.realm
         return out
