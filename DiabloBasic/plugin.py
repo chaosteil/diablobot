@@ -77,10 +77,6 @@ class DiabloBasic(callbacks.Plugin):
         # Init stream checking
         DiabloBasic._dstream_time = 0
 
-    def _quotehelp(self):
-        return 'Available quote sources: %s (%d quotes)' % \
-                (', '.join(sorted(self.quotes.keys())), self.quote_count)
-
     def printQuote(self, irc, name, message):
         irc.reply("%s: %s" % (name, message), prefixNick=False)
 
@@ -90,7 +86,8 @@ class DiabloBasic(callbacks.Plugin):
         """
         # Lists all available quotes
         if charname == "list":
-            irc.reply(self._quotehelp())
+            irc.reply('Available quote sources: %s (%d quotes)' % \
+                (', '.join(sorted(self.quotes.keys())), self.quote_count))
 
         # Picks a random quote
         elif not charname:
@@ -104,7 +101,7 @@ class DiabloBasic(callbacks.Plugin):
         # Help text
         elif charname not in self.quotes:
             irc.reply("I don't have any quotes from %s. To get a full list"
-                      "of the quotes, enter !quote list" % charname)
+                      "of the quotes, enter !quote list" % charname)
 
         # Prints a quote of the character
         else:
