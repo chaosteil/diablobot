@@ -3,6 +3,7 @@ import time
 
 whois = {}
 
+#NickServ account names of people allowed to use restricted commands
 op_ids = [  #note lowercase
     "maxlemon", "lemonegro",
     "chaosteil",
@@ -28,34 +29,45 @@ channel_rules = [
 
 
 def get_services_account(irc, nick):
-    # Is nick in Whois?
+    """irc object, nick str
+    Returns a tuple (status, name). status indicates whether the nick is logged in to NickServ.
+    1: user not seen, 2: WHOIS in progress, 3: user known to be not logged in, 4: user logged in
+    but expired, 5: logged in and current.
+    The second element of the tuple is None for statuses 1-3 and the NickServ account name for
+    statuses 4-5.
+    """
     if nick not in whois.keys():
+        # user hasn't been seen before
         irc.queueMsg(ircmsgs.whois(nick, nick))
-        whois[nick] = None    #None means whois in process
+        whois[nick] = None    # None indicates that a WHOIS is in process
         return (1, )
         
-    # Whois in progress
     elif whois[nick] == None:
+        # user has been seen but WHOIS did not yet finish
         return (2, )
 
-    # User not authenticated with NickServ
     elif whois[nick] == -1:
-        # We try to refresh the auth , maybe the user is registered now
+        # user is known, but is not logged in to NickServ
+        # we'll check again, in case they have logged in since the last time
         irc.queueMsg(ircmsgs.whois(nick, nick))
         return (3, )
 
-    # User authenticated some time ago
-    else:    
-        # Ten hours since auth, we refresh the auth
+    else:
+        # user is known and authenticated
         if time.time() - whois[nick][1] > 36000:
+            # but ten hour have passed, so refresh the entry
             irc.queueMsg(ircmsgs.whois(nick, nick))
             return (4, whois[nick][0])
 
-        # User logged in
         else:
+            # known and authenticated less than ten hours ago
             return (5, whois[nick][0])
 
 def check_auth(irc, nick):
+    """irc object, nick str
+    Convenient wrapper for get_services_account that notifies the user of what's going on.
+    Returns the NickServ account name if the user is logged in and current, otherwise None.
+    """
     a = get_services_account(irc, nick)
     if a[0] == 1:
         irc.reply("Sorry, I needed to verify your identity. "
