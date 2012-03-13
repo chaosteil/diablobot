@@ -43,7 +43,7 @@ def get_services_account(irc, nick):
         irc.queueMsg(ircmsgs.whois(nick, nick))
         whois[nick] = None    # None indicates that a WHOIS is in process
         return (1, )
-        
+
     elif whois[nick] == None:
         # user has been seen but WHOIS did not yet finish
         return (2, )

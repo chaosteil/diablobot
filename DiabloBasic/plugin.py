@@ -65,7 +65,7 @@ class DiabloBasic(callbacks.Plugin):
         self.quote_count = 0
         for c in self.quotes.values():
             self.quote_count += len(c["quotes"])
-        
+
         # Init stream checking
         DiabloBasic._dstream_time = 0
 
@@ -197,7 +197,7 @@ class DiabloBasic(callbacks.Plugin):
             DiabloBasic._dstream_json = sorted(DiabloBasic._dstream_json, key=lambda x: 0 if x["channel"]["title"] in DiabloBasic._dstream_regulars else 1)
 
         irc.reply("Active Diablo streams on twitch.tv or justin.tv:", private=True)
-        
+
         for i in DiabloBasic._dstream_json[:8]:
             irc.reply("%s - %s (%s)" % \
                       (i["channel"]["channel_url"].encode("utf-8"), i["title"].encode("utf-8"),
