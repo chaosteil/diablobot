@@ -118,9 +118,7 @@ class DiabloBasic(callbacks.Plugin):
                 #http://us.battle.net/d3/en/calculator/monk#WVYjRk!YUa!cZZaYb
                 m = re.search("battle.net/d3/en/calculator/([\\w-]+)#([\\w\\.]+)!([\\w\\.]+)!([\\w\\.]+)", url)
                 if m:
-                    sk = []
-                    for f in self._hash_decode(m.group(2)):    #skills
-                        sk.append(self.skilldata[m.group(1)]["skills"][f])
+                    sk = [self.skilldata[m.group(1)]["skills"][f] for f in self._hash_decode(m.group(2))]
                     out = self.classes[m.group(1)] + ": "
                     for (n, f) in enumerate(self._hash_decode(m.group(4))):    #runes
                         if f < 0:
