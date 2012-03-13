@@ -25,7 +25,7 @@ class DiabloAdmin(callbacks.Plugin):
     public = False
 
     def gitpull(self, irc, msg, args):
-        """[\37gitpull]
+        """
         Pulls the latest revision of the git repository from the servers
         """
         os.chdir("/home/diablobot/dbot/plugins")
@@ -44,7 +44,7 @@ class DiabloAdmin(callbacks.Plugin):
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
 
     def showlog(self, irc, msg, args):
-        """[\37showlog]
+        """
         Shows the last 5 lines in the error log.
         """
         ret = subprocess.Popen(["tail", "logs/messages.log"], stdout=subprocess.PIPE).communicate()[0]
@@ -52,11 +52,19 @@ class DiabloAdmin(callbacks.Plugin):
     showlog = wrap(showlog, [('checkCapability', 'owner')])
 
     def diablosource(self, irc, msg, args):
-        """[\37diablosource]
+        """
         Gives you the current location of the diablobot plugin source code.
         """
         irc.reply("Current location of the supybot plugins for diablobot: "
                   "http://www.github.com/Chaosteil/diablobot")
     diablosource = wrap(diablosource)
+
+    def fixwd(self, irc, msg, args):
+        """
+        Fix the bot's working directory.
+        """
+        os.chdir("/home/diablobot/dbot/")
+        irc.reply(os.getcwd())
+    fixwd = wrap(fixwd, [('checkCapability', 'owner')])
 
 Class = DiabloAdmin
