@@ -18,6 +18,7 @@ import os, subprocess
 class DiabloAdmin(callbacks.Plugin):
     """Add the help for "@plugin help DiabloAdmin" here
     This should describe *how* to use this plugin."""
+    public = False
 
     def gitpull(self, irc, msg, args):
         """[\37gitpull]
