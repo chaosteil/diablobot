@@ -59,4 +59,9 @@ class DiabloAdmin(callbacks.Plugin):
                   "http://www.github.com/Chaosteil/diablobot")
     diablosource = wrap(diablosource)
 
+    def fixwd(self, irc, msg, args):
+        os.chdir("/home/diablobot/dbot/")
+        irc.reply(os.getcwd())
+    diablosource = wrap(diablosource)
+
 Class = DiabloAdmin
