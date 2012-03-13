@@ -15,6 +15,18 @@ op_ids = [  #note lowercase
     "taffing", "taffer"
     ]
 
+channel_rules = [
+    "All topics are allowed, but Diablo should always take precedence.",
+    "Be polite and respectful of others.",
+    "Do not disrupt conversation with spam or bot activities.",
+    "Use #bazaar for item trading discussion.",
+    "Do not sell, offer to sell, or seek sale of beta keys.",
+    "Follow instructions given by the channel operators.",
+    "Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
+    "See http://bit.ly/wEkLDN for more details."
+    ]
+
+
 def get_services_account(irc, nick):
     # Is nick in Whois?
     if nick not in whois.keys():
