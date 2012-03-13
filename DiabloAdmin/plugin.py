@@ -15,31 +15,6 @@ import supybot.callbacks as callbacks
 
 import os, subprocess
 
-# Pulled from http://stackoverflow.com/a/136368
-def tail(f, window=20):
-    BUFSIZ = 1024
-    f.seek(0, 2)
-    bytes = f.tell()
-    size = window
-    block = -1
-    data = []
-    while size > 0 and bytes > 0:
-        if (bytes - BUFSIZ > 0):
-            # Seek back one whole BUFSIZ
-            f.seek(block*BUFSIZ, 2)
-            # read BUFFER
-            data.append(f.read(BUFSIZ))
-        else:
-            # file too small, start from begining
-            f.seek(0,0)
-            # only read what was not read
-            data.append(f.read(bytes))
-        linesFound = data[-1].count('\n')
-        size -= linesFound
-        bytes -= BUFSIZ
-        block -= 1
-    return '\n'.join(''.join(data).splitlines()[-window:])
-
 class DiabloAdmin(callbacks.Plugin):
     """Add the help for "@plugin help DiabloAdmin" here
     This should describe *how* to use this plugin."""
@@ -51,6 +26,8 @@ class DiabloAdmin(callbacks.Plugin):
         os.chdir("/home/diablobot/dbot/plugins")
         ret = subprocess.Popen(["git", "pull"], stdout=subprocess.PIPE).communicate()[0]
         for f in ret.split("\n"):
+            if f == "":
+                return
             irc.reply(f, prefixNick=False)
         os.chdir("/home/diablobot/dbot/")
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
