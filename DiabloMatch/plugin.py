@@ -192,7 +192,7 @@ class DiabloMatch(callbacks.Plugin):
             for user in users:
                 irc.reply(user.pretty_print(), private=True)
 
-    bt = wrap(bt, [optional('anything'), optional('anything')])
+    bt = wrap(bt, [optional('something'), optional('something')])
 
     def btinfo(self, irc, msg, args, arg1):
         """[\37user]
@@ -211,7 +211,7 @@ class DiabloMatch(callbacks.Plugin):
             for line in user.full_print():
                 irc.reply(line, private=True)
 
-    btinfo = wrap(btinfo, [optional('anything')])
+    btinfo = wrap(btinfo, [optional('something')])
 
     def _check_registered(self, irc, msg, session, ircname):
         try:
@@ -332,7 +332,7 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.reply("Set URL to " + arg2 + ".", private=True)
-    btset = wrap(btset, ['anything', optional('text')])
+    btset = wrap(btset, ['something', optional('text')])
 
     #on any channel activity, cache the user's whois info
     def doPrivmsg(self, irc, msg):
