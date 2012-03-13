@@ -92,58 +92,6 @@ class DiabloMatch(callbacks.Plugin):
     _bt_regexp    = re.compile(r"\w{1,32}#\d{4,8}$")
     _color_regexp = re.compile("(?:(?:\d{1,2}(?:,\d{1,2})?)?|||)")
 
-    def _get_services_account(self, irc, nick):
-        # Is nick in Whois?
-        if nick not in DiabloCommon.whois.keys():
-            irc.queueMsg(ircmsgs.whois(nick, nick))
-            DiabloCommon.whois[nick] = None    #None means whois in process
-            return (1, )
-        
-        # Whois in progress
-        elif DiabloCommon.whois[nick] == None:
-            return (2, )
-
-        # User not authenticated with NickServ
-        elif DiabloCommon.whois[nick] == -1:
-            # We try to refresh the auth , maybe the user is registered now
-            irc.queueMsg(ircmsgs.whois(nick, nick))
-            return (3, )
-
-        # User authenticated some time ago
-        else:    
-            # Ten hours since auth, we refresh the auth
-            if time.time() - DiabloCommon.whois[nick][1] > 36000:
-                irc.queueMsg(ircmsgs.whois(nick, nick))
-                return (4, DiabloCommon.whois[nick][0])
-
-            # User logged in
-            else:
-                return (5, DiabloCommon.whois[nick][0])
-
-    def _check_auth(self, irc, msg):
-        a = self._get_services_account(irc, msg.nick)
-        if a[0] == 1:
-            irc.reply("Sorry, I needed to verify your identity. "
-                      "Please repeat your previous command.", private=True)
-        elif a[0] == 2:
-            irc.reply("Still verifying your identity. "
-                      "Try again in a few seconds.", private=True)
-        elif a[0] == 3:
-            irc.reply("You're not logged in. Please authenticate with "
-                      "NickServ so I know who you are.", private=True)
-        elif a[0] == 4:
-            irc.reply("You were logged in to NickServ as '%s', but your "
-                      "last session expired. Please repeat your previous "
-                      "command." % a[1], private=True)
-        elif a[0] == 5:
-            irc.reply("You're logged in to NickServ as '%s'." % a[1],
-                      private=True)
-            return a[1]
-        else:
-            irc.reply("This can't ever happen. "
-                      "Someone must have divided by zero.", private=True)
-        return False
-
     # "Logged in as" WHOIS response
     def do330(self, irc, msg):
         nick = msg.args[1]
@@ -220,7 +168,7 @@ class DiabloMatch(callbacks.Plugin):
         if arg1 == "register":
             self._btRegister(irc, msg, arg2)
         elif arg1 == None:
-            s = self._check_auth(irc, msg)
+            s = DiabloCommon.check_auth(irc, msg)
             if s:
                 session = Session()
                 try:
@@ -289,7 +237,7 @@ class DiabloMatch(callbacks.Plugin):
         if arg2 == None:
             irc.reply("Here's the current value of " + arg1 + ": (not yet implemented).", private=True)
             return
-        ircname = self._check_auth(irc, msg)
+        ircname = DiabloCommon.check_auth(irc, msg)
         if not ircname:
             return
         if arg1.lower() in ["bt", "battletag"]:
@@ -391,11 +339,11 @@ class DiabloMatch(callbacks.Plugin):
         if ircmsgs.isCtcp(msg) and not ircmsgs.isAction(msg):
             return
         if irc.isChannel(msg.args[0]):
-            self._get_services_account(irc, msg.nick)
+            DiabloCommon.get_services_account(irc, msg.nick)
 
     #on any channel join, cache the user's whois info
     def doJoin(self, irc, msg):
         if irc.isChannel(msg.args[0]):
-            self._get_services_account(irc, msg.nick)
+            DiabloCommon.get_services_account(irc, msg.nick)
 
 Class = DiabloMatch
