@@ -178,9 +178,8 @@ class DiabloMatch(callbacks.Plugin):
                               "!bt register BattleTag#1234", private=True)
         else:
             data = arg1.split(":")
-            data.reverse()
 
-            users = self._findBtUsers(irc, data[0], None if len(data) == 1 else data[1])
+            users = self._findBtUsers(irc, data[-1], None if len(data) == 1 else data[0])
 
             for user in users:
                 irc.reply(user.pretty_print(), private=True)
@@ -192,9 +191,8 @@ class DiabloMatch(callbacks.Plugin):
         Shows detailed user information. \37user may be prefixed with irc:, steam:, reddit:, email:, or bt:, and may contain the wildcard *. If \37user is not supplied, your own information will be displayed.
         """
         data = arg1.split(":")
-        data.reverse()
 
-        users = self._findBtUsers(irc, data[0], "irc" if len(data) == 1 else data[1])
+        users = self._findBtUsers(irc, data[-1], "irc" if len(data) == 1 else data[0])
 
         for user in users:
             irc.reply("User details. Fields marked with a * are not "
