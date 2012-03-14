@@ -46,7 +46,7 @@ class DiabloBasic(callbacks.Plugin):
     # Stream Info
     _dstream_regulars = [
         "rdiablo",
-        "DrZealotTV"
+        "drzealottv"
     ]
     _dstream_regulars_json = {}
     _dstream_re = re.compile("diablo", re.IGNORECASE)
