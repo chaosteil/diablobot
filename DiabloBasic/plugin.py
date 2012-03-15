@@ -178,13 +178,19 @@ class DiabloBasic(callbacks.Plugin):
         irc.reply(tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
     tz = wrap(tz, ['something', 'something', optional('text')])
 
-    def rules(self, irc, msg, args):
+    def rules(self, irc, msg, args, victim):
+        """[/37nick]
+        Shows the rules for #diablo and #bazaar. If \37nick is specificed (requires op), tells the rules to that user.
         """
-        Shows the rules for #diablo and #bazaar.
-        """
+        if victim:
+            if not DiabloCommon.check_op(irc, msg.nick):
+                irc.reply("Only operators can tell rules to others.", private=True)
+                return
+        else:
+            victim = msg.nick
         for v in DiabloCommon.channel_rules:
-            irc.reply(v, private=True)
-    rules = wrap(rules)
+            irc.reply(v, private=True, to=victim)
+    rules = wrap(rules, [optional('nick')])
 
     def streams(self, irc, msg, args):
         """
@@ -211,15 +217,5 @@ class DiabloBasic(callbacks.Plugin):
             irc.reply("And more!", private=True)
 
     streams = wrap(streams)
-
-    def tellrules(self, irc, msg, args, victim):
-        """\37user
-        Tell the rules for #diablo and #bazaar to \37user.
-        """
-        if not DiabloCommon.check_op(irc, msg.nick):
-            return
-        for v in DiabloCommon.channel_rules:
-            irc.reply(v, private=True, to=victim)
-    tellrules = wrap(tellrules, ['nick'])
 
 Class = DiabloBasic
