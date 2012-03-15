@@ -136,13 +136,23 @@ class DiabloBasic(callbacks.Plugin):
                         out += self.skilldata[m.group(1)]["traits"][f]["name"] + ", "
                     out = out[:-2]
                     irc.reply(out, prefixNick=False)
+                    return  #no need no check the other url formats.
                 #https://twitter.com/#!/Nyzaris/status/179599382814011392
                 m = re.search("twitter.com/#!/.+/status/(\d+)", url)
                 if m:
                     j = urllib2.urlopen("http://api.twitter.com/1/statuses/show/%s.json" % m.group(1))
                     tjson = json.load(j)
-
                     irc.reply("%s (%s): %s" % (tjson["user"]["screen_name"], tjson["user"]["name"], tjson["text"]), prefixNick=False)
+                    return
+                if url.find("reddit.com/r/") != -1:
+                    j = urllib2.urlopen(url + ".json?limit=1")
+                    f = json.load(j)[0]["data"]["children"][0]["data"]
+
+                    if f["is_self"]:
+                        irc.reply("Reddit: [%d] %s (%s) by %s %s. %d comments." % (f["score"], f["title"], f["domain"], f["author"], time.strftime("%d %b %Y %H:%M:%S UTC", time.gmtime(f["created_utc"])), f["num_comments"]), prefixNick=False)
+                    else:
+                        irc.reply("Reddit: [%d] %s (%s) by %s %s. %d comments." % (f["score"], f["title"], f["url"], f["author"], time.strftime("%d %b %Y %H:%M:%S UTC", time.gmtime(f["created_utc"])), f["num_comments"]), prefixNick=False)
+                    return
 
     def tz(self, irc, msg, args, arg1, arg2, arg3):
         """[\37source_timezone] \37your_timezone \37time_to_convert  |  \37your_timezone now
