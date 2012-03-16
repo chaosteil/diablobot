@@ -17,7 +17,7 @@ whois = {}
 
 #NickServ account names of people allowed to use restricted commands
 op_ids = [  #note lowercase
-    "maxlemon", "lemonegro",
+    "maxlemon",
     "chaosteil",
     "listen2",
     "nitesmoke",
