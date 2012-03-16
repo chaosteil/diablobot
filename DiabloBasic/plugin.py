@@ -149,9 +149,9 @@ class DiabloBasic(callbacks.Plugin):
                     f = json.load(j)[0]["data"]["children"][0]["data"]
 
                     if f["is_self"]:
-                        irc.reply("Reddit: [%d] %s (%s) by %s %s. %d comments." % (f["score"], f["title"], f["domain"], f["author"], time.strftime("%d %b %Y %H:%M:%S UTC", time.gmtime(f["created_utc"])), f["num_comments"]), prefixNick=False)
+                        irc.reply("Reddit: [%d] %s (%s) by %s %s ago. %d comments." % (f["score"], f["title"], f["domain"], f["author"], DiabloCommon.timeago(time.time() - f["created_utc"]), f["num_comments"]), prefixNick=False)
                     else:
-                        irc.reply("Reddit: [%d] %s (%s) by %s %s. %d comments." % (f["score"], f["title"], f["url"], f["author"], time.strftime("%d %b %Y %H:%M:%S UTC", time.gmtime(f["created_utc"])), f["num_comments"]), prefixNick=False)
+                        irc.reply("Reddit: [%d] %s (%s) by %s %s ago. %d comments." % (f["score"], f["title"], f["url"], f["author"], DiabloCommon.timeago(time.time() - f["created_utc"]), f["num_comments"]), prefixNick=False)
                     return
 
     def tz(self, irc, msg, args, arg1, arg2, arg3):

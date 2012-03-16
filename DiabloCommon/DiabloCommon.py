@@ -115,3 +115,28 @@ def check_op(irc, nick):
         irc.reply("You're not allowed to use %s." % inspect.stack()[1][3])
         return False
     return True
+
+def timeago(sec):
+    """elapsed seconds
+    Returns the length of time formatted the way Reddit does.
+    """
+    sec = (int(sec))
+    n = sec / 31536000
+    if n:
+        return "%d year%s" % (n, "s" if n > 1 else "")
+    n = sec / 2592000
+    if n:
+        return "%d month%s" % (n, "s" if n > 1 else "")
+    n = sec / 604800
+    if n:
+        return "%d week%s" % (n, "s" if n > 1 else "")
+    n = sec / 86400
+    if n:
+        return "%d day%s" % (n, "s" if n > 1 else "")
+    n = sec / 3600
+    if n:
+        return "%d hour%s" % (n, "s" if n > 1 else "")
+    n = sec / 60
+    if n:
+        return "%d minutes%s" % (n, "s" if n > 1 else "")
+    return "%d second%s" % (sec, "s" if sec > 1 else "")    
