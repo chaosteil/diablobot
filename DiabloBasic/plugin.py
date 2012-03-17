@@ -123,12 +123,10 @@ class DiabloBasic(callbacks.Plugin):
                 m = re.search("battle.net/d3/en/calculator/([\\w-]+)#([\\w\\.]+)!([\\w\\.]+)!([\\w\\.]+)", url)
                 if m:
                     sk = [self.skilldata[m.group(1)]["skills"][f] for f in self._hash_decode(m.group(2))]
-                    out = self.classes[m.group(1)] + ": "
-                    out += ", ".join(["%s (%s)" % (sk[n]["name"], ("none" if f < 0 else sk[n]["runes"][f]["name"])) for (n, f) in enumerate(self._hash_decode(m.group(4)))])
+                    out = self.classes[m.group(1)] + ": " #classname
+                    out += ", ".join(["%s (%s)" % (sk[n]["name"], ("none" if f < 0 else sk[n]["runes"][f]["name"])) for (n, f) in enumerate(self._hash_decode(m.group(4)))]) #skills
                     out += " / "
-                    for f in self._hash_decode(m.group(3)):    #traits
-                        out += self.skilldata[m.group(1)]["traits"][f]["name"] + ", "
-                    out = out[:-2]
+                    out += ", ".join([self.skilldata[m.group(1)]["traits"][f]["name"] for f in self._hash_decode(m.group(3))]) #traits
                     irc.reply(out, prefixNick=False)
                     return  #no need no check the other url formats.
                 #https://twitter.com/#!/Nyzaris/status/179599382814011392
