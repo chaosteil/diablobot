@@ -228,4 +228,23 @@ class DiabloBasic(callbacks.Plugin):
 
     streams = wrap(streams)
 
+    def timeleft(self, irc, msg, args):
+        """
+        Shows the time remaining until the next big event. Only usable by +v or +o.
+        """
+        if not irc.isChannel(msg.args[0]):
+            return
+        if not (irc.state.channels[msg.args[0]].isOp(msg.nick) or
+                irc.state.channels[msg.args[0]].isVoice(msg.nick)):
+            return
+        secs = int(1337065200 - time.time()) # 15 May 2012 00:00:00 PDT
+        days = secs / 86400
+        secs = secs - (days * 86400)
+        hours = secs / 3600
+        secs -= hours * 3600
+        mins = secs / 60
+        secs -= mins * 60
+        irc.reply("Diablo III release: %d days, %d hours, %d minutes, %d seconds" % (days, hours, mins, secs), prefixNick=False)  # 15 May 2012 00:00:00 PDT
+    timeleft = wrap(timeleft)
+
 Class = DiabloBasic
