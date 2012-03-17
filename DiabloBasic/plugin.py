@@ -47,10 +47,11 @@ class DiabloBasic(callbacks.Plugin):
     }
     skilldata = {}
 
-    # Stream Info
+    # Stream info. note lowercase.
     _dstream_regulars = [
         "rdiablo",
-        "drzealottv"
+        "drzealottv",
+        "theblinks"
     ]
     _dstream_regulars_json = {}
     _dstream_re = re.compile("diablo", re.IGNORECASE)
@@ -188,6 +189,7 @@ class DiabloBasic(callbacks.Plugin):
             #if not irc.state.channels["#diablo"].isOp(msg.nick):
             #    irc.reply("Only operators can tell rules to others.", private=True)
             #    return
+            pass
         else:
             victim = msg.nick
         for v in DiabloCommon.channel_rules:
