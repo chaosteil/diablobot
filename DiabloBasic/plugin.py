@@ -124,13 +124,7 @@ class DiabloBasic(callbacks.Plugin):
                 if m:
                     sk = [self.skilldata[m.group(1)]["skills"][f] for f in self._hash_decode(m.group(2))]
                     out = self.classes[m.group(1)] + ": "
-                    for (n, f) in enumerate(self._hash_decode(m.group(4))):    #runes
-                        if f < 0:
-                            out += sk[n]["name"] + " (none)"
-                        else:
-                            out += sk[n]["name"] + " (" + sk[n]["runes"][f]["name"] + ")"
-                        out += ", "
-                    out = out[:-2]
+                    out += ", ".join(["%s (%s)" % (sk[n]["name"], ("none" if f < 0 else sk[n]["runes"][f]["name"])) for (n, f) in enumerate(self._hash_decode(m.group(4)))])
                     out += " / "
                     for f in self._hash_decode(m.group(3)):    #traits
                         out += self.skilldata[m.group(1)]["traits"][f]["name"] + ", "
