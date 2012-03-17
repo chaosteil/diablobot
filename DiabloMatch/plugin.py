@@ -60,7 +60,7 @@ class User(object):
         if self.tz != None:
             tz_to = pytz.timezone(self.tz)
             tz_from = pytz.timezone("America/New_York")
-            tm = datetime.now().replace(tzinfo=tz_from)
+            tm = tz_from.localize(datetime.now())
             tm_to = tm.astimezone(tz_to)
             out.append("Local time: " + tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
         if self.cmt != None:
