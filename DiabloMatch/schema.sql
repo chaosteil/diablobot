@@ -11,3 +11,9 @@ CREATE TABLE users (
     realm TEXT default NULL,
     url TEXT default NULL
 );
+
+CREATE TABLE reddit_v (
+	id INTEGER PRIMARY KEY,
+	key TEXT default NULL,
+	FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED
+);
