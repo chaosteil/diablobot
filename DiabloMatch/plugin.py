@@ -26,6 +26,7 @@ import time, pytz
 import re
 from datetime import datetime
 import hashlib
+import random
 
 import sys
 if "/home/diablobot/dbot/plugins/DiabloCommon" not in sys.path:
@@ -69,6 +70,13 @@ class User(object):
             out.append("URL: " + self.url)
         return out
 
+class Verification(object):
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return "<Verification('%s')>" % (self.id)
+
 #engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3', echo=True)
 engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3')
 Session = sessionmaker(bind=engine)
@@ -76,6 +84,8 @@ meta = MetaData()
 meta.bind = engine
 user_table = Table('users', meta, autoload=True)
 mapper(User, user_table)
+verification_table = Table('reddit_v', meta, autoload=True)
+mapper(Verification, verification_table)
 
 class DiabloMatch(callbacks.Plugin):
     """Add the help for "@plugin help DiabloMatch" here
@@ -326,6 +336,24 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.reply("Set URL to " + arg2 + ".", private=True)
+        elif arg1.lower() == "reddit":
+            session = Session()
+            user = self._check_registered(irc, msg, session, ircname)
+            if user == None:
+                return
+            try:
+                ver = session.query(Verification).filter(Verification.id == user.id).one()
+            except NoResultFound:
+                ver = Verification()
+            ver.id = user.id
+            hasher = hashlib.sha256()
+            hasher.update(str(random.randint(0, 4294967295)))
+            k = hasher.hexdigest()[0:32]
+            ver.key = k
+            session.add(ver)
+            session.commit()
+            irc.reply("Send a PM on Reddit to GharbadTheWeak with the subject diablobot verification and the body body " + k + "", private=True)
+            irc.reply("http://www.reddit.com/message/compose/?to=GharbadTheWeak&subject=diablobot%20verification&message=" + k, private=True)
     btset = wrap(btset, ['something', optional('text')])
 
     #on any channel activity, cache the user's whois info
