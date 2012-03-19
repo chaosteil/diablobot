@@ -352,7 +352,7 @@ class DiabloMatch(callbacks.Plugin):
             ver.key = k
             session.add(ver)
             session.commit()
-            irc.reply("Send a PM on Reddit to GharbadTheWeak with the subject diablobot verification and the body body " + k + "", private=True)
+            irc.reply("Send a PM on Reddit to GharbadTheWeak with the subject diablobot verification and the body " + k + "", private=True)
             irc.reply("http://www.reddit.com/message/compose/?to=GharbadTheWeak&subject=diablobot%20verification&message=" + k, private=True)
             irc.reply("Your verification will be accepted within an hour of receipt.", private=True)
     btset = wrap(btset, ['something', optional('text')])
