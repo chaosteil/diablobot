@@ -238,7 +238,7 @@ class DiabloMatch(callbacks.Plugin):
         except:
             pass
         if arg1.lower() == "list":    #or arg1.lower() not in []:
-            irc.reply("Available fields: bt/battletag, reddit_name, email, irc_name, steam_name, password, comment, tz/timezone, realm, url", private=True)
+            irc.reply("Available fields: bt/battletag, reddit_name, email, steam_name, password, comment, tz/timezone, realm, url", private=True)
             return
         if arg2 == None:
             irc.reply("Here's the current value of " + arg1 + ": (not yet implemented).", private=True)
