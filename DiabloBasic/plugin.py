@@ -23,7 +23,7 @@ import random
 import pytz, time
 from datetime import datetime
 from dateutil.parser import parse
-import urllib2
+import httplib2
 
 import sys
 if "/home/diablobot/dbot/plugins/DiabloCommon" not in sys.path:
@@ -133,13 +133,15 @@ class DiabloBasic(callbacks.Plugin):
                 #https://twitter.com/#!/Nyzaris/status/179599382814011392
                 m = re.search("twitter.com/#!/.+/status/(\d+)", url)
                 if m:
-                    j = urllib2.urlopen("http://api.twitter.com/1/statuses/show/%s.json" % m.group(1))
-                    tjson = json.load(j)
+                    h = httplib2.Http(".cache")
+                    resp, j = h.request("http://api.twitter.com/1/statuses/show/%s.json" % m.group(1), "GET")
+                    tjson = json.loads(j)
                     irc.reply("%s (%s): %s" % (tjson["user"]["screen_name"], tjson["user"]["name"], tjson["text"]), prefixNick=False)
                     return
                 if url.find("reddit.com/r/") != -1:
-                    j = urllib2.urlopen(url + ".json?limit=1")
-                    f = json.load(j)[0]["data"]["children"][0]["data"]
+                    h = httplib2.Http(".cache")
+                    resp, j = h.request(url + ".json?limit=1", "GET")
+                    f = json.loads(j)[0]["data"]["children"][0]["data"]
 
                     if f["is_self"]:
                         irc.reply("Reddit: [%d] %s (%s) by %s %s ago. %d comment%s." % (f["score"], f["title"], f["domain"], f["author"], DiabloCommon.timeago(time.time() - f["created_utc"]), f["num_comments"], "s" if f["num_comments"] != 1 else ""), prefixNick=False)
@@ -202,12 +204,13 @@ class DiabloBasic(callbacks.Plugin):
         """
         if time.time() - DiabloBasic._dstream_time > 600:    #ten minutes
             DiabloBasic._dstream_time = time.time()
-            j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20III")
-            DiabloBasic._dstream_json = json.load(j)
-            j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20II")
-            DiabloBasic._dstream_json.extend(json.load(j))
-            j = urllib2.urlopen("http://api.justin.tv/api/stream/list.json?meta_game=Diablo")
-            DiabloBasic._dstream_json.extend(json.load(j))
+            h = httplib2.Http(".cache")
+            resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20III", "GET")
+            DiabloBasic._dstream_json = json.loads(j)
+            resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20II", "GET")
+            DiabloBasic._dstream_json.extend(json.loads(j))
+            resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo", "GET")
+            DiabloBasic._dstream_json.extend(json.loads(j))
             DiabloBasic._dstream_json = sorted(DiabloBasic._dstream_json, key=lambda x: 0 if x["channel"]["title"] in DiabloBasic._dstream_regulars else 1)
 
         irc.reply("Active Diablo streams on twitch.tv or justin.tv:", private=True)
