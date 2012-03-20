@@ -117,6 +117,8 @@ class DiabloMatch(callbacks.Plugin):
 
     def _btRegister(self, irc, msg, battletag):
         if battletag:
+            irc.reply("After registering, use !btset to set your profile fields.", private=True)
+            irc.reply("If you set reddit_name, I'll sync your battletag from your /r/diablo flair.", private=True)
             self.btset(irc, msg, ["bt", battletag])
         else:
             irc.reply("Please specify the battletag you wish to register: "
