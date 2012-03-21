@@ -236,7 +236,7 @@ class DiabloBasic(callbacks.Plugin):
             return
         secs = int(1337065200 - time.time()) # 15 May 2012 00:00:00 PDT
         days = secs / 86400
-        secs = secs - (days * 86400)
+        secs -= days * 86400
         hours = secs / 3600
         secs -= hours * 3600
         mins = secs / 60
