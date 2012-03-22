@@ -24,7 +24,8 @@ channel_rules = [
     "5. Do not sell, offer to sell, or seek sale of beta keys.",
     "6. Follow instructions given by the channel operators.",
     "7. Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
-    "8. See http://bit.ly/wEkLDN for more details.",
+    "8. IRC statistics are available at http://d3.fuzz.me.uk/",
+    "9. See http://bit.ly/wEkLDN for more details.",
     "End of rules"
     ]
 
