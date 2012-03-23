@@ -89,7 +89,7 @@ class DiabloBasic(callbacks.Plugin):
         # Picks a random quote
         elif not charname:
             # this won't show up in the list of quote sources. it's a secret!
-            if random.randrange(0, 999) == 0:
+            if random.randint(0, 999) == 0:
                 self.printQuote(irc, "Cow", "Mooooooo! Moo moo moo moo moo!")
             else:
                 q = self.quotes[random.choice(self.quotes.keys())]
