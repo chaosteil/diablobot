@@ -114,5 +114,5 @@ def timeago(sec):
         return "%d hour%s" % (n, "s" if n > 1 else "")
     n = sec / 60
     if n:
-        return "%d minutes%s" % (n, "s" if n > 1 else "")
+        return "%d minute%s" % (n, "s" if n > 1 else "")
     return "%d second%s" % (sec, "s" if sec > 1 else "")    
