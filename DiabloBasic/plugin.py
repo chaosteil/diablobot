@@ -221,7 +221,7 @@ class DiabloBasic(callbacks.Plugin):
                        i["meta_game"].encode("utf-8")), private=True)
 
         if len(DiabloBasic._dstream_json) > 8:
-            irc.reply("And %d more!" % len(DiabloBasic._dstream_json - 8), private=True)
+            irc.reply("And %d more!" % len(DiabloBasic._dstream_json) - 8, private=True)
 
     streams = wrap(streams)
 
