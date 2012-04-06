@@ -61,11 +61,11 @@ class DiabloBasic(callbacks.Plugin):
 
         # Load class data
         for c in self.classes.keys():
-            with open("plugins/DiabloBasic/data/"+c+".json", "r") as f:
+            with open("/home/listen2/dbot/plugins/DiabloBasic/data/"+c+".json", "r") as f:
                 self.skilldata[c] = json.load(f)
 
         # Load quotes
-        with open("plugins/DiabloBasic/data/quotes.json", "r") as f:
+        with open("/home/listen2/dbot/plugins/DiabloBasic/data/quotes.json", "r") as f:
             self.quotes = json.load(f)
         self.quote_count = 0
         for c in self.quotes.values():
