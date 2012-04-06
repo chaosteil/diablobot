@@ -20,8 +20,8 @@ import supybot.callbacks as callbacks
 
 import os, subprocess, sys
 
-if "/home/diablobot/dbot/plugins/DiabloCommon" not in sys.path:
-     sys.path.append("/home/diablobot/dbot/plugins/DiabloCommon")
+if "/home/listen2/dbot/plugins/DiabloCommon" not in sys.path:
+     sys.path.append("/home/listen2/dbot/plugins/DiabloCommon")
 import DiabloCommon
 
 class DiabloAdmin(callbacks.Plugin):
@@ -33,7 +33,7 @@ class DiabloAdmin(callbacks.Plugin):
         """
         Pulls the latest revision of the git repository from the servers
         """
-        os.chdir("/home/diablobot/dbot/plugins")
+        os.chdir("/home/listen2/dbot/plugins")
         oldhead = subprocess.Popen(["git", "log -1 --format='%H'"], stdout=subprocess.PIPE).communicate()[0]
         ret = subprocess.Popen(["git", "pull"], stdout=subprocess.PIPE).communicate()[0]
         for f in ret.split("\n"):
@@ -45,7 +45,7 @@ class DiabloAdmin(callbacks.Plugin):
             if f == "":
                 return
             irc.reply(f, prefixNick=False)
-        os.chdir("/home/diablobot/dbot/")
+        os.chdir("/home/listen2/dbot/")
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
 
     def showlog(self, irc, msg, args):
@@ -68,7 +68,7 @@ class DiabloAdmin(callbacks.Plugin):
         """
         Fix the bot's working directory.
         """
-        os.chdir("/home/diablobot/dbot/")
+        os.chdir("/home/listen2/dbot/")
         irc.reply(os.getcwd())
     fixwd = wrap(fixwd, [('checkCapability', 'owner')])
 

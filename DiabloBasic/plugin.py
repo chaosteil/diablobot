@@ -26,8 +26,8 @@ from dateutil.parser import parse
 import httplib2
 
 import sys
-if "/home/diablobot/dbot/plugins/DiabloCommon" not in sys.path:
-     sys.path.append("/home/diablobot/dbot/plugins/DiabloCommon")
+if "/home/listen2/dbot/plugins/DiabloCommon" not in sys.path:
+     sys.path.append("/home/listen2/dbot/plugins/DiabloCommon")
 import DiabloCommon
 
 class DiabloBasic(callbacks.Plugin):
