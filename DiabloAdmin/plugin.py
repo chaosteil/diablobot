@@ -40,7 +40,7 @@ class DiabloAdmin(callbacks.Plugin):
             if f == "":
                 continue
             irc.reply(f, prefixNick=False)
-        log = subprocess.Popen(["git", "log", "--oneline", oldhead + "..HEAD"], stdout=subprocess.PIPE).communicate()[0]
+        log = subprocess.Popen(["git", "log", "--pretty=format:'%h %s %an %ar'", oldhead + "..HEAD"], stdout=subprocess.PIPE).communicate()[0]
         for f in log.split("\n"):
             if f == "":
                 continue
