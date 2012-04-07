@@ -40,11 +40,11 @@ class DiabloAdmin(callbacks.Plugin):
             if f == "":
                 continue
             irc.reply(f, prefixNick=False)
-        log = subprocess.Popen(["git", "log", "--pretty=format:'%h %s %an %ar'", oldhead + "..HEAD"], stdout=subprocess.PIPE).communicate()[0]
+        log = subprocess.Popen(["git", "log", "--pretty=format:'%h %s %an, %ar'", oldhead + "..HEAD"], stdout=subprocess.PIPE).communicate()[0]
         for f in log.split("\n"):
             if f == "":
                 continue
-            irc.reply(f, prefixNick=False)
+            irc.reply(f[1:-1], prefixNick=False)
         os.chdir("/home/listen2/dbot/")
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
 
