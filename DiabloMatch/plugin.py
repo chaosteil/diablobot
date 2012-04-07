@@ -359,6 +359,12 @@ class DiabloMatch(callbacks.Plugin):
             irc.reply("Your verification will be accepted within an hour of receipt.", private=True)
     btset = wrap(btset, ['something', optional('text')])
 
+    def lfg(self, irc, msg, args, arg1):
+        """
+        """
+        irc.reply("NYI")
+    lfg = wrap(lfg)
+
     #on any channel activity, cache the user's whois info
     def doPrivmsg(self, irc, msg):
         if ircmsgs.isCtcp(msg) and not ircmsgs.isAction(msg):
