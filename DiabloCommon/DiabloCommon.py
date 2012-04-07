@@ -26,7 +26,7 @@ channel_rules = [
     "7. Do not impersonate other /r/Diablo members or Blizzard employees.",
     "8. Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
     "9. IRC statistics are available at http://d3.fuzz.me.uk/",
-    "10. See http://bit.ly/wEkLDN for more details.",
+    "10. These rules are subject to change at any time. See http://bit.ly/wEkLDN for more details.",
     "End of rules"
     ]
 
