@@ -81,6 +81,8 @@ def check_auth(irc, nick):
     elif a[0] == 3:
         irc.reply("You're not logged in. Please authenticate with "
                   "NickServ so I know who you are.", private=True)
+        irc.reply("Type /msg NickServ help register and /msg"
+                "NickServ help identify for more information.", private=True)
     elif a[0] == 4:
         irc.reply("You were logged in to NickServ as '%s', but your "
                   "last session expired. Please repeat your previous "
