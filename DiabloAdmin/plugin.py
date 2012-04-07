@@ -38,12 +38,12 @@ class DiabloAdmin(callbacks.Plugin):
         ret = subprocess.Popen(["git", "pull"], stdout=subprocess.PIPE).communicate()[0]
         for f in ret.split("\n"):
             if f == "":
-                return
+                continue
             irc.reply(f, prefixNick=False)
         log = subprocess.Popen(["git", "log --oneline " + oldhead + "..HEAD"], stdout=subprocess.PIPE).communicate()[0]
         for f in log.split("\n"):
             if f == "":
-                return
+                continue
             irc.reply(f, prefixNick=False)
         os.chdir("/home/listen2/dbot/")
     gitpull = wrap(gitpull, [('checkCapability', 'owner')])
