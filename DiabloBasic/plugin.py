@@ -210,6 +210,8 @@ class DiabloBasic(callbacks.Plugin):
             DiabloBasic._dstream_json = json.loads(j)
             resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20II", "GET")
             DiabloBasic._dstream_json.extend(json.loads(j))
+            resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20II:%20Lord%20of%20Destruction", "GET")
+            DiabloBasic._dstream_json.extend(json.loads(j))
             resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo", "GET")
             DiabloBasic._dstream_json.extend(json.loads(j))
             DiabloBasic._dstream_json = sorted(DiabloBasic._dstream_json, key=lambda x: 0 if x["channel"]["title"] in DiabloBasic._dstream_regulars else 1)
