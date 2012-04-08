@@ -50,6 +50,7 @@ class DiabloBasic(callbacks.Plugin):
     # Stream info. note lowercase.
     _dstream_regulars = [
         "rdiablo",
+        "thunderclaww",
         "drzealottv",
         "theblinks"
     ]
