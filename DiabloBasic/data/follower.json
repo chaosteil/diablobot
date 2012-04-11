@@ -1,4 +1,101 @@
 {
+  "scoundrel" : [ {
+    "primary" : true,
+    "runes" : [ ],
+    "categoryName" : null,
+    "categorySlug" : null,
+    "name" : "Crippling Shot",
+    "icon" : "scoundrel_cripplingshot",
+    "slug" : "crippling-shot",
+    "requiredLevel" : 5,
+    "tooltipParams" : "skill/scoundrel/crippling-shot",
+    "description" : "<p>Ranged attack that slows the target by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">3</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">6</span> seconds</p>",
+    "simpleDescription" : "<p>Deals damage and slows the target.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ ],
+    "categoryName" : null,
+    "categorySlug" : null,
+    "name" : "Poison Bolts",
+    "icon" : "scoundrel_poisonarrow",
+    "slug" : "poison-bolts",
+    "requiredLevel" : 5,
+    "tooltipParams" : "skill/scoundrel/poison-bolts",
+    "description" : "<p>Ranged attack which deals <span class=\"d3-color-green\">40%</span> weapon damage and an additional <span class=\"d3-color-green\">40%</span> weapon damage as Poison over <span class=\"d3-color-green\">3</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">6</span> seconds</p>",
+    "simpleDescription" : "<p>Shoots a deadly poisoned bolt.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ ],
+    "categoryName" : null,
+    "categorySlug" : null,
+    "name" : "Dirty Fighting",
+    "icon" : "scoundrel_dirtyfighting",
+    "slug" : "dirty-fighting",
+    "requiredLevel" : 10,
+    "tooltipParams" : "skill/scoundrel/dirty-fighting",
+    "description" : "<p>Blinds enemies in front of the Scoundrel for <span class=\"d3-color-green\">3</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">30</span> seconds</p>",
+    "simpleDescription" : "<p>Blinds nearby enemies.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ ],
+    "categoryName" : null,
+    "categorySlug" : null,
+    "name" : "Vanish",
+    "icon" : "scoundrel_vanish",
+    "slug" : "vanish",
+    "requiredLevel" : 10,
+    "tooltipParams" : "skill/scoundrel/vanish",
+    "description" : "<p>The Scoundrel vanishes in a cloud of smoke when injured, reappearing after <span class=\"d3-color-green\">5</span> seconds. While vanished, he will heal himself for <span class=\"d3-color-green\">15505</span> Life.</p><p>Cooldown: <span class=\"d3-color-green\">30</span> seconds</p>",
+    "simpleDescription" : "<p>The Scoundrel temporarily vanishes when in danger.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ ],
+    "categoryName" : null,
+    "categorySlug" : null,
+    "name" : "Multishot",
+    "icon" : "scoundrel_multishot",
+    "slug" : "multishot",
+    "requiredLevel" : 15,
+    "tooltipParams" : "skill/scoundrel/multishot",
+    "description" : "<p>The Scoundrel&#39;s ranged attacks fire <span class=\"d3-color-green\">3</span> bolts at a time.</p>",
+    "simpleDescription" : "<p>The Scoundrel&#39;s attacks shoot multiple bolts.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ ],
+    "categoryName" : null,
+    "categorySlug" : null,
+    "name" : "Powered Shot",
+    "icon" : "scoundrel_powershot",
+    "slug" : "powered-shot",
+    "requiredLevel" : 15,
+    "tooltipParams" : "skill/scoundrel/powered-shot",
+    "description" : "<p>Powerful ranged attack that explodes on impact, dealing <span class=\"d3-color-green\">25%</span> weapon damage as Arcane to targets within <span class=\"d3-color-green\">6</span> yards and has a <span class=\"d3-color-green\">50%</span> chance to Stun targets for <span class=\"d3-color-green\">2</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">20</span> seconds</p>",
+    "simpleDescription" : "<p>Deals massive damage in an area and knocks back enemies.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ ],
+    "categoryName" : null,
+    "categorySlug" : null,
+    "name" : "Anatomy",
+    "icon" : "scoundrel_anatomy",
+    "slug" : "anatomy",
+    "requiredLevel" : 20,
+    "tooltipParams" : "skill/scoundrel/anatomy",
+    "description" : "<p>Increases Critical Hit Chance by <span class=\"d3-color-green\">3%</span> for the Scoundrel and his allies.</p>",
+    "simpleDescription" : "<p>Increases the Critical Hit Chance of the Scoundrel and his allies.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ ],
+    "categoryName" : null,
+    "categorySlug" : null,
+    "name" : "Hysteria",
+    "icon" : "scoundrel_hysteria",
+    "slug" : "hysteria",
+    "requiredLevel" : 20,
+    "tooltipParams" : "skill/scoundrel/hysteria",
+    "description" : "<p>Whenever you or the Scoundrel land a Critical Hit, you both will go into hysterics, increasing all damage done by <span class=\"d3-color-green\">10%</span> for <span class=\"d3-color-green\">3</span> seconds. This effect cannot occur more than once every <span class=\"d3-color-green\">6</span> seconds.</p>",
+    "simpleDescription" : "<p>Critical Hits cause you and the Scoundrel to temporarily deal more damage.</p>"
+  } ],
   "templar" : [ {
     "primary" : true,
     "runes" : [ ],
@@ -9,7 +106,7 @@
     "slug" : "heal",
     "requiredLevel" : 5,
     "tooltipParams" : "skill/templar/heal",
-    "description" : "<p>Heals you or the Templar for <span class=\"d3-color-green\">17794</span> Life.</p><p>Cooldown: <span class=\"d3-color-green\">15</span> seconds</p>",
+    "description" : "<p>Heals you or the Templar for <span class=\"d3-color-green\">4651</span> Life.</p><p>Cooldown: <span class=\"d3-color-green\">30</span> seconds</p>",
     "simpleDescription" : "<p>Heals you or the Templar.</p>"
   }, {
     "primary" : false,
@@ -21,8 +118,8 @@
     "slug" : "intervene",
     "requiredLevel" : 5,
     "tooltipParams" : "skill/templar/intervene",
-    "description" : "<p>Taunts enemies attacking you for <span class=\"d3-color-green\">5</span> seconds when you are below <span class=\"d3-color-green\">50%</span> health.</p><p>Cooldown: <span class=\"d3-color-green\">30</span> seconds</p>",
-    "simpleDescription" : "<p>Taunts enemies when your health is low.</p>"
+    "description" : "<p>Taunts enemies attacking the hero for <span class=\"d3-color-green\">3</span> seconds when the hero is below <span class=\"d3-color-green\">50%</span> Life.</p><p>Cooldown: <span class=\"d3-color-green\">60</span> seconds</p>",
+    "simpleDescription" : "<p>Taunts enemies when the hero&#39;s Life is low.</p>"
   }, {
     "primary" : false,
     "runes" : [ ],
@@ -33,7 +130,7 @@
     "slug" : "intimidate",
     "requiredLevel" : 10,
     "tooltipParams" : "skill/templar/intimidate",
-    "description" : "<p>Enemy units are slowed by <span class=\"d3-color-green\">30%</span> for <span class=\"d3-color-green\">3</span> seconds when they hit the Templar.  Does not stack with other slows.</p>",
+    "description" : "<p>Enemy units are slowed by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">3</span> seconds when they hit the Templar.</p>",
     "simpleDescription" : "<p>Enemies attacking the Templar are slowed.</p>"
   }, {
     "primary" : false,
@@ -45,7 +142,7 @@
     "slug" : "loyalty",
     "requiredLevel" : 10,
     "tooltipParams" : "skill/templar/loyalty",
-    "description" : "<p>Regenerates <span class=\"d3-color-green\">1186</span> Life per second for you and the Templar.</p>",
+    "description" : "<p>Regenerates <span class=\"d3-color-green\">155</span> Life per second for you and the Templar.</p>",
     "simpleDescription" : "<p>Provides Life regeneration for you and the Templar.</p>"
   }, {
     "primary" : true,
@@ -57,7 +154,7 @@
     "slug" : "charge",
     "requiredLevel" : 15,
     "tooltipParams" : "skill/templar/charge",
-    "description" : "<p>Charges a target, dealing <span class=\"d3-color-green\">150%</span> weapon damage and stunning all enemies within <span class=\"d3-color-green\">15</span> yards for <span class=\"d3-color-green\">3</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">15</span> seconds</p>",
+    "description" : "<p>Charges a target, dealing <span class=\"d3-color-green\">50%</span> weapon damage and stunning all enemies within <span class=\"d3-color-green\">8</span> yards for <span class=\"d3-color-green\">2</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">30</span> seconds</p>",
     "simpleDescription" : "<p>Charges an enemy, dealing damage and stunning the target.</p>"
   }, {
     "primary" : true,
@@ -69,7 +166,7 @@
     "slug" : "onslaught",
     "requiredLevel" : 15,
     "tooltipParams" : "skill/templar/onslaught",
-    "description" : "<p>Delivers a massive blow to an enemy for <span class=\"d3-color-green\">300%</span> weapon damage.</p><p>Cooldown: <span class=\"d3-color-green\">15</span> seconds</p>",
+    "description" : "<p>Delivers a massive blow to an enemy for <span class=\"d3-color-green\">200%</span> weapon damage.</p><p>Cooldown: <span class=\"d3-color-green\">15</span> seconds</p>",
     "simpleDescription" : "<p>Delivers a massive blow to an enemy.</p>"
   }, {
     "primary" : true,
@@ -81,8 +178,8 @@
     "slug" : "guardian",
     "requiredLevel" : 20,
     "tooltipParams" : "skill/templar/guardian",
-    "description" : "<p>Rush to the aid of wounded ally, knocking back enemies within <span class=\"d3-color-green\">15</span> yards and healing the wounded ally for <span class=\"d3-color-green\">35587</span> Life.</p><p>Cooldown: <span class=\"d3-color-green\">30</span> seconds</p>",
-    "simpleDescription" : "<p>When your health is low, the Templar will come to your aid, knocking back nearby enemies and healing you.</p>"
+    "description" : "<p>Rush to the aid of wounded ally, knocking back enemies within <span class=\"d3-color-green\">15</span> yards and healing the wounded ally for <span class=\"d3-color-green\">4651</span> Life.</p><p>Cooldown: <span class=\"d3-color-green\">30</span> seconds</p>",
+    "simpleDescription" : "<p>When hero Life is low, the Templar will come to your aid, knocking back nearby enemies and healing you.</p>"
   }, {
     "primary" : false,
     "runes" : [ ],
@@ -93,7 +190,7 @@
     "slug" : "inspire",
     "requiredLevel" : 20,
     "tooltipParams" : "skill/templar/inspire",
-    "description" : "<p>Increase resource generation for all allies that the Templar is following.<br/>Mana: <span class=\"d3-color-green\">13</span> per second.<br/>Arcane Power: <span class=\"d3-color-green\">1</span> per second.<br/>Hatred: <span class=\"d3-color-green\">1</span> per second.<br/>Discipline: <span class=\"d3-color-green\">1</span> per second.<br/>Fury: <span class=\"d3-color-green\">10%</span> generated.<br/>Spirit: <span class=\"d3-color-green\">10%</span> generated.</p>",
+    "description" : "<p>Increase resource generation for all allies that the Templar is following.<br/>Mana: <span class=\"d3-color-green\">2</span> per second.<br/>Arcane Power: <span class=\"d3-color-green\">0.5</span> per second.<br/>Hatred: <span class=\"d3-color-green\">1</span> per second.<br/>Fury: <span class=\"d3-color-green\">8%</span> generated.<br/>Spirit: <span class=\"d3-color-green\">12%</span> generated.</p>",
     "simpleDescription" : "<p>Increases your resource regeneration.</p>"
   } ],
   "enchantress" : [ {
@@ -106,20 +203,20 @@
     "slug" : "charm",
     "requiredLevel" : 15,
     "tooltipParams" : "skill/enchantress/charm",
-    "description" : "<p>Charms an enemy to fight for you for <span class=\"d3-color-green\">6</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">15</span> seconds</p>",
-    "simpleDescription" : "<p>Temporarily charms an enemy to fight for you.</p>"
+    "description" : "<p>Charms an enemy to fight for you for <span class=\"d3-color-green\">4</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">25</span> seconds</p>",
+    "simpleDescription" : "<p>Temporarily Charms an enemy to fight for you.</p>"
   }, {
     "primary" : true,
     "runes" : [ ],
     "categoryName" : null,
     "categorySlug" : null,
-    "name" : "Disorient",
-    "icon" : "enchantress_disorient",
-    "slug" : "disorient",
+    "name" : "Forceful Push",
+    "icon" : "enchantress_forcefulpush",
+    "slug" : "forceful-push",
     "requiredLevel" : 15,
-    "tooltipParams" : "skill/enchantress/disorient",
-    "description" : "<p>Cast a flash of confusion on a group of enemies in an area, causing them to stumble around disoriented for <span class=\"d3-color-green\">3</span> seconds.  Damage done to confused targets will break the effect.</p><p>Cooldown: <span class=\"d3-color-green\">15</span> seconds</p>",
-    "simpleDescription" : "<p>Disorients enemies for a short time.</p>"
+    "tooltipParams" : "skill/enchantress/forceful-push",
+    "description" : "<p>Summon an Arcane explosion <span class=\"d3-color-green\">8</span> yards around an enemy, dealing <span class=\"d3-color-green\">100%</span> weapon damage as Arcane and knocking back all monsters caught within it.</p><p>Cooldown: <span class=\"d3-color-green\">10</span> seconds</p>",
+    "simpleDescription" : "<p>Creates an explosion that deals massive damage and knocks back enemies.</p>"
   }, {
     "primary" : false,
     "runes" : [ ],
@@ -130,7 +227,7 @@
     "slug" : "powered-armor",
     "requiredLevel" : 20,
     "tooltipParams" : "skill/enchantress/powered-armor",
-    "description" : "<p>Enchantress buffs herself and her allies, increasing Armor by <span class=\"d3-color-green\">5%</span>.  Attackers are slowed by <span class=\"d3-color-green\">30%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "description" : "<p>Enchantress buffs herself and her allies, increasing Armor by <span class=\"d3-color-green\">15%</span>. Attackers are slowed by <span class=\"d3-color-green\">30%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
     "simpleDescription" : "<p>Increases the armor of the Enchantress and her allies, and slows attacking enemies.</p>"
   }, {
     "primary" : false,
@@ -149,27 +246,27 @@
     "runes" : [ ],
     "categoryName" : null,
     "categorySlug" : null,
-    "name" : "Erosion",
-    "icon" : "enchantress_scorchedearth",
-    "slug" : "erosion",
+    "name" : "Disorient",
+    "icon" : "enchantress_disorient",
+    "slug" : "disorient",
     "requiredLevel" : 25,
-    "tooltipParams" : "skill/enchantress/erosion",
-    "description" : "<p>Conjures a pool of arcane energy that deals <span class=\"d3-color-green\">50%</span> weapon damage per second as Arcane. Affected enemies take an extra <span class=\"d3-color-green\">25%</span> damage from all attacks for <span class=\"d3-color-green\">3</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">15</span> seconds</p>",
-    "simpleDescription" : "<p>Blast a target area, causing enemies to take damage over time.</p>"
+    "tooltipParams" : "skill/enchantress/disorient",
+    "description" : "<p>Cast a flash of Confusion on a group of enemies in an area, causing them to stumble around disoriented for <span class=\"d3-color-green\">2</span> seconds. </p><p>Cooldown: <span class=\"d3-color-green\">45</span> seconds</p>",
+    "simpleDescription" : "<p>Disorients enemies for a short time.</p>"
   }, {
     "primary" : true,
     "runes" : [ ],
     "categoryName" : null,
     "categorySlug" : null,
-    "name" : "Forceful Push",
-    "icon" : "enchantress_forcefulpush",
-    "slug" : "forceful-push",
+    "name" : "Erosion",
+    "icon" : "enchantress_scorchedearth",
+    "slug" : "erosion",
     "requiredLevel" : 25,
-    "tooltipParams" : "skill/enchantress/forceful-push",
-    "description" : "<p>Summon an arcane explosion <span class=\"d3-color-green\">15</span> yards around an enemy, dealing <span class=\"d3-color-green\">200%</span> weapon damage as Arcane damage and knocking back all monsters caught within it.</p><p>Cooldown: <span class=\"d3-color-green\">10</span> seconds</p>",
-    "simpleDescription" : "<p>Creates an explosion that deals massive damage and knocks back enemies.</p>"
+    "tooltipParams" : "skill/enchantress/erosion",
+    "description" : "<p>Conjures a pool of energy that deals <span class=\"d3-color-green\">50%</span> weapon damage as Arcane  per second. Affected enemies take an extra <span class=\"d3-color-green\">15%</span> damage from all attacks for <span class=\"d3-color-green\">3</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">15</span> seconds</p>",
+    "simpleDescription" : "<p>Blasts a target area, causing enemies to take damage over time.</p>"
   }, {
-    "primary" : true,
+    "primary" : false,
     "runes" : [ ],
     "categoryName" : null,
     "categorySlug" : null,
@@ -178,7 +275,7 @@
     "slug" : "focused-mind",
     "requiredLevel" : 30,
     "tooltipParams" : "skill/enchantress/focused-mind",
-    "description" : "<p>An aura that increases attack speed by <span class=\"d3-color-green\">5%</span> to allies within <span class=\"d3-color-green\">40</span> yards.</p>",
+    "description" : "<p>An aura that increases attack speed by <span class=\"d3-color-green\">3%</span> for allies within <span class=\"d3-color-green\">40</span> yards.</p>",
     "simpleDescription" : "<p>Increases the attack speed of the Enchantress and her allies.</p>"
   }, {
     "primary" : true,
@@ -190,104 +287,7 @@
     "slug" : "mass-control",
     "requiredLevel" : 30,
     "tooltipParams" : "skill/enchantress/mass-control",
-    "description" : "<p>The Enchantress lobs a bulb of magical energy at the player that will hex all enemies within <span class=\"d3-color-green\">15</span> yards into chickens for <span class=\"d3-color-green\">4</span> seconds. Hexed enemies are unable to perform offensive actions.</p><p>Cooldown: <span class=\"d3-color-green\">30</span> seconds</p>",
+    "description" : "<p>The Enchantress lobs a bulb of magical energy at the player that will hex all enemies within <span class=\"d3-color-green\">15</span> yards into chickens for <span class=\"d3-color-green\">5</span> seconds. Hexed enemies are unable to perform offensive actions.</p><p>Cooldown: <span class=\"d3-color-green\">60</span> seconds</p>",
     "simpleDescription" : "<p>Hexes all nearby enemies.</p>"
-  } ],
-  "scoundrel" : [ {
-    "primary" : true,
-    "runes" : [ ],
-    "categoryName" : null,
-    "categorySlug" : null,
-    "name" : "Crippling Shot",
-    "icon" : "scoundrel_cripplingshot",
-    "slug" : "crippling-shot",
-    "requiredLevel" : 10,
-    "tooltipParams" : "skill/scoundrel/crippling-shot",
-    "description" : "<p>Ranged attack that slows the target by <span class=\"d3-color-green\">50%</span> for <span class=\"d3-color-green\">3</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">4</span> seconds</p>",
-    "simpleDescription" : "<p>Deals damage and slows the target.</p>"
-  }, {
-    "primary" : true,
-    "runes" : [ ],
-    "categoryName" : null,
-    "categorySlug" : null,
-    "name" : "Poison Bolts",
-    "icon" : "scoundrel_poisonarrow",
-    "slug" : "poison-bolts",
-    "requiredLevel" : 10,
-    "tooltipParams" : "skill/scoundrel/poison-bolts",
-    "description" : "<p>Ranged attack which deals <span class=\"d3-color-green\">100%</span> weapon damage and an additional <span class=\"d3-color-green\">50%</span> weapon damage as Poison damage over <span class=\"d3-color-green\">3</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">4</span> seconds</p>",
-    "simpleDescription" : "<p>Shoots a deadly poisoned bolt.</p>"
-  }, {
-    "primary" : true,
-    "runes" : [ ],
-    "categoryName" : null,
-    "categorySlug" : null,
-    "name" : "Dirty Fighting",
-    "icon" : "scoundrel_dirtyfighting",
-    "slug" : "dirty-fighting",
-    "requiredLevel" : 15,
-    "tooltipParams" : "skill/scoundrel/dirty-fighting",
-    "description" : "<p>Blinds enemies in front of the Scoundrel for <span class=\"d3-color-green\">3</span> seconds.  Any hit will break the effect.</p><p>Cooldown: <span class=\"d3-color-green\">15</span> seconds</p>",
-    "simpleDescription" : "<p>Blinds nearby enemies.</p>"
-  }, {
-    "primary" : true,
-    "runes" : [ ],
-    "categoryName" : null,
-    "categorySlug" : null,
-    "name" : "Vanish",
-    "icon" : "scoundrel_vanish",
-    "slug" : "vanish",
-    "requiredLevel" : 15,
-    "tooltipParams" : "skill/scoundrel/vanish",
-    "description" : "<p>The Scoundrel vanishes in a cloud of smoke when injured, reappearing after <span class=\"d3-color-green\">5</span> seconds.  While vanished, he will heal himself for <span class=\"d3-color-green\">29656</span> Life.</p><p>Cooldown: <span class=\"d3-color-green\">30</span> seconds</p>",
-    "simpleDescription" : "<p>The Scoundrel temporarily vanishes when in danger.</p>"
-  }, {
-    "primary" : false,
-    "runes" : [ ],
-    "categoryName" : null,
-    "categorySlug" : null,
-    "name" : "Multishot",
-    "icon" : "scoundrel_multishot",
-    "slug" : "multishot",
-    "requiredLevel" : 20,
-    "tooltipParams" : "skill/scoundrel/multishot",
-    "description" : "<p>The Scoundrel&#39;s ranged attacks fire <span class=\"d3-color-green\">3</span> bolts at a time.</p>",
-    "simpleDescription" : "<p>The Scoundrel&#39;s attacks shoot multiple bolts.</p>"
-  }, {
-    "primary" : true,
-    "runes" : [ ],
-    "categoryName" : null,
-    "categorySlug" : null,
-    "name" : "Powered Shot",
-    "icon" : "scoundrel_powershot",
-    "slug" : "powered-shot",
-    "requiredLevel" : 20,
-    "tooltipParams" : "skill/scoundrel/powered-shot",
-    "description" : "<p>Powerful ranged attack that explodes on impact, dealing <span class=\"d3-color-green\">200%</span> weapon damage as Arcane damage to targets within <span class=\"d3-color-green\">15</span> yards and has a 50% chance to stun them for <span class=\"d3-color-green\">3</span> seconds.</p><p>Cooldown: <span class=\"d3-color-green\">10</span> seconds</p>",
-    "simpleDescription" : "<p>Deals massive damage in an area and knocks back enemies.</p>"
-  }, {
-    "primary" : false,
-    "runes" : [ ],
-    "categoryName" : null,
-    "categorySlug" : null,
-    "name" : "Anatomy",
-    "icon" : "scoundrel_anatomy",
-    "slug" : "anatomy",
-    "requiredLevel" : 25,
-    "tooltipParams" : "skill/scoundrel/anatomy",
-    "description" : "<p>Increases critical hit chance by <span class=\"d3-color-green\">5%</span> for the Scoundrel and his allies.</p>",
-    "simpleDescription" : "<p>Increases the critical hit chance of the Scoundrel and his allies.</p>"
-  }, {
-    "primary" : false,
-    "runes" : [ ],
-    "categoryName" : null,
-    "categorySlug" : null,
-    "name" : "Hysteria",
-    "icon" : "scoundrel_hysteria",
-    "slug" : "hysteria",
-    "requiredLevel" : 25,
-    "tooltipParams" : "skill/scoundrel/hysteria",
-    "description" : "<p>Whenever you or the Scoundrel strike a critical hit you both will go into hysterics, increasing all damage done by <span class=\"d3-color-green\">10%</span> for <span class=\"d3-color-green\">3</span> seconds. This effect cannot occur more than once every <span class=\"d3-color-green\">6</span> seconds.</p>",
-    "simpleDescription" : "<p>Critical hits cause you and the Scoundrel to temporarily deal more damage.</p>"
   } ]
 }

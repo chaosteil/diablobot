@@ -1,146 +1,41 @@
 {
-  "traits" : [ {
-    "description" : "<p>Damage you deal reduces enemy damage by <span class=\"d3-color-green\">25%</span> for <span class=\"d3-color-green\">2.5</span> seconds.</p>",
-    "name" : "Resolve",
-    "icon" : "monk_passive_resolve",
-    "slug" : "resolve",
-    "requiredLevel" : 10,
-    "tooltipParams" : "skill/monk/resolve",
-    "simpleDescription" : "<p>&quot;It is not our place to make demands of nature, nor to acquiesce to those who would. First we learn what is right, then we protect what is right.&quot; —Master Wughan</p>"
-  }, {
-    "description" : "<p>While dual-wielding, you gain a <span class=\"d3-color-green\">15%</span> chance to dodge incoming attacks. While using a two-handed weapon, all Spirit generation is increased by <span class=\"d3-color-green\">25%</span>.</p>",
-    "name" : "The Guardian's Path",
-    "icon" : "monk_passive_theguardianspath",
-    "slug" : "the-guardians-path",
-    "requiredLevel" : 10,
-    "tooltipParams" : "skill/monk/the-guardians-path",
-    "simpleDescription" : "<p>&quot;No weapon can overcome the weakness of an undisciplined mind. They can only serve as an extension of the self.&quot; —Waykeeper Tzo Krin</p>"
-  }, {
-    "description" : "<p>Increase movement speed by <span class=\"d3-color-green\">10%</span>.</p>",
-    "name" : "Fleet Footed",
-    "icon" : "monk_passive_fleetfooted",
-    "slug" : "fleet-footed",
-    "requiredLevel" : 12,
-    "tooltipParams" : "skill/monk/fleet-footed",
-    "simpleDescription" : "<p>Strength out of place is no strength at all.</p>"
-  }, {
-    "description" : "<p>Every point of Spirit spent heals you for <span class=\"d3-color-green\">118.6</span> Life.</p>",
-    "name" : "Transcendence",
-    "icon" : "monk_passive_transcendence",
-    "slug" : "transcendence",
-    "requiredLevel" : 13,
-    "tooltipParams" : "skill/monk/transcendence",
-    "simpleDescription" : "<p>A life unlived is no different than death.</p>"
-  }, {
-    "description" : "<p>Duration of all Mantras increased by <span class=\"d3-color-green\">7</span> minutes. While one of your Mantras is active you gain <span class=\"d3-color-green\">2</span> Spirit every second.</p>",
-    "name" : "Chant of Resonance",
-    "icon" : "monk_passive_chantofresonance",
-    "slug" : "chant-of-resonance",
-    "requiredLevel" : 15,
-    "tooltipParams" : "skill/monk/chant-of-resonance",
-    "simpleDescription" : "<p>The world continues on the noble path, each of us carrying another, all connected, ever onward.</p>"
-  }, {
-    "description" : "<p>Your Armor is increased by <span class=\"d3-color-green\">100%</span> of your Dexterity.</p>",
-    "name" : "Seize the Initiative",
-    "icon" : "monk_passive_seizetheinitiative",
-    "slug" : "seize-the-initiative",
-    "requiredLevel" : 17,
-    "tooltipParams" : "skill/monk/seize-the-initiative",
-    "simpleDescription" : "<p>The Monks of Ivgorod are trained to move like water—flowing freely into open spaces and crashing hard against their foes.</p>"
-  }, {
-    "description" : "<p>Increases maximum Spirit by <span class=\"d3-color-green\">100</span>.</p><p>Spirit fuels your defensive and offensive abilities.</p>",
-    "name" : "Exalted Soul",
-    "icon" : "monk_passive_exaltedsoul",
-    "slug" : "exalted-soul",
-    "requiredLevel" : 18,
-    "tooltipParams" : "skill/monk/exalted-soul",
-    "simpleDescription" : "<p>&quot;Endeavor to be one with the hidden truth and you will soar beyond the sky.&quot; —Waykeeper Tzo Krin</p>"
-  }, {
-    "description" : "<p>Your dodge chance is increased by an amount equal to <span class=\"d3-color-green\">30%</span> of your chance to critical hit.</p>",
-    "name" : "Sixth Sense",
-    "icon" : "monk_passive_sixthsense",
-    "slug" : "sixth-sense",
-    "requiredLevel" : 19,
-    "tooltipParams" : "skill/monk/sixth-sense",
-    "simpleDescription" : "<p>The final test of the Serpent&#39;s Form takes place in &quot;The Pit of 12 Vipers.&quot; The initiates are not told about the 13th.</p>"
-  }, {
-    "description" : "<p>While stunned, feared or charmed, all damage taken is reduced by <span class=\"d3-color-green\">75%</span>.</p>",
-    "name" : "Pacifism",
-    "icon" : "monk_passive_pacifism",
-    "slug" : "pacifism",
-    "requiredLevel" : 20,
-    "tooltipParams" : "skill/monk/pacifism",
-    "simpleDescription" : "<p>Ascetic practices require initiates to go without food, water and sleep for months at a time. Those who survive emerge unmoved by the petty distractions of the physical world.</p>"
-  }, {
-    "description" : "<p>When receiving fatal damage, you are instead restored to <span class=\"d3-color-green\">35%</span> of maximum Life and <span class=\"d3-color-green\">35%</span> Spirit.</p><p>This effect cannot occur more than once every <span class=\"d3-color-green\">90</span> seconds.</p>",
-    "name" : "Near Death Experience",
-    "icon" : "monk_passive_neardeathexperience",
-    "slug" : "near-death-experience",
-    "requiredLevel" : 22,
-    "tooltipParams" : "skill/monk/near-death-experience",
-    "simpleDescription" : "<p>&quot;We do not see what has been done, we only see what remains to be done.&quot; —Mantra of the Monks of Ivgorod</p>"
-  }, {
-    "description" : "<p>Whenever you use a direct heal skill on another player you and the other player deal <span class=\"d3-color-green\">16%</span> more damage for <span class=\"d3-color-green\">15</span> seconds.</p>",
-    "name" : "Guiding Light",
-    "icon" : "monk_passive_guidinglight",
-    "slug" : "guiding-light",
-    "requiredLevel" : 23,
-    "tooltipParams" : "skill/monk/guiding-light",
-    "simpleDescription" : "<p>&quot;I thought I was done for, trampled into the snow. Suddenly I felt her hand on my shoulder. The warmth returned to my bones, and together we repelled the beasts.&quot; —Legends of the North</p>"
-  }, {
-    "description" : "<p>Your resistance to all elements is equal to your highest elemental resistance.</p>",
-    "name" : "One With Everything",
-    "icon" : "monk_passive_onewitheverything",
-    "slug" : "one-with-everything",
-    "requiredLevel" : 24,
-    "tooltipParams" : "skill/monk/one-with-everything",
-    "simpleDescription" : "<p>Ice hunters brave months of frozen darkness. Desert traders bear relentless, scorching sun. This world is ours to endure.</p>"
-  }, {
-    "description" : "<p>Each different Spirit Generator ability you use increases your damage by <span class=\"d3-color-green\">8%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
-    "name" : "Combination Strike",
-    "icon" : "monk_passive_combinationstrike",
-    "slug" : "combination-strike",
-    "requiredLevel" : 25,
-    "tooltipParams" : "skill/monk/combination-strike",
-    "simpleDescription" : "<p>Master Wughan was not merely the first to perfect the six techniques. His true accomplishment was in weaving them into a style all his own.</p>"
-  } ],
   "skills" : [ {
     "primary" : true,
     "runes" : [ {
-      "name" : "Bounding Light",
-      "type" : "b",
+      "name" : "Thunderclap",
+      "type" : "a",
       "requiredLevel" : 6,
-      "tooltipParams" : "rune/fists-of-thunder/b",
-      "description" : "<p>Every third punch releases chain lighting instead of knocking enemies back.  Each lightning strike inflicts <span class=\"d3-color-green\">67%</span> weapon damage as Lightning.</p>",
-      "simpleDescription" : "<p>Every third punch releases chain lightning instead of causing Knockback.</p>"
+      "tooltipParams" : "rune/fists-of-thunder/a",
+      "description" : "<p>Teleport to the target and release an electric shockwave with every punch that hits all enemies within <span class=\"d3-color-green\">6</span> yards of your primary target for <span class=\"d3-color-green\">35%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Teleport to the target and release an electric shockwave with every punch.</p>"
     }, {
       "name" : "Lightning Flash",
       "type" : "e",
-      "requiredLevel" : 13,
+      "requiredLevel" : 14,
       "tooltipParams" : "rune/fists-of-thunder/e",
-      "description" : "<p>Fists of Thunder increases your Dodge chance by <span class=\"d3-color-green\">16%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
-      "simpleDescription" : "<p>Fists of Thunder increases your chance to Dodge.</p>"
+      "description" : "<p>Increases your chance to Dodge by <span class=\"d3-color-green\">16%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases your chance to Dodge.</p>"
     }, {
       "name" : "Static Charge",
       "type" : "c",
-      "requiredLevel" : 20,
+      "requiredLevel" : 30,
       "tooltipParams" : "rune/fists-of-thunder/c",
-      "description" : "<p>Your primary target is charged with static for <span class=\"d3-color-green\">5</span> seconds. Enemies with a static charge take <span class=\"d3-color-green\">35%</span> weapon damage as Lightning when you attack other nearby enemies with Fists of Thunder.</p>",
-      "simpleDescription" : "<p>Your target is charged with static electricity and takes additional damage when nearby enemies are hit by Fists of Thunder.</p>"
+      "description" : "<p>Your primary target is charged with static electricity for <span class=\"d3-color-green\">5</span> seconds and takes <span class=\"d3-color-green\">37%</span> weapon damage as Lightning when you attack other enemies with Fists of Thunder.</p>",
+      "simpleDescription" : "<p>Your target is charged with static electricity and takes additional damage when other enemies are hit by Fists of Thunder.</p>"
     }, {
       "name" : "Quickening",
       "type" : "d",
-      "requiredLevel" : 26,
+      "requiredLevel" : 42,
       "tooltipParams" : "rune/fists-of-thunder/d",
       "description" : "<p>Critical Hits generate an additional <span class=\"d3-color-green\">15</span> Spirit.</p>",
-      "simpleDescription" : "<p>Critical Hits generate Spirit.</p>"
+      "simpleDescription" : "<p>Critical Hits generate additional Spirit.</p>"
     }, {
-      "name" : "Thunderclap",
-      "type" : "a",
-      "requiredLevel" : 35,
-      "tooltipParams" : "rune/fists-of-thunder/a",
-      "description" : "<p>Teleport to the target and releases an electric shockwave with each punch that hits all enemies within <span class=\"d3-color-green\">6</span> yards of your primary target for <span class=\"d3-color-green\">35%</span> weapon damage as Lightning.</p>",
-      "simpleDescription" : "<p>Teleport to the target and release an electric shockwave with every punch.</p>"
+      "name" : "Bounding Light",
+      "type" : "b",
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/fists-of-thunder/b",
+      "description" : "<p>Every third punch releases chain lightning instead of knocking enemies back.  Each lightning strike inflicts <span class=\"d3-color-green\">73%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>Every third punch releases chain lightning instead of causing knockback.</p>"
     } ],
     "categoryName" : "Primary",
     "categorySlug" : "primary",
@@ -149,92 +44,92 @@
     "slug" : "fists-of-thunder",
     "requiredLevel" : 1,
     "tooltipParams" : "skill/monk/fists-of-thunder",
-    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Unleash a series of extremely fast punches that deal <span class=\"d3-color-green\">100%</span> weapon damage as Lightning. Every third hit deals damage to all enemies in front of you and knocks them back a short distance. Generates Spirit faster than other Spirit Generators due to the high attack speed.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Attack a single target with a series of rapid punches that can Knockback enemies.</p>"
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Unleash a series of extremely fast punches that deal <span class=\"d3-color-green\">110%</span> weapon damage as Lightning. Every third hit deals damage to all enemies in front of you and knocks them back a short distance. Generates Spirit faster than other Spirit-generating skills due to the high attack speed.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Attack a single target with a series of rapid punches that can knockback enemies.</p>"
   }, {
     "primary" : true,
     "runes" : [ {
-      "name" : "Way of the Falling Star",
-      "type" : "b",
-      "requiredLevel" : 7,
-      "tooltipParams" : "rune/dashing-strike/b",
-      "description" : "<p>Increase your movement speed by <span class=\"d3-color-green\">25%</span> for <span class=\"d3-color-green\">3</span> seconds after striking an enemy.</p>",
-      "simpleDescription" : "<p>Increase your movement speed after striking an enemy.</p>"
-    }, {
-      "name" : "Flying Side Kick",
-      "type" : "e",
-      "requiredLevel" : 15,
-      "tooltipParams" : "rune/dashing-strike/e",
-      "description" : "<p>Perform a flying kick that has a <span class=\"d3-color-green\">50%</span> chance to stun your target for <span class=\"d3-color-green\">2</span> seconds.</p>",
-      "simpleDescription" : "<p>Perform a flying kick that has a chance to Stun its target.</p>"
-    }, {
-      "name" : "Quicksilver",
-      "type" : "d",
-      "requiredLevel" : 21,
-      "tooltipParams" : "rune/dashing-strike/d",
-      "description" : "<p>The cost of Dashing Strike is reduced to <span class=\"d3-color-green\">10</span> Spirit.</p>",
-      "simpleDescription" : "<p>Reduce the Spirit cost of Dashing Strike.</p>"
-    }, {
-      "name" : "Soaring Skull",
+      "name" : "Vulture Claw Kick",
       "type" : "a",
-      "requiredLevel" : 26,
-      "tooltipParams" : "rune/dashing-strike/a",
-      "description" : "<p>Launch yourself through the air and slow all enemies along your path by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
-      "simpleDescription" : "<p>Launch yourself through the air and Slow all enemies along your path.</p>"
+      "requiredLevel" : 7,
+      "tooltipParams" : "rune/lashing-tail-kick/a",
+      "description" : "<p>Release a torrent of fire that burns nearby enemies for <span class=\"d3-color-green\">220%</span> weapon damage as Fire and causes Knockback.</p>",
+      "simpleDescription" : "<p>Release a torrent of fire that burns nearby enemies and causes Knockback.</p>"
     }, {
-      "name" : "Blinding Speed",
+      "name" : "Sweeping Armada",
+      "type" : "d",
+      "requiredLevel" : 15,
+      "tooltipParams" : "rune/lashing-tail-kick/d",
+      "description" : "<p>Increases Knockback distance by <span class=\"d3-color-green\">150%</span> and slows the movement speed of struck enemies by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases Knockback distance and slows the movement speed of struck enemies.</p>"
+    }, {
+      "name" : "Spinning Flame Kick",
+      "type" : "b",
+      "requiredLevel" : 28,
+      "tooltipParams" : "rune/lashing-tail-kick/b",
+      "description" : "<p>Hurl a column of fire that burns through enemies, causing <span class=\"d3-color-green\">240%</span> weapon damage as Fire to each enemy it strikes.</p>",
+      "simpleDescription" : "<p>Hurl a column of fire that that burns enemies in its path.</p>"
+    }, {
+      "name" : "Scorpion Sting",
+      "type" : "e",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/lashing-tail-kick/e",
+      "description" : "<p>Enemies have a <span class=\"d3-color-green\">50%</span> chance to be stunned for <span class=\"d3-color-green\">1.5</span> seconds instead of being knocked back.</p>",
+      "simpleDescription" : "<p>Enemies are stunned instead of being knocked back.</p>"
+    }, {
+      "name" : "Hand of Ytar",
       "type" : "c",
-      "requiredLevel" : 35,
-      "tooltipParams" : "rune/dashing-strike/c",
-      "description" : "<p>Receive a <span class=\"d3-color-green\">20%</span> increased chance to dodge for <span class=\"d3-color-green\">3</span> seconds.</p>",
-      "simpleDescription" : "<p>Increase your chance to Dodge when using Dashing Strike.</p>"
+      "requiredLevel" : 52,
+      "tooltipParams" : "rune/lashing-tail-kick/c",
+      "description" : "<p>Attack enemies at long range, slowing the movement speed of affected targets by <span class=\"d3-color-green\">80%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Attack enemies at long range, slowing them.</p>"
     } ],
     "categoryName" : "Secondary",
     "categorySlug" : "secondary",
-    "name" : "Dashing Strike",
-    "icon" : "monk_dashingstrike",
-    "slug" : "dashing-strike",
+    "name" : "Lashing Tail Kick",
+    "icon" : "monk_lashingtailkick",
+    "slug" : "lashing-tail-kick",
     "requiredLevel" : 2,
-    "tooltipParams" : "skill/monk/dashing-strike",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Spirit</p><p>Dash quickly at the targeted enemy or location, dealing <span class=\"d3-color-green\">80%</span> weapon damage and rooting the target for <span class=\"d3-color-green\">1</span> second.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Spirit</p><p>Quickly dash and strike an enemy.</p>"
+    "tooltipParams" : "skill/monk/lashing-tail-kick",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">30</span> Spirit</p><p>Unleash a deadly roundhouse kick that knocks enemies back and deals <span class=\"d3-color-green\">200%</span> weapon damage.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">30</span> Spirit</p><p>Unleash a deadly roundhouse kick that is effective against small groups of enemies.</p>"
   }, {
     "primary" : true,
     "runes" : [ {
       "name" : "Piercing Trident",
       "type" : "b",
-      "requiredLevel" : 8,
+      "requiredLevel" : 9,
       "tooltipParams" : "rune/deadly-reach/b",
-      "description" : "<p>The second and third strike of the skill have an increased area of effect.</p>",
-      "simpleDescription" : "<p>The second and third strikes have an increased area of effect.</p>"
+      "description" : "<p>Increases the area of effect of the second and third strikes.</p>",
+      "simpleDescription" : "<p>Increases the area of effect of the second and third strikes.</p>"
     }, {
       "name" : "Keen Eye",
       "type" : "e",
-      "requiredLevel" : 17,
+      "requiredLevel" : 18,
       "tooltipParams" : "rune/deadly-reach/e",
-      "description" : "<p>The third strike of Deadly Reach increases the armor of the Monk by <span class=\"d3-color-green\">50%</span> for <span class=\"d3-color-green\">4</span> seconds.</p>",
-      "simpleDescription" : "<p>The third strike of Deadly Reach increases your Armor for a limited time.</p>"
+      "description" : "<p>The third strike increases your Armor by <span class=\"d3-color-green\">50%</span> for <span class=\"d3-color-green\">4</span> seconds.</p>",
+      "simpleDescription" : "<p>The third strike increases your Armor for a limited time.</p>"
     }, {
       "name" : "Scattered Blows",
       "type" : "c",
-      "requiredLevel" : 28,
+      "requiredLevel" : 34,
       "tooltipParams" : "rune/deadly-reach/c",
-      "description" : "<p>The third strike is replaced with an attack that will hit up to <span class=\"d3-color-green\">6</span> nearby enemies within <span class=\"d3-color-green\">15</span> yards for <span class=\"d3-color-green\">150%</span> weapon damage as Lightning.</p>",
-      "simpleDescription" : "<p>The third strike randomly hits multiple enemies with Lightning.</p>"
+      "description" : "<p>The third strike is replaced with an attack that will hit up to <span class=\"d3-color-green\">6</span> nearby enemies within <span class=\"d3-color-green\">15</span> yards for <span class=\"d3-color-green\">170%</span> weapon damage as Lightning.</p>",
+      "simpleDescription" : "<p>The third strike hits enemies with Lightning.</p>"
     }, {
       "name" : "Strike from Beyond",
       "type" : "d",
-      "requiredLevel" : 38,
+      "requiredLevel" : 47,
       "tooltipParams" : "rune/deadly-reach/d",
-      "description" : "<p>Critical hits with this skill generate <span class=\"d3-color-green\">10</span> Spirit.</p>",
-      "simpleDescription" : "<p>Critical Hits generate Spirit.</p>"
+      "description" : "<p>Critical Hits generate an additional <span class=\"d3-color-green\">10</span> Spirit.</p>",
+      "simpleDescription" : "<p>Critical Hits generate additional Spirit.</p>"
     }, {
       "name" : "Foresight",
       "type" : "a",
-      "requiredLevel" : 48,
+      "requiredLevel" : 54,
       "tooltipParams" : "rune/deadly-reach/a",
-      "description" : "<p>The third strike of Deadly Reach increases the damage of all attacks by <span class=\"d3-color-green\">18%</span> for <span class=\"d3-color-green\">30</span> seconds.</p>",
-      "simpleDescription" : "<p>The third strike of Deadly Reach increases the damage of all attacks.</p>"
+      "description" : "<p>The third strike increases the damage of all attacks by <span class=\"d3-color-green\">18%</span> for <span class=\"d3-color-green\">30</span> seconds.</p>",
+      "simpleDescription" : "<p>The third strike increases the damage of all attacks.</p>"
     } ],
     "categoryName" : "Primary",
     "categorySlug" : "primary",
@@ -243,44 +138,44 @@
     "slug" : "deadly-reach",
     "requiredLevel" : 3,
     "tooltipParams" : "skill/monk/deadly-reach",
-    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Project lines of pure force over a short distance for <span class=\"d3-color-green\">100%</span> weapon damage. Every third hit extends out <span class=\"d3-color-green\">25</span> yards.</p>",
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Project lines of pure force over a short distance for <span class=\"d3-color-green\">110%</span> weapon damage. Every third hit extends <span class=\"d3-color-green\">25</span> yards.</p>",
     "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Strike multiple enemies in a row with each attack.</p>"
   }, {
     "primary" : false,
     "runes" : [ {
       "name" : "Self Reflection",
       "type" : "d",
-      "requiredLevel" : 11,
+      "requiredLevel" : 12,
       "tooltipParams" : "rune/blinding-flash/d",
       "description" : "<p>Increases the duration enemies are blinded to <span class=\"d3-color-green\">4</span> seconds.</p>",
-      "simpleDescription" : "<p>Increases the duration enemies are Blind.</p>"
+      "simpleDescription" : "<p>Increases the duration enemies are blinded.</p>"
     }, {
-      "name" : "Blind and Confused",
+      "name" : "Blinded and Confused",
       "type" : "c",
-      "requiredLevel" : 21,
+      "requiredLevel" : 19,
       "tooltipParams" : "rune/blinding-flash/c",
       "description" : "<p>Blinded enemies have a <span class=\"d3-color-green\">25%</span> chance to attack each other.</p>",
-      "simpleDescription" : "<p>Blind enemies have a chance to attack each other.</p>"
+      "simpleDescription" : "<p>Blinded enemies have a chance to attack each other.</p>"
     }, {
       "name" : "Blinding Echo",
       "type" : "b",
-      "requiredLevel" : 29,
+      "requiredLevel" : 28,
       "tooltipParams" : "rune/blinding-flash/b",
       "description" : "<p><span class=\"d3-color-green\">6</span> seconds after using Blinding Flash, a second flash of light will blind enemies within <span class=\"d3-color-green\">20</span> yards for <span class=\"d3-color-green\">0.5</span> seconds.</p>",
       "simpleDescription" : "<p>A second flash Blinds all nearby enemies.</p>"
     }, {
       "name" : "Searing Light",
       "type" : "e",
-      "requiredLevel" : 34,
+      "requiredLevel" : 41,
       "tooltipParams" : "rune/blinding-flash/e",
-      "description" : "<p>Increases the chance Elite monsters will miss attacks to <span class=\"d3-color-green\">60%</span>.</p>",
-      "simpleDescription" : "<p>Increases the chance Blind enemies will miss when attacking.</p>"
+      "description" : "<p>Increases the chance elite enemies will miss attacks to <span class=\"d3-color-green\">60%</span>.</p>",
+      "simpleDescription" : "<p>Increases the chance blinded elite enemies will miss when attacking.</p>"
     }, {
       "name" : "Faith in the Light",
       "type" : "a",
-      "requiredLevel" : 42,
+      "requiredLevel" : 55,
       "tooltipParams" : "rune/blinding-flash/a",
-      "description" : "<p>For <span class=\"d3-color-green\">3</span> seconds after using Blinding Flash, all of your attacks are infused to deal <span class=\"d3-color-green\">30%</span> additional weapon damage as Holy.</p>",
+      "description" : "<p>For <span class=\"d3-color-green\">3</span> seconds after using Blinding Flash, all of your attacks are empowered to deal <span class=\"d3-color-green\">30%</span> additional weapon damage as Holy.</p>",
       "simpleDescription" : "<p>After using Blinding Flash, all of your attacks deal extra damage for a limited time.</p>"
     } ],
     "categoryName" : "Defensive",
@@ -290,230 +185,42 @@
     "slug" : "blinding-flash",
     "requiredLevel" : 4,
     "tooltipParams" : "skill/monk/blinding-flash",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Create a flash of light that blinds all enemies within <span class=\"d3-color-green\">20</span> yards for <span class=\"d3-color-green\">3</span> seconds. Elite monsters will recover early but will suffer a <span class=\"d3-color-green\">30%</span> chance to miss with attacks.</p>",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Create a flash of light that blinds all enemies within <span class=\"d3-color-green\">20</span> yards for <span class=\"d3-color-green\">3</span> seconds. Elite enemies recover faster, but suffer a <span class=\"d3-color-green\">30%</span> chance to miss with attacks.</p>",
     "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Blind all nearby enemies for <span class=\"d3-color-green\">3</span> seconds.</p>"
-  }, {
-    "primary" : true,
-    "runes" : [ {
-      "name" : "Vulture Claw Kick",
-      "type" : "a",
-      "requiredLevel" : 14,
-      "tooltipParams" : "rune/lashing-tail-kick/a",
-      "description" : "<p>With a torrent of fire, strike all nearby enemies for <span class=\"d3-color-green\">220%</span> weapon damage as Fire and knock them back.</p>",
-      "simpleDescription" : "<p>Release a torrent of fire that burns nearby enemies and causes Knockback.</p>"
-    }, {
-      "name" : "Sweeping Armada",
-      "type" : "d",
-      "requiredLevel" : 24,
-      "tooltipParams" : "rune/lashing-tail-kick/d",
-      "description" : "<p>All enemies around you are knocked back <span class=\"d3-color-green\">150%</span> farther and have their movement slowed by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
-      "simpleDescription" : "<p>All enemies around you are knocked back farther and have their movement slowed.</p>"
-    }, {
-      "name" : "Spinning Flame Kick",
-      "type" : "b",
-      "requiredLevel" : 33,
-      "tooltipParams" : "rune/lashing-tail-kick/b",
-      "description" : "<p>Hurl a column of fire that pierces through enemies, causing <span class=\"d3-color-green\">240%</span> weapon damage as Fire to each enemy it strikes.</p>",
-      "simpleDescription" : "<p>Hurl a column of fire that that burns enemies in its path.</p>"
-    }, {
-      "name" : "Scorpion Sting",
-      "type" : "e",
-      "requiredLevel" : 42,
-      "tooltipParams" : "rune/lashing-tail-kick/e",
-      "description" : "<p>Instead of knocking enemies back, affected enemies are stunned for <span class=\"d3-color-green\">1.0</span> seconds.</p>",
-      "simpleDescription" : "<p>Stun instead of causing Knockback.</p>"
-    }, {
-      "name" : "Hand of Ytar",
-      "type" : "c",
-      "requiredLevel" : 51,
-      "tooltipParams" : "rune/lashing-tail-kick/c",
-      "description" : "<p>Attack enemies at long range and slow the movement speed of affected targets by <span class=\"d3-color-green\">80%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
-      "simpleDescription" : "<p>Attack enemies at range and Slow all enemies hit by the Hand of Ytar.</p>"
-    } ],
-    "categoryName" : "Secondary",
-    "categorySlug" : "secondary",
-    "name" : "Lashing Tail Kick",
-    "icon" : "monk_lashingtailkick",
-    "slug" : "lashing-tail-kick",
-    "requiredLevel" : 5,
-    "tooltipParams" : "skill/monk/lashing-tail-kick",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">30</span> Spirit</p><p>Unleash a deadly roundhouse kick, knocking enemies back and dealing <span class=\"d3-color-green\">200%</span> weapon damage.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">30</span> Spirit</p><p>A deadly roundhouse kick that is good against small groups of enemies.</p>"
-  }, {
-    "primary" : false,
-    "runes" : [ {
-      "name" : "Circle of Scorn",
-      "type" : "a",
-      "requiredLevel" : 16,
-      "tooltipParams" : "rune/breath-of-heaven/a",
-      "description" : "<p>Breath of Heaven also sears enemies for <span class=\"d3-color-green\">80%</span> weapon damage as Holy.</p>",
-      "simpleDescription" : "<p>Breath of Heaven deals Holy damage to enemies.</p>"
-    }, {
-      "name" : "Circle of Life",
-      "type" : "b",
-      "requiredLevel" : 25,
-      "tooltipParams" : "rune/breath-of-heaven/b",
-      "description" : "<p>Increases the healing to <span class=\"d3-color-green\">20047 - 26216</span> Life.</p>",
-      "simpleDescription" : "<p>Increases the healing power of Breath of Heaven.</p>"
-    }, {
-      "name" : "Blazing Wrath",
-      "type" : "c",
-      "requiredLevel" : 33,
-      "tooltipParams" : "rune/breath-of-heaven/c",
-      "description" : "<p>Breath of Heaven increases the damage of all your attacks by <span class=\"d3-color-green\">15%</span> for <span class=\"d3-color-green\">45</span> seconds.</p>",
-      "simpleDescription" : "<p>Breath of Heaven increases the damage of all your attacks for a limited time.</p>"
-    }, {
-      "name" : "Infused with Light",
-      "type" : "d",
-      "requiredLevel" : 38,
-      "tooltipParams" : "rune/breath-of-heaven/d",
-      "description" : "<p>Gain <span class=\"d3-color-green\">6</span> additional Spirit from Spirit generator attacks for <span class=\"d3-color-green\">5</span> seconds after using Breath of Heaven.</p>",
-      "simpleDescription" : "<p>Gain additional Spirit from Spirit generator attacks for a limited time.</p>"
-    }, {
-      "name" : "Penitent Flame",
-      "type" : "e",
-      "requiredLevel" : 47,
-      "tooltipParams" : "rune/breath-of-heaven/e",
-      "description" : "<p>Enemies exposed to Breath of Heaven run away in fear for <span class=\"d3-color-green\">1.5</span> seconds.</p>",
-      "simpleDescription" : "<p>Enemies exposed to Breath of Heaven run away in Fear.</p>"
-    } ],
-    "categoryName" : "Defensive",
-    "categorySlug" : "defensive",
-    "name" : "Breath of Heaven",
-    "icon" : "monk_breathofheaven",
-    "slug" : "breath-of-heaven",
-    "requiredLevel" : 8,
-    "tooltipParams" : "skill/monk/breath-of-heaven",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>A blast of holy energy heals you and all allies within <span class=\"d3-color-green\">12</span> yards for <span class=\"d3-color-green\">15421 - 20166</span> Life.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Heal yourself and nearby allies.</p>"
-  }, {
-    "primary" : false,
-    "runes" : [ {
-      "name" : "Hard Target",
-      "type" : "c",
-      "requiredLevel" : 18,
-      "tooltipParams" : "rune/mantra-of-evasion/c",
-      "description" : "<p>Mantra of Evasion also grants an increase in armor by <span class=\"d3-color-green\">30%</span>.</p>",
-      "simpleDescription" : "<p>Mantra of Evasion grants an Armor bonus.</p>"
-    }, {
-      "name" : "Divine Protection",
-      "type" : "e",
-      "requiredLevel" : 27,
-      "tooltipParams" : "rune/mantra-of-evasion/e",
-      "description" : "<p>Each target can be protected at most once every <span class=\"d3-color-green\">90</span> seconds by this effect.</p>",
-      "simpleDescription" : "<p>When you or an ally are close to death, a  shield of protection forms around you, reducing incoming damage.</p>"
-    }, {
-      "name" : "Wind Through the Reeds",
-      "type" : "d",
-      "requiredLevel" : 37,
-      "tooltipParams" : "rune/mantra-of-evasion/d",
-      "description" : "<p>Mantra of Evasion also grants an increase in movement speed by <span class=\"d3-color-green\">5%</span>.</p>",
-      "simpleDescription" : "<p>Mantra of Evasion increases your movement speed.</p>"
-    }, {
-      "name" : "Perseverance",
-      "type" : "b",
-      "requiredLevel" : 43,
-      "tooltipParams" : "rune/mantra-of-evasion/b",
-      "description" : "<p>Mantra of Evasion also reduces the duration of all control impairing effects by <span class=\"d3-color-green\">20%</span>.</p>",
-      "simpleDescription" : "<p>Mantra of Evasion reduces the duration of all control impairing effects like Slow or Frozen.</p>"
-    }, {
-      "name" : "Backlash",
-      "type" : "a",
-      "requiredLevel" : 51,
-      "tooltipParams" : "rune/mantra-of-evasion/a",
-      "description" : "<p>Successfully dodging an attack has a chance to create a burst of flame dealing <span class=\"d3-color-green\">35%</span> weapon damage as Fire to all nearby enemies.</p>",
-      "simpleDescription" : "<p>Successfully dodging an attack has a chance to create a burst of flame that damages nearby enemies.</p>"
-    } ],
-    "categoryName" : "Conviction",
-    "categorySlug" : "conviction",
-    "name" : "Mantra of Evasion",
-    "icon" : "monk_mantraofevasion",
-    "slug" : "mantra-of-evasion",
-    "requiredLevel" : 9,
-    "tooltipParams" : "skill/monk/mantra-of-evasion",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Recite a Mantra that grants you and all allies within <span class=\"d3-color-green\">40</span> yards a <span class=\"d3-color-green\">15%</span> chance to dodge attacks. Lasts <span class=\"d3-color-green\">3</span> minutes.</p><p>For <span class=\"d3-color-green\">3</span> seconds after activation, a second effect grants an additional <span class=\"d3-color-green\">15%</span> chance to dodge attacks.</p><p><span class=\"d3-color-yellow\">This is a Mantra. You can only have one Mantra active at a time.</span></p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost: </span><span class=\"d3-color-green\">25</span> Spirit</p><p>Increases your and your allies&#39; chance to dodge attacks.</p><p><span class=\"d3-color-yellow\">Only one Mantra can be active at a time.</span></p>"
-  }, {
-    "primary" : true,
-    "runes" : [ {
-      "name" : "The Flesh is Weak",
-      "type" : "c",
-      "requiredLevel" : 18,
-      "tooltipParams" : "rune/exploding-palm/c",
-      "description" : "<p>The third hit also causes the target to take <span class=\"d3-color-green\">12%</span> additional damage for <span class=\"d3-color-green\">3</span> seconds.</p>",
-      "simpleDescription" : "<p>The third hit causes the target to take additional damage.</p>"
-    }, {
-      "name" : "Strong Spirit",
-      "type" : "d",
-      "requiredLevel" : 27,
-      "tooltipParams" : "rune/exploding-palm/d",
-      "description" : "<p>If the target explodes after bleeding, gain <span class=\"d3-color-green\">5</span> Spirit for each enemy caught in the blast.</p>",
-      "simpleDescription" : "<p>If the target explodes after bleeding, gain Spirit for each enemy caught in the blast.</p>"
-    }, {
-      "name" : "Creeping Demise",
-      "type" : "b",
-      "requiredLevel" : 36,
-      "tooltipParams" : "rune/exploding-palm/b",
-      "description" : "<p>The bleed effect hits <span class=\"d3-color-green\">2</span> targets standing in front of you.</p>",
-      "simpleDescription" : "<p>Bleed multiple enemies in front of you.</p>"
-    }, {
-      "name" : "Impending Doom",
-      "type" : "a",
-      "requiredLevel" : 46,
-      "tooltipParams" : "rune/exploding-palm/a",
-      "description" : "<p>Increases the duration of the bleed effect to <span class=\"d3-color-green\">5</span> seconds.</p>",
-      "simpleDescription" : "<p>Increases the duration of the Bleed effect.</p>"
-    }, {
-      "name" : "Essence Burn",
-      "type" : "e",
-      "requiredLevel" : 56,
-      "tooltipParams" : "rune/exploding-palm/e",
-      "description" : "<p>The third strike causes the target to burn for <span class=\"d3-color-green\">60%</span> weapon damage as Fire every second for <span class=\"d3-color-green\">3</span> seconds. If the target dies while burning it explodes causing all nearby enemies to burn for <span class=\"d3-color-green\">30%</span> weapon damage as Fire for <span class=\"d3-color-green\">2</span> seconds. This effect can chain repeatedly.</p>",
-      "simpleDescription" : "<p>The third strike causes the target to burn. If the target dies while burning, it explodes and damages nearby enemies.</p>"
-    } ],
-    "categoryName" : "Primary",
-    "categorySlug" : "primary",
-    "name" : "Exploding Palm",
-    "icon" : "monk_explodingpalm",
-    "slug" : "exploding-palm",
-    "requiredLevel" : 11,
-    "tooltipParams" : "skill/monk/exploding-palm",
-    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>The first two strikes in the attack deal <span class=\"d3-color-green\">100%</span> weapon damage. The third strike causes the target to bleed for <span class=\"d3-color-green\">50%</span> of weapon damage as Physical per second for <span class=\"d3-color-green\">3</span> seconds. If the target dies while bleeding, it explodes and deals <span class=\"d3-color-green\">30%</span> of the target&#39;s maximum Life as Physical damage to all other enemies nearby.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Strike and Bleed an enemy. The enemy will explode if killed while bleeding.</p>"
   }, {
     "primary" : true,
     "runes" : [ {
       "name" : "Northern Breeze",
       "type" : "d",
-      "requiredLevel" : 19,
+      "requiredLevel" : 11,
       "tooltipParams" : "rune/tempest-rush/d",
-      "description" : "<p>Reduces channeling cost to <span class=\"d3-color-green\">10</span> Spirit.</p>",
+      "description" : "<p>Reduces the channeling cost of Tempest Rush to <span class=\"d3-color-green\">8</span> Spirit.</p>",
       "simpleDescription" : "<p>Reduces the Spirit cost of Tempest Rush.</p>"
     }, {
       "name" : "Tailwind",
       "type" : "b",
-      "requiredLevel" : 29,
+      "requiredLevel" : 20,
       "tooltipParams" : "rune/tempest-rush/b",
       "description" : "<p>Increases the movement speed of Tempest Rush by <span class=\"d3-color-green\">25%</span>.</p>",
-      "simpleDescription" : "<p>Increases the movement bonus of Tempest Rush.</p>"
+      "simpleDescription" : "<p>Increase the movement speed of Tempest Rush.</p>"
     }, {
       "name" : "Flurry",
       "type" : "e",
-      "requiredLevel" : 37,
+      "requiredLevel" : 33,
       "tooltipParams" : "rune/tempest-rush/e",
       "description" : "<p>Increases the potency of the hobbling effect, slowing enemy movement by <span class=\"d3-color-green\">80%</span>.</p>",
-      "simpleDescription" : "<p>Increases amount Tempest Rush Slows enemies.</p>"
+      "simpleDescription" : "<p>Increases the amount enemies are slowed.</p>"
     }, {
       "name" : "Slipstream",
       "type" : "c",
-      "requiredLevel" : 44,
+      "requiredLevel" : 45,
       "tooltipParams" : "rune/tempest-rush/c",
-      "description" : "<p>Reduce the damage taken while running by <span class=\"d3-color-green\">25%</span>.</p>",
-      "simpleDescription" : "<p>Reduce the damage taken while running.</p>"
+      "description" : "<p>Reduces damage taken while running by <span class=\"d3-color-green\">25%</span>.</p>",
+      "simpleDescription" : "<p>Reduces damage taken while running.</p>"
     }, {
       "name" : "Bluster",
       "type" : "a",
-      "requiredLevel" : 53,
+      "requiredLevel" : 56,
       "tooltipParams" : "rune/tempest-rush/a",
       "description" : "<p>Enemies knocked back have their damage reduced by <span class=\"d3-color-green\">20%</span> for the duration of the effect.</p>",
       "simpleDescription" : "<p>Enemies knocked back have their damage reduced.</p>"
@@ -523,141 +230,376 @@
     "name" : "Tempest Rush",
     "icon" : "monk_tempestrush",
     "slug" : "tempest-rush",
-    "requiredLevel" : 12,
+    "requiredLevel" : 5,
     "tooltipParams" : "skill/monk/tempest-rush",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Spirit plus an additional <span class=\"d3-color-green\">15</span> Spirit while channeling</p><p>Run directly through your enemies, knocking them back and hobbling them, slowing their movement by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">2</span> seconds. Also deals <span class=\"d3-color-green\">50%</span> weapon damage while running.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">30</span> Spirit</p><p>Run through your enemies, damaging and knocking them back.</p>"
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">15</span> Spirit plus an additional <span class=\"d3-color-green\">10</span> Spirit while channeling</p><p>Charge directly through your enemies, knocking them back and hobbling them, slowing their movement by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">2</span> seconds. Also deals <span class=\"d3-color-green\">50%</span> weapon damage while running.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Charge through your enemies, damaging and knocking them back.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Circle of Scorn",
+      "type" : "a",
+      "requiredLevel" : 14,
+      "tooltipParams" : "rune/breath-of-heaven/a",
+      "description" : "<p>Breath of Heaven also sears enemies for <span class=\"d3-color-green\">80%</span> weapon damage as Holy.</p>",
+      "simpleDescription" : "<p>Breath of Heaven deals Holy damage to enemies.</p>"
+    }, {
+      "name" : "Circle of Life",
+      "type" : "b",
+      "requiredLevel" : 21,
+      "tooltipParams" : "rune/breath-of-heaven/b",
+      "description" : "<p>Increases the healing power of Breath of Heaven to <span class=\"d3-color-green\">8063 - 9675</span> Life.</p>",
+      "simpleDescription" : "<p>Increases the healing power of Breath of Heaven.</p>"
+    }, {
+      "name" : "Blazing Wrath",
+      "type" : "c",
+      "requiredLevel" : 32,
+      "tooltipParams" : "rune/breath-of-heaven/c",
+      "description" : "<p>Breath of Heaven increases the damage of your attacks by <span class=\"d3-color-green\">15%</span> for <span class=\"d3-color-green\">45</span> seconds.</p>",
+      "simpleDescription" : "<p>Breath of Heaven increases the damage of your attacks for a limited time.</p>"
+    }, {
+      "name" : "Infused with Light",
+      "type" : "d",
+      "requiredLevel" : 44,
+      "tooltipParams" : "rune/breath-of-heaven/d",
+      "description" : "<p>Gain <span class=\"d3-color-green\">6</span> additional Spirit from Spirit generating attacks for <span class=\"d3-color-green\">5</span> seconds after using Breath of Heaven.</p>",
+      "simpleDescription" : "<p>Gain additional Spirit from Spirit generating attacks for a limited time.</p>"
+    }, {
+      "name" : "Penitent Flame",
+      "type" : "e",
+      "requiredLevel" : 59,
+      "tooltipParams" : "rune/breath-of-heaven/e",
+      "description" : "<p>Enemies exposed to Breath of Heaven run away in Fear for <span class=\"d3-color-green\">1.5</span> seconds.</p>",
+      "simpleDescription" : "<p>Enemies exposed to Breath of Heaven run away in Fear.</p>"
+    } ],
+    "categoryName" : "Defensive",
+    "categorySlug" : "defensive",
+    "name" : "Breath of Heaven",
+    "icon" : "monk_breathofheaven",
+    "slug" : "breath-of-heaven",
+    "requiredLevel" : 8,
+    "tooltipParams" : "skill/monk/breath-of-heaven",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>A blast of divine energy heals you and all allies within <span class=\"d3-color-green\">12</span> yards for <span class=\"d3-color-green\">6202 - 7442</span> Life.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">15</span> seconds</p><p>Heal yourself and nearby allies.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Way of the Falling Star",
+      "type" : "b",
+      "requiredLevel" : 15,
+      "tooltipParams" : "rune/dashing-strike/b",
+      "description" : "<p>After striking an enemy, your movement speed is increased <span class=\"d3-color-green\">25%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>After striking an enemy, your movement speed is increased.</p>"
+    }, {
+      "name" : "Flying Side Kick",
+      "type" : "e",
+      "requiredLevel" : 23,
+      "tooltipParams" : "rune/dashing-strike/e",
+      "description" : "<p>Perform a flying kick that has a <span class=\"d3-color-green\">60%</span> chance to Stun your target for <span class=\"d3-color-green\">1.5</span> seconds.</p>",
+      "simpleDescription" : "<p>Perform a flying kick that can Stun your target.</p>"
+    }, {
+      "name" : "Quicksilver",
+      "type" : "d",
+      "requiredLevel" : 32,
+      "tooltipParams" : "rune/dashing-strike/d",
+      "description" : "<p>Reduces the cost of Dashing Strike to <span class=\"d3-color-green\">10</span> Spirit.</p>",
+      "simpleDescription" : "<p>Reduces the Spirit cost of Dashing Strike.</p>"
+    }, {
+      "name" : "Soaring Skull",
+      "type" : "a",
+      "requiredLevel" : 39,
+      "tooltipParams" : "rune/dashing-strike/a",
+      "description" : "<p>Launch yourself through the air and slow all enemies along your path by <span class=\"d3-color-green\">60%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Launch yourself through the air and Slow all enemies along your path.</p>"
+    }, {
+      "name" : "Blinding Speed",
+      "type" : "c",
+      "requiredLevel" : 49,
+      "tooltipParams" : "rune/dashing-strike/c",
+      "description" : "<p>Receive a <span class=\"d3-color-green\">20%</span> increased chance to Dodge for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases your chance to Dodge when using Dashing Strike.</p>"
+    } ],
+    "categoryName" : "Techniques",
+    "categorySlug" : "techniques",
+    "name" : "Dashing Strike",
+    "icon" : "monk_dashingstrike",
+    "slug" : "dashing-strike",
+    "requiredLevel" : 9,
+    "tooltipParams" : "skill/monk/dashing-strike",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Quickly dash at the targeted enemy or location, striking for <span class=\"d3-color-green\">100%</span> weapon damage and rooting the target for <span class=\"d3-color-green\">1</span> second.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Quickly dash and strike an enemy.</p>"
   }, {
     "primary" : true,
     "runes" : [ {
       "name" : "Mangle",
       "type" : "a",
-      "requiredLevel" : 23,
+      "requiredLevel" : 17,
       "tooltipParams" : "rune/crippling-wave/a",
-      "description" : "<p>Increase damage to <span class=\"d3-color-green\">130%</span> weapon damage.</p>",
+      "description" : "<p>Increase damage to <span class=\"d3-color-green\">143%</span> weapon damage.</p>",
       "simpleDescription" : "<p>Increase damage of Crippling Wave.</p>"
     }, {
       "name" : "Concussion",
       "type" : "c",
-      "requiredLevel" : 31,
+      "requiredLevel" : 26,
       "tooltipParams" : "rune/crippling-wave/c",
       "description" : "<p>Enemies hit by Crippling Wave inflict <span class=\"d3-color-green\">20%</span> less damage for <span class=\"d3-color-green\">3</span> seconds.</p>",
       "simpleDescription" : "<p>Enemies hit by Crippling Wave deal less damage for a limited time.</p>"
     }, {
       "name" : "Rising Tide",
       "type" : "d",
-      "requiredLevel" : 39,
+      "requiredLevel" : 36,
       "tooltipParams" : "rune/crippling-wave/d",
-      "description" : "<p>Critical Hits generates <span class=\"d3-color-green\">5</span> Spirit.</p>",
-      "simpleDescription" : "<p>Critical Hits generate Spirit when using Crippling Wave.</p>"
+      "description" : "<p>Critical Hits generate an additional <span class=\"d3-color-green\">5</span> Spirit.</p>",
+      "simpleDescription" : "<p>Critical Hits generate additional Spirit when using Crippling Wave.</p>"
     }, {
       "name" : "Tsunami",
       "type" : "b",
-      "requiredLevel" : 46,
+      "requiredLevel" : 51,
       "tooltipParams" : "rune/crippling-wave/b",
       "description" : "<p>The range of Crippling Wave&#39;s third strike is increased to <span class=\"d3-color-green\">17</span> yards and the effect of the movement speed reduction is increased to <span class=\"d3-color-green\">60%</span>.</p>",
-      "simpleDescription" : "<p>Increase the range and movement speed reduction of the third attack using Crippling Wave.</p>"
+      "simpleDescription" : "<p>Increase the range and movement speed reduction of Crippling Wave&#39;s third attack.</p>"
     }, {
       "name" : "Breaking Wave",
       "type" : "e",
-      "requiredLevel" : 53,
+      "requiredLevel" : 57,
       "tooltipParams" : "rune/crippling-wave/e",
       "description" : "<p>Enemies hit by Crippling Wave take <span class=\"d3-color-green\">10%</span> additional damage from all attacks for <span class=\"d3-color-green\">3</span> seconds.</p>",
       "simpleDescription" : "<p>Enemies hit by Crippling Wave take additional damage for a limited time.</p>"
     } ],
-    "categoryName" : "Techniques",
-    "categorySlug" : "techniques",
+    "categoryName" : "Primary",
+    "categorySlug" : "primary",
     "name" : "Crippling Wave",
     "icon" : "monk_cripplingwave",
     "slug" : "crippling-wave",
-    "requiredLevel" : 14,
+    "requiredLevel" : 11,
     "tooltipParams" : "skill/monk/crippling-wave",
-    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>A series of large sweeping attacks that causes <span class=\"d3-color-green\">100%</span> weapon damage to all enemies in front of you. Every third hit damages all enemies around you and dazes them, slowing movement speed by <span class=\"d3-color-green\">30%</span> and attack speed by <span class=\"d3-color-green\">20%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Unleash a series of large sweeping attacks that cause <span class=\"d3-color-green\">110%</span> weapon damage to all enemies in front of you. Every third hit damages all enemies around you and dazes them, slowing their movement speed by <span class=\"d3-color-green\">30%</span> and attack speed by <span class=\"d3-color-green\">20%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
     "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Sweeping punches that cripple enemies, reducing their attack and movement speed.</p>"
   }, {
-    "primary" : false,
+    "primary" : true,
     "runes" : [ {
-      "name" : "Retaliation",
+      "name" : "Wall of Light",
       "type" : "a",
-      "requiredLevel" : 23,
-      "tooltipParams" : "rune/mantra-of-retribution/a",
-      "description" : "<p>Increase amount of damage reflected by the Mantra to <span class=\"d3-color-green\">60%</span>. The Mantra will now reflect ranged damage as well as melee damage.</p>",
-      "simpleDescription" : "<p>Increase amount of damage reflected by the Mantra and reflects ranged weapons as well.</p>"
+      "requiredLevel" : 18,
+      "tooltipParams" : "rune/wave-of-light/a",
+      "description" : "<p>Increases damage of the initial strike to <span class=\"d3-color-green\">312%</span> weapon damage as Holy.</p>",
+      "simpleDescription" : "<p>Increases damage of the initial strike.</p>"
     }, {
-      "name" : "Transgression",
+      "name" : "Explosive Light",
       "type" : "b",
-      "requiredLevel" : 32,
-      "tooltipParams" : "rune/mantra-of-retribution/b",
-      "description" : "<p>Mantra of Retribution also increases attack speed for you and all allies by <span class=\"d3-color-green\">8%</span>.</p>",
-      "simpleDescription" : "<p>Mantra of Retribution increases your attack speed for you and all allies.</p>"
+      "requiredLevel" : 25,
+      "tooltipParams" : "rune/wave-of-light/b",
+      "description" : "<p>Release bursts of energy that deal <span class=\"d3-color-green\">285%</span> weapon damage as Holy to nearby enemies.</p>",
+      "simpleDescription" : "<p>Release bursts of energy that deal Holy damage to enemies.</p>"
     }, {
-      "name" : "Indignation",
-      "type" : "c",
-      "requiredLevel" : 38,
-      "tooltipParams" : "rune/mantra-of-retribution/c",
-      "description" : "<p>When taking damage from the Mantra of Retribution, enemies have a <span class=\"d3-color-green\">20%</span> chance to be stunned for <span class=\"d3-color-green\">2</span> seconds.</p>",
-      "simpleDescription" : "<p>Mantra of Retribution has a chance to Stun enemies.</p>"
-    }, {
-      "name" : "Against All Odds",
+      "name" : "Empowered Wave",
       "type" : "d",
-      "requiredLevel" : 46,
-      "tooltipParams" : "rune/mantra-of-retribution/d",
-      "description" : "<p>Mantra of Retribution has a chance to restore <span class=\"d3-color-green\">3</span> Spirit when reflecting damage done to you.</p>",
-      "simpleDescription" : "<p>When redirecting damage, the Mantra of Retribution has a chance to restore Spirit.</p>"
+      "requiredLevel" : 35,
+      "tooltipParams" : "rune/wave-of-light/d",
+      "description" : "<p>Reduces the cost of Wave of Light to <span class=\"d3-color-green\">40</span> Spirit.</p>",
+      "simpleDescription" : "<p>Reduces the Spirit cost of Wave of Light.</p>"
     }, {
-      "name" : "Collateral Damage",
+      "name" : "Blinding Light",
       "type" : "e",
-      "requiredLevel" : 55,
-      "tooltipParams" : "rune/mantra-of-retribution/e",
-      "description" : "<p>An attacker that triggers Mantra of Retribution has up to a <span class=\"d3-color-green\">30%</span> chance to suffer a feedback blast, dealing <span class=\"d3-color-green\">45%</span> weapon damage as Holy to itself and surrounding enemies.</p>",
-      "simpleDescription" : "<p>Enemies damaged by the Mantra of Retribution have a chance to burst and deal Holy damage to nearby enemies.</p>"
+      "requiredLevel" : 49,
+      "tooltipParams" : "rune/wave-of-light/e",
+      "description" : "<p>Critical Hits Stun enemies for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Critical Hits Stun enemies.</p>"
+    }, {
+      "name" : "Pillar of the Ancients",
+      "type" : "c",
+      "requiredLevel" : 57,
+      "tooltipParams" : "rune/wave-of-light/c",
+      "description" : "<p>Summon an ancient pillar that deals <span class=\"d3-color-green\">210%</span> weapon damage followed by an additional <span class=\"d3-color-green\">210%</span> weapon damage after <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Summon an ancient pillar that crushes nearby enemies.</p>"
     } ],
-    "categoryName" : "Conviction",
-    "categorySlug" : "conviction",
-    "name" : "Mantra of Retribution",
-    "icon" : "monk_mantraofretribution",
-    "slug" : "mantra-of-retribution",
+    "categoryName" : "Secondary",
+    "categorySlug" : "secondary",
+    "name" : "Wave of Light",
+    "icon" : "monk_waveoflight",
+    "slug" : "wave-of-light",
+    "requiredLevel" : 12,
+    "tooltipParams" : "skill/monk/wave-of-light",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">75</span> Spirit</p><p>Focuses a wave of light that crushes enemies for <span class=\"d3-color-green\">215%</span> weapon damage as Holy, followed by an additional <span class=\"d3-color-green\">45%</span> weapon damage as Holy to all enemies in a line.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">75</span> Spirit</p><p>Ring a mystic bell that unleashes a wave of light that crushes all enemies in its path.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "The Flesh is Weak",
+      "type" : "c",
+      "requiredLevel" : 18,
+      "tooltipParams" : "rune/exploding-palm/c",
+      "description" : "<p>Also causes the target to take <span class=\"d3-color-green\">12%</span> additional damage for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Your target takes additional damage from attacks.</p>"
+    }, {
+      "name" : "Strong Spirit",
+      "type" : "d",
+      "requiredLevel" : 25,
+      "tooltipParams" : "rune/exploding-palm/d",
+      "description" : "<p>If the target explodes after bleeding, gain <span class=\"d3-color-green\">5</span> Spirit for each enemy caught in the blast.</p>",
+      "simpleDescription" : "<p>If the target explodes after bleeding, gain Spirit for each enemy caught in the blast.</p>"
+    }, {
+      "name" : "Creeping Demise",
+      "type" : "b",
+      "requiredLevel" : 36,
+      "tooltipParams" : "rune/exploding-palm/b",
+      "description" : "<p>Also reduces your target&#39;s movement speed by <span class=\"d3-color-green\">80%</span>.</p>",
+      "simpleDescription" : "<p>Slows the movement speed of the target.</p>"
+    }, {
+      "name" : "Impending Doom",
+      "type" : "a",
+      "requiredLevel" : 44,
+      "tooltipParams" : "rune/exploding-palm/a",
+      "description" : "<p>Increases the duration of the Bleed effect to deal <span class=\"d3-color-green\">220%</span> weapon damage as Physical over <span class=\"d3-color-green\">6</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases the duration of the Bleed effect.</p>"
+    }, {
+      "name" : "Essence Burn",
+      "type" : "e",
+      "requiredLevel" : 51,
+      "tooltipParams" : "rune/exploding-palm/e",
+      "description" : "<p>Instead of bleeding, the target will burn for <span class=\"d3-color-green\">250%</span> weapon damage as Fire over <span class=\"d3-color-green\">3</span> seconds. If the target dies while burning, it explodes causing all nearby enemies to burn for <span class=\"d3-color-green\">60%</span> weapon damage as Fire over <span class=\"d3-color-green\">3</span> seconds. This effect can happen multiple times.</p>",
+      "simpleDescription" : "<p>Causes the target to burn. If the target dies while burning, it explodes and ignites nearby enemies.</p>"
+    } ],
+    "categoryName" : "Techniques",
+    "categorySlug" : "techniques",
+    "name" : "Exploding Palm",
+    "icon" : "monk_explodingpalm",
+    "slug" : "exploding-palm",
+    "requiredLevel" : 13,
+    "tooltipParams" : "skill/monk/exploding-palm",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">40</span> Spirit</p><p>Cause a target to Bleed for <span class=\"d3-color-green\">220%</span> weapon damage as Physical over <span class=\"d3-color-green\">3</span> seconds. If the target dies while bleeding, it explodes and deals <span class=\"d3-color-green\">30%</span> of the target&#39;s maximum Life as Physical damage to all nearby enemies.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">40</span> Spirit</p><p>Strike and Bleed an enemy. The enemy will explode if killed while bleeding.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Eye of the Storm",
+      "type" : "d",
+      "requiredLevel" : 21,
+      "tooltipParams" : "rune/cyclone-strike/d",
+      "description" : "<p>Reduces the Spirit cost of Cyclone Strike to <span class=\"d3-color-green\">30</span> Spirit.</p>",
+      "simpleDescription" : "<p>Reduces the Spirit cost of Cyclone Strike.</p>"
+    }, {
+      "name" : "Implosion",
+      "type" : "b",
+      "requiredLevel" : 25,
+      "tooltipParams" : "rune/cyclone-strike/b",
+      "description" : "<p>Increases the distance enemies will be pulled towards you to <span class=\"d3-color-green\">34</span> yards.</p>",
+      "simpleDescription" : "<p>Increases the distance enemies will be pulled towards you.</p>"
+    }, {
+      "name" : "Sunburst",
+      "type" : "a",
+      "requiredLevel" : 34,
+      "tooltipParams" : "rune/cyclone-strike/a",
+      "description" : "<p>Changes the blast into an explosion of fire that has a <span class=\"d3-color-green\">35%</span> chance to Fear enemies for <span class=\"d3-color-green\">1.5</span> seconds.</p>",
+      "simpleDescription" : "<p>Changes the blast into an fiery explosion that causes Fear.</p>"
+    }, {
+      "name" : "Wall of Wind",
+      "type" : "e",
+      "requiredLevel" : 41,
+      "tooltipParams" : "rune/cyclone-strike/e",
+      "description" : "<p>After using Cyclone Strike, gain a <span class=\"d3-color-green\">20%</span> chance to dodge attacks for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>After using Cyclone Strike, gain a chance to dodge attacks for a limited time.</p>"
+    }, {
+      "name" : "Soothing Breeze",
+      "type" : "c",
+      "requiredLevel" : 55,
+      "tooltipParams" : "rune/cyclone-strike/c",
+      "description" : "<p>Cyclone Strike heals you and all allies within <span class=\"d3-color-green\">24</span> yards for <span class=\"d3-color-green\">1240</span> Life.</p>",
+      "simpleDescription" : "<p>Cyclone Strike heals you and your allies.</p>"
+    } ],
+    "categoryName" : "Focus",
+    "categorySlug" : "focus",
+    "name" : "Cyclone Strike",
+    "icon" : "monk_cyclonestrike",
+    "slug" : "cyclone-strike",
+    "requiredLevel" : 14,
+    "tooltipParams" : "skill/monk/cyclone-strike",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit</p><p>Pull all enemies within <span class=\"d3-color-green\">24</span> yards towards you, followed by a furious blast of energy that deals <span class=\"d3-color-green\">100%</span> weapon damage as Holy.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit</p><p>Mystical force pulls nearby enemies towards you and blasts them.</p>"
+  }, {
+    "primary" : true,
+    "runes" : [ {
+      "name" : "Hands of Lightning",
+      "type" : "b",
+      "requiredLevel" : 24,
+      "tooltipParams" : "rune/way-of-the-hundred-fists/b",
+      "description" : "<p>Increases the number of hits in the second strike from <span class=\"d3-color-green\">7</span> to <span class=\"d3-color-green\">10</span>.</p>",
+      "simpleDescription" : "<p>Increases the number of hits in the second strike.</p>"
+    }, {
+      "name" : "Blazing Fists",
+      "type" : "c",
+      "requiredLevel" : 32,
+      "tooltipParams" : "rune/way-of-the-hundred-fists/c",
+      "description" : "<p>Critical Hits increase your attack speed and movement speed by <span class=\"d3-color-green\">5%</span> for <span class=\"d3-color-green\">5</span> seconds. This effect can stack up to <span class=\"d3-color-green\">3</span> times.</p>",
+      "simpleDescription" : "<p>Critical Hits increase your attack and movement speeds.</p>"
+    }, {
+      "name" : "Fists of Fury",
+      "type" : "a",
+      "requiredLevel" : 40,
+      "tooltipParams" : "rune/way-of-the-hundred-fists/a",
+      "description" : "<p>Affected targets will take an additional <span class=\"d3-color-green\">10%</span> weapon damage per second as Holy for <span class=\"d3-color-green\">5</span> seconds. Also adds a short dash to the first strike.</p>",
+      "simpleDescription" : "<p>Perform a short dash on the first target and deal additional Holy damage over time.</p>"
+    }, {
+      "name" : "Spirited Salvo",
+      "type" : "d",
+      "requiredLevel" : 48,
+      "tooltipParams" : "rune/way-of-the-hundred-fists/d",
+      "description" : "<p>Every activation of the skill has a <span class=\"d3-color-green\">15%</span> chance to generate <span class=\"d3-color-green\">15</span> additional Spirit.</p>",
+      "simpleDescription" : "<p>Every use of this skill has a chance to generate additional Spirit.</p>"
+    }, {
+      "name" : "Windforce Flurry",
+      "type" : "e",
+      "requiredLevel" : 60,
+      "tooltipParams" : "rune/way-of-the-hundred-fists/e",
+      "description" : "<p>The third strike generates a wave of wind that deals <span class=\"d3-color-green\">250%</span> weapon damage as Physical to enemies directly ahead of you.</p>",
+      "simpleDescription" : "<p>The third strike generates a wave of wind that damages enemies in its path.</p>"
+    } ],
+    "categoryName" : "Primary",
+    "categorySlug" : "primary",
+    "name" : "Way of the Hundred Fists",
+    "icon" : "monk_wayofthehundredfists",
+    "slug" : "way-of-the-hundred-fists",
     "requiredLevel" : 15,
-    "tooltipParams" : "skill/monk/mantra-of-retribution",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Recite a Mantra that causes you and all allies within <span class=\"d3-color-green\">40</span> yards to reflect melee damage back at enemies, dealing Holy damage equal to <span class=\"d3-color-green\">40%</span> of the damage sustained. Lasts <span class=\"d3-color-green\">3</span> minutes.</p><p>For <span class=\"d3-color-green\">3</span> seconds after activation the effect on you is increased to <span class=\"d3-color-green\">80%</span> of the damage sustained.</p><p><span class=\"d3-color-yellow\">This is a Mantra. You can only have one Mantra active at a time.</span></p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost: </span><span class=\"d3-color-green\">25</span> Spirit</p><p>Enemies take damage when they attack you or your allies using melee weapons.</p><p><span class=\"d3-color-yellow\">Only one Mantra can be active at a time.</span></p>"
+    "tooltipParams" : "skill/monk/way-of-the-hundred-fists",
+    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Unleash a rapid series of punches that strikes enemies for <span class=\"d3-color-green\">140%</span> weapon damage.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Strike groups of enemies with a series of devastating punches.</p>"
   }, {
     "primary" : false,
     "runes" : [ {
       "name" : "Peaceful Repose",
       "type" : "a",
-      "requiredLevel" : 24,
+      "requiredLevel" : 23,
       "tooltipParams" : "rune/serenity/a",
-      "description" : "<p>When activated, Serenity heals you for <span class=\"d3-color-green\">35587 - 41518</span> Life.</p>",
-      "simpleDescription" : "<p>When activated, Serenity heals you as well.</p>"
+      "description" : "<p>When activated, Serenity heals you for <span class=\"d3-color-green\">6202 - 7752</span> Life.</p>",
+      "simpleDescription" : "<p>When activated, Serenity heals you.</p>"
     }, {
       "name" : "Reap What Is Sown",
       "type" : "e",
-      "requiredLevel" : 32,
+      "requiredLevel" : 29,
       "tooltipParams" : "rune/serenity/e",
-      "description" : "<p>Unleash an explosion equal to <span class=\"d3-color-green\">30%</span> of the damage avoided by Serenity when Serenity expires, dealing Holy damage to enemies within <span class=\"d3-color-green\">20</span> yards. The damage to each enemy cannot exceed <span class=\"d3-color-green\">100%</span> of your maximum Life.</p>",
-      "simpleDescription" : "<p>When Serenity expires, unleash an explosion dealing a portion of the absorbed damage back at attackers.</p>"
+      "description" : "<p>When Serenity ends, the shield explodes, dealing <span class=\"d3-color-green\">30%</span> of the damage absorbed by Serenity as Holy damage to enemies within <span class=\"d3-color-green\">20</span> yards. The damage to each enemy cannot exceed <span class=\"d3-color-green\">100%</span> of your maximum Life.</p>",
+      "simpleDescription" : "<p>When Serenity ends, the shield explodes, dealing a portion of the absorbed damage back at attackers.</p>"
     }, {
       "name" : "Tranquility",
       "type" : "d",
-      "requiredLevel" : 40,
+      "requiredLevel" : 39,
       "tooltipParams" : "rune/serenity/d",
-      "description" : "<p>Extends the protective shield and immunity to control impairing effects to allies within <span class=\"d3-color-green\">45</span> yards for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "description" : "<p>Extends the protective shield to allies within <span class=\"d3-color-green\">45</span> yards for <span class=\"d3-color-green\">2</span> seconds, and makes them immune to control impairing effects like Slow and Frozen.</p>",
       "simpleDescription" : "<p>Extends the protective shield to your allies and makes them immune to control impairing effects like Slow and Frozen.</p>"
     }, {
       "name" : "Ascension",
       "type" : "c",
-      "requiredLevel" : 50,
+      "requiredLevel" : 47,
       "tooltipParams" : "rune/serenity/c",
-      "description" : "<p>Increases the duration of Serenity to <span class=\"d3-color-green\">5</span> seconds.</p>",
-      "simpleDescription" : "<p>Increase the duration of Serenity.</p>"
+      "description" : "<p>Increases the duration of Serenity to <span class=\"d3-color-green\">4</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases the duration of Serenity.</p>"
     }, {
       "name" : "Instant Karma",
       "type" : "b",
-      "requiredLevel" : 57,
+      "requiredLevel" : 54,
       "tooltipParams" : "rune/serenity/b",
       "description" : "<p>While Serenity is active, <span class=\"d3-color-green\">50%</span> of all projectiles and melee attacks are reflected back at the attacker.</p>",
-      "simpleDescription" : "<p>While Serenity is active all projectiles and melee attacks are reflected back at the attacker.</p>"
+      "simpleDescription" : "<p>While Serenity is active, projectile and melee attacks have a chance to be reflected back at the attacker.</p>"
     } ],
     "categoryName" : "Defensive",
     "categorySlug" : "defensive",
@@ -666,44 +608,44 @@
     "slug" : "serenity",
     "requiredLevel" : 16,
     "tooltipParams" : "skill/monk/serenity",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">45</span> seconds</p><p>You are enveloped in a protective shield that absorbs all incoming damage for <span class=\"d3-color-green\">3</span> seconds and grants immunity to all control impairing effects.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">45</span> seconds</p><p>Become immune to all attacks for <span class=\"d3-color-green\">3</span> seconds.</p>"
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">20</span> seconds</p><p>You are enveloped in a protective shield that absorbs all incoming damage for <span class=\"d3-color-green\">3</span> seconds and grants immunity to all control impairing effects.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">10</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">20</span> seconds</p><p>Become immune to all attacks and control effects for <span class=\"d3-color-green\">3</span> seconds.</p>"
   }, {
     "primary" : true,
     "runes" : [ {
       "name" : "Sudden Assault",
       "type" : "a",
-      "requiredLevel" : 28,
+      "requiredLevel" : 23,
       "tooltipParams" : "rune/sevensided-strike/a",
-      "description" : "<p>Teleport to the target and increases damage done to <span class=\"d3-color-green\">1007%</span> weapon damage over <span class=\"d3-color-green\">7</span> hits.</p>",
-      "simpleDescription" : "<p>Teleport to the target and increase the damage per hit.</p>"
+      "description" : "<p>Teleport to the target, increasing damage done to <span class=\"d3-color-green\">1007%</span> weapon damage over <span class=\"d3-color-green\">7</span> strikes.</p>",
+      "simpleDescription" : "<p>Teleport to the target, increasing the damage per strike.</p>"
     }, {
-      "name" : "Several Sided Strike",
+      "name" : "Several-Sided Strike",
       "type" : "b",
-      "requiredLevel" : 35,
+      "requiredLevel" : 29,
       "tooltipParams" : "rune/sevensided-strike/b",
-      "description" : "<p>Increases the number of strikes made to <span class=\"d3-color-green\">9</span> attacks.</p>",
+      "description" : "<p>Increases the number of strikes to <span class=\"d3-color-green\">9</span>.</p>",
       "simpleDescription" : "<p>Increases the number of strikes.</p>"
     }, {
       "name" : "Pandemonium",
       "type" : "c",
-      "requiredLevel" : 45,
+      "requiredLevel" : 37,
       "tooltipParams" : "rune/sevensided-strike/c",
-      "description" : "<p>Enemies hit by the barrage have a <span class=\"d3-color-green\">25%</span> chance per hit to be charmed or stunned for <span class=\"d3-color-green\">7</span> seconds.</p>",
-      "simpleDescription" : "<p>Enemies hit by the Seven-Sided Strike have a chance to be Charmed or Stunned.</p>"
+      "description" : "<p>Enemies hit by Seven-Sided Strike have a <span class=\"d3-color-green\">25%</span> chance to be stunned for <span class=\"d3-color-green\">7</span> seconds by each hit.</p>",
+      "simpleDescription" : "<p>Enemies hit by Seven-Sided Strike have a chance to be Stunned.</p>"
     }, {
       "name" : "Sustained Attack",
       "type" : "d",
-      "requiredLevel" : 51,
+      "requiredLevel" : 43,
       "tooltipParams" : "rune/sevensided-strike/d",
       "description" : "<p>Reduces the cooldown of Seven-Sided Strike by <span class=\"d3-color-green\">7</span> seconds.</p>",
       "simpleDescription" : "<p>Reduces the cooldown of Seven-Sided Strike.</p>"
     }, {
       "name" : "Fulminating Onslaught",
       "type" : "e",
-      "requiredLevel" : 59,
+      "requiredLevel" : 60,
       "tooltipParams" : "rune/sevensided-strike/e",
-      "description" : "<p>Each impact explodes to deal Holy damage in a <span class=\"d3-color-green\">7</span> yard radius around the target.</p>",
+      "description" : "<p>Each strike explodes, dealing <span class=\"d3-color-green\">111%</span> weapon damage as Holy in a <span class=\"d3-color-green\">7</span> yard radius around the target.</p>",
       "simpleDescription" : "<p>Each strike triggers an explosion that deals Holy damage.</p>"
     } ],
     "categoryName" : "Focus",
@@ -711,141 +653,188 @@
     "name" : "Seven-Sided Strike",
     "icon" : "monk_sevensidedstrike",
     "slug" : "sevensided-strike",
-    "requiredLevel" : 19,
+    "requiredLevel" : 17,
     "tooltipParams" : "skill/monk/sevensided-strike",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">30</span> seconds</p><p>Dash rapidly between nearby enemies dealing <span class=\"d3-color-green\">777%</span> weapon damage over <span class=\"d3-color-green\">7</span> hits.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">30</span> seconds</p><p>Move with blinding speed and strike all nearby enemies while being immune to attacks yourself.</p>"
-  }, {
-    "primary" : true,
-    "runes" : [ {
-      "name" : "Wall of Light",
-      "type" : "a",
-      "requiredLevel" : 30,
-      "tooltipParams" : "rune/wave-of-light/a",
-      "description" : "<p>Increases damage of the initial impact to <span class=\"d3-color-green\">240%</span> weapon damage as Holy.</p>",
-      "simpleDescription" : "<p>Increases damage of the initial impact.</p>"
-    }, {
-      "name" : "Explosive Light",
-      "type" : "b",
-      "requiredLevel" : 39,
-      "tooltipParams" : "rune/wave-of-light/b",
-      "description" : "<p>Shoot out bursts of energy that deal <span class=\"d3-color-green\">330%</span> weapon damage as Holy to nearby enemies.</p>",
-      "simpleDescription" : "<p>Release bursts of energy that deal Holy damage to enemies.</p>"
-    }, {
-      "name" : "Empowered Wave",
-      "type" : "d",
-      "requiredLevel" : 43,
-      "tooltipParams" : "rune/wave-of-light/d",
-      "description" : "<p>Cost reduced to <span class=\"d3-color-green\">60</span> Spirit.</p>",
-      "simpleDescription" : "<p>Reduce the Spirit cost of Wave of Light.</p>"
-    }, {
-      "name" : "Blinding Light",
-      "type" : "e",
-      "requiredLevel" : 49,
-      "tooltipParams" : "rune/wave-of-light/e",
-      "description" : "<p>Critical hits stun enemies for <span class=\"d3-color-green\">3</span> seconds.</p>",
-      "simpleDescription" : "<p>Critical Hits Stun enemies.</p>"
-    }, {
-      "name" : "Pillar of the Ancients",
-      "type" : "c",
-      "requiredLevel" : 57,
-      "tooltipParams" : "rune/wave-of-light/c",
-      "description" : "<p>Summon an ancient pillar that deals <span class=\"d3-color-green\">240%</span> weapon damage followed by an additional <span class=\"d3-color-green\">240%</span> weapon damage after <span class=\"d3-color-green\">2</span> seconds.</p>",
-      "simpleDescription" : "<p>Summon an ancient pillar that crushes nearby enemies.</p>"
-    } ],
-    "categoryName" : "Secondary",
-    "categorySlug" : "secondary",
-    "name" : "Wave of Light",
-    "icon" : "monk_waveoflight",
-    "slug" : "wave-of-light",
-    "requiredLevel" : 20,
-    "tooltipParams" : "skill/monk/wave-of-light",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">100</span> Spirit</p><p>Focuses the power of Light to smite enemies for <span class=\"d3-color-green\">150%</span> weapon damage as Holy followed by an additional <span class=\"d3-color-green\">150%</span> weapon damage as Holy to all enemies in a line.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">100</span> Spirit</p><p>Ring a mystic bell to unleash a wave of light that crushes all enemies in its path.</p>"
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">30</span> seconds</p><p>Dash rapidly between nearby enemies, dealing <span class=\"d3-color-green\">777%</span> weapon damage over <span class=\"d3-color-green\">7</span> hits.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">30</span> seconds</p><p>Move with blinding speed and strike nearby enemies while being immune to attacks yourself.</p>"
   }, {
     "primary" : false,
     "runes" : [ {
-      "name" : "Sustenance",
-      "type" : "a",
-      "requiredLevel" : 30,
-      "tooltipParams" : "rune/mantra-of-healing/a",
-      "description" : "<p>Increases the Life regeneration granted by Mantra of Healing to <span class=\"d3-color-green\">1186</span> Life per second.</p>",
-      "simpleDescription" : "<p>Increase Mantra of Healing&#39;s Life regeneration.</p>"
-    }, {
-      "name" : "Circular Breathing",
-      "type" : "d",
-      "requiredLevel" : 36,
-      "tooltipParams" : "rune/mantra-of-healing/d",
-      "description" : "<p>Mantra of Healing also grants you <span class=\"d3-color-green\">3</span> Spirit per second.</p>",
-      "simpleDescription" : "<p>Mantra of Healing regenerates Spirit.</p>"
-    }, {
-      "name" : "Boon of Protection",
-      "type" : "b",
-      "requiredLevel" : 44,
-      "tooltipParams" : "rune/mantra-of-healing/b",
-      "description" : "<p>Mantra of Healing shrouds you and your allies with a mystical shield for <span class=\"d3-color-green\">1</span> seconds  that absorbs up to <span class=\"d3-color-green\">10%</span> of each person&#39;s maximum Life in damage.</p>",
-      "simpleDescription" : "<p>Mantra of Healing shrouds you and your allies with a mystical shield that absorbs damage.</p>"
-    }, {
-      "name" : "Heavenly Body",
+      "name" : "Hard Target",
       "type" : "c",
-      "requiredLevel" : 52,
-      "tooltipParams" : "rune/mantra-of-healing/c",
-      "description" : "<p>Mantra of Healing also increases Vitality by <span class=\"d3-color-green\">10%</span>.</p>",
-      "simpleDescription" : "<p>Mantra of Healing also increases Vitality.</p>"
+      "requiredLevel" : 24,
+      "tooltipParams" : "rune/mantra-of-evasion/c",
+      "description" : "<p>Mantra of Evasion also increases Armor by <span class=\"d3-color-green\">20%</span>.</p>",
+      "simpleDescription" : "<p>Mantra of Evasion grants an Armor bonus.</p>"
     }, {
-      "name" : "Time of Need",
+      "name" : "Divine Protection",
       "type" : "e",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/mantra-of-evasion/e",
+      "description" : "<p>Each target can be protected at most once every <span class=\"d3-color-green\">90</span> seconds by this effect.</p>",
+      "simpleDescription" : "<p>When you or an ally are close to death, a  shield of protection forms around you, reducing damage taken.</p>"
+    }, {
+      "name" : "Wind through the Reeds",
+      "type" : "d",
+      "requiredLevel" : 40,
+      "tooltipParams" : "rune/mantra-of-evasion/d",
+      "description" : "<p>Mantra of Evasion also increases movement speed by <span class=\"d3-color-green\">5%</span>.</p>",
+      "simpleDescription" : "<p>Mantra of Evasion increases your movement speed.</p>"
+    }, {
+      "name" : "Perseverance",
+      "type" : "b",
+      "requiredLevel" : 50,
+      "tooltipParams" : "rune/mantra-of-evasion/b",
+      "description" : "<p>Mantra of Evasion also reduces the duration of all control impairing effects like Slow or Frozen by <span class=\"d3-color-green\">20%</span>.</p>",
+      "simpleDescription" : "<p>Mantra of Evasion reduces the duration of all control impairing effects like Slow or Frozen.</p>"
+    }, {
+      "name" : "Backlash",
+      "type" : "a",
       "requiredLevel" : 58,
-      "tooltipParams" : "rune/mantra-of-healing/e",
-      "description" : "<p>Mantra of Healing also increases all resistances by <span class=\"d3-color-green\">20%</span>.</p>",
-      "simpleDescription" : "<p>Mantra of Healing also increases resistances to all damage types.</p>"
+      "tooltipParams" : "rune/mantra-of-evasion/a",
+      "description" : "<p>Successfully dodging an attack has a chance to create a burst of flame dealing <span class=\"d3-color-green\">35%</span> weapon damage as Fire to all nearby enemies.</p>",
+      "simpleDescription" : "<p>Successfully dodging an attack has a chance to create a burst of flame that damages nearby enemies.</p>"
     } ],
-    "categoryName" : "Conviction",
-    "categorySlug" : "conviction",
-    "name" : "Mantra of Healing",
-    "icon" : "monk_mantraofhealing",
-    "slug" : "mantra-of-healing",
+    "categoryName" : "Mantras",
+    "categorySlug" : "mantras",
+    "name" : "Mantra of Evasion",
+    "icon" : "monk_mantraofevasion",
+    "slug" : "mantra-of-evasion",
+    "requiredLevel" : 19,
+    "tooltipParams" : "skill/monk/mantra-of-evasion",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit</p><p>Recite a Mantra that grants you and your allies within <span class=\"d3-color-green\">40</span> yards a <span class=\"d3-color-green\">15%</span> chance to dodge attacks for <span class=\"d3-color-green\">3</span> minutes.</p><p>For <span class=\"d3-color-green\">3</span> seconds after activation, a second effect grants an additional <span class=\"d3-color-green\">15%</span> chance to dodge attacks.</p><p><span class=\"d3-color-yellow\">This is a Mantra. You can only have one Mantra active at a time.</span></p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost: </span><span class=\"d3-color-green\">50</span> Spirit</p><p>Increase your and your allies&#39; chance to dodge attacks.</p><p><span class=\"d3-color-yellow\">Only one Mantra can be active at a time.</span></p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Retaliation",
+      "type" : "a",
+      "requiredLevel" : 28,
+      "tooltipParams" : "rune/mantra-of-retribution/a",
+      "description" : "<p>Increases the amount of damage reflected by the Mantra to <span class=\"d3-color-green\">60%</span>. The Mantra will now reflect ranged damage as well as melee damage.</p>",
+      "simpleDescription" : "<p>Increases the amount of damage reflected, and reflects ranged attacks as well.</p>"
+    }, {
+      "name" : "Transgression",
+      "type" : "b",
+      "requiredLevel" : 36,
+      "tooltipParams" : "rune/mantra-of-retribution/b",
+      "description" : "<p>Increases attack speed for you and your allies by <span class=\"d3-color-green\">8%</span>.</p>",
+      "simpleDescription" : "<p>Increases attack speed for you and your allies.</p>"
+    }, {
+      "name" : "Indignation",
+      "type" : "c",
+      "requiredLevel" : 41,
+      "tooltipParams" : "rune/mantra-of-retribution/c",
+      "description" : "<p>When taking damage from the Mantra of Retribution, enemies have a <span class=\"d3-color-green\">10%</span> chance to be stunned for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Mantra of Retribution has a chance to Stun enemies.</p>"
+    }, {
+      "name" : "Against All Odds",
+      "type" : "d",
+      "requiredLevel" : 56,
+      "tooltipParams" : "rune/mantra-of-retribution/d",
+      "description" : "<p>When reflecting damage done to you, Mantra of Retribution has a chance to restore <span class=\"d3-color-green\">3</span> Spirit.</p>",
+      "simpleDescription" : "<p>Mantra of Retribution has a chance to restore Spirit.</p>"
+    }, {
+      "name" : "Collateral Damage",
+      "type" : "e",
+      "requiredLevel" : 59,
+      "tooltipParams" : "rune/mantra-of-retribution/e",
+      "description" : "<p>An attacker that is damaged by Mantra of Retribution has a <span class=\"d3-color-green\">30%</span> chance to suffer a feedback blast, dealing <span class=\"d3-color-green\">45%</span> weapon damage as Holy to itself and nearby enemies.</p>",
+      "simpleDescription" : "<p>Enemies damaged by Mantra of Retribution have a chance to burst and deal Holy damage to nearby enemies.</p>"
+    } ],
+    "categoryName" : "Mantras",
+    "categorySlug" : "mantras",
+    "name" : "Mantra of Retribution",
+    "icon" : "monk_mantraofretribution",
+    "slug" : "mantra-of-retribution",
     "requiredLevel" : 21,
-    "tooltipParams" : "skill/monk/mantra-of-healing",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Recite a Mantra that causes you and all allies within <span class=\"d3-color-green\">40</span> yards to gain increased Life regeneration by <span class=\"d3-color-green\">593</span> Life per second.  Lasts <span class=\"d3-color-green\">3</span> minutes.</p><p>For <span class=\"d3-color-green\">3</span> seconds after activation the effect is increased to <span class=\"d3-color-green\">2372.5</span> Life per second.</p><p><span class=\"d3-color-yellow\">This is a Mantra. You can only have one Mantra active at a time.</span></p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost: </span><span class=\"d3-color-green\">25</span> Spirit</p><p>Increases Life regeneration for you and your allies.</p><p><span class=\"d3-color-yellow\">Only one Mantra can be active at a time.</span></p>"
+    "tooltipParams" : "skill/monk/mantra-of-retribution",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit</p><p>Recite a Mantra that causes you and your allies within <span class=\"d3-color-green\">40</span> yards to reflect melee damage back at enemies, dealing Holy damage equal to <span class=\"d3-color-green\">40%</span> of the damage sustained. The effect lasts for <span class=\"d3-color-green\">3</span> minutes.</p><p>For <span class=\"d3-color-green\">3</span> seconds after activation, the effect on you increases to <span class=\"d3-color-green\">80%</span> of the damage sustained.</p><p><span class=\"d3-color-yellow\">This is a Mantra. You can only have one Mantra active at a time.</span></p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost: </span><span class=\"d3-color-green\">50</span> Spirit</p><p>Enemies take damage when they attack you or your allies using melee weapons.</p><p><span class=\"d3-color-yellow\">Only one Mantra can be active at a time.</span></p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Master of Wind",
+      "type" : "e",
+      "requiredLevel" : 27,
+      "tooltipParams" : "rune/sweeping-wind/e",
+      "description" : "<p>Increases the duration of the vortex to <span class=\"d3-color-green\">10</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases the duration of the vortex.</p>"
+    }, {
+      "name" : "Blade Storm",
+      "type" : "a",
+      "requiredLevel" : 33,
+      "tooltipParams" : "rune/sweeping-wind/a",
+      "description" : "<p>Intensify the vortex, increasing the damage per stack to <span class=\"d3-color-green\">20%</span> weapon damage. This increases the damage with <span class=\"d3-color-green\">3</span> stacks to <span class=\"d3-color-green\">60%</span> weapon damage.</p>",
+      "simpleDescription" : "<p>Increase the damage of Sweeping Wind.</p>"
+    }, {
+      "name" : "Fire Storm",
+      "type" : "b",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/sweeping-wind/b",
+      "description" : "<p>Increases the radius of the vortex to <span class=\"d3-color-green\">14</span> yards and changes the damage dealt to Fire.</p>",
+      "simpleDescription" : "<p>Increase the radius of the vortex.</p>"
+    }, {
+      "name" : "Inner Storm",
+      "type" : "d",
+      "requiredLevel" : 46,
+      "tooltipParams" : "rune/sweeping-wind/d",
+      "description" : "<p>As long as your vortex is at the maximum stack count, you gain <span class=\"d3-color-green\">3</span> Spirit per second.</p>",
+      "simpleDescription" : "<p>Gain Spirit whenever the vortex is at its maximum.</p>"
+    }, {
+      "name" : "Cyclone",
+      "type" : "c",
+      "requiredLevel" : 56,
+      "tooltipParams" : "rune/sweeping-wind/c",
+      "description" : "<p>While your vortex is at the maximum stack count, Critical Hits have a chance to spawn a lightning tornado that periodically electrocutes nearby enemies for <span class=\"d3-color-green\">20%</span> weapon damage as Lightning. Each spawned lightning tornado lasts <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>While the vortex is at its maximum, every Critical Hit spawns a lightning tornado that electrocutes enemies.</p>"
+    } ],
+    "categoryName" : "Techniques",
+    "categorySlug" : "techniques",
+    "name" : "Sweeping Wind",
+    "icon" : "monk_sweepingwind",
+    "slug" : "sweeping-wind",
+    "requiredLevel" : 21,
+    "tooltipParams" : "skill/monk/sweeping-wind",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">75</span> Spirit</p><p>Surround yourself in a vortex that continuously deals <span class=\"d3-color-green\">15%</span> weapon damage to all enemies within <span class=\"d3-color-green\">10</span> yards. The vortex lasts <span class=\"d3-color-green\">6</span> seconds and is refreshed each time you strike an enemy with a melee attack. Landing a Critical Hit has a chance to increase the vortex effect up to <span class=\"d3-color-green\">2</span> times for a total of <span class=\"d3-color-green\">45%</span> weapon damage to nearby enemies.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">75</span> Spirit</p><p>Surround yourself in a vortex that damages nearby enemies. Critical Hits intensify the vortex.</p>"
   }, {
     "primary" : false,
     "runes" : [ {
       "name" : "Safe Haven",
       "type" : "d",
-      "requiredLevel" : 31,
+      "requiredLevel" : 26,
       "tooltipParams" : "rune/inner-sanctuary/d",
-      "description" : "<p>You and all allies regenerate <span class=\"d3-color-green\">2966</span> Life per second while inside the circle.</p>",
-      "simpleDescription" : "<p>You and your allies regenerate Life inside the Sanctuary.</p>"
+      "description" : "<p>You and your allies standing in the area of effect of Inner Sanctuary regenerate <span class=\"d3-color-green\">1550</span> Life per second.</p>",
+      "simpleDescription" : "<p>You and your allies within the circle regenerate Life.</p>"
     }, {
       "name" : "Sanctified Ground",
       "type" : "e",
-      "requiredLevel" : 39,
+      "requiredLevel" : 31,
       "tooltipParams" : "rune/inner-sanctuary/e",
-      "description" : "<p>When Inner Sanctuary expires it becomes Sanctified Ground for <span class=\"d3-color-green\">6</span> seconds, slowing the movement of all enemies on it by <span class=\"d3-color-green\">60%</span>.</p>",
-      "simpleDescription" : "<p>When Inner Sanctuary expires it becomes Sanctified Ground slowing enemies that move through it.</p>"
+      "description" : "<p>When Inner Sanctuary expires, it becomes sanctified ground for <span class=\"d3-color-green\">6</span> seconds, slowing the movement of all enemies that move through it by <span class=\"d3-color-green\">60%</span>.</p>",
+      "simpleDescription" : "<p>When Inner Sanctuary expires, it sanctifies the ground, slowing enemies that move through it.</p>"
     }, {
       "name" : "Consecration",
       "type" : "b",
-      "requiredLevel" : 45,
+      "requiredLevel" : 37,
       "tooltipParams" : "rune/inner-sanctuary/b",
-      "description" : "<p>Increase the duration of Inner Sanctuary to <span class=\"d3-color-green\">8</span> seconds.</p>",
+      "description" : "<p>Increases the duration of Inner Sanctuary to <span class=\"d3-color-green\">7</span> seconds.</p>",
       "simpleDescription" : "<p>Increases the duration of Inner Sanctuary.</p>"
     }, {
       "name" : "Circle of Protection",
       "type" : "c",
-      "requiredLevel" : 52,
+      "requiredLevel" : 43,
       "tooltipParams" : "rune/inner-sanctuary/c",
-      "description" : "<p>Allies, including yourself, standing in the area of effect of Inner Sanctuary take <span class=\"d3-color-green\">35%</span> less damage.</p>",
-      "simpleDescription" : "<p>Allies, including yourself, in the Inner Sanctuary take less damage.</p>"
+      "description" : "<p>You and your allies standing in the area of effect of Inner Sanctuary take <span class=\"d3-color-green\">35%</span> less damage.</p>",
+      "simpleDescription" : "<p>You and your allies within the circle take less damage.</p>"
     }, {
       "name" : "Forbidden Palace",
       "type" : "a",
-      "requiredLevel" : 59,
+      "requiredLevel" : 58,
       "tooltipParams" : "rune/inner-sanctuary/a",
-      "description" : "<p>Enemies within the area of effect of Inner Sanctuary when it is activated take <span class=\"d3-color-green\">150%</span> weapon damage as Holy.</p>",
-      "simpleDescription" : "<p>Enemies within the Inner Sanctuary take Holy damage.</p>"
+      "description" : "<p>You and your allies standing in the area of effect of Inner Sanctuary deal <span class=\"d3-color-green\">10%</span> additional damage.</p>",
+      "simpleDescription" : "<p>You and your allies within the circle have their damage increased.</p>"
     } ],
     "categoryName" : "Defensive",
     "categorySlug" : "defensive",
@@ -854,117 +843,117 @@
     "slug" : "inner-sanctuary",
     "requiredLevel" : 22,
     "tooltipParams" : "skill/monk/inner-sanctuary",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">30</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">30</span> seconds</p><p>Create a circle of protection on the ground for <span class=\"d3-color-green\">6</span> seconds that cannot be passed by enemies.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">30</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">30</span> seconds</p><p>Create a runic circle that enemies cannot enter.</p>"
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">30</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">20</span> seconds</p><p>Create a runic circle of protection on the ground for <span class=\"d3-color-green\">5</span> seconds that cannot be passed by enemies.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">30</span> Spirit<br/><span class=\"d3-color-gold\">Cooldown:</span> <span class=\"d3-color-green\">20</span> seconds</p><p>Create a runic circle that enemies cannot enter.</p>"
   }, {
-    "primary" : true,
+    "primary" : false,
     "runes" : [ {
-      "name" : "Blade Storm",
-      "type" : "a",
-      "requiredLevel" : 32,
-      "tooltipParams" : "rune/sweeping-wind/a",
-      "description" : "<p>Intensify the vortex, increasing the damage per stack to <span class=\"d3-color-green\">25%</span> weapon damage. This increases the damage with <span class=\"d3-color-green\">3</span> stacks to <span class=\"d3-color-green\">75%</span> weapon damage.</p>",
-      "simpleDescription" : "<p>Intensify the vortex, increasing the damage of Sweeping Wind.</p>"
-    }, {
-      "name" : "Fire Storm",
+      "name" : "Water Ally",
       "type" : "b",
-      "requiredLevel" : 40,
-      "tooltipParams" : "rune/sweeping-wind/b",
-      "description" : "<p>Increases the radius of the vortex to <span class=\"d3-color-green\">14</span> yards and modifies the damage dealt to Fire.</p>",
-      "simpleDescription" : "<p>Increases the radius of the vortex.</p>"
+      "requiredLevel" : 27,
+      "tooltipParams" : "rune/mystic-ally/b",
+      "description" : "<p>Imbue the ally with the essence of water. The ally gains the ability to perform a wave attack that deals <span class=\"d3-color-green\">120%</span> of your weapon damage as Physical and slows the movement of affected targets by <span class=\"d3-color-green\">30%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
+      "simpleDescription" : "<p>Your ally gains the ability to perform a wave attack.</p>"
     }, {
-      "name" : "Inner Storm",
-      "type" : "d",
-      "requiredLevel" : 47,
-      "tooltipParams" : "rune/sweeping-wind/d",
-      "description" : "<p>As long as your vortex is at the maximum stack count, you gain <span class=\"d3-color-green\">5</span> Spirit per second.</p>",
-      "simpleDescription" : "<p>Regain Spirit whenever the vortex is at its maximum.</p>"
-    }, {
-      "name" : "Master of Wind",
-      "type" : "e",
-      "requiredLevel" : 52,
-      "tooltipParams" : "rune/sweeping-wind/e",
-      "description" : "<p>Increases the duration of the vortex to <span class=\"d3-color-green\">10</span> seconds.</p>",
-      "simpleDescription" : "<p>Increase the duration of the vortex.</p>"
-    }, {
-      "name" : "Cyclone",
-      "type" : "c",
-      "requiredLevel" : 58,
-      "tooltipParams" : "rune/sweeping-wind/c",
-      "description" : "<p>While your vortex is at the maximum stack count, every third hit spawns a lightning tornado that periodically electrocutes nearby enemies for <span class=\"d3-color-green\">20%</span> weapon damage as Lightning. Each spawned lightning tornado lasts <span class=\"d3-color-green\">3</span> seconds.</p>",
-      "simpleDescription" : "<p>While the vortex is at its maximum, every third hit spawns a lightning tornado that electrocutes enemies.</p>"
-    } ],
-    "categoryName" : "Techniques",
-    "categorySlug" : "techniques",
-    "name" : "Sweeping Wind",
-    "icon" : "monk_sweepingwind",
-    "slug" : "sweeping-wind",
-    "requiredLevel" : 22,
-    "tooltipParams" : "skill/monk/sweeping-wind",
-    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Strike a target for <span class=\"d3-color-green\">100%</span> weapon damage. Every third hit creates a vortex of air that surrounds you. The vortex of air lasts <span class=\"d3-color-green\">5</span> seconds and deals <span class=\"d3-color-green\">15%</span> weapon damage to all enemies within <span class=\"d3-color-green\">10</span> yards. This vortex effect can stack up to <span class=\"d3-color-green\">3</span> times for a total of <span class=\"d3-color-green\">45%</span> weapon damage to nearby enemies.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Unleash a flurry of punches that create a vortex that damages nearby enemies.</p>"
-  }, {
-    "primary" : true,
-    "runes" : [ {
-      "name" : "Eye of the Storm",
-      "type" : "d",
+      "name" : "Fire Ally",
+      "type" : "a",
       "requiredLevel" : 31,
-      "tooltipParams" : "rune/cyclone-strike/d",
-      "description" : "<p>Reduces the cost to <span class=\"d3-color-green\">45</span> Spirit.</p>",
-      "simpleDescription" : "<p>Reduces the Spirit cost of Cyclone Strike.</p>"
+      "tooltipParams" : "rune/mystic-ally/a",
+      "description" : "<p>Imbue the ally with the essence of fire. The ally gains the ability to unleash a flaming kick for <span class=\"d3-color-green\">80%</span> weapon damage as Fire plus an additional <span class=\"d3-color-green\">40%</span> of your weapon damage per second as Fire for <span class=\"d3-color-green\">2</span> seconds to all enemies in a straight line.</p>",
+      "simpleDescription" : "<p>Your ally gains the ability to unleash a flaming kick.</p>"
     }, {
-      "name" : "Implosion",
-      "type" : "b",
-      "requiredLevel" : 37,
-      "tooltipParams" : "rune/cyclone-strike/b",
-      "description" : "<p>Increases the distance enemies will be pulled to <span class=\"d3-color-green\">34</span> yards.</p>",
-      "simpleDescription" : "<p>Increases the distance enemies will be pulled towards you and increase the damage of the blast.</p>"
+      "name" : "Air Ally",
+      "type" : "d",
+      "requiredLevel" : 39,
+      "tooltipParams" : "rune/mystic-ally/d",
+      "description" : "<p>Imbue the ally with the essence of air. Every attack made by the ally has a <span class=\"d3-color-green\">2%</span> chance to generate <span class=\"d3-color-green\">100</span> Spirit for you. In addition, the ally is surrounded in a torrent of wind that deals <span class=\"d3-color-green\">10%</span> of your weapon damage per second as Physical to all nearby enemies.</p>",
+      "simpleDescription" : "<p>Each of your ally&#39;s attacks has the chance to regenerate your Spirit.</p>"
     }, {
-      "name" : "Conflagration",
-      "type" : "a",
-      "requiredLevel" : 43,
-      "tooltipParams" : "rune/cyclone-strike/a",
-      "description" : "<p>Changes the blast into an explosion of fire that causes affected enemies to be feared for <span class=\"d3-color-green\">2</span> seconds.</p>",
-      "simpleDescription" : "<p>Change the blast into an fiery explosion that causes Fear.</p>"
-    }, {
-      "name" : "Wall of Wind",
+      "name" : "Eternal Ally",
       "type" : "e",
-      "requiredLevel" : 49,
-      "tooltipParams" : "rune/cyclone-strike/e",
-      "description" : "<p>After using Cyclone Strike gain a <span class=\"d3-color-green\">20%</span> chance to dodge attacks for <span class=\"d3-color-green\">3</span> seconds.</p>",
-      "simpleDescription" : "<p>After using Cyclone Strike gain a chance to Dodge attacks for a limited time.</p>"
+      "requiredLevel" : 46,
+      "tooltipParams" : "rune/mystic-ally/e",
+      "description" : "<p>Imbue the ally with the essence of life. When the ally dies, it has a <span class=\"d3-color-green\">50%</span> chance to be reborn after <span class=\"d3-color-green\">5</span> seconds. In addition, the physical damage of the ally&#39;s basic attack is increased to <span class=\"d3-color-green\">44%</span> of your weapon damage per swing.</p>",
+      "simpleDescription" : "<p>Your ally gains a chance to be reborn when destroyed.</p>"
     }, {
-      "name" : "Soothing Breeze",
+      "name" : "Earth Ally",
       "type" : "c",
-      "requiredLevel" : 56,
-      "tooltipParams" : "rune/cyclone-strike/c",
-      "description" : "<p>Cyclone Strike heals you and all allies within <span class=\"d3-color-green\">24</span> yards for <span class=\"d3-color-green\">4448</span> Life.</p>",
-      "simpleDescription" : "<p>Cyclone Strike heals you and your allies.</p>"
+      "requiredLevel" : 53,
+      "tooltipParams" : "rune/mystic-ally/c",
+      "description" : "<p>Imbue the ally with the essence of earth. Maximum Life for you and the ally is increased by <span class=\"d3-color-green\">10%</span>. The ally also gains the ability to create a wave of earth, dealing <span class=\"d3-color-green\">60%</span> of your weapon damage as Physical to a single enemy and forcing that enemy to attack the ally for <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases the maximum Life for you and your ally.</p>"
     } ],
     "categoryName" : "Focus",
     "categorySlug" : "focus",
-    "name" : "Cyclone Strike",
-    "icon" : "monk_cyclonestrike",
-    "slug" : "cyclone-strike",
-    "requiredLevel" : 25,
-    "tooltipParams" : "skill/monk/cyclone-strike",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">75</span> Spirit</p><p>Pull all enemies within <span class=\"d3-color-green\">24</span> yards towards you followed by a furious blast of energy that deals <span class=\"d3-color-green\">150%</span> weapon damage as Holy.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">75</span> Spirit</p><p>Mystical force pulls nearby enemies towards you and blasts them.</p>"
+    "name" : "Mystic Ally",
+    "icon" : "monk_mystically",
+    "slug" : "mystic-ally",
+    "requiredLevel" : 22,
+    "tooltipParams" : "skill/monk/mystic-ally",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Summon a mystic ally to fight alongside you until it is destroyed. The ally deals <span class=\"d3-color-green\">40%</span> of your weapon damage as Physical per swing.</p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Summon a mystic ally to fight alongside you.</p>"
+  }, {
+    "primary" : false,
+    "runes" : [ {
+      "name" : "Sustenance",
+      "type" : "a",
+      "requiredLevel" : 31,
+      "tooltipParams" : "rune/mantra-of-healing/a",
+      "description" : "<p>Increases the Life regeneration granted by Mantra of Healing to <span class=\"d3-color-green\">620</span> Life per second.</p>",
+      "simpleDescription" : "<p>Increases Life regeneration.</p>"
+    }, {
+      "name" : "Circular Breathing",
+      "type" : "d",
+      "requiredLevel" : 38,
+      "tooltipParams" : "rune/mantra-of-healing/d",
+      "description" : "<p>Mantra of Healing also regenerates <span class=\"d3-color-green\">3</span> Spirit per second.</p>",
+      "simpleDescription" : "<p>Regenerates Spirit.</p>"
+    }, {
+      "name" : "Boon of Protection",
+      "type" : "b",
+      "requiredLevel" : 42,
+      "tooltipParams" : "rune/mantra-of-healing/b",
+      "description" : "<p>Mantra of Healing shrouds you and your allies with a mystical shield for <span class=\"d3-color-green\">2</span> seconds that absorbs up to <span class=\"d3-color-green\">15%</span> of each target&#39;s maximum Life in damage.</p>",
+      "simpleDescription" : "<p>Shroud you and your allies with a mystical shield that absorbs damage.</p>"
+    }, {
+      "name" : "Heavenly Body",
+      "type" : "c",
+      "requiredLevel" : 48,
+      "tooltipParams" : "rune/mantra-of-healing/c",
+      "description" : "<p>Mantra of Healing also increases Vitality by <span class=\"d3-color-green\">10%</span>.</p>",
+      "simpleDescription" : "<p>Increases Vitality.</p>"
+    }, {
+      "name" : "Time of Need",
+      "type" : "e",
+      "requiredLevel" : 53,
+      "tooltipParams" : "rune/mantra-of-healing/e",
+      "description" : "<p>Mantra of Healing also increases resistances to all damage types by <span class=\"d3-color-green\">20%</span>.</p>",
+      "simpleDescription" : "<p>Increases resistances to all damage types.</p>"
+    } ],
+    "categoryName" : "Mantras",
+    "categorySlug" : "mantras",
+    "name" : "Mantra of Healing",
+    "icon" : "monk_mantraofhealing",
+    "slug" : "mantra-of-healing",
+    "requiredLevel" : 26,
+    "tooltipParams" : "skill/monk/mantra-of-healing",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit</p><p>Recite a Mantra that causes you and your allies within <span class=\"d3-color-green\">40</span> yards to gain increased Life regeneration by <span class=\"d3-color-green\">310</span> Life per second. The Mantra lasts <span class=\"d3-color-green\">3</span> minutes.</p><p>For <span class=\"d3-color-green\">3</span> seconds after activation, the effect is increased to <span class=\"d3-color-green\">1240.4</span> Life per second.</p><p><span class=\"d3-color-yellow\">This is a Mantra. You can only have one Mantra active at a time.</span></p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost: </span><span class=\"d3-color-green\">50</span> Spirit</p><p>Increase Life regeneration for you and your allies.</p><p><span class=\"d3-color-yellow\">Only one Mantra can be active at a time.</span></p>"
   }, {
     "primary" : false,
     "runes" : [ {
       "name" : "Overawe",
       "type" : "a",
-      "requiredLevel" : 34,
+      "requiredLevel" : 35,
       "tooltipParams" : "rune/mantra-of-conviction/a",
-      "description" : "<p>Increases Mantra strength so that enemies take <span class=\"d3-color-green\">24%</span> additional damage and <span class=\"d3-color-green\">48%</span> for the first <span class=\"d3-color-green\">3</span> seconds.</p>",
-      "simpleDescription" : "<p>Increases Mantra strength so that enemies take additional damage.</p>"
+      "description" : "<p>Increases the strength of Mantra of Conviction so that enemies take <span class=\"d3-color-green\">24%</span> additional damage and <span class=\"d3-color-green\">48%</span> for the first <span class=\"d3-color-green\">3</span> seconds.</p>",
+      "simpleDescription" : "<p>Increases damage done to enemies.</p>"
     }, {
       "name" : "Intimidation",
       "type" : "e",
-      "requiredLevel" : 42,
+      "requiredLevel" : 44,
       "tooltipParams" : "rune/mantra-of-conviction/e",
-      "description" : "<p>Enemies affected by Mantra of Conviction inflict <span class=\"d3-color-green\">10%</span> less damage.</p>",
+      "description" : "<p>Enemies affected by Mantra of Conviction deal <span class=\"d3-color-green\">10%</span> less damage.</p>",
       "simpleDescription" : "<p>Enemies affected by Mantra of Conviction deal less damage.</p>"
     }, {
       "name" : "Dishearten",
@@ -976,9 +965,9 @@
     }, {
       "name" : "Reclamation",
       "type" : "d",
-      "requiredLevel" : 54,
+      "requiredLevel" : 55,
       "tooltipParams" : "rune/mantra-of-conviction/d",
-      "description" : "<p>You and your allies have up to a <span class=\"d3-color-green\">30%</span> chance to be healed for <span class=\"d3-color-green\">534 - 652</span> Life when using melee attacks on an enemy under the effects of Mantra of Conviction.</p>",
+      "description" : "<p>You and your allies have a <span class=\"d3-color-green\">30%</span> chance to be healed for <span class=\"d3-color-green\">279 - 341</span> Life when using melee attacks on an enemy under the effects of Mantra of Conviction.</p>",
       "simpleDescription" : "<p>You and your allies have a chance to be healed when using melee attacks under the effects of Mantra of Conviction.</p>"
     }, {
       "name" : "Submission",
@@ -986,110 +975,129 @@
       "requiredLevel" : 60,
       "tooltipParams" : "rune/mantra-of-conviction/b",
       "description" : "<p>Enemies affected by Mantra of Conviction take <span class=\"d3-color-green\">12%</span> weapon damage per second as Holy.</p>",
-      "simpleDescription" : "<p>Enemies affected by the Mantra of Conviction take Holy damage over time.</p>"
+      "simpleDescription" : "<p>Enemies affected by Mantra of Conviction take Holy damage over time.</p>"
     } ],
-    "categoryName" : "Conviction",
-    "categorySlug" : "conviction",
+    "categoryName" : "Mantras",
+    "categorySlug" : "mantras",
     "name" : "Mantra of Conviction",
     "icon" : "monk_mantraofconviction",
     "slug" : "mantra-of-conviction",
-    "requiredLevel" : 26,
-    "tooltipParams" : "skill/monk/mantra-of-conviction",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Recite a Mantra that causes all enemies within <span class=\"d3-color-green\">20</span> yards of you to take <span class=\"d3-color-green\">12%</span> additional damage. Lasts <span class=\"d3-color-green\">3</span> minutes.</p><p>For <span class=\"d3-color-green\">3</span> seconds after activation the effect is increased to <span class=\"d3-color-green\">24%</span> additional damage.</p><p><span class=\"d3-color-yellow\">This is a Mantra. You can only have one Mantra active at a time.</span></p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Increases damage taken by nearby enemies.</p><p><span class=\"d3-color-yellow\">Only one Mantra can be active at a time.</span></p>"
-  }, {
-    "primary" : true,
-    "runes" : [ {
-      "name" : "Hands of Lightning",
-      "type" : "b",
-      "requiredLevel" : 34,
-      "tooltipParams" : "rune/way-of-the-hundred-fists/b",
-      "description" : "<p>Increase the number of hits in the second strike from <span class=\"d3-color-green\">7</span> to <span class=\"d3-color-green\">10</span>.</p>",
-      "simpleDescription" : "<p>Increase the number of hits in the second strike.</p>"
-    }, {
-      "name" : "Blazing Fists",
-      "type" : "c",
-      "requiredLevel" : 41,
-      "tooltipParams" : "rune/way-of-the-hundred-fists/c",
-      "description" : "<p>Critical hits increase your attack speed and movement speed by <span class=\"d3-color-green\">5%</span> for <span class=\"d3-color-green\">5</span> seconds. This effect can stack up to <span class=\"d3-color-green\">3</span> times.</p>",
-      "simpleDescription" : "<p>Critical hits increase your attack and movement speeds.</p>"
-    }, {
-      "name" : "Fists of Fury",
-      "type" : "a",
-      "requiredLevel" : 48,
-      "tooltipParams" : "rune/way-of-the-hundred-fists/a",
-      "description" : "<p>Affected targets will take an additional <span class=\"d3-color-green\">10%</span> weapon damage per second as Holy for <span class=\"d3-color-green\">5</span> seconds. Also enables the first hit to dash a short distance.</p>",
-      "simpleDescription" : "<p>Affected targets take additional Holy damage and enables the first hit to dash a short distance.</p>"
-    }, {
-      "name" : "Spirited Salvo",
-      "type" : "d",
-      "requiredLevel" : 55,
-      "tooltipParams" : "rune/way-of-the-hundred-fists/d",
-      "description" : "<p>Every activation of the skill has a <span class=\"d3-color-green\">15%</span> chance to generate <span class=\"d3-color-green\">15</span> additional Spirit.</p>",
-      "simpleDescription" : "<p>Every use of this skill has a chance to generate additional Spirit.</p>"
-    }, {
-      "name" : "Windforce Flurry",
-      "type" : "e",
-      "requiredLevel" : 60,
-      "tooltipParams" : "rune/way-of-the-hundred-fists/e",
-      "description" : "<p>The third strike generates a wave of wind that deals <span class=\"d3-color-green\">250%</span> weapon damage as Physical to enemies directly ahead of you.</p>",
-      "simpleDescription" : "<p>The third strike generates a wave of wind that damages enemies in your path.</p>"
-    } ],
-    "categoryName" : "Techniques",
-    "categorySlug" : "techniques",
-    "name" : "Way of the Hundred Fists",
-    "icon" : "monk_wayofthehundredfists",
-    "slug" : "way-of-the-hundred-fists",
-    "requiredLevel" : 27,
-    "tooltipParams" : "skill/monk/way-of-the-hundred-fists",
-    "description" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>A rapid series of punches strikes enemies for <span class=\"d3-color-green\">125%</span> weapon damage.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Generate:</span> <span class=\"d3-color-green\">6</span> Spirit per attack</p><p>Strike groups of enemies with a series of devastating punches.</p>"
-  }, {
-    "primary" : false,
-    "runes" : [ {
-      "name" : "Water Ally",
-      "type" : "b",
-      "requiredLevel" : 36,
-      "tooltipParams" : "rune/mystic-ally/b",
-      "description" : "<p>Imbue the ally with the essence of water. The ally gains the ability to perform a wave attack that deals <span class=\"d3-color-green\">120%</span> of your weapon damage as Physical and slows the movement of affected targets by <span class=\"d3-color-green\">30%</span> for <span class=\"d3-color-green\">2</span> seconds.</p>",
-      "simpleDescription" : "<p>Imbue the ally with the essence of water.</p>"
-    }, {
-      "name" : "Fire Ally",
-      "type" : "a",
-      "requiredLevel" : 41,
-      "tooltipParams" : "rune/mystic-ally/a",
-      "description" : "<p>Imbue the ally with the essence of fire. The ally gains the ability to fire kick for <span class=\"d3-color-green\">80%</span> weapon damage as Fire plus an additional <span class=\"d3-color-green\">40%</span> of your weapon damage per second as Fire for <span class=\"d3-color-green\">2</span> seconds to all enemies in a straight line.</p>",
-      "simpleDescription" : "<p>Imbue the ally with the essence of fire.</p>"
-    }, {
-      "name" : "Air Ally",
-      "type" : "d",
-      "requiredLevel" : 45,
-      "tooltipParams" : "rune/mystic-ally/d",
-      "description" : "<p>Imbue the ally with the essence of air. Every attack made by the ally has a <span class=\"d3-color-green\">2%</span> chance to generate <span class=\"d3-color-green\">100</span> Spirit for you. In addition, the ally is surrounded in a torrent of wind that deals <span class=\"d3-color-green\">10%</span> of your weapon damage per second as Physical to all nearby enemies.</p>",
-      "simpleDescription" : "<p>Imbue the ally with the essence of air that has a chance to regenerate Spirit.</p>"
-    }, {
-      "name" : "Eternal Ally",
-      "type" : "e",
-      "requiredLevel" : 50,
-      "tooltipParams" : "rune/mystic-ally/e",
-      "description" : "<p>Imbue the ally with the essence of life. When the ally dies it has a <span class=\"d3-color-green\">50%</span> chance to be reborn after <span class=\"d3-color-green\">5</span> seconds.  In addition, the physical damage of the ally&#39;s basic attack is increased to <span class=\"d3-color-green\">44%</span> of your weapon damage per swing.</p>",
-      "simpleDescription" : "<p>Imbue the ally with the essence of life, which gives your ally a chance to be reborn when destroyed.</p>"
-    }, {
-      "name" : "Earth Ally",
-      "type" : "c",
-      "requiredLevel" : 60,
-      "tooltipParams" : "rune/mystic-ally/c",
-      "description" : "<p>Imbue the ally with the essence of earth. Maximum Life for you and the ally is increased by <span class=\"d3-color-green\">10%</span>. The ally also gains the ability to create a wave of earth, dealing <span class=\"d3-color-green\">60%</span> of your weapon damage as Physical to a single enemy and forcing that enemy to attack the ally for <span class=\"d3-color-green\">3</span> seconds.</p>",
-      "simpleDescription" : "<p>Imbue the ally with the essence of earth which increase the maximum Life for you and the ally.</p>"
-    } ],
-    "categoryName" : "Focus",
-    "categorySlug" : "focus",
-    "name" : "Mystic Ally",
-    "icon" : "monk_mystically",
-    "slug" : "mystic-ally",
     "requiredLevel" : 30,
-    "tooltipParams" : "skill/monk/mystic-ally",
-    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Summon an elemental ally capable of engaging enemies in combat until it is destroyed. The ally deals <span class=\"d3-color-green\">40%</span> of your weapon damage as Physical per swing.</p>",
-    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">25</span> Spirit</p><p>Mystically summon an elemental ally to fight alongside you.</p>"
+    "tooltipParams" : "skill/monk/mantra-of-conviction",
+    "description" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit</p><p>Recite a Mantra that causes all enemies within <span class=\"d3-color-green\">20</span> yards of you to take <span class=\"d3-color-green\">12%</span> additional damage. The Mantra lasts <span class=\"d3-color-green\">3</span> minutes.</p><p>For <span class=\"d3-color-green\">3</span> seconds after activation, the effect is increased to <span class=\"d3-color-green\">24%</span> additional damage.</p><p><span class=\"d3-color-yellow\">This is a Mantra. You can only have one Mantra active at a time.</span></p>",
+    "simpleDescription" : "<p><span class=\"d3-color-gold\">Cost:</span> <span class=\"d3-color-green\">50</span> Spirit</p><p>Increases damage taken by nearby enemies.</p><p><span class=\"d3-color-yellow\">Only one Mantra can be active at a time.</span></p>"
+  } ],
+  "traits" : [ {
+    "description" : "<p>Increases movement speed by <span class=\"d3-color-green\">10%</span>.</p>",
+    "name" : "Fleet Footed",
+    "icon" : "monk_passive_fleetfooted",
+    "slug" : "fleet-footed",
+    "requiredLevel" : 10,
+    "tooltipParams" : "skill/monk/fleet-footed",
+    "simpleDescription" : "<p>Strength out of place is no strength at all.</p>"
+  }, {
+    "description" : "<p>Damage you deal reduces enemy damage by <span class=\"d3-color-green\">25%</span> for <span class=\"d3-color-green\">2.5</span> seconds.</p>",
+    "name" : "Resolve",
+    "icon" : "monk_passive_resolve",
+    "slug" : "resolve",
+    "requiredLevel" : 10,
+    "tooltipParams" : "skill/monk/resolve",
+    "simpleDescription" : "<p>&quot;It is not our place to make demands of nature, nor to acquiesce to those who would. First we learn what is right, then we protect what is right.&quot; —Master Wughan</p>"
+  }, {
+    "description" : "<p>Increases maximum Spirit by <span class=\"d3-color-green\">100</span>.</p><p>Spirit fuels your defensive and offensive abilities.</p>",
+    "name" : "Exalted Soul",
+    "icon" : "monk_passive_exaltedsoul",
+    "slug" : "exalted-soul",
+    "requiredLevel" : 13,
+    "tooltipParams" : "skill/monk/exalted-soul",
+    "simpleDescription" : "<p>&quot;Endeavor to be one with the hidden truth and you will soar beyond the sky.&quot; —Waykeeper Tzo Krin</p>"
+  }, {
+    "description" : "<p>Every point of Spirit spent heals you for <span class=\"d3-color-green\">62.0</span> Life.</p>",
+    "name" : "Transcendence",
+    "icon" : "monk_passive_transcendence",
+    "slug" : "transcendence",
+    "requiredLevel" : 16,
+    "tooltipParams" : "skill/monk/transcendence",
+    "simpleDescription" : "<p>A life unlived is no different than death.</p>"
+  }, {
+    "description" : "<p>Duration of all Mantras increased by <span class=\"d3-color-green\">7</span> minutes. While one of your Mantras is active you gain <span class=\"d3-color-green\">2</span> Spirit every second.</p>",
+    "name" : "Chant of Resonance",
+    "icon" : "monk_passive_chantofresonance",
+    "slug" : "chant-of-resonance",
+    "requiredLevel" : 20,
+    "tooltipParams" : "skill/monk/chant-of-resonance",
+    "simpleDescription" : "<p>The world continues on the noble path, each of us carrying another, all connected, ever onward.</p>"
+  }, {
+    "description" : "<p>Your Armor is increased by <span class=\"d3-color-green\">100%</span> of your Dexterity.</p>",
+    "name" : "Seize the Initiative",
+    "icon" : "monk_passive_seizetheinitiative",
+    "slug" : "seize-the-initiative",
+    "requiredLevel" : 20,
+    "tooltipParams" : "skill/monk/seize-the-initiative",
+    "simpleDescription" : "<p>The Monks of Ivgorod are trained to move like water—flowing freely into open spaces and crashing hard against their foes.</p>"
+  }, {
+    "description" : "<p>While dual-wielding, you gain a <span class=\"d3-color-green\">15%</span> chance to dodge incoming attacks. While using a two-handed weapon, all Spirit generation is increased by <span class=\"d3-color-green\">25%</span>.</p>",
+    "name" : "The Guardian's Path",
+    "icon" : "monk_passive_theguardianspath",
+    "slug" : "the-guardians-path",
+    "requiredLevel" : 24,
+    "tooltipParams" : "skill/monk/the-guardians-path",
+    "simpleDescription" : "<p>&quot;No weapon can overcome the weakness of an undisciplined mind. They can only serve as an extension of the self.&quot; —Waykeeper Tzo Krin</p>"
+  }, {
+    "description" : "<p>Your dodge chance is increased by an amount equal to <span class=\"d3-color-green\">30%</span> of your Critical Hit Chance.</p>",
+    "name" : "Sixth Sense",
+    "icon" : "monk_passive_sixthsense",
+    "slug" : "sixth-sense",
+    "requiredLevel" : 27,
+    "tooltipParams" : "skill/monk/sixth-sense",
+    "simpleDescription" : "<p>The final test of the Serpent&#39;s Form takes place in &quot;The Pit of 12 Vipers.&quot; The initiates are not told about the 13th.</p>"
+  }, {
+    "description" : "<p>While you are under a Stun, Fear or Charm effect, all damage taken is reduced by <span class=\"d3-color-green\">75%</span>.</p>",
+    "name" : "Pacifism",
+    "icon" : "monk_passive_pacifism",
+    "slug" : "pacifism",
+    "requiredLevel" : 30,
+    "tooltipParams" : "skill/monk/pacifism",
+    "simpleDescription" : "<p>Ascetic practices require initiates to go without food, water and sleep for months at a time. Those who survive emerge unmoved by the petty distractions of the physical world.</p>"
+  }, {
+    "description" : "<p>Reduces all cooldowns by <span class=\"d3-color-green\">15%</span>.</p>",
+    "name" : "Beacon of Ytar",
+    "icon" : "monk_passive_beaconofytar",
+    "slug" : "beacon-of-ytar",
+    "requiredLevel" : 35,
+    "tooltipParams" : "skill/monk/beacon-of-ytar",
+    "simpleDescription" : "<p>It is only through hardship that we come to know our limits, and only through knowing our limits that we learn to shatter them.</p>"
+  }, {
+    "description" : "<p>Whenever you use a direct heal skill on another player you and the other player deal <span class=\"d3-color-green\">16%</span> more damage for <span class=\"d3-color-green\">15</span> seconds.</p>",
+    "name" : "Guiding Light",
+    "icon" : "monk_passive_guidinglight",
+    "slug" : "guiding-light",
+    "requiredLevel" : 40,
+    "tooltipParams" : "skill/monk/guiding-light",
+    "simpleDescription" : "<p>&quot;I thought I was done for, trampled into the snow. Suddenly I felt her hand on my shoulder. The warmth returned to my bones, and together we repelled the beasts.&quot; —Legends of the North</p>"
+  }, {
+    "description" : "<p>Your resistance to all elements is equal to your highest elemental resistance.</p>",
+    "name" : "One With Everything",
+    "icon" : "monk_passive_onewitheverything",
+    "slug" : "one-with-everything",
+    "requiredLevel" : 45,
+    "tooltipParams" : "skill/monk/one-with-everything",
+    "simpleDescription" : "<p>Ice hunters brave months of frozen darkness. Desert traders bear relentless, scorching sun. This world is ours to endure.</p>"
+  }, {
+    "description" : "<p>Each different Spirit Generator ability you use increases your damage by <span class=\"d3-color-green\">8%</span> for <span class=\"d3-color-green\">3</span> seconds.</p>",
+    "name" : "Combination Strike",
+    "icon" : "monk_passive_combinationstrike",
+    "slug" : "combination-strike",
+    "requiredLevel" : 50,
+    "tooltipParams" : "skill/monk/combination-strike",
+    "simpleDescription" : "<p>Master Wughan was not merely the first to perfect the six techniques. His true accomplishment was in weaving them into a style all his own.</p>"
+  }, {
+    "description" : "<p>When receiving fatal damage, you are instead restored to <span class=\"d3-color-green\">35%</span> of maximum Life and <span class=\"d3-color-green\">35%</span> Spirit.</p><p>This effect cannot occur more than once every <span class=\"d3-color-green\">90</span> seconds.</p>",
+    "name" : "Near Death Experience",
+    "icon" : "monk_passive_neardeathexperience",
+    "slug" : "near-death-experience",
+    "requiredLevel" : 58,
+    "tooltipParams" : "skill/monk/near-death-experience",
+    "simpleDescription" : "<p>&quot;We do not see what has been done, we only see what remains to be done.&quot; —Mantra of the Monks of Ivgorod</p>"
   } ]
 }
