@@ -60,7 +60,7 @@ class User(object):
             out.append("Realm: " + self.realm)
         if self.tz != None:
             tz_to = pytz.timezone(self.tz)
-            tz_from = pytz.timezone("America/New_York")
+            tz_from = pytz.timezone("America/Los_Angeles")
             tm = tz_from.localize(datetime.now())
             tm_to = tm.astimezone(tz_to)
             out.append("Local time: " + tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
