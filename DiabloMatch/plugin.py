@@ -78,7 +78,7 @@ class Verification(object):
         return "<Verification('%s')>" % (self.id)
 
 #engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3', echo=True)
-engine = create_engine('sqlite:///home/listen2/dbot/plugins/DiabloMatch/db.sqlite3')
+engine = create_engine('sqlite:////home/listen2/dbot/plugins/DiabloMatch/db.sqlite3')
 #f = open('/home/listen2/db_pass', 'r')
 #p = f.read()
 #f.close()
