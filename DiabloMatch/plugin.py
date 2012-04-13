@@ -342,7 +342,7 @@ class DiabloMatch(callbacks.Plugin):
             session.add(user)
             session.commit()
             irc.reply("Set URL to " + arg2 + ".", private=True)
-        elif arg1.lower() == "reddit":
+        elif arg1.lower() in ["reddit", "reddit_name"]:
             session = Session()
             user = self._check_registered(irc, msg, session, ircname)
             if user == None:
