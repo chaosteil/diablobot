@@ -150,6 +150,21 @@ class DiabloBasic(callbacks.Plugin):
                         irc.reply("Reddit: [%d] %s (%s) by %s %s ago. %d comment%s." % (f["score"], f["title"], f["url"], f["author"], DiabloCommon.timeago(time.time() - f["created_utc"]), f["num_comments"], "s" if f["num_comments"] != 1 else ""), prefixNick=False)
                     return
 
+    def sk(self, irc, msg, args, arg1):
+        """[\37skill name | \37rune name]
+        Shows details of the specified skill or rune.
+        """
+        for c in self.skilldata:
+            for s in c["skills"]:
+                if s["name"] == arg1:
+                    irc.reply(s["tooltipParams"], prefixNick=False)
+                else:
+                    for r in c["runes"]:
+                        if r["name"] == arg1:
+                            irc.reply(s["tooltipParams"], prefixNick=False)
+    sk = wrap(sk, ['anything'])
+
+
     def tz(self, irc, msg, args, arg1, arg2, arg3):
         """[\37source_timezone] \37your_timezone \37time_to_convert  |  \37your_timezone now
 
