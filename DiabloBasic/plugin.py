@@ -169,7 +169,7 @@ class DiabloBasic(callbacks.Plugin):
                         if r["name"] == arg1:
                             irc.reply("%s, %s (%s): %s" % (s["name"], r["name"], self.classes[c], self._strip_html_re.sub("", r["description"])), prefixNick=False)
                             return
-    sk = wrap(sk, ['anything'])
+    sk = wrap(sk, ['text'])
 
 
     def tz(self, irc, msg, args, arg1, arg2, arg3):
