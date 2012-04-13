@@ -211,7 +211,10 @@ class DiabloMatch(callbacks.Plugin):
         """[\37user]
         Shows detailed user information. \37user may be prefixed with irc:, steam:, reddit:, email:, or bt:, and may contain the wildcard *. If \37user is not supplied, your own information will be displayed.
         """
-        data = arg1.split(":", 1)
+        if arg1 == None:
+            data = ["irc", msg.nick]
+        else:
+            data = arg1.split(":", 1)
 
         users = self._findBtUsers(irc, data[-1], "irc" if len(data) == 1 else data[0])
 
