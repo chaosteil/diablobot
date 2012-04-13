@@ -57,6 +57,9 @@ class DiabloBasic(callbacks.Plugin):
     _dstream_regulars_json = {}
     _dstream_re = re.compile("diablo", re.IGNORECASE)
 
+    _strip_html_re = re.compile("<.*?>")    #Yes, I know using regexps on HTML is bad. But Blizzard always has such nicely-formed HTML, so I think it's okay.
+                                            #After release, when the skills stop changing, we can just format the json files properly and print them without modification.
+
     def __init__(self, irc):
         super(DiabloBasic, self).__init__(irc)
 
@@ -155,13 +158,17 @@ class DiabloBasic(callbacks.Plugin):
         Shows details of the specified skill or rune.
         """
         for c in self.skilldata:
-            for s in c["skills"]:
+            if c == "follower":
+                continue
+            for s in self.skilldata[c]["skills"]:
                 if s["name"] == arg1:
-                    irc.reply(s["tooltipParams"], prefixNick=False)
+                    irc.reply("%s (%s): %s" % (s["name"], self.classes[c], self._strip_html_re.sub("", s["description"])), prefixNick=False)
+                    return
                 else:
-                    for r in c["runes"]:
+                    for r in s["runes"]:
                         if r["name"] == arg1:
-                            irc.reply(s["tooltipParams"], prefixNick=False)
+                            irc.reply("%s, %s (%s): %s" % (s["name"], r["name"], self.classes[c], self._strip_html_re.sub("", r["description"])), prefixNick=False)
+                            return
     sk = wrap(sk, ['anything'])
 
 
