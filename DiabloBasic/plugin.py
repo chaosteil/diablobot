@@ -65,8 +65,9 @@ class DiabloBasic(callbacks.Plugin):
 
         # Load class data
         for c in self.classes.keys():
-            with open("/home/listen2/dbot/plugins/DiabloBasic/data/"+c+".json", "r") as f:
-                self.skilldata[c] = json.load(f)
+            h = httplib2.Http(".cache")
+            resp, j = h.request("http://us.battle.net/d3/en/data/calculator/%s" % c, "GET")
+            self.skilldata[c] = json.loads(j)
 
         # Load quotes
         with open("/home/listen2/dbot/plugins/DiabloBasic/data/quotes.json", "r") as f:
