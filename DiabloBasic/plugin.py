@@ -200,7 +200,10 @@ class DiabloBasic(callbacks.Plugin):
                 try:
                     tz_from = pytz.timezone(arg1)
                     tz_to = pytz.timezone(arg2)
-                    tm = tz_from.localize(parse(arg3))
+                    if arg3 == "now":
+                        tm = datetime.now(pytz.utc)
+                    else:
+                        tm = tz_from.localize(parse(arg3))
                 except ValueError:
                     return
         except pytz.UnknownTimeZoneError as e:
