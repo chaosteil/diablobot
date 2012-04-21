@@ -183,6 +183,8 @@ class DiabloBasic(callbacks.Plugin):
         Converts the given time from \37source_timezone to \37your_timezone. If no source timezone is specified, Pacific US (Blizzard) time is used. If 'now' is used as the time to covert, the source timezone is assumed to be US/Pacific (Blizzard).
         """
         try:
+            if arg1.lower() in ["blizz", "blizzard"]:
+                arg1 = "America/Los_Angeles"
             if not arg3:
                 tz_to = pytz.timezone(arg1)
                 if arg2 == "now":
