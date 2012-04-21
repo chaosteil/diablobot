@@ -145,7 +145,7 @@ class DiabloBasic(callbacks.Plugin):
                     return
                 m = re.search("redd.it/(.+)", url)
                 if m:
-                    url = "reddit.com/comments/%s.json" % m.group(1)
+                    url = "http://www.reddit.com/comments/%s/.json" % m.group(1)
                     # don't return because we want to go through the next block
                 if url.find("reddit.com/") != -1:
                     h = httplib2.Http(".cache")
