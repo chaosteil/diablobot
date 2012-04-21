@@ -143,7 +143,7 @@ class DiabloBasic(callbacks.Plugin):
                     tjson = json.loads(j)
                     irc.reply("%s (%s): %s" % (tjson["user"]["screen_name"], tjson["user"]["name"], tjson["text"]), prefixNick=False)
                     return
-                if url.find("reddit.com/r/") != -1:
+                if url.find("reddit.com/r/") != -1 or url.find("redd.it/") != -1:
                     h = httplib2.Http(".cache")
                     resp, j = h.request(url + ".json?limit=1", "GET")
                     f = json.loads(j)[0]["data"]["children"][0]["data"]
