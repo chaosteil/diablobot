@@ -202,7 +202,7 @@ class DiabloMatch(callbacks.Plugin):
 
             users = self._findBtUsers(irc, data[-1], None if len(data) == 1 else data[0])
 
-            for user in users:
+            for user in users[0:6]:
                 irc.reply(user.pretty_print(), private=True)
 
     bt = wrap(bt, [optional('something'), optional('something')])
@@ -218,9 +218,10 @@ class DiabloMatch(callbacks.Plugin):
 
         users = self._findBtUsers(irc, data[-1], "irc" if len(data) == 1 else data[0])
 
-        for user in users:
-            irc.reply("User details. Fields marked with a * are not "
-                      "officially validated.", private=True)
+        if len(users) > 0:
+        irc.reply("User details. Fields marked with a * are not "
+                  "officially validated.", private=True)
+        for user in users[0:6]:
             for line in user.full_print():
                 irc.reply(line, private=True)
 
