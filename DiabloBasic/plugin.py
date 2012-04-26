@@ -166,12 +166,12 @@ class DiabloBasic(callbacks.Plugin):
             if c == "follower":
                 continue
             for s in self.skilldata[c]["skills"]:
-                if s["name"] == arg1:
+                if s["name"].lower() == arg1.lower():
                     irc.reply("%s (%s): %s" % (s["name"], self.classes[c], self._strip_html_re.sub("", s["description"])), prefixNick=False)
                     return
                 else:
                     for r in s["runes"]:
-                        if r["name"] == arg1:
+                        if r["name"].lower() == arg1.lower():
                             irc.reply("%s, %s (%s): %s" % (s["name"], r["name"], self.classes[c], self._strip_html_re.sub("", r["description"])), prefixNick=False)
                             return
     sk = wrap(sk, ['text'])
