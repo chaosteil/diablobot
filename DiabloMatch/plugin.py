@@ -78,11 +78,11 @@ class Verification(object):
         return "<Verification('%s')>" % (self.id)
 
 #engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3', echo=True)
-engine = create_engine('sqlite:////home/listen2/dbot/plugins/DiabloMatch/db.sqlite3')
-#f = open('/home/listen2/db_pass', 'r')
-#p = f.read()
-#f.close()
-#engine = create_engine("postgresql://rdiablo:"+p+"@127.0.0.1/rdiablo")
+#engine = create_engine('sqlite:////home/listen2/dbot/plugins/DiabloMatch/db.sqlite3')
+f = open('/home/listen2/db_pass', 'r')
+p = f.read().rstrip()
+f.close()
+engine = create_engine("postgresql://rdiablo:"+p+"@127.0.0.1/rdiablo")
 Session = sessionmaker(bind=engine)
 meta = MetaData()
 meta.bind = engine
