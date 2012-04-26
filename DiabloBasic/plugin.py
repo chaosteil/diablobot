@@ -278,5 +278,9 @@ class DiabloBasic(callbacks.Plugin):
         secs -= mins * 60
         irc.reply("Diablo III release: %d days, %d hours, %d minutes, %d seconds" % (days, hours, mins, secs), prefixNick=False)  # 15 May 2012 00:00:00 PDT
     timeleft = wrap(timeleft)
+	
+	def vgs(self, irc, msg, args):
+		irc.reply("[VGS] Shazbot!")
+	vgs = wrap(vgs)
 
 Class = DiabloBasic
