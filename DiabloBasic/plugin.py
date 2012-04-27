@@ -264,11 +264,13 @@ class DiabloBasic(callbacks.Plugin):
         """
         Shows the time remaining until the next big event. Only usable by +v or +o.
         """
+        """
         if not irc.isChannel(msg.args[0]):
             return
         if not (irc.state.channels[msg.args[0]].isOp(msg.nick) or
                 irc.state.channels[msg.args[0]].isVoice(msg.nick)):
             return
+        """
         secs = int(1337065200 - time.time()) # 15 May 2012 00:00:00 PDT
         days = secs / 86400
         secs -= days * 86400
