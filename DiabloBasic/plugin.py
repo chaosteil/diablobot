@@ -260,7 +260,7 @@ class DiabloBasic(callbacks.Plugin):
 
     streams = wrap(streams)
 
-    def timeleft(self, irc, msg, args):
+    def timeleft(self, irc, msg, args, realm):
         """
         Shows the time remaining until the next big event. Only usable by +v or +o.
         """
@@ -271,7 +271,14 @@ class DiabloBasic(callbacks.Plugin):
                 irc.state.channels[msg.args[0]].isVoice(msg.nick)):
             return
         """
-        secs = int(1337065200 - time.time()) # 15 May 2012 00:00:00 PDT
+        if not realm:
+            realm = "na"
+        launches = {"na":1337065200, "sea":1337011260, "eu":1337036460}
+        try:
+            secs = int(launches[realm] - time.time()) # 15 May 2012 00:00:00 PDT
+        except KeyError:
+            irc.reply("Valid regions: NA, SEA, EU")
+            return
         days = secs / 86400
         secs -= days * 86400
         hours = secs / 3600
@@ -279,7 +286,7 @@ class DiabloBasic(callbacks.Plugin):
         mins = secs / 60
         secs -= mins * 60
         irc.reply("Diablo III release: %d days, %d hours, %d minutes, %d seconds" % (days, hours, mins, secs), prefixNick=False)  # 15 May 2012 00:00:00 PDT
-    timeleft = wrap(timeleft)
+    timeleft = wrap(timeleft, [optional('lowered')])
 
     def vgs(self, irc, msg, args):
         """
