@@ -155,7 +155,7 @@ class DiabloBasic(callbacks.Plugin):
                     if f["is_self"]:
                         irc.reply("Reddit: (+%d) %s (%s) by %s %s ago. %d comment%s." % (f["score"], f["title"], f["domain"], f["author"], DiabloCommon.timeago(time.time() - f["created_utc"]), f["num_comments"], "s" if f["num_comments"] != 1 else ""), prefixNick=False)
                     else:
-                        irc.reply("Reddit: [%d] %s (%s) by %s %s ago. %d comment%s." % (f["score"], f["title"], f["url"], f["author"], DiabloCommon.timeago(time.time() - f["created_utc"]), f["num_comments"], "s" if f["num_comments"] != 1 else ""), prefixNick=False)
+                        irc.reply("Reddit: (+%d) %s (%s) by %s %s ago. %d comment%s." % (f["score"], f["title"], f["url"], f["author"], DiabloCommon.timeago(time.time() - f["created_utc"]), f["num_comments"], "s" if f["num_comments"] != 1 else ""), prefixNick=False)
                     return
 
     def sk(self, irc, msg, args, arg1):
