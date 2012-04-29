@@ -289,7 +289,7 @@ class DiabloBasic(callbacks.Plugin):
         secs -= hours * 3600
         mins = secs / 60
         secs -= mins * 60
-        irc.reply("Time until Diablo III %s launch: %d days, %d hours, %d minutes, %d seconds" % (realm.upper(), days, hours, mins, secs), prefixNick=False)  # 15 May 2012 00:00:00 PDT
+        irc.reply("Time until Diablo III %s launch: %d day%s, %d hour%s, %d minute%s, %d second%s" % (realm.upper(), days, "s" if days != 1 else "", hours, "s" if hours != 1 else "", mins, "s" if mins != 1 else "", secs, "s" if secs != 1 else ""), prefixNick=False)  # 15 May 2012 00:00:00 PDT
     timeleft = wrap(timeleft, [optional('lowered')])
 
     def vgs(self, irc, msg, args):
