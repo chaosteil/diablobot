@@ -277,7 +277,7 @@ class DiabloBasic(callbacks.Plugin):
         """
         if not realm:
             realm = "na"
-        launches = {"na":1337065200, "sea":1337011260, "eu":1337036460}
+        launches = {"na":1337065200, "sea":1337011260, "eu":1337032860}
         try:
             secs = int(launches[realm] - time.time()) # 15 May 2012 00:00:00 PDT
         except KeyError:
