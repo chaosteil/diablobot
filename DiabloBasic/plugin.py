@@ -26,8 +26,8 @@ from dateutil.parser import parse
 import httplib2
 
 import sys
-if "/home/listen2/dbot/plugins/DiabloCommon" not in sys.path:
-     sys.path.append("/home/listen2/dbot/plugins/DiabloCommon")
+if "/srv/bots/dbot/plugins/DiabloCommon" not in sys.path:
+     sys.path.append("/srv/bots/dbot/plugins/DiabloCommon")
 import DiabloCommon
 
 class DiabloBasic(callbacks.Plugin):
@@ -70,7 +70,7 @@ class DiabloBasic(callbacks.Plugin):
             self.skilldata[c] = json.loads(j)
 
         # Load quotes
-        with open("/home/listen2/dbot/plugins/DiabloBasic/data/quotes.json", "r") as f:
+        with open("/srv/bots/dbot/plugins/DiabloBasic/data/quotes.json", "r") as f:
             self.quotes = json.load(f)
         self.quote_count = 0
         for c in self.quotes.values():

@@ -29,8 +29,8 @@ import hashlib
 import random
 
 import sys
-if "/home/listen2/dbot/plugins/DiabloCommon" not in sys.path:
-     sys.path.append("/home/listen2/dbot/plugins/DiabloCommon")
+if "/srv/bots/dbot/plugins/DiabloCommon" not in sys.path:
+     sys.path.append("/srv/bots/dbot/plugins/DiabloCommon")
 import DiabloCommon
 
 class User(object):
@@ -78,7 +78,7 @@ class Verification(object):
         return "<Verification('%s')>" % (self.id)
 
 #engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3', echo=True)
-#engine = create_engine('sqlite:////home/listen2/dbot/plugins/DiabloMatch/db.sqlite3')
+#engine = create_engine('sqlite:////srv/bots/dbot/plugins/DiabloMatch/db.sqlite3')
 f = open('/home/listen2/db_pass', 'r')
 p = f.read().rstrip()
 f.close()
