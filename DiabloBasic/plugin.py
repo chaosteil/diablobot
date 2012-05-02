@@ -102,7 +102,7 @@ class DiabloBasic(callbacks.Plugin):
 
         # Help text
         elif charname not in self.quotes:
-            irc.reply("I don't have any quotes from %s. Available quote sources: %s (%d quotes)" % \
+            irc.reply("I don't have any quotes from %s. Available sources: %s (%d quotes)" % \
                 (charname, ", ".join(sorted(self.quotes.keys())), self.quote_count))
 
         # Prints a quote of the character
