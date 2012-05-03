@@ -136,10 +136,10 @@ class DiabloBasic(callbacks.Plugin):
                     irc.reply(out, prefixNick=False)
                     return  #no need no check the other url formats.
                 #https://twitter.com/#!/Nyzaris/status/179599382814011392
-                m = re.search("twitter.com/#!/.+/status(es)?/(\d+)", url)
+                m = re.search("twitter.com/(?:#!/)?.+/status(?:es)?/(\d+)", url)
                 if m:
                     h = httplib2.Http(".cache")
-                    resp, j = h.request("http://api.twitter.com/1/statuses/show/%s.json" % m.group(2), "GET")
+                    resp, j = h.request("http://api.twitter.com/1/statuses/show/%s.json" % m.group(1), "GET")
                     tjson = json.loads(j)
                     irc.reply("%s (%s): %s" % (tjson["user"]["screen_name"], tjson["user"]["name"], tjson["text"]), prefixNick=False)
                     return
