@@ -211,10 +211,7 @@ class DiabloBasic(callbacks.Plugin):
                 except ValueError:
                     return
         except pytz.UnknownTimeZoneError as e:
-            if str(e).lower() == "'blizzard'":
-                irc.reply("Blizzard time: Soon™")
-            else:
-                irc.reply("Unknown time zone " + str(e))
+            irc.reply("Unknown time zone " + str(e))
             return
         tm_to = tm.astimezone(tz_to)
         irc.reply(tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
@@ -275,6 +272,9 @@ class DiabloBasic(callbacks.Plugin):
                 irc.state.channels[msg.args[0]].isVoice(msg.nick)):
             return
         """
+        if realm in ["blizz", "blizzard"]:
+            irc.reply("Diablo III %s launch: Soon™", prefixNick=False)  # 15 May 2012 00:00:00 PDT
+            return
         if not realm:
             realm = "na"
         launches = {"na":1337065200, "sea":1337011260, "eu":1337032860}
