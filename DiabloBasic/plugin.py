@@ -273,7 +273,7 @@ class DiabloBasic(callbacks.Plugin):
             return
         """
         if realm in ["blizz", "blizzard"]:
-            irc.reply("Diablo III %s launch: Soon™", prefixNick=False)  # 15 May 2012 00:00:00 PDT
+            irc.reply("Diablo III launch: Soon™", prefixNick=False)  # 15 May 2012 00:00:00 PDT
             return
         if not realm:
             realm = "na"
