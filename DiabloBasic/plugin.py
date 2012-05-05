@@ -51,6 +51,7 @@ class DiabloBasic(callbacks.Plugin):
     _dstream_regulars = [
         "rdiablo",
         "thunderclaww",
+        "ibleeedorange",
         "drzealottv",
         "theblinks"
     ]
