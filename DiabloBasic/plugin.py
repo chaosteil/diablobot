@@ -76,6 +76,10 @@ class DiabloBasic(callbacks.Plugin):
         for c in self.quotes.values():
             self.quote_count += len(c["quotes"])
 
+        # Load skill abbreviations
+        with open("/srv/bots/dbot/plugins/DiabloBasic/data/sk_abbrs.json", "r") as f:
+            self.sk_abbrs = json.load(f)
+
         # Init stream checking
         DiabloBasic._dstream_time = 0
 
@@ -162,9 +166,8 @@ class DiabloBasic(callbacks.Plugin):
         """[\37skill name | \37rune name]
         Shows details of the specified skill or rune.
         """
-        abbrevs = {"cw":"crippling wave","fot":"fists of thunder","wothf":"way of the hundred fists","boh":"breath of heaven"}
-        if arg1.lower() in abbrevs.keys():
-            arg1 = abbrevs[arg1.lower()]
+        if arg1.lower() in self.sk_abbrs.keys():
+            arg1 = self.sk_abbrs[arg1.lower()]
         for c in self.skilldata:
             if c == "follower":
                 continue
