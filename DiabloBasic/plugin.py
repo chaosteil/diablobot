@@ -162,6 +162,9 @@ class DiabloBasic(callbacks.Plugin):
         """[\37skill name | \37rune name]
         Shows details of the specified skill or rune.
         """
+        abbrevs = {"cw":"crippling wave","fot":"fists of thunder","wothf":"way of the hundred fists"}
+        if arg1.lower() in abbrevs.keys():
+            arg1 = abbrevs[arg1.lower()]
         for c in self.skilldata:
             if c == "follower":
                 continue
