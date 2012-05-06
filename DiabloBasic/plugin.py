@@ -306,4 +306,10 @@ class DiabloBasic(callbacks.Plugin):
         irc.reply("[VGS] Shazbot!")
     vgs = wrap(vgs)
 
+    def moo(self, irc, msg, args):
+        """
+        There is no cow level!
+        """
+        irc.reply("There is no cow level!")
+
 Class = DiabloBasic
