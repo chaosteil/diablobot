@@ -25,6 +25,8 @@ from datetime import datetime
 from dateutil.parser import parse
 import httplib2
 
+from xml.dom.minidom import parseString
+
 import sys
 if "/srv/bots/dbot/plugins/DiabloCommon" not in sys.path:
      sys.path.append("/srv/bots/dbot/plugins/DiabloCommon")
@@ -83,6 +85,9 @@ class DiabloBasic(callbacks.Plugin):
 
         # Init stream checking
         DiabloBasic._dstream_time = 0
+
+        with open("/home/listen2/mumble_query", "r") as f:  #URL for the multiplay.co.uk mumble server status
+            self._mumble_query = f.read().rstrip()
 
     def printQuote(self, irc, name, message):
         irc.reply("%s: %s" % (name, message), prefixNick=False)
@@ -298,6 +303,17 @@ class DiabloBasic(callbacks.Plugin):
         secs -= mins * 60
         irc.reply("Time until Diablo III %s launch: %d day%s, %d hour%s, %d minute%s, %d second%s" % (realm.upper(), days, "s" if days != 1 else "", hours, "s" if hours != 1 else "", mins, "s" if mins != 1 else "", secs, "s" if secs != 1 else ""), prefixNick=False)  # 15 May 2012 00:00:00 PDT
     timeleft = wrap(timeleft, [optional('lowered')])
+
+    def mumble(self, irc, msg, args):
+        h = httplib2.Http(".cache")
+        resp, j = h.request(self._mumble_query, "GET")
+        dom = parseString(j)
+
+        num_users = dom.getElementsByTagName("numplayers")[0].firstChild.data
+        max_users = dom.getElementsByTagName("maxplayers")[0].firstChild.data
+
+        irc.reply("Official /r/diablo mumble server: mumble.rdiablo.com, port=2612, password=cowlevel. Users: %s/%s." % (num_users, max_users))
+    mumble = wrap(mumble)
 
     def vgs(self, irc, msg, args):
         """
