@@ -312,7 +312,7 @@ class DiabloBasic(callbacks.Plugin):
         num_users = dom.getElementsByTagName("numplayers")[0].firstChild.data
         max_users = dom.getElementsByTagName("maxplayers")[0].firstChild.data
 
-        irc.reply("Official /r/diablo mumble server: mumble.rdiablo.com, port=2612, password=cowlevel. Users: %s/%s." % (num_users, max_users))
+        irc.reply("Official /r/diablo mumble server: mumble.rdiablo.com, port=2612, password=cowlevel. Users: %s/%s." % (num_users, max_users), prefixNick=False)
     mumble = wrap(mumble)
 
     def vgs(self, irc, msg, args):
