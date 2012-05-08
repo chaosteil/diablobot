@@ -54,7 +54,7 @@ class User(object):
         return out
 
     def full_print(self):
-        out = self.pretty_print(r=False)
+        out = self.pretty_print(r=False) + " "
         if self.realm != None:
             out += "Realm: %s " % (self.realm)
         if self.tz != None:
