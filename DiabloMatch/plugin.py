@@ -50,23 +50,23 @@ class User(object):
     def pretty_print(self, r=True):
         out = ", ".join(["" + f[1] + ": " + getattr(self, f[0]) for f in User.quickfields if getattr(self, f[0]) not in [None, 0]])
         if r and self.realm != None:
-            out += ", Realm: " + self.realm
+            out += ", Realm: %s" % (self.realm)
         return out
 
     def full_print(self):
         out = self.pretty_print(r=False)
         if self.realm != None:
-            out += "Realm: " + self.realm
+            out += "Realm: %s " % (self.realm)
         if self.tz != None:
             tz_to = pytz.timezone(self.tz)
             tz_from = pytz.timezone("America/Los_Angeles")
             tm = tz_from.localize(datetime.now())
             tm_to = tm.astimezone(tz_to)
-            out += "Local time: " + tm_to.strftime("%d %b %H:%M:%S (%Z %z)")
+            out += "Local time: %s " % (tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
         if self.cmt != None:
-            out += "Comment: " + self.cmt
+            out += "Comment: %s " % (self.cmt)
         if self.url != None:
-            out += "URL: " + self.url
+            out += "URL: %s " % (self.url)
         return out
 
 class Verification(object):
@@ -217,7 +217,7 @@ class DiabloMatch(callbacks.Plugin):
 
         users = self._findBtUsers(irc, data[-1], "irc" if len(data) == 1 else data[0])
 
-        for user in users[0:6]:
+        for user in users[0:10]:
             #irc.reply("User details. Fields marked with a * are not "
             #      "officially validated.", private=True)
             irc.reply(user.full_print(), private=True)
