@@ -54,20 +54,19 @@ class User(object):
         return out
 
     def full_print(self):
-        out = []
-        out.append(self.pretty_print(r=False))
+        out = self.pretty_print(r=False)
         if self.realm != None:
-            out.append("Realm: " + self.realm)
+            out += "Realm: " + self.realm
         if self.tz != None:
             tz_to = pytz.timezone(self.tz)
             tz_from = pytz.timezone("America/Los_Angeles")
             tm = tz_from.localize(datetime.now())
             tm_to = tm.astimezone(tz_to)
-            out.append("Local time: " + tm_to.strftime("%d %b %H:%M:%S (%Z %z)"))
+            out += "Local time: " + tm_to.strftime("%d %b %H:%M:%S (%Z %z)")
         if self.cmt != None:
-            out.append("Comment: " + self.cmt)
+            out += "Comment: " + self.cmt
         if self.url != None:
-            out.append("URL: " + self.url)
+            out += "URL: " + self.url
         return out
 
 class Verification(object):
@@ -221,8 +220,7 @@ class DiabloMatch(callbacks.Plugin):
         for user in users[0:6]:
             #irc.reply("User details. Fields marked with a * are not "
             #      "officially validated.", private=True)
-            for line in user.full_print():
-                irc.reply(line, private=True)
+            irc.reply(user.full_print(), private=True)
 
     btinfo = wrap(btinfo, [optional('something')])
 
