@@ -76,6 +76,13 @@ class Verification(object):
     def __repr__(self):
         return "<Verification('%s')>" % (self.id)
 
+class Profile(object):
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return "<Profile('%s')>" % (self.id)
+
 #engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3', echo=True)
 #engine = create_engine('sqlite:////srv/bots/dbot/plugins/DiabloMatch/db.sqlite3')
 f = open('/home/listen2/db_pass', 'r')
@@ -89,6 +96,8 @@ user_table = Table('users', meta, autoload=True)
 mapper(User, user_table)
 verification_table = Table('reddit_v', meta, autoload=True)
 mapper(Verification, verification_table)
+profile_table = Table('profiles', meta, autoload=True)
+mapper(Profile, profile_table)
 
 class DiabloMatch(callbacks.Plugin):
     """Add the help for "@plugin help DiabloMatch" here
