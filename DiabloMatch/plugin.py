@@ -389,8 +389,8 @@ class DiabloMatch(callbacks.Plugin):
                 irc.reply("You don't have a profile named '%s'." % pname)
                 return
         else:
-            default_profile_name = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
-            if default_profile_name == None:
+            u = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
+            if not user.default_profile:
                 irc.reply("You don't have a default profile set. Use !lfgset profile and !btset default_profile to set one.")
                 return
             else:
