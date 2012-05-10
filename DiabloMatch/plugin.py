@@ -372,10 +372,17 @@ class DiabloMatch(callbacks.Plugin):
         if not ircname:
             return
         session = Session()
-        try:
-            #TODO can we exclude all columns other than default_profile ?
-            user = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).filter(func.lower(User.default_profile) == func.lower(pname)).one()
-        irc.reply("Using profile %s" % user.default_profile)
+        if pname:
+            try:
+                #TODO can we exclude all columns other than default_profile ?
+                profile = session.query(Profile).join(User).filter(func.lower(User.irc_name) == func.lower(ircname)).filter(func.lower(Profile.profile_name) == func.lower(pname)).one()
+            except NoResultFound:
+                irc.reply("You don't have a profile named '%s'." % pname)
+                return
+        else:
+            pass
+            #profile = session.query(Profile).join(User).filter(func.lower(User.irc_name) == func.lower(ircname)).filter(func.lower(User.default_profile) == func.lower(pname)).one()
+        irc.reply("Using profile %s" % profile.profile_name)
     lfg = wrap(lfg, [optional("text")])
 
     #on any channel activity, cache the user's whois info
