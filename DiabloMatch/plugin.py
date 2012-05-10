@@ -364,11 +364,19 @@ class DiabloMatch(callbacks.Plugin):
             irc.reply("Your verification will be accepted within an hour of receipt.", private=True)
     btset = wrap(btset, ['something', optional('text')])
 
-    def lfg(self, irc, msg, args, arg1):
+    def lfg(self, irc, msg, args, pname):
+        """[\37profile name]
+        Finds a group that matches the profile \37profile name. If \37profile name is not specified, your default profile is used. Issue !lfgset profile to create or modify profiles.
         """
-        """
-        irc.reply("NYI")
-    lfg = wrap(lfg)
+        ircname = DiabloCommon.check_auth(irc, msg.nick)
+        if not ircname:
+            return
+        session = Session()
+        try:
+            #TODO can we exclude all columns other than default_profile ?
+            user = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).filter(func.lower(User.default_profile) == func.lower(pname)).one()
+        irc.reply("Using profile %s" % user.default_profile)
+    lfg = wrap(lfg, [optional("text")])
 
     #on any channel activity, cache the user's whois info
     def doPrivmsg(self, irc, msg):
