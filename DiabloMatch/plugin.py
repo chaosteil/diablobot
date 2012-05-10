@@ -375,7 +375,7 @@ class DiabloMatch(callbacks.Plugin):
 
     def lfg(self, irc, msg, args, pname):
         """[\37profile name]
-        Finds a group that matches the profile \37profile name. If \37profile name is not specified, your default profile is used. Issue !lfgset profile to create or modify profiles.
+        Finds players that match the game profile \37profile name. If \37profile name is not specified, your default profile is used. Issue !lfgset profile to create or modify profiles.
         """
         ircname = DiabloCommon.check_auth(irc, msg.nick)
         if not ircname:
