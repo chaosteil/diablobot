@@ -373,6 +373,24 @@ class DiabloMatch(callbacks.Plugin):
             irc.reply("Your verification will be accepted within an hour of receipt.", private=True)
     btset = wrap(btset, ['something', optional('text')])
 
+    def btverify(self, irc, msg, args, key):
+        ircname = DiabloCommon.check_auth(irc, msg.nick)
+        if not ircname:
+            return
+        session = Session()
+        try:
+            user = session.query(User).join(Verification).filter(Verification.key == key).one()
+        except NoResultFound:
+            irc.reply("Key not recognized.", private=True) #TODO better feedback message
+            return
+        ver = session.query(Verification).filter(Verification.id == user.id).one()
+        user.irc_name = ircname
+        session.add(user)
+        session.delete(ver)
+        session.commit()
+        irc.reply("Success.", private=True)
+    btverify = wrap(btverify, ["text"])
+
     def lfg(self, irc, msg, args, pname):
         """[\37profile name]
         Finds players that match the game profile \37profile name. If \37profile name is not specified, your default profile is used. Issue !lfgset profile to create or modify profiles.
