@@ -237,6 +237,7 @@ class DiabloBasic(callbacks.Plugin):
         """[/37nick]
         Shows the rules for #diablo and #bazaar. If \37nick is specificed (requires op), tells the rules to that user.
         """
+        vic = False
         if victim:
             #if not irc.state.channels["#diablo"].isOp(msg.nick):
             #    irc.reply("Only operators can tell rules to others.", private=True)
