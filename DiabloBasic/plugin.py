@@ -241,11 +241,14 @@ class DiabloBasic(callbacks.Plugin):
             #if not irc.state.channels["#diablo"].isOp(msg.nick):
             #    irc.reply("Only operators can tell rules to others.", private=True)
             #    return
+            vic = True
             irc.reply("This message was triggered by %s" % msg.nick, private=True, to=victim)
         else:
             victim = msg.nick
         for v in DiabloCommon.channel_rules:
             irc.reply(v, private=True, to=victim)
+        if vic:
+            irc.reply("Finished sending rules to %s" % victim, private=True)
     rules = wrap(rules, [optional('nick')])
 
     def streams(self, irc, msg, args):
