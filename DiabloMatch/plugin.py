@@ -389,7 +389,7 @@ class DiabloMatch(callbacks.Plugin):
         session.delete(ver)
         session.commit()
         irc.reply("Success.", private=True)
-    btverify = wrap(btverify, ["text"])
+    btverify = wrap(btverify, ["something"])
 
     def lfg(self, irc, msg, args, pname):
         """[\37profile name]
