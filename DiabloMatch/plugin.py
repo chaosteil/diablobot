@@ -374,6 +374,9 @@ class DiabloMatch(callbacks.Plugin):
     btset = wrap(btset, ['something', optional('text')])
 
     def btverify(self, irc, msg, args, key):
+        """\37profile name
+        Verifies your IRC services name. This is only useful if you did not register through IRC.
+        """
         ircname = DiabloCommon.check_auth(irc, msg.nick)
         if not ircname:
             return
