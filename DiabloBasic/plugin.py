@@ -327,11 +327,4 @@ class DiabloBasic(callbacks.Plugin):
         irc.reply("Official /r/diablo mumble server: mumble.rdiablo.com, port=2612, password=secretmana. Users: %s/%s." % (num_users, max_users), prefixNick=False)
     mumble = wrap(mumble)
 
-    def vgs(self, irc, msg, args):
-        """
-        The infamous VGS voice command from Tribes: Ascend.
-        """
-        irc.reply("[VGS] Shazbot!")
-    vgs = wrap(vgs)
-
 Class = DiabloBasic

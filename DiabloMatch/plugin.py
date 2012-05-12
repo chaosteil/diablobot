@@ -394,6 +394,35 @@ class DiabloMatch(callbacks.Plugin):
         irc.reply("Success.", private=True)
     btverify = wrap(btverify, ["something"])
 
+    def lfgset(self, irc, msg, args, pname):
+        """\37profile name [\37option=\37value ...]
+        Sets options for the profile \37profile name. The profile will be created if it does not exist.
+        """
+        ircname = DiabloCommon.check_auth(irc, msg.nick)
+        if not ircname:
+            return
+        session = Session()
+        if pname:
+            try:
+                #TODO can we exclude all columns other than default_profile ?
+                profile = session.query(Profile).join(User).filter(func.lower(User.irc_name) == func.lower(ircname)).filter(func.lower(Profile.profile_name) == func.lower(pname)).one()
+            except NoResultFound:
+                irc.reply("You don't have a profile named '%s'." % pname)
+                return
+        else:
+            u = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
+            if not u.default_profile:
+                irc.reply("You don't have a default profile set. Use !lfgset profile and !btset default_profile to set one.")
+                return
+            else:
+                try:
+                    profile = session.query(Profile).join(User).filter(func.lower(User.irc_name) == func.lower(ircname)).filter(func.lower(Profile.profile_name) == func.lower(User.default_profile)).one()
+                except NoResultFound:
+                    irc.reply("Your default profile '%s' doesn't exist." % pname)
+                    return
+        irc.reply("Using profile %s" % profile.profile_name)
+    lfg = wrap(lfg, [optional("text")])
+
     def lfg(self, irc, msg, args, pname):
         """[\37profile name]
         Finds players that match the game profile \37profile name. If \37profile name is not specified, your default profile is used. Issue !lfgset profile to create or modify profiles.
