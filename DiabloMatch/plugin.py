@@ -448,7 +448,7 @@ class DiabloMatch(callbacks.Plugin):
                     arg_ov = None
         #now pname contains the name of the profile or None, and arg_ov contans the remainder of the string
         ovs = []
-        for f in _bt_lfgargs_regexp.findall(arg_ov):
+        for f in DiabloMatch._bt_lfgargs_regexp.findall(arg_ov):
             p = f.split("=")
             ovs.append((p[0].strip(), p[1].strip()))
         #now ovs contains the (key, value) of every override specified in argv
