@@ -433,9 +433,8 @@ class DiabloMatch(callbacks.Plugin):
             return
 
         ovs = []
-        if argv == None:
-            pname = None
-        else: #Hold on to your butts...
+        pname = None
+        if not argv == None: #Hold on to your butts...
             arg_sp = argv.split(None, 1)      #split off the first word
             if "=" in arg_sp[0]:      #does the first word contain an equals sign?
                 arg_ov = argv #yes, so the user is getting right into the overrides
