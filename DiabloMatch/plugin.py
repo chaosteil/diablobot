@@ -432,20 +432,21 @@ class DiabloMatch(callbacks.Plugin):
         if not ircname:
             return
 
-        #Hold on to your butts...
-        pname = None
-        arg_sp = argv.split(None, 1)      #split off the first word
-        if "=" in arg_sp[0]:      #does the first word contain an equals sign?
-            arg_ov = argv #yes, so the user is getting right into the overrides
-        else:
-            if len(arg_sp) > 1 and arg_sp[1].find("=") == 0:      #maybe the second word starts with an equals sign?
-                arg_ov = argv #yes, they're getting right into the overrides.
+        if argv == None:
+            pname = None
+        else: #Hold on to your butts...
+            arg_sp = argv.split(None, 1)      #split off the first word
+            if "=" in arg_sp[0]:      #does the first word contain an equals sign?
+                arg_ov = argv #yes, so the user is getting right into the overrides
             else:
-                pname = arg_sp[0] #nope. the first word must be a profile name.
-                try:
-                    arg_ov = arg_sp[1]
-                except IndexError:  #there are no args
-                    arg_ov = None
+                if len(arg_sp) > 1 and arg_sp[1].find("=") == 0:      #maybe the second word starts with an equals sign?
+                    arg_ov = argv #yes, they're getting right into the overrides.
+                else:
+                    pname = arg_sp[0] #nope. the first word must be a profile name.
+                    try:
+                        arg_ov = arg_sp[1]
+                    except IndexError:  #there are no args
+                        arg_ov = None
         #now pname contains the name of the profile or None, and arg_ov contans the remainder of the string
         ovs = []
         if not arg_ov == None:
