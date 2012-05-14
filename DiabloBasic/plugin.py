@@ -286,32 +286,15 @@ class DiabloBasic(callbacks.Plugin):
         """
         Shows the time remaining until the next big event. Only usable by +v or +o.
         """
-        """
-        if not irc.isChannel(msg.args[0]):
-            return
-        if not (irc.state.channels[msg.args[0]].isOp(msg.nick) or
-                irc.state.channels[msg.args[0]].isVoice(msg.nick)):
-            return
-        """
-        if realm in ["blizz", "blizzard"] or random.randint(0, 99) == 0:
-            irc.reply("Diablo III launch: Soon™", prefixNick=False)
-            return
-        if not realm:
-            realm = "na"
-        launches = {"na":1337065200, "eu":1337032860}
-        try:
-            secs = int(launches[realm] - time.time()) # 15 May 2012 00:00:00 PDT
-        except KeyError:
-            irc.reply("Valid regions: NA, EU")
-            return
+        launches = 1337065200
+        secs = int(launches - time.time()) # 15 May 2012 00:00:00 PDT
         #days = secs / 86400
         #secs -= days * 86400
         hours = secs / 3600
         secs -= hours * 3600
         mins = secs / 60
         secs -= mins * 60
-        #irc.reply("Time until Diablo III %s launch: %d day%s, %d hour%s, %d minute%s, %d second%s" % (realm.upper(), days, "s" if days != 1 else "", hours, "s" if hours != 1 else "", mins, "s" if mins != 1 else "", secs, "s" if secs != 1 else ""), prefixNick=False)  # 15 May 2012 00:00:00 PDT
-        irc.reply("Time until Diablo III %s launch: %d hour%s, %d minute%s, %d second%s" % (realm.upper(), hours, "s" if hours != 1 else "", mins, "s" if mins != 1 else "", secs, "s" if secs != 1 else ""), prefixNick=False)  # 15 May 2012 00:00:00 PDT
+        irc.reply("Time until Diablo III Americas launch: %d hour%s, %d minute%s, %d second%s" % (hours, "s" if hours != 1 else "", mins, "s" if mins != 1 else "", secs, "s" if secs != 1 else ""), prefixNick=False)
     timeleft = wrap(timeleft, [optional('lowered')])
 
     def mumble(self, irc, msg, args):
