@@ -55,6 +55,7 @@ class DiabloBasic(callbacks.Plugin):
         "thunderclaww",
         "ibleeedorange",
         "drzealottv",
+        "wpnewborn",
         "theblinks"
     ]
     _dstream_regulars_json = {}
