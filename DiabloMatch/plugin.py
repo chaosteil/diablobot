@@ -434,8 +434,9 @@ class DiabloMatch(callbacks.Plugin):
     lfgset = wrap(lfgset, [optional("text")])
 
     def lfg(self, irc, msg, args, argv):
-        """[\37profile name]
-        Finds players that match the game profile \37profile name. If \37profile name is not specified, your default profile is used. Issue !lfgset profile to create or modify profiles.
+        """[\37profile name] [field=value ...]
+        Finds players that match the game profile \37profile name. If \37profile name is not specified, your default profile is used. If no default profile exists, lists all games.
+        Use field=value to temporarily override profile settings. Groups can be viewed at http://battletags.rdiablo.com/groups .
         """
         ircname = DiabloCommon.check_auth(irc, msg.nick)
         if not ircname:
@@ -487,25 +488,13 @@ class DiabloMatch(callbacks.Plugin):
         g = Group()
         g.uid = u.id
         #TODO deep copy p -> g
+        g.expansion = "d3"
         for o in ovs:
             if o[0] in ["cmt", "expansion", "group_size", "hardcore", "realm", "difficulty", "level_min", "level_max", "current_quest", "game_name", "game_pass"]:
                 setattr(g, o[0], o[1])
             else:
                 irc.reply("Unknown field '%s'" % o[0])
 
-        """
-        cmt VARCHAR(255),								-- freeform text
-        expansion expansion_t DEFAULT NULL,
-        group_size SMALLINT DEFAULT 0,			-- 0 means any
-        hardcore BOOLEAN DEFAULT FALSE,
-        realm VARCHAR(7) DEFAULT NULL,
-        difficulty VARCHAR(15) DEFAULT NULL,	-- NULL means any
-        level_min SMALLINT DEFAULT 0,				-- 0 means no min
-        level_max SMALLINT DEFAULT 0,				-- 0 means no max
-        current_quest VARCHAR(31) DEFAULT NULL,	-- NULL means any
-        game_name VARCHAR(63) DEFAULT NULL,
-        game_pass VARCHAR(63) DEFAULT NULL,
-        """
         session.add(g)
         session.commit()
 
