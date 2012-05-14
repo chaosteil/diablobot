@@ -468,7 +468,7 @@ class DiabloMatch(callbacks.Plugin):
         if pname:
             try:
                 #TODO can we exclude all columns other than default_profile ?
-                profile = session.query(Profile).join(User).filter(func.lower(User.irc_name) == func.lower(ircname)).filter(func.lower(Profile.profile_name) == func.lower(pname)).one()
+                p = session.query(Profile).join(User).filter(func.lower(User.irc_name) == func.lower(ircname)).filter(func.lower(Profile.profile_name) == func.lower(pname)).one()
             except NoResultFound:
                 irc.reply("You don't have a profile named '%s'." % pname)
                 return
@@ -476,7 +476,7 @@ class DiabloMatch(callbacks.Plugin):
             if not u.default_profile:
                 #irc.reply("You don't have a default profile set. Use !lfgset profile and !btset default_profile to set one.")
                 irc.reply("You don't have a default profile set. Using a wildcard profile.")
-                return
+                p = None
             else:
                 try:
                     profile = session.query(Profile).join(User).filter(func.lower(User.irc_name) == func.lower(ircname)).filter(func.lower(Profile.profile_name) == func.lower(User.default_profile)).one()
@@ -486,6 +486,7 @@ class DiabloMatch(callbacks.Plugin):
 
         g = Group()
         g.uid = u.id
+        #TODO deep copy p -> g
         for o in ovs:
             if o[0] in ["cmt", "expansion", "group_size", "hardcore", "realm", "difficulty", "level_min", "level_max", "current_quest", "game_name", "game_pass"]:
                 setattr(g, o[0], o[1])
@@ -508,7 +509,8 @@ class DiabloMatch(callbacks.Plugin):
         session.add(g)
         session.commit()
 
-        irc.reply("Using profile %s with the following overrides: %s" % (profile.profile_name, ovs))
+        #irc.reply("Using profile %s with the following overrides: %s" % (profile.profile_name, ovs))
+        irc.reply("Okay.")
     lfg = wrap(lfg, [optional("text")])
 
     #on any channel activity, cache the user's whois info
