@@ -83,6 +83,13 @@ class Profile(object):
     def __repr__(self):
         return "<Profile('%s')>" % (self.id)
 
+class Group(object):
+    def __init__(self):
+        pass
+
+    def __repr__(self):
+        return "<Group('%s')>" % (self.id)
+
 #engine = create_engine('sqlite:///plugins/DiabloMatch/db.sqlite3', echo=True)
 #engine = create_engine('sqlite:////srv/bots/dbot/plugins/DiabloMatch/db.sqlite3')
 f = open('/home/listen2/db_pass', 'r')
@@ -98,6 +105,8 @@ verification_table = Table('reddit_v', meta, autoload=True)
 mapper(Verification, verification_table)
 profile_table = Table('profiles', meta, autoload=True)
 mapper(Profile, profile_table)
+group_table = Table('groups', meta, autoload=True)
+mapper(Group, group_table)
 
 class DiabloMatch(callbacks.Plugin):
     """Add the help for "@plugin help DiabloMatch" here
@@ -453,10 +462,9 @@ class DiabloMatch(callbacks.Plugin):
                     p = f.split("=")
                     ovs.append((p[0].strip(), p[1].strip()))
                 #now ovs contains the (key, value) of every override specified in argv
-        irc.reply("using profile %s with the following overrides: %s" % (pname, ovs))
-        return
 
         session = Session()
+        u = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
         if pname:
             try:
                 #TODO can we exclude all columns other than default_profile ?
@@ -465,9 +473,9 @@ class DiabloMatch(callbacks.Plugin):
                 irc.reply("You don't have a profile named '%s'." % pname)
                 return
         else:
-            u = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
             if not u.default_profile:
-                irc.reply("You don't have a default profile set. Use !lfgset profile and !btset default_profile to set one.")
+                #irc.reply("You don't have a default profile set. Use !lfgset profile and !btset default_profile to set one.")
+                irc.reply("You don't have a default profile set. Using a wildcard profile.")
                 return
             else:
                 try:
@@ -476,7 +484,31 @@ class DiabloMatch(callbacks.Plugin):
                     irc.reply("Your default profile '%s' doesn't exist." % pname)
                     return
 
-        irc.reply("Using profile %s" % profile.profile_name)
+        g = Group()
+        g.uid = u.id
+        for o in ovs:
+            if o[0] in ["cmt", "expansion", "group_size", "hardcore", "realm", "difficulty", "level_min", "level_max", "current_quest", "game_name", "game_pass"]:
+                setattr(g, o[0], o[1])
+            else:
+                irc.reply("Unknown field '%s'" % o[0])
+
+        """
+        cmt VARCHAR(255),								-- freeform text
+        expansion expansion_t DEFAULT NULL,
+        group_size SMALLINT DEFAULT 0,			-- 0 means any
+        hardcore BOOLEAN DEFAULT FALSE,
+        realm VARCHAR(7) DEFAULT NULL,
+        difficulty VARCHAR(15) DEFAULT NULL,	-- NULL means any
+        level_min SMALLINT DEFAULT 0,				-- 0 means no min
+        level_max SMALLINT DEFAULT 0,				-- 0 means no max
+        current_quest VARCHAR(31) DEFAULT NULL,	-- NULL means any
+        game_name VARCHAR(63) DEFAULT NULL,
+        game_pass VARCHAR(63) DEFAULT NULL,
+        """
+        session.add(g)
+        session.commit()
+
+        irc.reply("Using profile %s with the following overrides: %s" % (profile.profile_name, ovs))
     lfg = wrap(lfg, [optional("text")])
 
     #on any channel activity, cache the user's whois info
