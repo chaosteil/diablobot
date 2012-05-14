@@ -297,11 +297,11 @@ class DiabloBasic(callbacks.Plugin):
             return
         if not realm:
             realm = "na"
-        launches = {"na":1337065200, "sea":1337011260, "eu":1337032860}
+        launches = {"na":1337065200, "sea":1337011260, "eu":1337032860, "install":1337007660}
         try:
             secs = int(launches[realm] - time.time()) # 15 May 2012 00:00:00 PDT
         except KeyError:
-            irc.reply("Valid regions: NA, SEA, EU")
+            irc.reply("Valid regions: NA, SEA, EU, install")
             return
         days = secs / 86400
         secs -= days * 86400
