@@ -438,7 +438,7 @@ class DiabloMatch(callbacks.Plugin):
         if "=" in arg_sp[0]:      #does the first word contain an equals sign?
             arg_ov = argv #yes, so the user is getting right into the overrides
         else:
-            if arg_sp[1].find("=") == 0:      #maybe the second word starts with an equals sign?
+            if len(arg_sp) > 1 and arg_sp[1].find("=") == 0:      #maybe the second word starts with an equals sign?
                 arg_ov = argv #yes, they're getting right into the overrides.
             else:
                 pname = arg_sp[0] #nope. the first word must be a profile name.
