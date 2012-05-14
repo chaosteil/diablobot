@@ -469,6 +469,7 @@ class DiabloMatch(callbacks.Plugin):
             u = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
         except NoResultFound:
             irc.reply("I don't know your BattleTag, so I can't help you find a group. Use !bt register to register yours.")
+            return
         if pname:
             try:
                 #TODO can we exclude all columns other than default_profile ?
