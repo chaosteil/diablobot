@@ -113,6 +113,7 @@ class DiabloMatch(callbacks.Plugin):
 
     _bt_regexp    = re.compile(r"\w{1,32}#\d{4,8}$")
     _color_regexp = re.compile("(?:(?:\d{1,2}(?:,\d{1,2})?)?|||)")
+    _bt_lfgargs_regexp = re.compile("(\S+\s*=.+?(?=\s+\S+\s*=|$))")
 
     # "Logged in as" WHOIS response
     def do330(self, irc, msg):
@@ -423,13 +424,36 @@ class DiabloMatch(callbacks.Plugin):
         irc.reply("Using profile %s" % profile.profile_name)
     lfg = wrap(lfg, [optional("text")])
 
-    def lfg(self, irc, msg, args, pname):
+    def lfg(self, irc, msg, args, argv):
         """[\37profile name]
         Finds players that match the game profile \37profile name. If \37profile name is not specified, your default profile is used. Issue !lfgset profile to create or modify profiles.
         """
         ircname = DiabloCommon.check_auth(irc, msg.nick)
         if not ircname:
             return
+
+        #Hold on to your butts...
+
+        pname = None
+        for i in range(0, len(argv)):
+            arg_sp = argv.split(None, 1)      #split off the first word
+            if "=" in arg_sp[0]:      #does the first word contain an equals sign?
+                arg_ov = argv #yes, so the user is getting right into the overrides
+            else:
+                if arg_sp[1].find("=") == 0:      #maybe the second word starts with an equals sign?
+                    arg_ov = argv #yes, they're getting right into the overrides.
+                else:
+                    pname = arg_sp[0] #nope. the first word must be a profile name.
+                    arg_ov = arg_sp[1]
+        #now pname contains the name of the profile or None, and arg_ov contans the remainder of the string
+        ovs = []
+        for f in r.findall(arg_ov):
+            p = f.split("=")
+            ovs.append((p[0].strip(), p[1].strip()))
+        #now ovs contains the (key, value) of every override specified in argv
+        irc.reply("using profile %s with the following overrides: %s" % (pname, ovs))
+        return
+
         session = Session()
         if pname:
             try:
@@ -449,6 +473,7 @@ class DiabloMatch(callbacks.Plugin):
                 except NoResultFound:
                     irc.reply("Your default profile '%s' doesn't exist." % pname)
                     return
+
         irc.reply("Using profile %s" % profile.profile_name)
     lfg = wrap(lfg, [optional("text")])
 
