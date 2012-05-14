@@ -465,7 +465,10 @@ class DiabloMatch(callbacks.Plugin):
                 #now ovs contains the (key, value) of every override specified in argv
 
         session = Session()
-        u = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
+        try:
+            u = session.query(User).filter(func.lower(User.irc_name) == func.lower(ircname)).one()
+        except NoResultFound:
+            irc.reply("I don't know your BattleTag, so I can't help you find a group. Use !bt register to register yours.")
         if pname:
             try:
                 #TODO can we exclude all columns other than default_profile ?
