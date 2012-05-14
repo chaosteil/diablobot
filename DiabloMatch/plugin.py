@@ -434,19 +434,18 @@ class DiabloMatch(callbacks.Plugin):
 
         #Hold on to your butts...
         pname = None
-        for i in range(0, len(argv)):
-            arg_sp = argv.split(None, 1)      #split off the first word
-            if "=" in arg_sp[0]:      #does the first word contain an equals sign?
-                arg_ov = argv #yes, so the user is getting right into the overrides
+        arg_sp = argv.split(None, 1)      #split off the first word
+        if "=" in arg_sp[0]:      #does the first word contain an equals sign?
+            arg_ov = argv #yes, so the user is getting right into the overrides
+        else:
+            if arg_sp[1].find("=") == 0:      #maybe the second word starts with an equals sign?
+                arg_ov = argv #yes, they're getting right into the overrides.
             else:
-                if arg_sp[1].find("=") == 0:      #maybe the second word starts with an equals sign?
-                    arg_ov = argv #yes, they're getting right into the overrides.
-                else:
-                    pname = arg_sp[0] #nope. the first word must be a profile name.
-                    arg_ov = arg_sp[1]
+                pname = arg_sp[0] #nope. the first word must be a profile name.
+                arg_ov = arg_sp[1]
         #now pname contains the name of the profile or None, and arg_ov contans the remainder of the string
         ovs = []
-        for f in r.findall(arg_ov):
+        for f in _bt_lfgargs_regexp.findall(arg_ov):
             p = f.split("=")
             ovs.append((p[0].strip(), p[1].strip()))
         #now ovs contains the (key, value) of every override specified in argv
