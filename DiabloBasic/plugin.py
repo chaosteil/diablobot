@@ -286,6 +286,9 @@ class DiabloBasic(callbacks.Plugin):
         """
         Shows the time remaining until the next big event. Only usable by +v or +o.
         """
+        if random.randint(0, 50) == 0:
+            irc.reply("Diablo III launch: Soon™", prefixNick=False)
+            return
         launches = 1337065200
         secs = int(launches - time.time()) # 15 May 2012 00:00:00 PDT
         #days = secs / 86400
