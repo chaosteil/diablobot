@@ -454,7 +454,7 @@ class DiabloMatch(callbacks.Plugin):
                     p = f.split("=")
                     ovs.append((p[0].strip(), p[1].strip()))
                 #now ovs contains the (key, value) of every override specified in argv
-                irc.reply("using profile %s with the following overrides: %s" % (pname, ovs))
+        irc.reply("using profile %s with the following overrides: %s" % (pname, ovs))
         return
 
         session = Session()
