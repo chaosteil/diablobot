@@ -442,7 +442,10 @@ class DiabloMatch(callbacks.Plugin):
                 arg_ov = argv #yes, they're getting right into the overrides.
             else:
                 pname = arg_sp[0] #nope. the first word must be a profile name.
-                arg_ov = arg_sp[1]
+                try:
+                    arg_ov = arg_sp[1]
+                except IndexError:  #there are no args
+                    arg_ov = None
         #now pname contains the name of the profile or None, and arg_ov contans the remainder of the string
         ovs = []
         for f in _bt_lfgargs_regexp.findall(arg_ov):
