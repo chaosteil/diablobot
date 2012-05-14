@@ -303,13 +303,14 @@ class DiabloBasic(callbacks.Plugin):
         except KeyError:
             irc.reply("Valid regions: NA, SEA, EU, install")
             return
-        days = secs / 86400
-        secs -= days * 86400
+        #days = secs / 86400
+        #secs -= days * 86400
         hours = secs / 3600
         secs -= hours * 3600
         mins = secs / 60
         secs -= mins * 60
-        irc.reply("Time until Diablo III %s launch: %d day%s, %d hour%s, %d minute%s, %d second%s" % (realm.upper(), days, "s" if days != 1 else "", hours, "s" if hours != 1 else "", mins, "s" if mins != 1 else "", secs, "s" if secs != 1 else ""), prefixNick=False)  # 15 May 2012 00:00:00 PDT
+        #irc.reply("Time until Diablo III %s launch: %d day%s, %d hour%s, %d minute%s, %d second%s" % (realm.upper(), days, "s" if days != 1 else "", hours, "s" if hours != 1 else "", mins, "s" if mins != 1 else "", secs, "s" if secs != 1 else ""), prefixNick=False)  # 15 May 2012 00:00:00 PDT
+        irc.reply("Time until Diablo III %s launch: %d hour%s, %d minute%s, %d second%s" % (realm.upper(), hours, "s" if hours != 1 else "", mins, "s" if mins != 1 else "", secs, "s" if secs != 1 else ""), prefixNick=False)  # 15 May 2012 00:00:00 PDT
     timeleft = wrap(timeleft, [optional('lowered')])
 
     def mumble(self, irc, msg, args):
