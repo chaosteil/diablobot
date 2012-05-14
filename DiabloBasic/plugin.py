@@ -293,8 +293,8 @@ class DiabloBasic(callbacks.Plugin):
                 irc.state.channels[msg.args[0]].isVoice(msg.nick)):
             return
         """
-        if realm in ["blizz", "blizzard"]:
-            irc.reply("Diablo III launch: Soon™", prefixNick=False)  # 15 May 2012 00:00:00 PDT
+        if realm in ["blizz", "blizzard"] or random.randint(0, 99) == 0:
+            irc.reply("Diablo III launch: Soon™", prefixNick=False)
             return
         if not realm:
             realm = "na"
