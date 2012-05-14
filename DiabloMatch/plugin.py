@@ -422,7 +422,7 @@ class DiabloMatch(callbacks.Plugin):
                     irc.reply("Your default profile '%s' doesn't exist." % pname)
                     return
         irc.reply("Using profile %s" % profile.profile_name)
-    lfg = wrap(lfg, [optional("text")])
+    lfgset = wrap(lfgset, [optional("text")])
 
     def lfg(self, irc, msg, args, argv):
         """[\37profile name]
@@ -433,7 +433,6 @@ class DiabloMatch(callbacks.Plugin):
             return
 
         #Hold on to your butts...
-
         pname = None
         for i in range(0, len(argv)):
             arg_sp = argv.split(None, 1)      #split off the first word
