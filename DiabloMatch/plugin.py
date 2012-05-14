@@ -432,6 +432,7 @@ class DiabloMatch(callbacks.Plugin):
         if not ircname:
             return
 
+        ovs = []
         if argv == None:
             pname = None
         else: #Hold on to your butts...
@@ -447,14 +448,13 @@ class DiabloMatch(callbacks.Plugin):
                         arg_ov = arg_sp[1]
                     except IndexError:  #there are no args
                         arg_ov = None
-        #now pname contains the name of the profile or None, and arg_ov contans the remainder of the string
-        ovs = []
-        if not arg_ov == None:
-            for f in DiabloMatch._bt_lfgargs_regexp.findall(arg_ov):
-                p = f.split("=")
-                ovs.append((p[0].strip(), p[1].strip()))
-            #now ovs contains the (key, value) of every override specified in argv
-            irc.reply("using profile %s with the following overrides: %s" % (pname, ovs))
+            #now pname contains the name of the profile or None, and arg_ov contans the remainder of the string
+            if not arg_ov == None:
+                for f in DiabloMatch._bt_lfgargs_regexp.findall(arg_ov):
+                    p = f.split("=")
+                    ovs.append((p[0].strip(), p[1].strip()))
+                #now ovs contains the (key, value) of every override specified in argv
+                irc.reply("using profile %s with the following overrides: %s" % (pname, ovs))
         return
 
         session = Session()
