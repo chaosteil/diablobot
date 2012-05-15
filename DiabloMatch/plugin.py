@@ -209,8 +209,7 @@ class DiabloMatch(callbacks.Plugin):
                     # We pick one user. irc_name is unique, so no worries
                     user = session.query(User).filter(
                         func.lower(User.irc_name) == func.lower(s)).one()
-                    irc.reply("Your battletag is %s" % user.pretty_print(),
-                              private=True)
+                    irc.reply(("Your battletag is %s" % user.pretty_print()).encode("utf-8"), private=True)
 
                 except NoResultFound:
                     irc.reply("No battletag found for you. Register one with "
@@ -221,7 +220,7 @@ class DiabloMatch(callbacks.Plugin):
             users = self._findBtUsers(irc, data[-1], None if len(data) == 1 else data[0])
 
             for user in users[0:6]:
-                irc.reply(user.pretty_print(), private=True)
+                irc.reply(user.pretty_print().encode("utf-8"), private=True)
 
     bt = wrap(bt, [optional('something'), optional('something')])
 
