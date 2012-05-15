@@ -120,7 +120,7 @@ class DiabloMatch(callbacks.Plugin):
         "asia"
     ]
 
-    _bt_regexp    = re.compile(r"\w{1,32}#\d{4,8}$")
+    _bt_regexp    = re.compile(r"\S{1,32}#\d{4,8}$", re.UNICODE)
     _color_regexp = re.compile("(?:(?:\d{1,2}(?:,\d{1,2})?)?|||)")
     _bt_lfgargs_regexp = re.compile("(\S+\s*=.+?(?=\s+\S+\s*=|$))")
 
