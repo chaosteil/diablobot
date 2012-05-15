@@ -286,6 +286,8 @@ class DiabloBasic(callbacks.Plugin):
         """
         Shows the time remaining until the next big event. Only usable by +v or +o.
         """
+        irc.reply("All Diablo III regions have launched! What are you doing talking to IRC bots?? Go play!!!", prefixNick=False)
+        return
         if random.randint(0, 50) == 0:
             irc.reply("Diablo III launch: Soon™", prefixNick=False)
             return
