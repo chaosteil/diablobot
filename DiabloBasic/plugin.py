@@ -366,9 +366,9 @@ class DiabloBasic(callbacks.Plugin):
         for r in ["am", "eu", "as"]:
             s = self._realm_up(r)
             if self._realm_prev[r] != s:
-                irc.reply("%s is now reporting %s" % (r, "UP" if s else "DOWN"), to="listen2")
+                irc.reply("%s is now reporting %s" % (r, "UP" if s else "DOWN"), to="#diablobot")
             else:
-                irc.reply("%s continues to report %s" % (r, "UP" if s else "DOWN"), to="listen2")
+                irc.reply("%s continues to report %s" % (r, "UP" if s else "DOWN"), to="#diablobot")
             self._realm_prev[r] = s
 
 Class = DiabloBasic
