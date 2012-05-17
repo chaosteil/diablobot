@@ -325,7 +325,7 @@ class DiabloBasic(callbacks.Plugin):
     mumble = wrap(mumble)
 
     def _realm_up(self, r):
-        if time.time() - self._realm_time > 600:    #ten minutes
+        if time.time() - self._realm_time > 150:    #2.5 minutes
             resp, html = self._h.request("http://us.battle.net/d3/en/status", "GET")
             self._realm_dom = parseString(html)
             self._realm_time = time.time()
