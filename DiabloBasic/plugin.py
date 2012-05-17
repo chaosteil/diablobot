@@ -67,10 +67,11 @@ class DiabloBasic(callbacks.Plugin):
     def __init__(self, irc):
         super(DiabloBasic, self).__init__(irc)
 
+        self._h = httplib2.Http(".cache")
+
         # Load class data
         for c in self.classes.keys():
-            h = httplib2.Http(".cache")
-            resp, j = h.request("http://us.battle.net/d3/en/data/calculator/%s" % c, "GET")
+            resp, j = self._h.request("http://us.battle.net/d3/en/data/calculator/%s" % c, "GET")
             self.skilldata[c] = json.loads(j)
 
         # Load quotes
@@ -88,12 +89,11 @@ class DiabloBasic(callbacks.Plugin):
 
         with open("/home/listen2/mumble_query", "r") as f:  #URL for the multiplay.co.uk mumble server status
             self._mumble_query = f.read().rstrip()
-        h = httplib2.Http(".cache")
-        resp, j = h.request(self._mumble_query, "GET")
+        resp, j = self._h.request(self._mumble_query, "GET")
         self._mumble_dom = parseString(j)
         self._mumble_time = time.time()
 
-        resp, html = h.request("http://us.battle.net/d3/en/status", "GET")
+        resp, html = self._h.request("http://us.battle.net/d3/en/status", "GET")
         self._realm_dom = parseString(html)
         self._realm_time = time.time()
 
@@ -156,8 +156,7 @@ class DiabloBasic(callbacks.Plugin):
                 #https://twitter.com/#!/Nyzaris/status/179599382814011392
                 m = re.search("twitter.com/(?:#!/)?.+/status(?:es)?/(\d+)", url)
                 if m:
-                    h = httplib2.Http(".cache")
-                    resp, j = h.request("http://api.twitter.com/1/statuses/show/%s.json" % m.group(1), "GET")
+                    resp, j = self._h.request("http://api.twitter.com/1/statuses/show/%s.json" % m.group(1), "GET")
                     tjson = json.loads(j)
                     irc.reply("%s (%s): %s" % (tjson["user"]["screen_name"], tjson["user"]["name"], tjson["text"]), prefixNick=False)
                     return
@@ -166,8 +165,7 @@ class DiabloBasic(callbacks.Plugin):
                     url = "http://www.reddit.com/comments/%s/.json" % m.group(1)
                     # don't return because we want to go through the next block
                 if url.find("reddit.com/") != -1:
-                    h = httplib2.Http(".cache")
-                    resp, j = h.request(url + ".json?limit=1", "GET")
+                    resp, j = self._h.request(url + ".json?limit=1", "GET")
                     f = json.loads(j)[0]["data"]["children"][0]["data"]
 
                     if f["is_self"]:
@@ -262,14 +260,13 @@ class DiabloBasic(callbacks.Plugin):
         """
         if time.time() - DiabloBasic._dstream_time > 600:    #ten minutes
             DiabloBasic._dstream_time = time.time()
-            h = httplib2.Http(".cache")
-            resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20III", "GET")
+            resp, j = self._h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20III", "GET")
             DiabloBasic._dstream_json = json.loads(j)
-            resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20II", "GET")
+            resp, j = self._h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20II", "GET")
             DiabloBasic._dstream_json.extend(json.loads(j))
-            resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20II:%20Lord%20of%20Destruction", "GET")
+            resp, j = self._h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo%20II:%20Lord%20of%20Destruction", "GET")
             DiabloBasic._dstream_json.extend(json.loads(j))
-            resp, j = h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo", "GET")
+            resp, j = self._h.request("http://api.justin.tv/api/stream/list.json?meta_game=Diablo", "GET")
             DiabloBasic._dstream_json.extend(json.loads(j))
             DiabloBasic._dstream_json = sorted(DiabloBasic._dstream_json, key=lambda x: 0 if x["channel"]["title"] in DiabloBasic._dstream_regulars else 1)
 
@@ -309,8 +306,7 @@ class DiabloBasic(callbacks.Plugin):
         """Returns the mumble server connection information and some basic status information.
         """
         if time.time() - self._mumble_time > 600:    #ten minutes
-            h = httplib2.Http(".cache")
-            resp, j = h.request(self._mumble_query, "GET")
+            resp, j = self._h.request(self._mumble_query, "GET")
             self._mumble_dom = parseString(j)
             self._mumble_time = time.time()
 
@@ -322,7 +318,7 @@ class DiabloBasic(callbacks.Plugin):
 
     def realm(self, irc, msg, args, r):
         if time.time() - self._realm_time > 600:    #ten minutes
-            resp, html = h.request("http://us.battle.net/d3/en/status", "GET")
+            resp, html = self._h.request("http://us.battle.net/d3/en/status", "GET")
             self._realm_dom = parseString(html)
             self._realm_time = time.time()
 
