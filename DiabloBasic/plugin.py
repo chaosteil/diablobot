@@ -93,6 +93,8 @@ class DiabloBasic(callbacks.Plugin):
         self._mumble_dom = parseString(j)
         self._mumble_time = time.time()
 
+        resp, html = h.request("http://us.battle.net/d3/en/status", "GET")
+        self._realm_dom = parseString(html)
         self._realm_time = time.time()
 
     def printQuote(self, irc, name, message):
