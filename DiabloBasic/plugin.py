@@ -319,23 +319,23 @@ class DiabloBasic(callbacks.Plugin):
     mumble = wrap(mumble)
 
     def realm(self, irc, msg, args, r):
-        if time.time() - self._mumble_time > 600:    #ten minutes
+        if time.time() - self._realm_time > 600:    #ten minutes
             resp, html = h.request("http://us.battle.net/d3/en/status", "GET")
             self._realm_dom = parseString(html)
             self._realm_time = time.time()
 
         if r in ["america", "americas", "na", "us"]:
-            if _status_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
+            if self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
                 irc.reply("Americas game server is reporting UP.")
             else:
                 irc.reply("Americas game server is reporting DOWN.")
         elif r in ["europe", "eu"]:
-            if _status_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
+            if self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
                 irc.reply("Europe game server is reporting UP.")
             else:
                 irc.reply("Europe game server is reporting DOWN.")
         elif r in ["asia", "sea"]:
-            if _status_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
+            if self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
                 irc.reply("Asia game server is reporting UP.")
             else:
                 irc.reply("Asia game server is reporting DOWN.")
