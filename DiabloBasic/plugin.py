@@ -84,7 +84,6 @@ class DiabloBasic(callbacks.Plugin):
         with open("/srv/bots/dbot/plugins/DiabloBasic/data/sk_abbrs.json", "r") as f:
             self.sk_abbrs = json.load(f)
 
-        # Init stream checking
         DiabloBasic._dstream_time = 0
 
         with open("/home/listen2/mumble_query", "r") as f:  #URL for the multiplay.co.uk mumble server status
@@ -93,6 +92,8 @@ class DiabloBasic(callbacks.Plugin):
         resp, j = h.request(self._mumble_query, "GET")
         self._mumble_dom = parseString(j)
         self._mumble_time = time.time()
+
+        self._realm_time = time.time()
 
     def printQuote(self, irc, name, message):
         irc.reply("%s: %s" % (name, message), prefixNick=False)
@@ -316,5 +317,31 @@ class DiabloBasic(callbacks.Plugin):
 
         irc.reply("Official /r/diablo mumble server: mumble.rdiablo.com, port=2612, password=secretmana. Users: %s/%s." % (num_users, max_users), prefixNick=False)
     mumble = wrap(mumble)
+
+    def realm(self, irc, msg, args, r):
+        if time.time() - self._mumble_time > 600:    #ten minutes
+            resp, html = h.request("http://us.battle.net/d3/en/status", "GET")
+            self._realm_dom = parseString(html)
+            self._realm_time = time.time()
+
+        if r in ["america", "americas", "na", "us"]:
+            if _status_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
+                irc.reply("Americas game server is reporting UP."
+            else:
+                irc.reply("Americas game server is reporting DOWN."
+        elif r in ["europe", "eu"]:
+            if _status_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
+                irc.reply("Europe game server is reporting UP."
+            else:
+                irc.reply("Europe game server is reporting DOWN."
+        elif r in ["asia", "sea"]:
+            if _status_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
+                irc.reply("Asia game server is reporting UP."
+            else:
+                irc.reply("Asia game server is reporting DOWN."
+        else:
+            irc.reply("Unknown realm.")
+    realm = wrap(realm, ['lowered'])
+
 
 Class = DiabloBasic
