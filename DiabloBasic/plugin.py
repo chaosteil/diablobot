@@ -65,6 +65,8 @@ class DiabloBasic(callbacks.Plugin):
     _strip_html_re = re.compile("<.*?>")    #Yes, I know using regexps on HTML is bad. But Blizzard always has such nicely-formed HTML, so I think it's okay.
                                             #After release, when the skills stop changing, we can just format the json files properly and print them without modification.
 
+    _realm_names = {"am":"Americas", "eu":"Europe", "as":"Asia"}
+
     def __init__(self, irc):
         super(DiabloBasic, self).__init__(irc)
 
@@ -353,17 +355,31 @@ class DiabloBasic(callbacks.Plugin):
                 irc.reply("Asia game server is reporting UP.")
             else:
                 irc.reply("Asia game server is reporting DOWN.")
-        elif r == "up":
-            pass #TODO list of all realms that are up
-        elif r == "down":
-            pass
+        elif r == "up": #list of all realms that are up
+            a = []
+            for r in self._realm_names.keys():
+                if self._realm_up(r):
+                    a.append(self._realm_names[r])
+            if len(a):
+                irc.reply("Realms reporting up: %s" % (",".join(a)))
+            else:
+                irc.reply("Realms reporting up: none")
+        elif r == "down": #list of all realms that are down
+            a = []
+            for r in self._realm_names.keys():
+                if not self._realm_up(r):
+                    a.append(self._realm_names[r])
+            if len(a):
+                irc.reply("Realms reporting down: %s" % (",".join(a)))
+            else:
+                irc.reply("Realms reporting down: none")
         else:
             irc.reply("Unknown realm.")
     realm = wrap(realm, ['lowered'])
 
     def _realmcheck(self):
         irc = self._irc #workaround for not being able to pass irc in through addPeriodicEvent() in __init__()
-        for r in ["am", "eu", "as"]:
+        for r in self._realm_names.keys():
             s = self._realm_up(r)
             if self._realm_prev[r] != s:
                 irc.reply("%s is now reporting %s" % (r, "UP" if s else "DOWN"), to="#diablobot")
