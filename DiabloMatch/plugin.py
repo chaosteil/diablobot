@@ -112,10 +112,8 @@ class DiabloMatch(callbacks.Plugin):
     """Add the help for "@plugin help DiabloMatch" here
     This should describe *how* to use this plugin."""
 
-    # TODO fix when the actual list is made available
     _realms = [
-        "useast",
-        "uswest",
+        "americas",
         "europe",
         "asia"
     ]
