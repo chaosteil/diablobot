@@ -360,6 +360,6 @@ class DiabloBasic(callbacks.Plugin):
 
     def _realmcheck(self):
         irc.reply(time.time(), to="listen2")
-    schedule.addPeriodicEvent(self._realmcheck(), 5)
+    schedule.addPeriodicEvent(_realmcheck(), 5)
 
 Class = DiabloBasic
