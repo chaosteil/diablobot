@@ -16,6 +16,7 @@ import supybot.plugins as plugins
 import supybot.ircutils as ircutils
 import supybot.ircmsgs as ircmsgs
 import supybot.callbacks as callbacks
+import supybot.schedule as schedule
 
 import re
 import json
@@ -319,6 +320,11 @@ class DiabloBasic(callbacks.Plugin):
     mumble = wrap(mumble)
 
     def _realm_up(r):
+        if time.time() - self._realm_time > 600:    #ten minutes
+            resp, html = self._h.request("http://us.battle.net/d3/en/status", "GET")
+            self._realm_dom = parseString(html)
+            self._realm_time = time.time()
+
         if r == "am":
             return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "eu":
@@ -329,12 +335,7 @@ class DiabloBasic(callbacks.Plugin):
             raise Exception
 
     def realm(self, irc, msg, args, r):
-        if time.time() - self._realm_time > 600:    #ten minutes
-            resp, html = self._h.request("http://us.battle.net/d3/en/status", "GET")
-            self._realm_dom = parseString(html)
-            self._realm_time = time.time()
-
-        if r in ["america", "americas", "na", "us"]:
+        if r in ["america", "americas", "am", "na", "us"]:
             if self._realm_up("am"):
                 irc.reply("Americas game server is reporting UP.")
             else:
@@ -349,11 +350,16 @@ class DiabloBasic(callbacks.Plugin):
                 irc.reply("Asia game server is reporting UP.")
             else:
                 irc.reply("Asia game server is reporting DOWN.")
+        elif r == "up":
+            pass #TODO list of all realms that are up
+        elif r == "down":
+            pass
         else:
             irc.reply("Unknown realm.")
     realm = wrap(realm, ['lowered'])
 
     def _realmcheck(self):
-        
+        irc.reply(time.time(), to="listen2")
+    schedule.addPeriodicEvent(self._realmcheck(), 5)
 
 Class = DiabloBasic
