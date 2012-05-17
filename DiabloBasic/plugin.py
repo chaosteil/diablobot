@@ -326,19 +326,19 @@ class DiabloBasic(callbacks.Plugin):
 
         if r in ["america", "americas", "na", "us"]:
             if _status_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
-                irc.reply("Americas game server is reporting UP."
+                irc.reply("Americas game server is reporting UP.")
             else:
-                irc.reply("Americas game server is reporting DOWN."
+                irc.reply("Americas game server is reporting DOWN.")
         elif r in ["europe", "eu"]:
             if _status_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
-                irc.reply("Europe game server is reporting UP."
+                irc.reply("Europe game server is reporting UP.")
             else:
-                irc.reply("Europe game server is reporting DOWN."
+                irc.reply("Europe game server is reporting DOWN.")
         elif r in ["asia", "sea"]:
             if _status_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
-                irc.reply("Asia game server is reporting UP."
+                irc.reply("Asia game server is reporting UP.")
             else:
-                irc.reply("Asia game server is reporting DOWN."
+                irc.reply("Asia game server is reporting DOWN.")
         else:
             irc.reply("Unknown realm.")
     realm = wrap(realm, ['lowered'])
