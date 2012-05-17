@@ -97,6 +97,8 @@ class DiabloBasic(callbacks.Plugin):
         self._realm_dom = parseString(html)
         self._realm_time = time.time()
 
+        self._realm_prev = {"am":True, "eu":True, "as":True}    #assume all realms up by default
+
     def printQuote(self, irc, name, message):
         irc.reply("%s: %s" % (name, message), prefixNick=False)
 
@@ -316,6 +318,16 @@ class DiabloBasic(callbacks.Plugin):
         irc.reply("Official /r/diablo mumble server: mumble.rdiablo.com, port=2612, password=secretmana. Users: %s/%s." % (num_users, max_users), prefixNick=False)
     mumble = wrap(mumble)
 
+    def _realm_up(r):
+        if r == "am":
+            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+        elif r == "eu":
+            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+        elif r == "as":
+            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+        else:
+            raise Exception
+
     def realm(self, irc, msg, args, r):
         if time.time() - self._realm_time > 600:    #ten minutes
             resp, html = self._h.request("http://us.battle.net/d3/en/status", "GET")
@@ -323,17 +335,17 @@ class DiabloBasic(callbacks.Plugin):
             self._realm_time = time.time()
 
         if r in ["america", "americas", "na", "us"]:
-            if self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
+            if self._realm_up("am"):
                 irc.reply("Americas game server is reporting UP.")
             else:
                 irc.reply("Americas game server is reporting DOWN.")
         elif r in ["europe", "eu"]:
-            if self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
+            if self._realm_up("eu"):
                 irc.reply("Europe game server is reporting UP.")
             else:
                 irc.reply("Europe game server is reporting DOWN.")
-        elif r in ["asia", "sea"]:
-            if self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up':
+        elif r in ["asia", "as", "sea"]:
+            if self._realm_up("as"):
                 irc.reply("Asia game server is reporting UP.")
             else:
                 irc.reply("Asia game server is reporting DOWN.")
@@ -341,5 +353,7 @@ class DiabloBasic(callbacks.Plugin):
             irc.reply("Unknown realm.")
     realm = wrap(realm, ['lowered'])
 
+    def _realmcheck(self):
+        
 
 Class = DiabloBasic
