@@ -99,6 +99,9 @@ class DiabloBasic(callbacks.Plugin):
         self._realm_time = time.time()
 
         self._realm_prev = {"am":True, "eu":True, "as":True}    #assume all realms up by default
+        self._irc = irc
+        schedule.removeEvent("realmcheck")
+        schedule.addPeriodicEvent(self._realmcheck, 180, name="realmcheck", now=True)
 
     def printQuote(self, irc, name, message):
         irc.reply("%s: %s" % (name, message), prefixNick=False)
@@ -319,7 +322,7 @@ class DiabloBasic(callbacks.Plugin):
         irc.reply("Official /r/diablo mumble server: mumble.rdiablo.com, port=2612, password=secretmana. Users: %s/%s." % (num_users, max_users), prefixNick=False)
     mumble = wrap(mumble)
 
-    def _realm_up(r):
+    def _realm_up(self, r):
         if time.time() - self._realm_time > 600:    #ten minutes
             resp, html = self._h.request("http://us.battle.net/d3/en/status", "GET")
             self._realm_dom = parseString(html)
@@ -359,7 +362,13 @@ class DiabloBasic(callbacks.Plugin):
     realm = wrap(realm, ['lowered'])
 
     def _realmcheck(self):
-        irc.reply(time.time(), to="listen2")
-    schedule.addPeriodicEvent(_realmcheck(), 5)
+        irc = self._irc #workaround for not being able to pass irc in through addPeriodicEvent() in __init__()
+        for r in ["am", "eu", "as"]:
+            s = self._realm_up(r)
+            if self._realm_prev[r] != s:
+                irc.reply("%s is now reporting %s" % (r, "UP" if s else "DOWN"), to="listen2")
+            else:
+                irc.reply("%s continues to report %s" % (r, "UP" if s else "DOWN"), to="listen2")
+            self._realm_prev[r] = s
 
 Class = DiabloBasic
