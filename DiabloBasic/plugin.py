@@ -102,6 +102,7 @@ class DiabloBasic(callbacks.Plugin):
         self._realm_dom = parseString(html)
         self._realm_time = time.time()
 
+        self._realm_prev = {}
         for r in self._realm_names.keys():
             self._realm_prev[r] = True          #assume all realms up by default
 
