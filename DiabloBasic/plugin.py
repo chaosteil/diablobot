@@ -110,6 +110,9 @@ class DiabloBasic(callbacks.Plugin):
         self._realm_prev["am_brl"] = False
         self._realm_prev["am_clp"] = False
         self._realm_prev["am_ars"] = False
+        self._realm_prev["am_mxn"] = False
+        self._realm_prev["am_usd"] = False
+        self._realm_prev["am_aud"] = False
         self._realm_prev["eu_eur"] = False
         self._realm_prev["eu_gbp"] = False
         self._realm_prev["eu_rub"] = False
