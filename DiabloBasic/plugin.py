@@ -102,7 +102,17 @@ class DiabloBasic(callbacks.Plugin):
         self._realm_dom = parseString(html)
         self._realm_time = time.time()
 
-        self._realm_prev = {"am":True, "eu":True, "as":True}    #assume all realms up by default
+        for r in self._realm_names.keys():
+            self._realm_prev[r] = True          #assume all realms up by default
+
+        #TODO remove these when the RMAHs come online!
+        self._realm_prev["am_brl"] = False
+        self._realm_prev["am_clp"] = False
+        self._realm_prev["am_ars"] = False
+        self._realm_prev["eu_eur"] = False
+        self._realm_prev["eu_gbp"] = False
+        self._realm_prev["eu_rub"] = False
+
         self._irc = irc
         schedule.removeEvent("realmcheck")
         schedule.addPeriodicEvent(self._realmcheck, 180, name="realmcheck", now=True)
