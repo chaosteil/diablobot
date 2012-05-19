@@ -381,7 +381,8 @@ class DiabloBasic(callbacks.Plugin):
                 if self._realm_up(r):
                     a.append(self._realm_names[r])
             if len(a):
-                irc.reply("Realms reporting up: %s" % (", ".join(a)))
+                s = ", ".join(a).replace("Auction House", "")
+                irc.reply("Realms reporting up: %s" % (s))
             else:
                 irc.reply("Realms reporting up: none")
         elif r == "down": #list of all realms that are down
@@ -390,7 +391,8 @@ class DiabloBasic(callbacks.Plugin):
                 if not self._realm_up(r):
                     a.append(self._realm_names[r])
             if len(a):
-                irc.reply("Realms reporting down: %s" % (", ".join(a)))
+                s = ", ".join(a).replace("Auction House", "")
+                irc.reply("Realms reporting down: %s" % (s))
             else:
                 irc.reply("Realms reporting down: none")
         else:
