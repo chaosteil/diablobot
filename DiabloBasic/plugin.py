@@ -411,10 +411,13 @@ class DiabloBasic(callbacks.Plugin):
                 irc.reply("Realms reporting down: none", prefixNick=False)
         else:
             if r in ["america", "americas", "am", "na", "us"]:
+                r = "am"
                 s = self._realm_up("am")
             elif r in ["europe", "eu"]:
+                r = "eu"
                 s = self._realm_up("eu")
             elif r in ["asia", "as", "sea"]:
+                r = "as"
                 s = self._realm_up("as")
             else:
                 try:
