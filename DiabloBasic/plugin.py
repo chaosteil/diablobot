@@ -382,9 +382,9 @@ class DiabloBasic(callbacks.Plugin):
                     a.append(self._realm_names[r])
             if len(a):
                 s = ", ".join(a).replace(" Auction House", "")
-                irc.reply("Realms reporting up: %s" % (s))
+                irc.reply("Realms reporting up: %s" % (s), prefixNick=False)
             else:
-                irc.reply("Realms reporting up: none")
+                irc.reply("Realms reporting up: none", prefixNick=False)
         elif r == "down": #list of all realms that are down
             a = []
             for r in self._realm_names.keys():
@@ -392,9 +392,9 @@ class DiabloBasic(callbacks.Plugin):
                     a.append(self._realm_names[r])
             if len(a):
                 s = ", ".join(a).replace(" Auction House", "")
-                irc.reply("Realms reporting down: %s" % (s))
+                irc.reply("Realms reporting down: %s" % (s), prefixNick=False)
             else:
-                irc.reply("Realms reporting down: none")
+                irc.reply("Realms reporting down: none", prefixNick=False)
         else:
             if r in ["america", "americas", "am", "na", "us"]:
                 s = self._realm_up("am")
@@ -409,9 +409,9 @@ class DiabloBasic(callbacks.Plugin):
                     irc.reply("Unknown realm.")
                     return
             if s:
-                irc.reply("%s is reporting UP." % (self._realm_names[r]))
+                irc.reply("%s is reporting UP." % (self._realm_names[r]), prefixNick=False)
             else:
-                irc.reply("%s is reporting DOWN." % (self._realm_names[r]))
+                irc.reply("%s is reporting DOWN." % (self._realm_names[r]), prefixNick=False)
 
     realm = wrap(realm, ['lowered'])
 
