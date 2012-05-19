@@ -389,6 +389,9 @@ class DiabloBasic(callbacks.Plugin):
             raise Exception
 
     def realm(self, irc, msg, args, r):
+        """\37realm
+        Show status of realm game servers or auction houses.
+        """
         if r == "up": #list of all realms that are up
             a = []
             for r in self._realm_names.keys():
