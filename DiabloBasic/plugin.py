@@ -375,22 +375,7 @@ class DiabloBasic(callbacks.Plugin):
             raise Exception
 
     def realm(self, irc, msg, args, r):
-        if r in ["america", "americas", "am", "na", "us"]:
-            if self._realm_up("am"):
-                irc.reply("Americas game server is reporting UP.")
-            else:
-                irc.reply("Americas game server is reporting DOWN.")
-        elif r in ["europe", "eu"]:
-            if self._realm_up("eu"):
-                irc.reply("Europe game server is reporting UP.")
-            else:
-                irc.reply("Europe game server is reporting DOWN.")
-        elif r in ["asia", "as", "sea"]:
-            if self._realm_up("as"):
-                irc.reply("Asia game server is reporting UP.")
-            else:
-                irc.reply("Asia game server is reporting DOWN.")
-        elif r == "up": #list of all realms that are up
+        if r == "up": #list of all realms that are up
             a = []
             for r in self._realm_names.keys():
                 if self._realm_up(r):
@@ -409,13 +394,23 @@ class DiabloBasic(callbacks.Plugin):
             else:
                 irc.reply("Realms reporting down: none")
         else:
-            try:
-                if self._realm_up(r):
-                    irc.reply("%s is reporting UP." % (self._realm_names[r]))
-                else:
-                    irc.reply("%s is reporting DOWN." % (self._realm_names[r]))
-            except:
-                irc.reply("Unknown realm.")
+            if r in ["america", "americas", "am", "na", "us"]:
+                s = self._realm_up("am")
+            elif r in ["europe", "eu"]:
+                s = self._realm_up("eu")
+            elif r in ["asia", "as", "sea"]:
+                s = self._realm_up("as")
+            else:
+                try:
+                    s = self._realm_up(r)
+                except:
+                    irc.reply("Unknown realm.")
+                    return
+            if s:
+                irc.reply("%s is reporting UP." % (self._realm_names[r]))
+            else:
+                irc.reply("%s is reporting DOWN." % (self._realm_names[r]))
+
     realm = wrap(realm, ['lowered'])
 
     def _realmcheck(self):
