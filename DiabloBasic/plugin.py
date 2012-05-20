@@ -434,6 +434,7 @@ class DiabloBasic(callbacks.Plugin):
                 irc.reply("%s is reporting DOWN." % (self._realm_names[r]), prefixNick=False)
 
     realm = wrap(realm, ['lowered'])
+    realms = wrap(realm, ['lowered'])
 
     def _realmcheck(self):
         irc = self._irc #workaround for not being able to pass irc in through addPeriodicEvent() in __init__()
