@@ -21,7 +21,7 @@ channel_rules = [
     "2. Be polite and respectful of others.",
     "3. Do not disrupt conversation with spam or bot activities.",
     "4. Use #bazaar for item trading discussion.",
-    "5. Do not sell, offer to sell, or seek sale of beta keys.",
+    "5. Do not facilitate violation of any Blizzard EULA.",
     "6. Follow instructions given by the channel operators.",
     "7. Do not impersonate other /r/Diablo members or Blizzard employees.",
     "8. Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
