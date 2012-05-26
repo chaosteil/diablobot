@@ -1296,6 +1296,18 @@
 			"Something for you I am making. Again, not kill Gharbad, live and give good. You take this as proof I keep word...",
 			"Nothing yet! Almost done. Very powerful, very strong. Live! Live! No pain and promise I keep!",
 			"This too good for you. Very powerful! You want - you take!"
+		]
+	},
+	"templar": {
+		"name": "",
+		"quotes": [
+			"Evil has been rebuked."
+		]
+	},
+	"other": {
+		"name": "",
+		"quotes": [
+			"Joshua: We just spent a week fighting off hundreds of walking corpses outside our impenetrable gates. We're the hardest bastards within a hundred miles. Who's going to attack us?"
 	 ]
 	}
 }
