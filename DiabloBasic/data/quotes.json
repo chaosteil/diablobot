@@ -1299,7 +1299,7 @@
 		]
 	},
 	"templar": {
-		"name": "",
+		"name": "Templar",
 		"quotes": [
 			"My order would approve.",
 			"You set a shining example.",
@@ -1400,7 +1400,7 @@
 		]
 	},
 	"scoundrel": {
-		"name": "",
+		"name": "Scoundrel",
 		"quotes": [
 			"Almost as good as me.",
 			"Hey, you're not so bad.",
@@ -1507,7 +1507,7 @@
 		]
 	},
 	"enchantress": {
-		"name": "",
+		"name": "Enchantress",
 		"quotes": [
 			"Masterfully done.",
 			"Fine work.",
