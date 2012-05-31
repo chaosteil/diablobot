@@ -1634,6 +1634,48 @@
 			"We shall cleanse this blight!"
 		]
 	},
+	"monk": {
+		"name": "Monk",
+		"quotes": [
+			"You have shown me the truth.",
+			"I was mistaken.",
+			"My mistake.",
+			"My error grieves me.",
+			"Help me!",
+			"I cannot stand alone!",
+			"Lend your strength to mine!",
+			"Ha! A vicious strike!",
+			"Feel the wrath of Ytar!",
+			"Break beneath the endless tide!",
+			"You are defeated!",
+			"Your flaws are revealed!",
+			"The storm breaks!",
+			"The gods strike through me!",
+			"This fight is over. ",
+			"Your strength fails!",
+			"Farewell.",
+			"May you find what you seek.",
+			"Be strong.",
+			"We will meet again.",
+			"We must go!",
+			"I am ready.",
+			"I have been healed.",
+			"My wounds are closing.",
+			"My strength returns.",
+			"My injuries are less severe.",
+			"Ytar, guide my path. My hands are yours.",
+			"Time is always moving. I should be too.",
+			"I am needed elsewhere. I should go.",
+			"The gods do not reward those who do not act.",
+			"Those who do nothing will become nothing.",
+			"There is no triumph without risk.",
+			"A new recruit has joined my party. My foes gain strength.",
+			"Follow!",
+			"Journey with me.",
+			"Our path is one.",
+			"Let me guide you."
+		]
+	},
 	"other": {
 		"name": "",
 		"quotes": [
