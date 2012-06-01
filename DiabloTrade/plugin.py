@@ -30,6 +30,8 @@ class DiabloTrade(callbacks.Plugin):
     This should describe *how* to use this plugin."""
 
     def __init__(self, irc):
+        super(DiabloTrade, self).__init__(irc)
+
         self._h = httplib2.Http(".cache")
         self._last_listing = None
         self._irc = irc
