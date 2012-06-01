@@ -34,7 +34,10 @@ class DiabloTrade(callbacks.Plugin):
         self._last_listing = None
         self._irc = irc
 
-        schedule.removeEvent("d3tcheck")
+        try:
+            schedule.removeEvent("d3tcheck")
+        except KeyError:
+            pass #it's okay if the event doesn't exist. Just want to make sure we don't have duplicate events.
         schedule.addPeriodicEvent(self._checklistings, 300, name="d3tcheck", now=True)
 
     def bt(self, irc, msg, args):
