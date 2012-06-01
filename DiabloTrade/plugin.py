@@ -17,6 +17,7 @@ from supybot.commands import *
 import supybot.plugins as plugins
 import supybot.ircutils as ircutils
 import supybot.ircmsgs as ircmsgs
+import supybot.callbacks as callbacks
 import supybot.schedule as schedule
 
 import sys
