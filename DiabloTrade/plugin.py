@@ -49,7 +49,7 @@ class DiabloTrade(callbacks.Plugin):
         resp, j = self._h.request(("http://www.reddit.com/r/D3T/new/.json?sort=new&limit=4%s" % ("&before=%s" % (self._last_listing) if self._last_listing else "")), "GET")
         posts = json.loads(j.decode("utf-8"))
 
-        for p in posts["data"]["children"]:
+        for p in reversed(posts["data"]["children"]):
             irc.reply("New listing by %s: %s (http://reddit.com/r/d3t/comments/%s)" % (p["data"]["author"], p["data"]["title"], p["data"]["id"]), to="#bazaar")
             #TODO if reddit_name is associated with a bt, show the bt
             self._last_listing = "t3_" + p["data"]["id"]
