@@ -40,7 +40,7 @@ class DiabloTrade(callbacks.Plugin):
             pass #it's okay if the event doesn't exist. Just want to make sure we don't have duplicate events.
         schedule.addPeriodicEvent(self._checklistings, 300, name="d3tcheck", now=True)
 
-    def bt(self, irc, msg, args):
+    def _checklistings(self):
         """
         Checks for new listings on /r/d3t and prints them to #bazaar
         """
