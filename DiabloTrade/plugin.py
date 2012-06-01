@@ -33,9 +33,12 @@ class DiabloTrade(callbacks.Plugin):
         super(DiabloTrade, self).__init__(irc)
 
         self._h = httplib2.Http(".cache")
-        self._last_listing = None
         self._irc = irc
-        self._first_run = True
+
+        #get the top post and store the id. This will be the starting point for the "new posts" check.
+        resp, j = self._h.request("http://www.reddit.com/r/D3T/new/.json?sort=new&limit=1", "GET")
+        posts = json.loads(j.decode("utf-8"))
+        self._last_listing = "t3_" + posts["data"]["children"][0]["data"]["id"]
 
         try:
             schedule.removeEvent("d3tcheck")
@@ -49,14 +52,12 @@ class DiabloTrade(callbacks.Plugin):
         """
         irc = self._irc #workaround for not being able to pass irc in through addPeriodicEvent() in __init__()
 
-        resp, j = self._h.request(("http://www.reddit.com/r/D3T/new/.json?sort=new&limit=4%s" % ("&before=%s" % (self._last_listing) if self._last_listing else "")), "GET")
+        resp, j = self._h.request("http://www.reddit.com/r/D3T/new/.json?sort=new&limit=4&before=%s" % (self._last_listing), "GET")
         posts = json.loads(j.decode("utf-8"))
 
         for p in reversed(posts["data"]["children"]):
-            if not self._first_run:
-                irc.reply("New listing by %s: %s (http://reddit.com/r/d3t/comments/%s)" % (p["data"]["author"], p["data"]["title"], p["data"]["id"]), to="#bazaar")
+            irc.reply("New listing by %s: %s (http://reddit.com/r/D3T/comments/%s)" % (p["data"]["author"], p["data"]["title"], p["data"]["id"]), to="#bazaar")
             #TODO if reddit_name is associated with a bt, show the bt
             self._last_listing = "t3_" + p["data"]["id"]
-        self._first_run = False
 
 Class = DiabloTrade
