@@ -193,7 +193,10 @@ class DiabloBasic(callbacks.Plugin):
                     # don't return because we want to go through the next block
                 if url.find("reddit.com/") != -1:
                     resp, j = self._h.request(url + ".json?limit=1", "GET")
-                    f = json.loads(j)[0]["data"]["children"][0]["data"]
+                    try:
+                        f = json.loads(j)[0]["data"]["children"][0]["data"]
+                    except KeyError:
+                        return    #it probably was a link to a subreddit or something, so don't sweat it
 
                     if f["is_self"]:
                         irc.reply("Reddit: (+%d) %s (%s) by %s %s ago. %d comment%s." % (f["score"], f["title"], f["domain"], f["author"], DiabloCommon.timeago(time.time() - f["created_utc"]), f["num_comments"], "s" if f["num_comments"] != 1 else ""), prefixNick=False)
