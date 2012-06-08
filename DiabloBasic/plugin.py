@@ -122,7 +122,7 @@ class DiabloBasic(callbacks.Plugin):
             schedule.removeEvent("realmcheck")
         except KeyError:
             pass #it's okay if the event doesn't exist. Just want to make sure we don't have duplicate events.
-        schedule.addPeriodicEvent(self._realmcheck, 180, name="realmcheck", now=True)
+        #schedule.addPeriodicEvent(self._realmcheck, 180, name="realmcheck", now=True)
 
     def printQuote(self, irc, name, message):
         irc.reply("%s: %s" % (name, message), prefixNick=False)
