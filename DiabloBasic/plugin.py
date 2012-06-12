@@ -333,43 +333,43 @@ class DiabloBasic(callbacks.Plugin):
             self._realm_time = time.time()
 
         if r == "am":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "am_gold":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "am_hc":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[3].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[3].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "am_usd":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[5].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[5].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "am_aud":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[7].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[7].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "am_mxn":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[9].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[9].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "am_brl":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[11].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[11].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "am_clp":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[13].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[13].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "am_ars":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[15].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[7].childNodes[15].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
 
         elif r == "eu":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "eu_gold":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "eu_hc":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[3].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[3].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "eu_eur":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[5].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[5].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "eu_gbp":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[7].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[7].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "eu_rub":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[9].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[7].childNodes[9].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
 
         elif r == "as":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[3].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "as_gold":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[7].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[7].childNodes[1].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
         elif r == "as_hc":
-            return self._realm_dom.childNodes[1].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[7].childNodes[3].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
+            return self._realm_dom.childNodes[0].childNodes[3].childNodes[0].childNodes[3].childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[5].childNodes[1].childNodes[7].childNodes[3].childNodes[1]._attrs["class"].nodeValue.split()[1] == 'up'
 
         else:
             raise Exception
