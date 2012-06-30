@@ -16,17 +16,16 @@ import time
 whois = {}
 
 channel_rules = [
-    "Channel rules for #diablo and #bazaar",
+    "Channel rules for #diablo",
     "1. All topics are allowed, but Diablo should always take precedence.",
     "2. Be polite and respectful of others.",
     "3. Do not disrupt conversation with spam or bot activities.",
-    "4. Use #bazaar for item trading discussion.",
-    "5. Do not facilitate violation of any Blizzard EULA.",
-    "6. Follow instructions given by the channel operators.",
-    "7. Do not impersonate other /r/Diablo members or Blizzard employees.",
-    "8. Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
-    "9. IRC statistics are available at http://d3.fuzz.me.uk/",
-    "10. These rules are subject to change at any time. See http://bit.ly/wEkLDN for more details.",
+    "4. Do not facilitate violation of any Blizzard EULA.",
+    "5. Follow instructions given by the channel operators.",
+    "6. Do not impersonate other /r/Diablo members or Blizzard employees.",
+    "7. Abide by the EsperNet Charter and Acceptable Use Policy (http://esper.net/charter.php)",
+    "8. IRC statistics are available at http://d3.fuzz.me.uk/",
+    "9. These rules are subject to change at any time. See http://bit.ly/wEkLDN for more details.",
     "End of rules"
     ]
 
