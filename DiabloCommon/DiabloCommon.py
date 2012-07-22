@@ -105,9 +105,6 @@ def timeago(sec):
     n = sec / 2592000
     if n:
         return "%d month%s" % (n, "s" if n > 1 else "")
-    n = sec / 604800
-    if n:
-        return "%d week%s" % (n, "s" if n > 1 else "")
     n = sec / 86400
     if n:
         return "%d day%s" % (n, "s" if n > 1 else "")
@@ -117,4 +114,4 @@ def timeago(sec):
     n = sec / 60
     if n:
         return "%d minute%s" % (n, "s" if n > 1 else "")
-    return "%d second%s" % (sec, "s" if sec > 1 else "")    
+    return "%d second%s" % (sec, "s" if sec > 1 else "")
