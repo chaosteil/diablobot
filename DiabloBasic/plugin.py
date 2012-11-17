@@ -98,6 +98,8 @@ class DiabloBasic(callbacks.Plugin):
         self._mumble_dom = parseString(j)
         self._mumble_time = time.time()
 
+        self._chansize_time = 0
+
         resp, html = self._h.request("http://us.battle.net/d3/en/status", "GET")
         self._realm_dom = parseString(html)
         self._realm_time = time.time()
@@ -430,5 +432,27 @@ class DiabloBasic(callbacks.Plugin):
             #else:
             #    irc.reply("%s continues to report %s" % (r, "UP" if s else "DOWN"), to="#diablobot")
             self._realm_prev[r] = s
+
+    #on #diablo join, part, or quit, update the channel-size file
+    def doJoin(self, irc, msg):
+        if msg.args[0] == "#diablo":
+            if time.time() - self._chansize_time > 600:    #ten minutes
+                with open("/tmp/irc_diablo_size", "w") as f:
+                    f.write("%d" % (len(irc.state.channels[msg.args[0]].users)))
+                self._chansize_time = time.time()
+
+    def doPart(self, irc, msg):
+        if msg.args[0] == "#diablo":
+            if time.time() - self._chansize_time > 600:    #ten minutes
+                with open("/tmp/irc_diablo_size", "w") as f:
+                    f.write(len(irc.state.channels[msg.args[0]].users))
+                self._chansize_time = time.time()
+
+    def doQuit(self, irc, msg):
+        if msg.args[0] == "#diablo":
+            if time.time() - self._chansize_time > 600:    #ten minutes
+                with open("/tmp/irc_diablo_size", "w") as f:
+                    f.write(len(irc.state.channels[msg.args[0]].users))
+                self._chansize_time = time.time()
 
 Class = DiabloBasic
