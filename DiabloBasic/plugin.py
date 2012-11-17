@@ -433,26 +433,24 @@ class DiabloBasic(callbacks.Plugin):
             #    irc.reply("%s continues to report %s" % (r, "UP" if s else "DOWN"), to="#diablobot")
             self._realm_prev[r] = s
 
+
+    def _update_chansize_file(self, n):
+        if time.time() - self._chansize_time > 600:    #ten minutes
+            with open("/tmp/irc_diablo_size", "w") as f:
+                f.write("%d" % (n))
+            self._chansize_time = time.time()
+
     #on #diablo join, part, or quit, update the channel-size file
     def doJoin(self, irc, msg):
         if msg.args[0] == "#diablo":
-            if time.time() - self._chansize_time > 600:    #ten minutes
-                with open("/tmp/irc_diablo_size", "w") as f:
-                    f.write("%d" % (len(irc.state.channels[msg.args[0]].users)))
-                self._chansize_time = time.time()
+            self._update_chansize_file(len(irc.state.channels[msg.args[0]].users))
 
     def doPart(self, irc, msg):
         if msg.args[0] == "#diablo":
-            if time.time() - self._chansize_time > 600:    #ten minutes
-                with open("/tmp/irc_diablo_size", "w") as f:
-                    f.write(len(irc.state.channels[msg.args[0]].users))
-                self._chansize_time = time.time()
+            self._update_chansize_file(len(irc.state.channels[msg.args[0]].users))
 
     def doQuit(self, irc, msg):
         if msg.args[0] == "#diablo":
-            if time.time() - self._chansize_time > 600:    #ten minutes
-                with open("/tmp/irc_diablo_size", "w") as f:
-                    f.write(len(irc.state.channels[msg.args[0]].users))
-                self._chansize_time = time.time()
+            self._update_chansize_file(len(irc.state.channels[msg.args[0]].users))
 
 Class = DiabloBasic
