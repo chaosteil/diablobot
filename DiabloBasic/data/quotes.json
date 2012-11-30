@@ -308,14 +308,17 @@
 			"Therefore, I must destroy the corrupted Worldstone before the powers of Hell take root. This act will change your world forever -- with consequences even I cannot foresee. However, it is the only way to ensure mankind's survival. ",
 			"Go now, mortal. I have opened a portal that will lead you to safety. ",
 			"May the Eternal Light shine upon you and your descendants for what you've done this day. The continued survival of mankind is your legacy! Above all else, you have earned a rest from this endless battle.",
-			"Hope remains within the hearts of men."
+			"Hope remains within the hearts of men.",
+			"STOP! he beast contained herein shall not be set free--not even by you!",
+			"Fool! You have just ensured the doom of this world. You cannot even begin to imagine what you've set in motion this day. Go now, to the Temple of Light in the eastern city of Kurast. There you will find the gate to Hell open before you. You must find the courage to step through that gate, Marius. Take the stone you hold to the Hellforge, where it will be destroyed. Go now! Take the stone and run!"
 		]
 	},
 	"diablo" : {
 		"name" : "Diablo",
 		"quotes" : [
 				"Aggh... The smell of life surrounds me.",
-				"Not even death can save you from me..."
+				"Not even death can save you from me...",
+				"Now you know what I seek, Marius. This is my brother. Sleep now. We set out with the dawn."
 		]
 	},
 	"izual" : {
@@ -338,15 +341,19 @@
 		"name" : "Mephisto",
 		"quotes" : [
 				"My brothers have escaped you.",
-				"You're too late, ha ha ha ha ha ha."
-		]
-	},
-	"baal" : {
-		"name" : "Baal",
-		"quotes" : [
+				"You're too late, ha ha ha ha ha ha.",
+				"My brothers, at long last we stand reunited. The infernal gate has been prepared. The time of our final victory is at hand. May the way to Hell be opened!",
+				"And the evil that was once vanquished shall rise anew. Wrapped in the guise of man shall he walk amongst the innocent, and terror shall consume they that dwell upon the earth. The skies shall rain fire, the seas will become as blood, the righteous shall fall before the wicked, and all creation shall tremble before the burning standards of Hell!",
+				"The gate stands ready. And now, my young brother, the time has come for you to assume your true form. Arise Diablo, Lord of Terror! You are the harbinger of our return, Diablo. Send forth your terror into hell!"
 				"My brothers will not have died in vain!",
 				"Aaaaggghhh...",
-				"(Maniacal Laughter)."
+				"(Maniacal Laughter).",
+				"So, Marius. At last I find you.",
+				"I've been searching for you for a long time, Marius. I was rather beginning to think you didn't want to be found.",
+				"Not your fault? Tell me, Marius... How was it not your fault?",
+				"Marius... Give me the stone and all is forgiven! Give it to me, Marius.",
+				"You haven't failed, old man. You've done exactly as you were meant to do. However, I am not the Archangel Tyrael.",
+				"You have done well, Marius! Now I think you shall have your reward!"
 		]
 	},
 	"atma" : {
@@ -1792,6 +1799,34 @@
 		"name": "",
 		"quotes": [
 			"Joshua: We just spent a week fighting off hundreds of walking corpses outside our impenetrable gates. We're the hardest bastards within a hundred miles. Who's going to attack us?"
-	 ]
+		]
+	},
+	"marius" : {
+		"name" : "Marius",
+		"quotes" : [
+			"Tyrael! Yes, yes, now I... Now I recognize you... I should've known you'd travel in disguise; they're... they're always watching...",
+			"Oh, forgive me, Tyrael, please... It wasn't my fault.",
+			"The Wanderer. Yes, it was... was the Wanderer. My days in the Rogue Citadel seem so long ago. I sought refuge from my memories in the company of other outcasts, high in the mountains past the Eastern Gate.",
+			"Oh, I fought sleep for days at a time... For when I dreamt, the memories would return. Memories of the monastery and the evil that had claimed it. Dreams, memories... I couldn't tell the difference anymore.",
+			"And the evil from my dreams followed me in my heels! How had he found me here? How could this broken shell of a man, barely able to carry the weight of his own sword, be the burning terror which drove me to hide here?",
+			"He seemed to have demons of his own which he struggled to contain. He was losing.",
+			"As I watched, I became convinced that I was truly mad. The terror, the destruction, the evil that I witnessed--how else could I explain them? Were these the demons from my dreams, or were they born... within the Wanderer?",
+			"Why did I follow him? I don't know. Why do things happen as they do in dreams? But when he beckoned, I had to follow him. And from that moment, we traveled together. East... always into the east!",
+			"We traveled east, over the mountains and into the vast deserts of broken lands. As the days passed, my companion told me of himself: that he had once been a great warrior, and that a dark and sacred burden now weighed heavily upon him.",
+			"We traveled for an eternity across that barren wasteland. How long, I couldn't say. And always, a dark cloud seemed to follow us, just over the horizon. ",
+			"Finally, the journey ended.We climbed the last ridge. There below us lay our destination: the shining jewel, Lut Gholein, with the great sea beyond. We made camp there that night. Perhaps it was the warm desert wind, or the sound of the ocean; but for the first time in many weeks, I slept.",
+			"However, the dreams returned. But these were clearly not my own. I beheld a vision of a great man: the mage, Tal Rasha. You were there too, Tyrael; I remember seeing you in my dream. His brethren had cornered a great demon named Baal, Lord of Destruction, who had been set loose upon the world.",
+			"They attempted to imprison the demon within a sacred stone. Yet when their attempts failed, Tal Rasha selflessly volunteered to contain the demon within himself, completing the prison. He instructed his brethren to bind him within a tomb, buried under the sand... and there, to wrestle with the demon for all eternity.",
+			"The next morning, we walked over the hill toward Lut Gholein. I had no idea then of the horrors that were in store for me there...",
+			"My companion drew in the dank, cold air of the tomb. It seemed to... strengthen him. I stood in the doorway between light and darkness. What was left of my sanity implored me not to enter. But that voice was just a whisper now...",
+			"As we worked our way deeper and deeper into the crypt, I began to see a change in my companion. He seemed to be gaining strength! I could barely see in the gloom, but my companion seemed to know the way. We came at last to a great hall. It was then I realized my companion hadn't been gaining strength; he had been losing what was left of his humanity.",
+			"What choice did I have? I ran.",
+			"I did as you told me, Tyrael: I found the temple of the Zakarum. In the deepest recesses of the temple, I found a dark gathering: my companion, the Wanderer; Tal Rasha; and a great evil who could only be the Lord of Hatred himself: Mephisto!",
+			"I heard later that he was defeated, and that the Soulstones were destroyed in Hellforge. All except one...",
+			"Oh, ho ho ho, oh I failed, Tyrael. I couldn't do as you asked. I couldn't enter that gate. Forgive me, Tyrael... forgive me.",
+			"Take it! Take it, take it! I'm glad this is finally over, Tyrael! Look! What the stone has done to me, oh! Ho, ho, ho...",
+			"Baal! Lo! Lo, lo, lo, lo, lo... ho... ho ho...",
+			"What have I done to deserve this?"
+		]
 	}
 }
