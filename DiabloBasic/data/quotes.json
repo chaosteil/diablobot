@@ -345,6 +345,11 @@
 				"My brothers, at long last we stand reunited. The infernal gate has been prepared. The time of our final victory is at hand. May the way to Hell be opened!",
 				"And the evil that was once vanquished shall rise anew. Wrapped in the guise of man shall he walk amongst the innocent, and terror shall consume they that dwell upon the earth. The skies shall rain fire, the seas will become as blood, the righteous shall fall before the wicked, and all creation shall tremble before the burning standards of Hell!",
 				"The gate stands ready. And now, my young brother, the time has come for you to assume your true form. Arise Diablo, Lord of Terror! You are the harbinger of our return, Diablo. Send forth your terror into hell!"
+		]
+	},
+	"baal" : {
+		"name" : "Baal",
+		"quotes" : [
 				"My brothers will not have died in vain!",
 				"Aaaaggghhh...",
 				"(Maniacal Laughter).",
