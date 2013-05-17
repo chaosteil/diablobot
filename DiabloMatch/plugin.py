@@ -221,6 +221,8 @@ class DiabloMatch(callbacks.Plugin):
                 irc.reply(user.pretty_print().encode("utf-8"), private=True)
 
     bt = wrap(bt, [optional('something'), optional('something')])
+    btag = wrap(bt, [optional('something'), optional('something')])
+    battletag = wrap(bt, [optional('something'), optional('something')])
 
     def btinfo(self, irc, msg, args, arg1):
         """[\37user]
